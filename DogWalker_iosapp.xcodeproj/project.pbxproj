@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47C4C3D8259DC49200E84C4E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C4C3D7259DC49200E84C4E /* Setting.storyboard */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
 		76005369259DB48B0058F313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005368259DB48B0058F313 /* ViewController.swift */; };
 		7600536C259DB48B0058F313 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600536A259DB48B0058F313 /* Main.storyboard */; };
 		7600536E259DB48C0058F313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7600536D259DB48C0058F313 /* Assets.xcassets */; };
 		76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600536F259DB48C0058F313 /* LaunchScreen.storyboard */; };
-		7600537E259DB5430058F313 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600537D259DB5430058F313 /* Home.storyboard */; };
+		7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600538B259DF1DD0058F313 /* Feed.storyboard */; };
+		7600538F259DF1F10058F313 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600538E259DF1F10058F313 /* MyPage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47C4C3D7259DC49200E84C4E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		76005361259DB48B0058F313 /* DogWalker_iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalker_iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76005364259DB48B0058F313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76005366259DB48B0058F313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,7 +26,8 @@
 		7600536D259DB48C0058F313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76005370259DB48C0058F313 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76005372259DB48C0058F313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7600537D259DB5430058F313 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7600538B259DF1DD0058F313 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		7600538E259DF1F10058F313 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +62,13 @@
 			children = (
 				76005364259DB48B0058F313 /* AppDelegate.swift */,
 				76005366259DB48B0058F313 /* SceneDelegate.swift */,
-				47C4C3D7259DC49200E84C4E /* Setting.storyboard */,
 				76005368259DB48B0058F313 /* ViewController.swift */,
 				7600536A259DB48B0058F313 /* Main.storyboard */,
 				7600536D259DB48C0058F313 /* Assets.xcassets */,
 				7600536F259DB48C0058F313 /* LaunchScreen.storyboard */,
 				76005372259DB48C0058F313 /* Info.plist */,
-				7600537D259DB5430058F313 /* Home.storyboard */,
+				7600538B259DF1DD0058F313 /* Feed.storyboard */,
+				7600538E259DF1F10058F313 /* MyPage.storyboard */,
 			);
 			path = DogWalker_iosapp;
 			sourceTree = "<group>";
@@ -131,10 +131,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */,
+				7600538F259DF1F10058F313 /* MyPage.storyboard in Resources */,
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
-				47C4C3D8259DC49200E84C4E /* Setting.storyboard in Resources */,
+				7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */,
 				7600536C259DB48B0058F313 /* Main.storyboard in Resources */,
-				7600537E259DB5430058F313 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
