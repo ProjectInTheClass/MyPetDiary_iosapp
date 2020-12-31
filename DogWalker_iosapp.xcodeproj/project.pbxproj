@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47C4C3D8259DC49200E84C4E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C4C3D7259DC49200E84C4E /* Setting.storyboard */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
 		76005369259DB48B0058F313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005368259DB48B0058F313 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47C4C3D7259DC49200E84C4E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		76005361259DB48B0058F313 /* DogWalker_iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalker_iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76005364259DB48B0058F313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76005366259DB48B0058F313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				76005364259DB48B0058F313 /* AppDelegate.swift */,
 				76005366259DB48B0058F313 /* SceneDelegate.swift */,
+				47C4C3D7259DC49200E84C4E /* Setting.storyboard */,
 				76005368259DB48B0058F313 /* ViewController.swift */,
 				7600536A259DB48B0058F313 /* Main.storyboard */,
 				7600536D259DB48C0058F313 /* Assets.xcassets */,
@@ -129,6 +132,7 @@
 			files = (
 				76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */,
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
+				47C4C3D8259DC49200E84C4E /* Setting.storyboard in Resources */,
 				7600536C259DB48B0058F313 /* Main.storyboard in Resources */,
 				7600537E259DB5430058F313 /* Home.storyboard in Resources */,
 			);
