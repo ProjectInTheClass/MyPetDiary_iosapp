@@ -6,5 +6,6 @@ target 'DogWalker_iosapp' do
   use_frameworks!
 
   # Pods for DogWalker_iosapp
+  pod 'FSCalendar'
 
 end

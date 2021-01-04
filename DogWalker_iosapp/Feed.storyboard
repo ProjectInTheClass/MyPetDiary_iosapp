@@ -12,23 +12,11 @@
         <scene sceneID="n75-gN-yJp">
             <objects>
                 <viewController id="AjM-WY-uif" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Frm-uw-W63">
+                    <view key="view" contentMode="scaleToFill" id="Frm-uw-W63" customClass="FSCalendar">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ev4-HW-oe7">
-                                <rect key="frame" x="5" y="93" width="404" height="715"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="svM-9h-cff"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="ev4-HW-oe7" secondAttribute="bottom" constant="5" id="D3G-Ve-fF7"/>
-                            <constraint firstItem="ev4-HW-oe7" firstAttribute="top" secondItem="svM-9h-cff" secondAttribute="top" constant="5" id="MrX-9l-u07"/>
-                            <constraint firstItem="ev4-HW-oe7" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="5" id="TbK-rM-v4e"/>
-                            <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="ev4-HW-oe7" secondAttribute="trailing" constant="5" id="uFn-f4-uD4"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" selectedImage="house.fill" id="V6C-0p-V0z"/>
                     <navigationItem key="navigationItem" title="Feed" id="bXY-3X-Y5q"/>
