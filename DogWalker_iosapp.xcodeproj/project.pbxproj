@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05F90A22259DF701002E30C4 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F90A21259DF701002E30C4 /* Chat.storyboard */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
 		76005369259DB48B0058F313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005368259DB48B0058F313 /* ViewController.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05F90A21259DF701002E30C4 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		76005361259DB48B0058F313 /* DogWalker_iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalker_iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76005364259DB48B0058F313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76005366259DB48B0058F313 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 				7600536F259DB48C0058F313 /* LaunchScreen.storyboard */,
 				76005372259DB48C0058F313 /* Info.plist */,
 				7600538B259DF1DD0058F313 /* Feed.storyboard */,
-				05F90A21259DF701002E30C4 /* Chat.storyboard */,
 				7600538E259DF1F10058F313 /* MyPage.storyboard */,
 			);
 			path = DogWalker_iosapp;
@@ -133,7 +130,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F90A22259DF701002E30C4 /* Chat.storyboard in Resources */,
 				76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */,
 				7600538F259DF1F10058F313 /* MyPage.storyboard in Resources */,
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
