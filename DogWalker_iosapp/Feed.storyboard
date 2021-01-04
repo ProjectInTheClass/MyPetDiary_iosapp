@@ -11,16 +11,31 @@
         <!--Feed-->
         <scene sceneID="n75-gN-yJp">
             <objects>
-                <viewController id="AjM-WY-uif" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Frm-uw-W63" customClass="FSCalendar">
+                <viewController id="AjM-WY-uif" customClass="FeedViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Frm-uw-W63">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rp-qv-HRy" customClass="FSCalendar">
+                                <rect key="frame" x="5" y="93" width="404" height="420"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="svM-9h-cff"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="300" id="XJI-nM-9BQ"/>
+                            <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="3Rp-qv-HRy" secondAttribute="trailing" constant="5" id="nta-Zj-DQM"/>
+                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="5" id="oXX-49-sIn"/>
+                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="top" secondItem="svM-9h-cff" secondAttribute="top" constant="5" id="rJP-Hb-o6e"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" selectedImage="house.fill" id="V6C-0p-V0z"/>
                     <navigationItem key="navigationItem" title="Feed" id="bXY-3X-Y5q"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="calendarView" destination="3Rp-qv-HRy" id="31P-l7-hbG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ie8-Au-DVE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
