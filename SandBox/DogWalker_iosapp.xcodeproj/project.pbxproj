@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B6DF2B25A5C57700DAD172 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05B6DF2A25A5C57700DAD172 /* GoogleService-Info.plist */; };
+		05B6DF4A25A5C98800DAD172 /* SBUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B6DF4925A5C98800DAD172 /* SBUserController.swift */; };
 		47C846BD25A44E39005DAB89 /* AppFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* AppFeed.storyboard */; };
 		47C846D825A45BAA005DAB89 /* AppFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C846D725A45BAA005DAB89 /* AppFeedCollectionViewController.swift */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05B6DF2A25A5C57700DAD172 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		05B6DF4925A5C98800DAD172 /* SBUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBUserController.swift; sourceTree = "<group>"; };
 		0643566F6D350D71265F9BFD /* Pods-DogWalker_iosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.debug.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		47C846BC25A44E39005DAB89 /* AppFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppFeed.storyboard; sourceTree = "<group>"; };
 		47C846D725A45BAA005DAB89 /* AppFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeedCollectionViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		76005363259DB48B0058F313 /* DogWalker_iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				05B6DF2A25A5C57700DAD172 /* GoogleService-Info.plist */,
 				76005364259DB48B0058F313 /* AppDelegate.swift */,
 				76005366259DB48B0058F313 /* SceneDelegate.swift */,
 				47C846BC25A44E39005DAB89 /* AppFeed.storyboard */,
@@ -88,6 +93,7 @@
 				7655053825A31D2300FA5CFE /* FeedViewController.swift */,
 				7655054325A4763600FA5CFE /* AddDiaryViewController.swift */,
 				47C846D725A45BAA005DAB89 /* AppFeedCollectionViewController.swift */,
+				05B6DF4925A5C98800DAD172 /* SBUserController.swift */,
 			);
 			path = DogWalker_iosapp;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
 				7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */,
 				7600536C259DB48B0058F313 /* Main.storyboard in Resources */,
+				05B6DF2B25A5C57700DAD172 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +238,7 @@
 				47C846D825A45BAA005DAB89 /* AppFeedCollectionViewController.swift in Sources */,
 				7655053925A31D2300FA5CFE /* FeedViewController.swift in Sources */,
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,
+				05B6DF4A25A5C98800DAD172 /* SBUserController.swift in Sources */,
 				76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iosml.DogWalker-iosapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosml.DogWalker-iosapp-sandbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -404,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.iosml.DogWalker-iosapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.iosml.DogWalker-iosapp-sandbox";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05B6DF1A25A5C41F00DAD172 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05B6DF1925A5C41F00DAD172 /* GoogleService-Info.plist */; };
 		47C846BD25A44E39005DAB89 /* AppFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* AppFeed.storyboard */; };
 		47C846D825A45BAA005DAB89 /* AppFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C846D725A45BAA005DAB89 /* AppFeedCollectionViewController.swift */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05B6DF1925A5C41F00DAD172 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0643566F6D350D71265F9BFD /* Pods-DogWalker_iosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.debug.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		47C846BC25A44E39005DAB89 /* AppFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppFeed.storyboard; sourceTree = "<group>"; };
 		47C846D725A45BAA005DAB89 /* AppFeedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeedCollectionViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				7600536F259DB48C0058F313 /* LaunchScreen.storyboard */,
 				76005372259DB48C0058F313 /* Info.plist */,
 				7600538B259DF1DD0058F313 /* Feed.storyboard */,
+				05B6DF1925A5C41F00DAD172 /* GoogleService-Info.plist */,
 				7600538E259DF1F10058F313 /* MyPage.storyboard */,
 				7655053825A31D2300FA5CFE /* FeedViewController.swift */,
 				7655054325A4763600FA5CFE /* AddDiaryViewController.swift */,
@@ -174,6 +177,7 @@
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
 				7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */,
 				7600536C259DB48B0058F313 /* Main.storyboard in Resources */,
+				05B6DF1A25A5C41F00DAD172 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
