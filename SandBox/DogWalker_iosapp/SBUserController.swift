@@ -8,6 +8,8 @@
 import UIKit
 import MobileCoreServices
 import Photos
+import FirebaseAuth
+import FirebaseStorage
 
 class SBUserController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -36,11 +38,12 @@ class SBUserController: UIViewController, UIImagePickerControllerDelegate, UINav
         
         let image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage).pngData()
         
-        let imagePath = FIRAuth.auth()!.currentUser!.uid + "\(int(NSDate.timeIntervalSinceReferenceDate * 1000)).jpg"
+        let imageName = Auth.auth().currentUser!.uid + "\(Int(NSDate.timeIntervalSinceReferenceDate * 1000)).jpg"
         
-        let riverRef = FIRStorage.storage().reference().child("ios_images")
+        // ios_images : 파일 이름
+        let riversRef = Storage.storage().reference().child("ios_images").child(imageName)
         
-        riversRef.putData(data, metadata: nil) { (metadata, error) in
+        riversRef.putData(image!, metadata: nil) { (metadata, error) in
           guard let metadata = metadata else {
             // Uh-oh, an error occurred!
             return
@@ -55,6 +58,8 @@ class SBUserController: UIViewController, UIImagePickerControllerDelegate, UINav
             }
           }
         }
+        
+        dismiss(animated: true, completion: nil)
         
     }
     
