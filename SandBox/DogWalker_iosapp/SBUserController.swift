@@ -27,6 +27,37 @@ class SBUserController: UIViewController, UIImagePickerControllerDelegate, UINav
         // Do any additional setup after loading the view.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage).pngData()
+        
+        let imagePath = FIRAuth.auth()!.currentUser!.uid + "\(int(NSDate.timeIntervalSinceReferenceDate * 1000)).jpg"
+        
+        let riverRef = FIRStorage.storage().reference().child("ios_images")
+        
+        riversRef.putData(data, metadata: nil) { (metadata, error) in
+          guard let metadata = metadata else {
+            // Uh-oh, an error occurred!
+            return
+          }
+          // Metadata contains file metadata such as size, content-type.
+          let size = metadata.size
+          // You can also access to download URL after upload.
+          riversRef.downloadURL { (url, error) in
+            guard let downloadURL = url else {
+              // Uh-oh, an error occurred!
+              return
+            }
+          }
+        }
+        
+    }
+    
 
     /*
     // MARK: - Navigation
