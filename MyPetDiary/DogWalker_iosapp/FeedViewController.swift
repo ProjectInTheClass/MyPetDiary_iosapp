@@ -35,6 +35,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.scope = .month
         // event 색
         calendarView.appearance.eventDefaultColor = .red
+        // 캘린더에 이번달 날짜만 표시하기 위함
+        calendarView.placeholderType = .none
     }
     
     
