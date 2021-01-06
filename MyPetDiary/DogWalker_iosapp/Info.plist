@@ -6,6 +6,8 @@
 	<string>카메라사용</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>앨범 사용</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>앱 접근 허용</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

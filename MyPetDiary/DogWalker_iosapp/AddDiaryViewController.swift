@@ -19,6 +19,22 @@ class AddDiaryViewController: UIViewController{
         super.viewDidLoad()
         picker.delegate = self
     }
+    func settingAlert(){
+        if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String{
+            let alert = UIAlertController(title: "설정", message: "\(appName)이(가) 카메라 접근이 허용되지 않았습니다. 설정화면으로 가시겠습니까?", preferredStyle:  .alert)
+            let cancelAction = UIAlertAction(title: "취소", style: .default){ (action) in
+                //
+            }
+            let confirmAction = UIAlertAction(title: "확인", style: .default){ (action) in
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+            }
+            alert.addAction(cancelAction)
+            alert.addAction(confirmAction)
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            //
+        }
+    }
     
     @IBAction func addImage(_ sender: Any) {
         let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
@@ -31,11 +47,36 @@ class AddDiaryViewController: UIViewController{
         }
 
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        switch PHPhotoLibrary.authorizationStatus(){
+        case .denied:
+            settingAlert()
+        case .restricted:
+            break
+        case .authorized:
+            alert.addAction(library)
+            alert.addAction(camera)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({ state in
+                if state == .authorized{
+                    alert.addAction(library)
+                    alert.addAction(camera)
+                    alert.addAction(cancel)
+                    self.present(alert, animated: true, completion: nil)
+                }else{
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        default:
+            break
+        }
 
-        alert.addAction(library)
-        alert.addAction(camera)
-        alert.addAction(cancel)
-        present(alert, animated: true, completion: nil)
+//        alert.addAction(library)
+//        alert.addAction(camera)
+//        alert.addAction(cancel)
+//        present(alert, animated: true, completion: nil)
 
     }
     
@@ -55,6 +96,8 @@ class AddDiaryViewController: UIViewController{
             print("Camera not available")
         }
     }
+    
+    
 }
 
 extension AddDiaryViewController : UIImagePickerControllerDelegate,
