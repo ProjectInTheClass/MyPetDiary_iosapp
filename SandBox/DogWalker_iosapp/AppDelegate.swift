@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  DogWalker_iosapp
-//
-//  Created by 정지연 on 2020/12/31.
-//
+// SANDBOX
 
 import UIKit
 import Firebase
@@ -12,6 +7,8 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //let storage = Storage.storage()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

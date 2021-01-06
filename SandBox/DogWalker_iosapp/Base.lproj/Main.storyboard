@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ma-Rr-Az6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Igs-2i-n5u">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +27,22 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="eWX-dL-xss">
+            <objects>
+                <viewController id="heE-Yi-n4F" customClass="SBHomeController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2KB-aM-iJg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="r4I-e8-bCs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="Nqk-6D-4KR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTi-85-neS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="-307"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="gdN-8L-VtO">
             <objects>
@@ -45,5 +63,61 @@
             </objects>
             <point key="canvasLocation" x="235" y="527"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OT4-rX-NIL">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Igs-2i-n5u" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e8D-Gg-TKb">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="heE-Yi-n4F" kind="relationship" relationship="viewControllers" id="b2n-9U-5EM"/>
+                        <segue destination="Gly-UX-zfF" kind="relationship" relationship="viewControllers" id="KRt-XP-7R0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXJ-Gi-qrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="63"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="O7R-cD-3Al">
+            <objects>
+                <viewController id="Gly-UX-zfF" customClass="SBUserController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fUO-Gk-XuN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMU-VH-xwl">
+                                <rect key="frame" x="160.5" y="433" width="93" height="30"/>
+                                <state key="normal" title="upload image"/>
+                                <connections>
+                                    <action selector="uploadImage:" destination="Gly-UX-zfF" eventType="touchUpInside" id="kHo-tF-ToH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lu0-02-KXX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AMU-VH-xwl" firstAttribute="centerY" secondItem="fUO-Gk-XuN" secondAttribute="centerY" id="qim-Gx-suO"/>
+                            <constraint firstItem="AMU-VH-xwl" firstAttribute="centerX" secondItem="fUO-Gk-XuN" secondAttribute="centerX" id="rHA-gf-eJc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User" image="person" catalog="system" selectedImage="person.fill" id="rx6-qk-WX6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QYv-Ci-Urz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2722" y="394"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
