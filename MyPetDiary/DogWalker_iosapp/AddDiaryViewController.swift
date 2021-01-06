@@ -15,13 +15,18 @@ class AddDiaryViewController: UIViewController{
     let picker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     
+    var fetchResult: PHFetchResult<PHAsset>?
+    var canAccessImages: [UIImage] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
     }
+    
     func settingAlert(){
         if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String{
-            let alert = UIAlertController(title: "설정", message: "\(appName)이(가) 카메라 접근이 허용되지 않았습니다. 설정화면으로 가시겠습니까?", preferredStyle:  .alert)
+            let alert = UIAlertController(title: "Alert", message: "\(appName)이(가) 카메라 접근이 허용되지 않았습니다. 설정화면으로 가시겠습니까?", preferredStyle:  .alert)
             let cancelAction = UIAlertAction(title: "취소", style: .default){ (action) in
                 //
             }
@@ -35,9 +40,10 @@ class AddDiaryViewController: UIViewController{
             //
         }
     }
-    
+
+
     @IBAction func addImage(_ sender: Any) {
-        let alert =  UIAlertController(title: "원하는 타이틀", message: "원하는 메세지", preferredStyle: .actionSheet)
+        let alert =  UIAlertController(title: "사진을 등록하세요!", message: " ", preferredStyle: .actionSheet)
 
         let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
         }
@@ -61,10 +67,12 @@ class AddDiaryViewController: UIViewController{
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({ state in
                 if state == .authorized{
-                    alert.addAction(library)
-                    alert.addAction(camera)
-                    alert.addAction(cancel)
-                    self.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.async{
+                        alert.addAction(library)
+                        alert.addAction(camera)
+                        alert.addAction(cancel)
+                        self.present(alert, animated: true, completion: nil)
+                    }
                 }else{
                     self.dismiss(animated: true, completion: nil)
                 }

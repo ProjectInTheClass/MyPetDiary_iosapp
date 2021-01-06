@@ -25,10 +25,11 @@
                         <viewLayoutGuide key="safeArea" id="svM-9h-cff"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="5" id="XJI-nM-9BQ"/>
-                            <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="3Rp-qv-HRy" secondAttribute="trailing" constant="5" id="nta-Zj-DQM"/>
-                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="5" id="oXX-49-sIn"/>
-                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="top" secondItem="svM-9h-cff" secondAttribute="top" constant="5" id="rJP-Hb-o6e"/>
+                            <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="3Rp-qv-HRy" secondAttribute="trailing" constant="5" id="7ql-8t-fZu"/>
+                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="5" id="MLd-8K-6c2"/>
+                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="centerX" secondItem="Frm-uw-W63" secondAttribute="centerX" id="T2i-bw-YHI"/>
+                            <constraint firstItem="3Rp-qv-HRy" firstAttribute="top" secondItem="svM-9h-cff" secondAttribute="top" constant="5" id="aIV-oD-Vv7"/>
+                            <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="5" id="i4E-Og-PSR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" selectedImage="house.fill" id="V6C-0p-V0z"/>
@@ -55,7 +56,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVY-sY-1OQ">
-                                <rect key="frame" x="147" y="251" width="121" height="69"/>
+                                <rect key="frame" x="147" y="357" width="121" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="select image"/>
                                 <connections>
