@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--App Feed Collection View Controller-->
         <scene sceneID="o1a-2C-Dgb">
             <objects>
-                <viewController id="UNo-DY-SAZ" sceneMemberID="viewController">
+                <viewController id="UNo-DY-SAZ" customClass="AppFeedCollectionViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Mm-qj-PsR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZS-t3-iWg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238" y="-300"/>
+            <point key="canvasLocation" x="52" y="-207"/>
         </scene>
     </scenes>
     <resources>
