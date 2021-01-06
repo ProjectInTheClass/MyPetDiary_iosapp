@@ -1,10 +1,3 @@
-//
-//  FeedViewController.swift
-//  DogWalker_iosapp
-//
-//  Created by 정지연 on 2021/01/04.
-//
-
 import Foundation
 import FSCalendar
 
