@@ -14,6 +14,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2ma-Rr-Az6" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="hQi-gL-aCG"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pgd-SA-iAb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,6 +22,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="bpa-oD-l7T" kind="relationship" relationship="viewControllers" id="M1q-XM-XWa"/>
+                        <segue destination="9dT-g8-pwG" kind="relationship" relationship="viewControllers" id="q2V-uu-4Eo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeO-sX-p6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -36,7 +38,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7O-mK-lhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157" y="505"/>
+            <point key="canvasLocation" x="-206" y="500"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="FZo-G5-0FC">
@@ -82,9 +84,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
                                 <rect key="frame" x="97" y="682" width="220" height="30"/>
                                 <state key="normal" title="입력한 닉네임으로 다이어리 사용하기"/>
-                                <connections>
-                                    <segue destination="9dT-g8-pwG" kind="show" id="RlY-E5-yaa"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bj0-Za-YKU"/>
@@ -105,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dY3-Dc-AZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849" y="84"/>
+            <point key="canvasLocation" x="-1187" y="84"/>
         </scene>
     </scenes>
     <resources>
