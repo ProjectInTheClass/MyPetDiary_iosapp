@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>985362020015-orl7l79l0dqdms60ctmv33qgatvjs06t.apps.googleusercontent.com</string>
+	<string>985362020015-152dou2ieuf3v43nbrblqchkg52cnpdo.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.985362020015-orl7l79l0dqdms60ctmv33qgatvjs06t</string>
+	<string>com.googleusercontent.apps.985362020015-152dou2ieuf3v43nbrblqchkg52cnpdo</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDRQ9vFz52AYhtSwNybV5jeTsdTnSR1RNo</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.iosml.DogWalker-iosapp</string>
+	<string>dgu.iosml.petdiary</string>
 	<key>PROJECT_ID</key>
 	<string>mypetdiary-475e9</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:985362020015:ios:afc79e1bef6655c256465a</string>
+	<string>1:985362020015:ios:a375c70956678f5256465a</string>
 </dict>
 </plist>
