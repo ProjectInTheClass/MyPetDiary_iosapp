@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ma-Rr-Az6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,46 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="Q16-N8-GTD">
-            <objects>
-                <viewController id="Wru-SE-Q1I" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Si7-SE-whe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임 입력만으로 나만의 다이어리를 만들어보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myn-qO-afe">
-                                <rect key="frame" x="34" y="186" width="346" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okd-9S-I2t">
-                                <rect key="frame" x="191" y="338" width="32" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m7-1s-tm1">
-                                <rect key="frame" x="182" y="415" width="50" height="30"/>
-                                <state key="normal" title="SignUp"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Z8x-we-kXl"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="myn-qO-afe" firstAttribute="top" secondItem="Z8x-we-kXl" secondAttribute="top" constant="142" id="1Ei-Zs-2vg"/>
-                            <constraint firstItem="okd-9S-I2t" firstAttribute="centerX" secondItem="Si7-SE-whe" secondAttribute="centerX" id="8Md-gl-B1V"/>
-                            <constraint firstItem="0m7-1s-tm1" firstAttribute="centerX" secondItem="Si7-SE-whe" secondAttribute="centerX" id="cqx-LK-MMM"/>
-                            <constraint firstItem="0m7-1s-tm1" firstAttribute="top" secondItem="okd-9S-I2t" secondAttribute="bottom" constant="43" id="hiB-Yc-YDT"/>
-                            <constraint firstItem="myn-qO-afe" firstAttribute="centerX" secondItem="Si7-SE-whe" secondAttribute="centerX" id="kLO-SE-fX6"/>
-                            <constraint firstItem="okd-9S-I2t" firstAttribute="top" secondItem="myn-qO-afe" secondAttribute="bottom" constant="131" id="xD4-1C-2yg"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewm-Xz-b0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-801.44927536231887" y="83.705357142857139"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hkY-9E-m9u">
             <objects>
@@ -89,7 +49,69 @@
             </objects>
             <point key="canvasLocation" x="235" y="527"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eE3-HY-8ba">
+            <objects>
+                <viewController id="wbW-7b-uVI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dlI-ds-ax5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 닉네임 입력으로" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-4t-bpo">
+                                <rect key="frame" x="129" y="270" width="156" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물과의 추억을 기록하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-Kv-veS">
+                                <rect key="frame" x="97" y="296" width="220" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nts-ok-BHG">
+                                <rect key="frame" x="191" y="448" width="32" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-u0-prR">
+                                <rect key="frame" x="184.5" y="417" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
+                                <rect key="frame" x="97" y="682" width="220" height="30"/>
+                                <state key="normal" title="입력한 닉네임으로 다이어리 사용하기"/>
+                                <connections>
+                                    <segue destination="9dT-g8-pwG" kind="show" id="RlY-E5-yaa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bj0-Za-YKU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bj0-Za-YKU" firstAttribute="bottom" secondItem="sBC-UQ-7Z8" secondAttribute="bottom" constant="150" id="0Dg-nc-g9W"/>
+                            <constraint firstItem="sBC-UQ-7Z8" firstAttribute="top" secondItem="nts-ok-BHG" secondAttribute="bottom" constant="200" id="12n-O4-Sk7"/>
+                            <constraint firstItem="nts-ok-BHG" firstAttribute="top" secondItem="qE4-u0-prR" secondAttribute="bottom" constant="10" id="5JF-TV-tds"/>
+                            <constraint firstItem="nts-ok-BHG" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="6E5-1u-Utg"/>
+                            <constraint firstItem="qE4-u0-prR" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="8Tr-9x-L9o"/>
+                            <constraint firstItem="qE4-u0-prR" firstAttribute="top" secondItem="i9J-Kv-veS" secondAttribute="bottom" constant="100" id="LCm-A8-n0r"/>
+                            <constraint firstItem="i9J-Kv-veS" firstAttribute="top" secondItem="wvq-4t-bpo" secondAttribute="bottom" constant="5" id="Lus-aU-kUF"/>
+                            <constraint firstItem="sBC-UQ-7Z8" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="iiy-BE-Mst"/>
+                            <constraint firstItem="wvq-4t-bpo" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="t2L-IN-X2f"/>
+                            <constraint firstItem="i9J-Kv-veS" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="zhZ-v8-PDA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dY3-Dc-AZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="84"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RlY-E5-yaa"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
