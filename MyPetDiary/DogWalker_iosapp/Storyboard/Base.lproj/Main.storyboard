@@ -20,7 +20,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Fii-gs-P2C" kind="relationship" relationship="viewControllers" id="CDu-Ee-IyZ"/>
                         <segue destination="bpa-oD-l7T" kind="relationship" relationship="viewControllers" id="M1q-XM-XWa"/>
                     </connections>
                 </tabBarController>
@@ -109,9 +108,6 @@
             <point key="canvasLocation" x="-849" y="84"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="RlY-E5-yaa"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
