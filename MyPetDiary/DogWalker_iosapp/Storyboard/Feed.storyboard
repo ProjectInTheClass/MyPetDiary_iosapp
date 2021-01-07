@@ -248,7 +248,7 @@
         <!--Home-->
         <scene sceneID="vdz-lk-t3t">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6CU-Ut-o6v" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Feed" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6CU-Ut-o6v" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="6Oc-Z7-Vqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dIl-jM-fir">

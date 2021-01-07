@@ -35,7 +35,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9dT-g8-pwG" kind="relationship" relationship="viewControllers" id="n3x-hp-d94"/>
+                        <segue destination="Fii-gs-P2C" kind="relationship" relationship="viewControllers" id="CDu-Ee-IyZ"/>
                         <segue destination="bpa-oD-l7T" kind="relationship" relationship="viewControllers" id="M1q-XM-XWa"/>
                     </connections>
                 </tabBarController>
@@ -44,14 +44,14 @@
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
         <!--Feed-->
-        <scene sceneID="gdN-8L-VtO">
+        <scene sceneID="Mb1-Bl-8Yv">
             <objects>
-                <viewControllerPlaceholder storyboardName="Feed" id="9dT-g8-pwG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RHr-al-OxM"/>
+                <viewControllerPlaceholder storyboardIdentifier="Feed" storyboardName="Feed" id="Fii-gs-P2C" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yem-P7-G4L"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Tb-ne-Hpi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U7O-mK-lhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-46" y="529"/>
+            <point key="canvasLocation" x="-157" y="505"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="FZo-G5-0FC">
