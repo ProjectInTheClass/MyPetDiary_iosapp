@@ -26,6 +26,8 @@
 	<string>앨범 사용</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>앱 접근 허용</string>
+	<key>User Interface Style</key>
+	<string>Light</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
