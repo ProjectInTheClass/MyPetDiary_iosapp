@@ -12,6 +12,7 @@ import Photos
 
 class AddDiaryViewController: UIViewController{
     
+    @IBOutlet weak var showDate: UILabel!
     let picker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     
