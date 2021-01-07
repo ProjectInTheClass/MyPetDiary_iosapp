@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed-->
+        <!--My Pet Diary-->
         <scene sceneID="n75-gN-yJp">
             <objects>
                 <viewController id="AjM-WY-uif" customClass="FeedViewController" customModule="DogWalker_iosapp" sceneMemberID="viewController">
@@ -41,8 +41,8 @@
                             <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="100" id="i4E-Og-PSR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" selectedImage="house.fill" id="V6C-0p-V0z"/>
-                    <navigationItem key="navigationItem" title="Feed" id="bXY-3X-Y5q"/>
+                    <tabBarItem key="tabBarItem" title="Diary" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="V6C-0p-V0z"/>
+                    <navigationItem key="navigationItem" title="My Pet Diary" id="bXY-3X-Y5q"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="3Rp-qv-HRy" id="31P-l7-hbG"/>
@@ -135,7 +135,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ojO-l4-thD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.94267677514529891" blue="0.93744017837836924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ojO-l4-thD" firstAttribute="bottom" secondItem="BPp-RI-6AK" secondAttribute="bottom" constant="180" id="62L-yB-4sp"/>
                             <constraint firstItem="Kjv-0e-tkE" firstAttribute="top" secondItem="ZyJ-Wo-8VT" secondAttribute="bottom" constant="5" id="6SF-GF-bg6"/>
@@ -215,7 +215,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bII-e0-Ptr"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.94267677510000003" blue="0.93744017840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4x6-Pf-Lcx" firstAttribute="top" secondItem="bII-e0-Ptr" secondAttribute="top" constant="100" id="0Xc-ws-oUz"/>
                             <constraint firstItem="WRk-Wl-eqg" firstAttribute="centerX" secondItem="gwk-Zb-gzu" secondAttribute="centerX" id="2yc-qI-EoA"/>
@@ -256,6 +256,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book.closed" catalog="system" width="115" height="128"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
