@@ -37,8 +37,8 @@ class SBUserController: UIViewController, UIImagePickerControllerDelegate, UINav
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let image = (info[UIImagePickerController.InfoKey.originalImage] as! UIImage).pngData()
-        
-        let imageName = Auth.auth().currentUser!.uid + "\(Int(NSDate.timeIntervalSinceReferenceDate * 1000)).jpg"
+
+        let imageName = FirebaseAuth.Auth.auth().currentUser!.uid + "\(Int(NSDate.timeIntervalSinceReferenceDate * 1000)).jpg"
         
         // ios_images : 파일 이름
         let riversRef = Storage.storage().reference().child("ios_images").child(imageName)
