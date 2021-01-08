@@ -149,9 +149,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="hcT-dO-e2X" kind="popoverPresentation" popoverAnchorView="okE-aC-Dtd" id="ZZc-D8-NCM">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <segue destination="hcT-dO-e2X" kind="presentation" id="ZZc-D8-NCM"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -241,10 +239,10 @@
             </objects>
             <point key="canvasLocation" x="3290" y="53"/>
         </scene>
-        <!--View Controller-->
+        <!--Withdrawal View Controller-->
         <scene sceneID="Cxw-EG-UtL">
             <objects>
-                <viewController id="hcT-dO-e2X" sceneMemberID="viewController">
+                <viewController id="hcT-dO-e2X" customClass="WithdrawalViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GuZ-g1-TZ4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,10 +258,16 @@
                                 <state key="normal" title="예">
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="bQj-p2-Ka2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e28-f7-0ld">
                                 <rect key="frame" x="187.5" y="581.5" width="39" height="30"/>
                                 <state key="normal" title="아니오"/>
+                                <connections>
+                                    <action selector="keepUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="5UT-Kg-xDD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ud1-Gg-AO9"/>
@@ -278,6 +282,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dzj-Kw-SOC"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="100" height="100"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
