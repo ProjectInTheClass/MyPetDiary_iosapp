@@ -11,17 +11,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    // 로그인을 했는지 안했는지 구분
+    var isLogged: Bool = false
 
+    // 처음 앱에 접근할 때 최초로 1번 실행하게 됨
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil) // Main.storyboard 가져오기
+                
+        if isLogged == false {
+            // 로그인 안된 상태
+            guard let signupVC = storyboard.instantiateViewController(withIdentifier: "SignUpView") as? SignUpViewController else { return }
+            window?.rootViewController = signupVC
+        } else {
+            // 로그인 된 상태
+            guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
+            window?.rootViewController = mainVC
+        }
+    }
+    
+    func changeRootViewController (_ vc: UIViewController, animated: Bool) {
+        guard let window = self.window else { return }
+        window.rootViewController = vc // 전환
+        
+        UIView.transition(with: window, duration: 0.4, options: [.transitionCrossDissolve], animations: nil, completion: nil)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
+        // This occurs shortly after the scene enters the background, or when its session is#imageLiteral(resourceName: "simulator_screenshot_BB2368D6-57BD-4A81-888D-C44584861E94.png") discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
