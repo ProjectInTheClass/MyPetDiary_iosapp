@@ -10,6 +10,7 @@
 		05DA67E425A82FF0000CE91D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67E325A82FF0000CE91D /* SignUpViewController.swift */; };
 		05DA67E725A834C0000CE91D /* MPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67E625A834C0000CE91D /* MPMainViewController.swift */; };
 		05DA67FA25A87600000CE91D /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67F925A87600000CE91D /* MyPageViewController.swift */; };
+		05DA67FD25A879CE000CE91D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67FC25A879CE000CE91D /* SettingViewController.swift */; };
 		05FA7B1C25A7227C00E4A253 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FA7B1B25A7227C00E4A253 /* GoogleService-Info.plist */; };
 		47C846BD25A44E39005DAB89 /* AppFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* AppFeed.storyboard */; };
 		47C846D825A45BAA005DAB89 /* AppFeedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C846D725A45BAA005DAB89 /* AppFeedCollectionViewController.swift */; };
@@ -31,6 +32,7 @@
 		05DA67E325A82FF0000CE91D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05DA67E625A834C0000CE91D /* MPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPMainViewController.swift; sourceTree = "<group>"; };
 		05DA67F925A87600000CE91D /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		05DA67FC25A879CE000CE91D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		05FA7B1B25A7227C00E4A253 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0643566F6D350D71265F9BFD /* Pods-DogWalker_iosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.debug.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		47C846BC25A44E39005DAB89 /* AppFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppFeed.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				05DA67E325A82FF0000CE91D /* SignUpViewController.swift */,
 				05DA67E625A834C0000CE91D /* MPMainViewController.swift */,
 				05DA67F925A87600000CE91D /* MyPageViewController.swift */,
+				05DA67FC25A879CE000CE91D /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76005369259DB48B0058F313 /* ViewController.swift in Sources */,
+				05DA67FD25A879CE000CE91D /* SettingViewController.swift in Sources */,
 				76005365259DB48B0058F313 /* AppDelegate.swift in Sources */,
 				05DA67E425A82FF0000CE91D /* SignUpViewController.swift in Sources */,
 				47C846D825A45BAA005DAB89 /* AppFeedCollectionViewController.swift in Sources */,

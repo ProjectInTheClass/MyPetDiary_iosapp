@@ -74,7 +74,7 @@
         <!--Setting-->
         <scene sceneID="pC6-XV-pQA">
             <objects>
-                <tableViewController title="Setting" id="GeC-B7-BW7" sceneMemberID="viewController">
+                <tableViewController title="Setting" id="GeC-B7-BW7" customClass="SettingViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="setting" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="NEW-Sc-qu3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,15 +132,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="c6q-et-GfV" style="IBUITableViewCellStyleDefault" id="okE-aC-Dtd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="c6q-et-GfV" style="IBUITableViewCellStyleDefault" id="okE-aC-Dtd">
                                         <rect key="frame" x="20" y="186" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="okE-aC-Dtd" id="48A-co-MkX">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="탈퇴하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c6q-et-GfV">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -148,6 +148,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hcT-dO-e2X" kind="popoverPresentation" popoverAnchorView="okE-aC-Dtd" id="ZZc-D8-NCM">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -235,6 +240,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSA-t1-a39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3290" y="53"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Cxw-EG-UtL">
+            <objects>
+                <viewController id="hcT-dO-e2X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GuZ-g1-TZ4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Der-pf-gnb">
+                                <rect key="frame" x="144" y="410.5" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xQ-wh-1gl">
+                                <rect key="frame" x="192" y="531.5" width="30" height="30"/>
+                                <state key="normal" title="예">
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e28-f7-0ld">
+                                <rect key="frame" x="187.5" y="581.5" width="39" height="30"/>
+                                <state key="normal" title="아니오"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ud1-Gg-AO9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9xQ-wh-1gl" firstAttribute="top" secondItem="Der-pf-gnb" secondAttribute="bottom" constant="100" id="HOZ-qo-1jD"/>
+                            <constraint firstItem="9xQ-wh-1gl" firstAttribute="centerX" secondItem="e28-f7-0ld" secondAttribute="centerX" id="I1Z-My-7Xf"/>
+                            <constraint firstItem="Der-pf-gnb" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="I2Y-Wh-Oow"/>
+                            <constraint firstItem="e28-f7-0ld" firstAttribute="top" secondItem="9xQ-wh-1gl" secondAttribute="bottom" constant="20" id="aJc-Lf-3na"/>
+                            <constraint firstItem="Der-pf-gnb" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" id="fyk-yB-0yT"/>
+                            <constraint firstItem="9xQ-wh-1gl" firstAttribute="centerX" secondItem="Der-pf-gnb" secondAttribute="centerX" id="hBL-i7-JoL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Dzj-Kw-SOC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4211.594202898551" y="101.78571428571428"/>
         </scene>
         <!--My Page-->
         <scene sceneID="AF0-5c-O8Z">
