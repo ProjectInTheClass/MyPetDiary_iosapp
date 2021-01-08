@@ -11,9 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    // 로그인을 했는지 안했는지 구분
     var isLogged: Bool = false
-
+    
     // 처음 앱에 접근할 때 최초로 1번 실행하게 됨
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -22,6 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil) // Main.storyboard 가져오기
+
+        if UserDefaults.standard.string(forKey: "token") != nil { // 기록이 있을 때
+            isLogged = true
+        } else { // 기록이 없을 때
+            isLogged = false
+        }
+        
                 
         if isLogged == false {
             // 로그인 안된 상태

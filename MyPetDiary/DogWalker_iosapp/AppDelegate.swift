@@ -15,20 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        if let token = UserDefaults.standard.string(forKey: "token") {
-            UserDefaults.standard.value(forKey: "CustomKey") // Load
-            //UserDefaults.standard.set(value, forKey: "CustomKey") // Save
-        } else {
-            UserDefaults.standard.setValue(UUID().uuidString, forKey: "token")
-        }
-        
-        Auth.auth().signInAnonymously() { (authResult, error) in
-          // ...
-            guard let user = authResult?.user else { return }
-            let isAnonymous = user.isAnonymous  // true
-            let uid = user.uid
-        }
-        
         return true
     }
 
