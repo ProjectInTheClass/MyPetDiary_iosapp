@@ -242,7 +242,7 @@
         <!--Withdrawal View Controller-->
         <scene sceneID="Cxw-EG-UtL">
             <objects>
-                <viewController id="hcT-dO-e2X" customClass="WithdrawalViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="hcT-dO-e2X" customClass="WithdrawalViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GuZ-g1-TZ4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,6 +281,7 @@
                             <constraint firstItem="9xQ-wh-1gl" firstAttribute="centerX" secondItem="Der-pf-gnb" secondAttribute="centerX" id="hBL-i7-JoL"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Dzj-Kw-SOC"/>
                     <value key="contentSizeForViewInPopover" type="size" width="100" height="100"/>
                 </viewController>
