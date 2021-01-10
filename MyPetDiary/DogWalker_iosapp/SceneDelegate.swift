@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
     var isLogged: Bool = false
     
     // 처음 앱에 접근할 때 최초로 1번 실행하게 됨

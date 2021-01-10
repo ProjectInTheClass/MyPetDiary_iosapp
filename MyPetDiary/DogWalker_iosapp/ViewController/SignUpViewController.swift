@@ -12,10 +12,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nickName: UITextField!
     @IBAction func signUp(_ sender: Any) {
         UserDefaults.standard.setValue(UUID().uuidString, forKey: "token")
-        UserDefaults.standard.setValue(self.nickName, forKey: "nickName")
-        print(UUID().uuidString)
+        //UserDefaults.standard.setValue(self.nickName, forKey: "nickName")
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
+    
+        print("UUID(token) : "+UUID().uuidString)
     }
 
     override func viewDidLoad() {
