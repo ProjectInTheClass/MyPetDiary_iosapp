@@ -57,6 +57,8 @@
         <scene sceneID="A6h-wA-S3u">
             <objects>
                 <viewController id="mGD-zB-hHn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4kR-4D-o0b">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VpM-l2-dyE">
