@@ -23,12 +23,12 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // 화면터치하면 키보드 없어짐
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.textField.resignFirstResponder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
             self.textField.resignFirstResponder()
             self.dismiss(animated: true, completion: nil)
             return true

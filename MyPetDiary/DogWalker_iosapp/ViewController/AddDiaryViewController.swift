@@ -60,6 +60,8 @@ class AddDiaryViewController: UIViewController{
             settingAlert()
         case .restricted:
             break
+//        case .limited:
+            
         case .authorized:
             alert.addAction(library)
             alert.addAction(camera)
