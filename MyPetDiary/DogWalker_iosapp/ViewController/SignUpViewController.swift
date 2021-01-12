@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
+    
+    var ref: DatabaseReference! = Database.database().reference()
     
     @IBOutlet weak var nickName: UITextField!
     @IBAction func signUp(_ sender: Any) {
@@ -17,6 +21,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
     
         print("UUID(token) : "+UUID().uuidString)
+        
+        self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
+        
     }
 
     override func viewDidLoad() {
