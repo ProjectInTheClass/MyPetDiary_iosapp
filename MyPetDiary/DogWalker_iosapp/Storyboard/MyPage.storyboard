@@ -292,7 +292,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="e3g-Mb-nBV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4212" y="53"/>
+            <point key="canvasLocation" x="4211.594202898551" y="52.901785714285715"/>
         </scene>
         <!--My Page-->
         <scene sceneID="AF0-5c-O8Z">
