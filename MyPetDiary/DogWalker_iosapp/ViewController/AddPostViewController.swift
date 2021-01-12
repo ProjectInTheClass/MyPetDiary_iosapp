@@ -7,8 +7,9 @@
 
 import UIKit
 
-class AddPostViewController: UIViewController {
+class AddPostViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +21,17 @@ class AddPostViewController: UIViewController {
 //            let vc = segue.destination as! ViewController
             
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+
+            self.textField.resignFirstResponder()
+            self.dismiss(animated: true, completion: nil)
+            return true
     }
     
 

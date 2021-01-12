@@ -34,11 +34,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라사용</string>
+	<string>카메라사용_사진 추가</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>앨범 사용</string>
+	<string>앨범 사용_사진 추가</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>앱 접근 허용</string>
+	<string>카메라 앱에 접근 허용</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
