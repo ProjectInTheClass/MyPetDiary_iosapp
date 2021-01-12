@@ -21,7 +21,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.nickName.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -33,7 +33,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.nickName.resignFirstResponder()
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.nickName.resignFirstResponder()
+            return true
+    }
+    
     /*
     // MARK: - Navigation
 
