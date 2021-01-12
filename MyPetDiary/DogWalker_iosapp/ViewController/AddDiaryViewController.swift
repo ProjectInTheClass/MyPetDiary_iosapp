@@ -18,7 +18,8 @@ class AddDiaryViewController: UIViewController{
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
-    
+    /// MainVC로 부터 받은 Memocell에 선택되어있는 날짜
+    var showingDate: Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
