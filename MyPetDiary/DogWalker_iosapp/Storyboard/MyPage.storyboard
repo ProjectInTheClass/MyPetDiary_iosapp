@@ -37,9 +37,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
-                                <rect key="frame" x="321" y="155" width="69" height="30"/>
-                                <state key="normal" title="프로필 수정"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
+                                <rect key="frame" x="311" y="159" width="103" height="22"/>
+                                <state key="normal" title="프로필 수정" image="plus.circle" catalog="system"/>
                                 <connections>
                                     <segue destination="ZFp-oD-xpf" kind="modal" id="07s-ui-aCU"/>
                                 </connections>
@@ -48,11 +48,11 @@
                         <viewLayoutGuide key="safeArea" id="eyX-vQ-wRm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Miu-SB-93I" firstAttribute="leading" secondItem="Irs-gG-w4T" secondAttribute="trailing" constant="94" id="0Cw-sO-GWE"/>
-                            <constraint firstItem="Miu-SB-93I" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="67" id="1fg-SD-zSt"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="200" id="9tA-4U-yUe"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="kVU-Zm-bKE" secondAttribute="trailing" constant="300" id="BJD-SB-X82"/>
+                            <constraint firstItem="Miu-SB-93I" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="71" id="CHY-mx-dXI"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="leading" secondItem="eyX-vQ-wRm" secondAttribute="leading" constant="5" id="Hl3-AV-soK"/>
+                            <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="Miu-SB-93I" secondAttribute="trailing" id="NRZ-o1-xPG"/>
                             <constraint firstItem="kVU-Zm-bKE" firstAttribute="centerY" secondItem="Irs-gG-w4T" secondAttribute="centerY" id="NdT-Tp-OAn"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="bottom" secondItem="eys-lX-Myl" secondAttribute="bottom" constant="5" id="SMt-hl-gf5"/>
                             <constraint firstItem="kVU-Zm-bKE" firstAttribute="leading" secondItem="eyX-vQ-wRm" secondAttribute="leading" constant="20" id="YSk-Em-HhD"/>
@@ -359,6 +359,7 @@
         <image name="person.circle.fill" catalog="system" width="32" height="32"/>
         <image name="person.crop.square" catalog="system" width="32" height="32"/>
         <image name="person.crop.square.fill" catalog="system" width="32" height="32"/>
+        <image name="plus.circle" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
