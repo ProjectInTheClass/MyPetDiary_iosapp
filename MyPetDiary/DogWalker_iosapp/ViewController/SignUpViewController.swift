@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+//import Alamofire
+
+struct User: Codable {
+    var user_index: Int
+    var user_name: String
+    var user_token: String
+}
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -23,13 +31,40 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         print("UUID(token) : "+UUID().uuidString)
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
+        //self.ref.child("User/\(user.uid)/user_name").setValue(["user_name": nickName])
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.nickName.delegate = self
         // Do any additional setup after loading the view.
+        
+        // configuring firebase
+        //FirebaseApp.configure()
+        
+        self.nickName.delegate = self
+        
+        
+//        let decoder = JSONDecoder()
+//
+//        AF.request("https://mypetdiary-475e9-default-rtdb.firebaseio.com/User").responseData(completionHandler: { response in
+//            switch response.result {
+//            case .success(let data):
+//                let userInfo: [User] = try! decoder.decode(Array<User>.self, from: data)
+//                print(userInfo)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        })
+        
+        //ref = FirebaseDatabase.DatabaseReference.child("users")
+        //ref = FirebaseDatabase.DatabaseReference.child(nickName)
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {

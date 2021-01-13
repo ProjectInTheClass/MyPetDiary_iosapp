@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.1)
   - Firebase/Analytics (7.3.0):
     - Firebase/Core
   - Firebase/Auth (7.3.0):
@@ -92,6 +93,7 @@ PODS:
     - Realm (= 10.5.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
@@ -101,6 +103,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -121,6 +124,7 @@ SPEC REPOS:
     - RealmSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Firebase: 26223c695fe322633274198cb19dca8cb7e54416
   FirebaseAnalytics: 2580c2d62535ae7b644143d48941fcc239ea897a
   FirebaseAuth: c224a0cf1afa0949bd5c7bfcf154b4f5ce8ddef2
@@ -140,6 +144,6 @@ SPEC CHECKSUMS:
   Realm: e1c22c3d83b229afb70ebc10e1771c91e9542d12
   RealmSwift: 6fc078d9d3fd7e58c71bfdbb694e252462f112a5
 
-PODFILE CHECKSUM: 86d386953e955f79b454e1bef04e0dfc41a31177
+PODFILE CHECKSUM: 306872e3bba502266dc692e6b8b02ddb6d245e54
 
 COCOAPODS: 1.10.0
