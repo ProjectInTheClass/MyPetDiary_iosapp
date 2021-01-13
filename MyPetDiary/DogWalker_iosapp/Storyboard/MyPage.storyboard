@@ -63,17 +63,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mary" translatesAutoresizingMaskIntoConstraints="NO" id="WuL-5O-RBo">
-                                <rect key="frame" x="20" y="128" width="106" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="콩이💚" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrF-Uk-Rnz">
-                                <rect key="frame" x="134" y="151" width="93" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
                                 <rect key="frame" x="354" y="239" width="40" height="41"/>
                                 <color key="tintColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -292,7 +281,6 @@
     <resources>
         <image name="dog" width="256" height="256"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="mary" width="353" height="327"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.exclam.fill" catalog="system" width="128" height="113"/>
