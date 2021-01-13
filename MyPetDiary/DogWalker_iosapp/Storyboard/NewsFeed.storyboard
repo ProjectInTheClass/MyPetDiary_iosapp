@@ -25,7 +25,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hana" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-qW-ZWH">
-                                            <rect key="frame" x="32" y="23" width="48" height="48"/>
+                                            <rect key="frame" x="32" y="23" width="48" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="48" id="891-hI-GMb"/>
                                                 <constraint firstAttribute="height" constant="48" id="wFv-r1-imz"/>
@@ -38,13 +38,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-k7-iDo">
-                                            <rect key="frame" x="0.0" y="79" width="414" height="414"/>
+                                            <rect key="frame" x="0.0" y="75" width="414" height="414"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NU0-k7-iDo" secondAttribute="height" multiplier="1:1" id="CFJ-hI-JZp"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iO-6c-xIf">
-                                            <rect key="frame" x="12" y="505" width="390" height="1"/>
+                                            <rect key="frame" x="12" y="501" width="390" height="1"/>
                                             <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.84705882352941175" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="q04-zG-r1x"/>
@@ -61,8 +61,10 @@
                                         <constraint firstAttribute="trailing" secondItem="8iO-6c-xIf" secondAttribute="trailing" constant="12" id="SBm-1h-Wtt"/>
                                         <constraint firstItem="0Lq-Ho-HVf" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="top" constant="30" id="UdQ-xF-i7L"/>
                                         <constraint firstItem="8iO-6c-xIf" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="12" id="Vk4-SO-dSg"/>
+                                        <constraint firstItem="NU0-k7-iDo" firstAttribute="centerX" secondItem="Sf5-Pn-dYh" secondAttribute="centerX" id="cga-Ap-bP4"/>
                                         <constraint firstItem="NU0-k7-iDo" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" id="egQ-LP-kxI"/>
                                         <constraint firstItem="dFW-qW-ZWH" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="topMargin" constant="12" id="hkz-nj-pde"/>
+                                        <constraint firstItem="NU0-k7-iDo" firstAttribute="centerY" secondItem="Sf5-Pn-dYh" secondAttribute="centerY" id="zdn-4T-qJW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
