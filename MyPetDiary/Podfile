@@ -17,4 +17,6 @@ target 'DogWalker_iosapp' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+
+  pod 'Alamofire', '~> 5.2'
 end
