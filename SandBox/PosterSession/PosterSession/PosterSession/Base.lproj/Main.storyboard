@@ -15,16 +15,117 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog2" translatesAutoresizingMaskIntoConstraints="NO" id="5XP-H9-Rx3">
+                                <rect key="frame" x="20" y="48" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="golden1" translatesAutoresizingMaskIntoConstraints="NO" id="fYv-ge-eKf">
+                                <rect key="frame" x="20" y="575" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="hmR-3f-Rzp">
+                                <rect key="frame" x="0.0" y="121" width="414" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="golden2" translatesAutoresizingMaskIntoConstraints="NO" id="0Vb-Ag-7qv">
+                                <rect key="frame" x="0.0" y="633" width="414" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="콩이네" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czl-Lr-qxE">
+                                <rect key="frame" x="78" y="61" width="52" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="골든이 눈나" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7X-Jg-8sa">
+                                <rect key="frame" x="78" y="588" width="92" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="SB6-g0-Oye"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="feedImage1" destination="hmR-3f-Rzp" id="Hcm-qx-GZ3"/>
+                        <outlet property="feedImage2" destination="0Vb-Ag-7qv" id="LCj-tE-Zt9"/>
+                        <outlet property="myImage" destination="5XP-H9-Rx3" id="mvg-rD-t9b"/>
+                        <outlet property="myImage2" destination="fYv-ge-eKf" id="bLj-qu-4Ko"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="84"/>
+            <point key="canvasLocation" x="905.79710144927549" y="-241.07142857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pS2-XO-pGe">
+            <objects>
+                <viewController id="i6f-1q-jxh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qU1-Am-84W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="CTX-iQ-sWo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="O8Q-f1-URs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Be-Rz-Ukh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="387"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ar0-oA-yiD">
+            <objects>
+                <viewController id="D4H-nv-XzP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6py-KA-gUA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="j8x-j5-rj8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="calendar" catalog="system" selectedImage="calendar.circle.fill" id="wFS-N0-Ym4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DEN-2i-c5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="889"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5M7-44-Kgo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JKV-Aw-LsF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7iS-ZM-LQL">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="vCa-zt-1Nl"/>
+                        <segue destination="D4H-nv-XzP" kind="relationship" relationship="viewControllers" id="XjD-5M-huY"/>
+                        <segue destination="i6f-1q-jxh" kind="relationship" relationship="viewControllers" id="TEO-t3-KwZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5h-L8-Pem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-113.04347826086958" y="0.0"/>
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="dog" width="300" height="300"/>
+        <image name="dog2" width="300" height="300"/>
+        <image name="golden1" width="316.5" height="386.5"/>
+        <image name="golden2" width="367.5" height="416"/>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
+        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
