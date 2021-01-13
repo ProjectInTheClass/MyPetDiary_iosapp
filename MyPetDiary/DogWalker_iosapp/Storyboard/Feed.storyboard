@@ -66,7 +66,7 @@
                             <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="8aJ-Jb-6KR" secondAttribute="trailing" constant="5" id="t6J-Om-Nhs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Diary" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="V6C-0p-V0z"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="My Pet Diary" id="bXY-3X-Y5q">
                         <barButtonItem key="rightBarButtonItem" title="addPost" id="t0p-s8-Olf">
                             <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ie8-Au-DVE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.7971014492755" y="-102.45535714285714"/>
+            <point key="canvasLocation" x="1915.9420289855075" y="-102.45535714285714"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="ErJ-aU-pzO">
@@ -107,29 +107,29 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CCF-Sw-oSx">
-                                        <rect key="frame" x="58.5" y="48.5" width="287.5" height="68.5"/>
+                                        <rect key="frame" x="80" y="49.5" width="244.5" height="64.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8s-tr-XK4">
-                                                <rect key="frame" x="88.5" y="0.0" width="110.5" height="40"/>
+                                                <rect key="frame" x="72.5" y="0.0" width="99.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3ig-QF-Jgf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHJ-TS-Ydl">
-                                                <rect key="frame" x="0.0" y="40" width="287.5" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="244.5" height="24.5"/>
                                                 <string key="text">Record what happened today!
 </string>
-                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Zy-TI-Gr5">
-                                        <rect key="frame" x="102" y="155" width="200" height="200"/>
+                                        <rect key="frame" x="102" y="153.5" width="200" height="200"/>
                                         <color key="backgroundColor" red="1" green="0.92788973949999998" blue="0.9270296509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="0.94267677510000003" blue="0.93744017840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -140,8 +140,8 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVY-sY-1OQ">
-                                        <rect key="frame" x="142.5" y="393.5" width="119" height="41"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                        <rect key="frame" x="151.5" y="393.5" width="101" height="37"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
                                         <state key="normal" title="select image">
                                             <color key="titleColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -150,7 +150,7 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-Ou-fO6">
-                                        <rect key="frame" x="63.5" y="472.5" width="277" height="97.5"/>
+                                        <rect key="frame" x="63.5" y="470" width="277" height="97.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="bottom" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BZ7-fF-eHY">
                                                 <rect key="frame" x="0.0" y="0.0" width="277" height="24"/>
@@ -224,7 +224,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vId-9K-gyO">
-                                        <rect key="frame" x="170.5" y="608.5" width="63" height="48"/>
+                                        <rect key="frame" x="170.5" y="607" width="63" height="48"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                         <state key="normal" title="NEXT">
                                             <color key="titleColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mU-E8-7MU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792.753623188406" y="-102.45535714285714"/>
+            <point key="canvasLocation" x="2702.898550724638" y="-102.45535714285714"/>
         </scene>
         <!--Add Post View Controller-->
         <scene sceneID="L9E-ez-Odi">
@@ -283,11 +283,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Write More!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-Pf-Lcx">
-                                        <rect key="frame" x="144.5" y="60" width="115" height="50"/>
+                                        <rect key="frame" x="147.5" y="60" width="109.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RCv-pS-GeN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -302,8 +302,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-Wl-eqg">
-                                        <rect key="frame" x="168.5" y="420" width="67" height="215"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-Wl-eqg">
+                                        <rect key="frame" x="168.5" y="420" width="67" height="48"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                         <state key="normal" title="DONE">
                                             <color key="titleColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -312,8 +312,8 @@
                                             <segue destination="Rsu-Hm-Ayc" kind="unwind" identifier="backtoVC1" unwindAction="unwindFromVC3WithSeque:" id="bVg-fO-EbR"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhP-F8-4Qe">
-                                        <rect key="frame" x="177" y="665" width="50" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhP-F8-4Qe">
+                                        <rect key="frame" x="177" y="498" width="50" height="217"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -338,13 +338,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJx-mr-IeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Rsu-Hm-Ayc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2573.913043478261" y="-102.45535714285714"/>
+            <point key="canvasLocation" x="3484.057971014493" y="-102.45535714285714"/>
         </scene>
-        <!--Home-->
+        <!--Calendar-->
         <scene sceneID="vdz-lk-t3t">
             <objects>
-                <navigationController storyboardIdentifier="Feed" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6CU-Ut-o6v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="6Oc-Z7-Vqz"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6CU-Ut-o6v" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="6Oc-Z7-Vqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dIl-jM-fir">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -357,14 +357,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXb-BB-Fxz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17.39130434782609" y="-102.45535714285714"/>
+            <point key="canvasLocation" x="892.75362318840587" y="-102.45535714285714"/>
         </scene>
     </scenes>
     <resources>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="house" catalog="system" width="128" height="106"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
