@@ -23,8 +23,14 @@
 		76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600536F259DB48C0058F313 /* LaunchScreen.storyboard */; };
 		7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600538B259DF1DD0058F313 /* Feed.storyboard */; };
 		7600538F259DF1F10058F313 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7600538E259DF1F10058F313 /* MyPage.storyboard */; };
+		7640D69B25AECF5100A15B14 /* GlobalConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D69A25AECF5100A15B14 /* GlobalConstant.swift */; };
+		7640D69F25AED1B000A15B14 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D69E25AED1B000A15B14 /* UICollectionViewCell+Extension.swift */; };
+		7640D6A325AED24000A15B14 /* TodayDateCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D6A225AED24000A15B14 /* TodayDateCenter.swift */; };
+		7640D6A925AED38C00A15B14 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D6A825AED38C00A15B14 /* UIColor+Extension.swift */; };
+		7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D6AB25AED43C00A15B14 /* DayInfo.swift */; };
 		7655053925A31D2300FA5CFE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655053825A31D2300FA5CFE /* FeedViewController.swift */; };
 		7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655054325A4763600FA5CFE /* AddDiaryViewController.swift */; };
+		766EFA5825AEC1CD00643504 /* SubMemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */; };
 		769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */; };
 		D2729DE7BE144748584B6206 /* Pods_DogWalker_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */; };
 /* End PBXBuildFile section */
@@ -50,8 +56,14 @@
 		76005372259DB48C0058F313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7600538B259DF1DD0058F313 /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		7600538E259DF1F10058F313 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		7640D69A25AECF5100A15B14 /* GlobalConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstant.swift; sourceTree = "<group>"; };
+		7640D69E25AED1B000A15B14 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		7640D6A225AED24000A15B14 /* TodayDateCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDateCenter.swift; sourceTree = "<group>"; };
+		7640D6A825AED38C00A15B14 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		7640D6AB25AED43C00A15B14 /* DayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfo.swift; sourceTree = "<group>"; };
 		7655053825A31D2300FA5CFE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		7655054325A4763600FA5CFE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
+		766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogWalker_iosapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,6 +101,8 @@
 		76005363259DB48B0058F313 /* DogWalker_iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				7640D6A125AED23600A15B14 /* Model */,
+				7640D69925AECF2B00A15B14 /* Extension */,
 				769BF40F25A6E0E60098DC87 /* ViewController */,
 				769BF40D25A6E0960098DC87 /* Storyboard */,
 				76005364259DB48B0058F313 /* AppDelegate.swift */,
@@ -98,6 +112,25 @@
 				76005372259DB48C0058F313 /* Info.plist */,
 			);
 			path = DogWalker_iosapp;
+			sourceTree = "<group>";
+		};
+		7640D69925AECF2B00A15B14 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7640D69A25AECF5100A15B14 /* GlobalConstant.swift */,
+				7640D69E25AED1B000A15B14 /* UICollectionViewCell+Extension.swift */,
+				7640D6A825AED38C00A15B14 /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7640D6A125AED23600A15B14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7640D6A225AED24000A15B14 /* TodayDateCenter.swift */,
+				7640D6AB25AED43C00A15B14 /* DayInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		769BF40D25A6E0960098DC87 /* Storyboard */ = {
@@ -125,6 +158,7 @@
 				05DA67FC25A879CE000CE91D /* SettingViewController.swift */,
 				05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */,
 				47FAB53D25AD8F08005BEBAF /* NewsFeedTableViewController.swift */,
+				766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -264,12 +298,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7640D6A325AED24000A15B14 /* TodayDateCenter.swift in Sources */,
+				766EFA5825AEC1CD00643504 /* SubMemoCollectionViewCell.swift in Sources */,
+				7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */,
 				76005369259DB48B0058F313 /* ViewController.swift in Sources */,
+				7640D6A925AED38C00A15B14 /* UIColor+Extension.swift in Sources */,
+				7640D69B25AECF5100A15B14 /* GlobalConstant.swift in Sources */,
 				05DA67FD25A879CE000CE91D /* SettingViewController.swift in Sources */,
 				76005365259DB48B0058F313 /* AppDelegate.swift in Sources */,
 				05DA67E425A82FF0000CE91D /* SignUpViewController.swift in Sources */,
 				7655053925A31D2300FA5CFE /* FeedViewController.swift in Sources */,
 				05DA67FA25A87600000CE91D /* MyPageViewController.swift in Sources */,
+				7640D69F25AED1B000A15B14 /* UICollectionViewCell+Extension.swift in Sources */,
 				05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */,
 				47FAB53E25AD8F08005BEBAF /* NewsFeedTableViewController.swift in Sources */,
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,

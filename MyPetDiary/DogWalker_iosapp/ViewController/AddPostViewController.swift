@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class AddPostViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
@@ -45,4 +46,17 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+}
+
+// MARK: - UITextViewDelegate
+extension AddPostViewController: UITextViewDelegate {
+    
+    // 메모 textfield의 글자 수를 250자로 제한하기 위해 추가.
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        guard let content = textView.text else { return true }
+        
+        let limitedLength = content.count + text.count - range.length
+        
+        return limitedLength <= Config.Appearance.maximumLength
+    }
 }

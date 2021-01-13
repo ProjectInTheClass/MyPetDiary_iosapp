@@ -57,5 +57,19 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 
 }
 
-
+extension FeedViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    // dataCell과 memoCell의 사이즈를 결정하는 메소드
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellHeight = subView.frame.height / Config.AspectRatio.cellAspectRatio
+        let cellWidth = subView.frame.width / Config.AspectRatio.cellAspectRatio
+        
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize(width: 0, height: 0) }
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+}
 
