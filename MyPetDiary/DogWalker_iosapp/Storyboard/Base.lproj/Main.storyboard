@@ -56,7 +56,7 @@
         <scene sceneID="f2c-rq-Yz5">
             <objects>
                 <viewControllerPlaceholder storyboardName="NewsFeed" id="VU5-27-Va3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MBf-My-Oil"/>
+                    <tabBarItem key="tabBarItem" title="News Feed" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="MBf-My-Oil"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0U-IE-CMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,6 +126,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="newspaper" catalog="system" width="32" height="32"/>
+        <image name="newspaper.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

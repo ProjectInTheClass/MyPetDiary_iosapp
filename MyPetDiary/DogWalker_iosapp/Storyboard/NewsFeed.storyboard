@@ -58,11 +58,11 @@
             </objects>
             <point key="canvasLocation" x="1302.8985507246377" y="-581.25"/>
         </scene>
-        <!--Item 1-->
+        <!--News Feed-->
         <scene sceneID="3W1-PH-Ny4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cK3-4A-rwW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="POm-av-bKX"/>
+                    <tabBarItem key="tabBarItem" title="News Feed" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="POm-av-bKX"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HaU-BL-PSF">
@@ -81,6 +81,8 @@
     </scenes>
     <resources>
         <image name="hana" width="609" height="960"/>
+        <image name="newspaper" catalog="system" width="32" height="32"/>
+        <image name="newspaper.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
