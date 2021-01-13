@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
         print("UUID(token) : "+UUID().uuidString)
         
-        self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
+        //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
         
     }
 
