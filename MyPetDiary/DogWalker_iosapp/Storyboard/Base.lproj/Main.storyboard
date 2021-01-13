@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,50 +69,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 닉네임 입력으로" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-4t-bpo">
-                                <rect key="frame" x="129" y="270" width="156" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물과의 추억을 기록하세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-Kv-veS">
-                                <rect key="frame" x="97" y="296" width="220" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-u0-prR">
-                                <rect key="frame" x="184.5" y="417" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
-                                <rect key="frame" x="97" y="682" width="220" height="30"/>
-                                <state key="normal" title="입력한 닉네임으로 다이어리 사용하기"/>
-                                <connections>
-                                    <action selector="signUp:" destination="wbW-7b-uVI" eventType="touchUpInside" id="qE0-lS-Sa9"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nts-ok-BHG">
-                                <rect key="frame" x="191" y="448" width="32" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-8P-nwo">
+                                <rect key="frame" x="5" y="194" width="404" height="518"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 닉네임 입력으로" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-4t-bpo">
+                                        <rect key="frame" x="119.5" y="0.0" width="165.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물과의 추억을 기록하세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-Kv-veS">
+                                        <rect key="frame" x="86" y="29" width="232.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-6C-54k">
+                                        <rect key="frame" x="0.0" y="58" width="404" height="72.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-u0-prR">
+                                        <rect key="frame" x="179.5" y="137.5" width="45" height="54"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nts-ok-BHG">
+                                        <rect key="frame" x="102" y="198.5" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Vk1-ua-Jov"/>
+                                            <constraint firstAttribute="height" constant="50" id="l4j-Ez-dvB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-Fl-hCI">
+                                        <rect key="frame" x="0.0" y="255.5" width="404" height="233.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
+                                        <rect key="frame" x="171" y="496" width="62" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <state key="normal" title="Start!">
+                                            <color key="titleColor" red="0.78092810120245426" green="0.35974350001763439" blue="0.49855727010254058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUp:" destination="wbW-7b-uVI" eventType="touchUpInside" id="qE0-lS-Sa9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bj0-Za-YKU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.95216169738863632" blue="0.95963653900521917" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bj0-Za-YKU" firstAttribute="bottom" secondItem="sBC-UQ-7Z8" secondAttribute="bottom" constant="150" id="0Dg-nc-g9W"/>
-                            <constraint firstItem="sBC-UQ-7Z8" firstAttribute="top" secondItem="nts-ok-BHG" secondAttribute="bottom" constant="200" id="12n-O4-Sk7"/>
-                            <constraint firstItem="nts-ok-BHG" firstAttribute="top" secondItem="qE4-u0-prR" secondAttribute="bottom" constant="10" id="5JF-TV-tds"/>
-                            <constraint firstItem="nts-ok-BHG" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="6E5-1u-Utg"/>
-                            <constraint firstItem="qE4-u0-prR" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="8Tr-9x-L9o"/>
-                            <constraint firstItem="qE4-u0-prR" firstAttribute="top" secondItem="i9J-Kv-veS" secondAttribute="bottom" constant="100" id="LCm-A8-n0r"/>
-                            <constraint firstItem="i9J-Kv-veS" firstAttribute="top" secondItem="wvq-4t-bpo" secondAttribute="bottom" constant="5" id="Lus-aU-kUF"/>
-                            <constraint firstItem="sBC-UQ-7Z8" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="iiy-BE-Mst"/>
-                            <constraint firstItem="wvq-4t-bpo" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="t2L-IN-X2f"/>
-                            <constraint firstItem="i9J-Kv-veS" firstAttribute="centerX" secondItem="dlI-ds-ax5" secondAttribute="centerX" id="zhZ-v8-PDA"/>
+                            <constraint firstItem="Hpn-8P-nwo" firstAttribute="top" secondItem="bj0-Za-YKU" secondAttribute="top" constant="150" id="8fu-JI-2Vx"/>
+                            <constraint firstItem="bj0-Za-YKU" firstAttribute="bottom" secondItem="Hpn-8P-nwo" secondAttribute="bottom" constant="150" id="Dmj-K9-8Ra"/>
+                            <constraint firstItem="Hpn-8P-nwo" firstAttribute="leading" secondItem="bj0-Za-YKU" secondAttribute="leading" constant="5" id="ZIS-Kb-He6"/>
+                            <constraint firstAttribute="trailing" secondItem="Hpn-8P-nwo" secondAttribute="trailing" constant="5" id="uyW-Wh-mUQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -122,14 +139,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dY3-Dc-AZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1187" y="84"/>
+            <point key="canvasLocation" x="-1028" y="100"/>
         </scene>
     </scenes>
     <resources>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
