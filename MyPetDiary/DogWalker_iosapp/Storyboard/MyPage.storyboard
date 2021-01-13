@@ -31,24 +31,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="kVU-Zm-bKE">
                                 <rect key="frame" x="20" y="128" width="94" height="85"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="user111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irs-gG-w4T">
-                                <rect key="frame" x="134" y="155" width="93" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irs-gG-w4T">
+                                <rect key="frame" x="134" y="155" width="93" height="31"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
-                                <rect key="frame" x="332" y="155" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
+                                <rect key="frame" x="321" y="155" width="69" height="30"/>
+                                <state key="normal" title="프로필 수정"/>
                                 <connections>
-                                    <segue destination="6tQ-Dh-V7f" kind="modal" id="6H5-6W-FH2"/>
+                                    <segue destination="ZFp-oD-xpf" kind="modal" id="07s-ui-aCU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eyX-vQ-wRm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Miu-SB-93I" firstAttribute="leading" secondItem="Irs-gG-w4T" secondAttribute="trailing" constant="94" id="0Cw-sO-GWE"/>
+                            <constraint firstItem="Miu-SB-93I" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="67" id="1fg-SD-zSt"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="200" id="9tA-4U-yUe"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="kVU-Zm-bKE" secondAttribute="trailing" constant="300" id="BJD-SB-X82"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="leading" secondItem="eyX-vQ-wRm" secondAttribute="leading" constant="5" id="Hl3-AV-soK"/>
@@ -77,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGE-Fr-fik" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2470" y="53"/>
+            <point key="canvasLocation" x="2469.5652173913045" y="52.901785714285715"/>
         </scene>
         <!--프로필 수정-->
         <scene sceneID="pQE-c7-9Iv">
@@ -106,7 +107,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3v-ZE-bbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3840.579710144928" y="-631.47321428571422"/>
+            <point key="canvasLocation" x="3262" y="-331"/>
         </scene>
         <!--Setting-->
         <scene sceneID="pC6-XV-pQA">
@@ -274,7 +275,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSA-t1-a39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3290" y="53"/>
+            <point key="canvasLocation" x="3322" y="425"/>
         </scene>
         <!--Withdrawal View Controller-->
         <scene sceneID="Cxw-EG-UtL">
@@ -329,7 +330,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="e3g-Mb-nBV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="53"/>
+            <point key="canvasLocation" x="4258" y="425"/>
         </scene>
         <!--My Page-->
         <scene sceneID="AF0-5c-O8Z">
@@ -349,24 +350,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAo-lS-oG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1707" y="53"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="4fk-RB-Kqc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6tQ-Dh-V7f" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6sM-84-0Qg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ZFp-oD-xpf" kind="relationship" relationship="rootViewController" id="kUl-X1-9aO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OJ4-Wt-z8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3026" y="-631"/>
         </scene>
     </scenes>
     <resources>
