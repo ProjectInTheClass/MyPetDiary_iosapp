@@ -15,6 +15,7 @@
 		05FA7B1C25A7227C00E4A253 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FA7B1B25A7227C00E4A253 /* GoogleService-Info.plist */; };
 		47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */; };
 		47FAB61A25AF4CDE005BEBAF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB61925AF4CDE005BEBAF /* Post.swift */; };
+		47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62425AF5343005BEBAF /* PostCell.swift */; };
 		47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
