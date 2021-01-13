@@ -18,12 +18,22 @@ class AddDiaryViewController: UIViewController{
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
-    /// MainVC로 부터 받은 Memocell에 선택되어있는 날짜
-    var showingDate: Date?
     
+    func getCurrentDateTime(){
+        let formatter = DateFormatter() //객체 생성
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
+        let str = formatter.string(from: Date()) //문자열로 바꾸기
+        showDate.text = "\(str)"   //라벨에 출력
+        
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        getCurrentDateTime()
     }
     
     func settingAlert(){
