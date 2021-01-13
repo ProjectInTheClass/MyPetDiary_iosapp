@@ -340,11 +340,11 @@
             </objects>
             <point key="canvasLocation" x="3484.057971014493" y="-102.45535714285714"/>
         </scene>
-        <!--Calendar-->
+        <!--Navigation Controller-->
         <scene sceneID="vdz-lk-t3t">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6CU-Ut-o6v" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="6Oc-Z7-Vqz"/>
+                    <tabBarItem key="tabBarItem" title="" image="book.closed" catalog="system" selectedImage="book.closed.fill" id="6Oc-Z7-Vqz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dIl-jM-fir">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

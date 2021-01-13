@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "KakaoTalk_Photo_2020-12-30-00-04-54.jpeg",
+      "filename" : "mary.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "mary-1.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "mary-2.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }
