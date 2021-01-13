@@ -7,6 +7,7 @@ target 'DogWalker_iosapp' do
 
   # Pods for DogWalker_iosapp
   pod 'FSCalendar'
+  pod 'RealmSwift'
 
   # add the Firebase pod for Google Analytics
   pod 'Firebase/Analytics'

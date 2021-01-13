@@ -7,6 +7,7 @@
 
 import Foundation
 import FSCalendar
+import RealmSwift
 
 class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
 
@@ -40,6 +41,10 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.appearance.eventDefaultColor = .red
         // 캘린더에 이번달 날짜만 표시하기 위함
         calendarView.placeholderType = .none
+        // Month 폰트 설정
+        calendarView.appearance.headerTitleFont = UIFont(name: Config.Font.normal, size: Config.FontSize.month)
+        // day 폰트 설정
+        calendarView.appearance.titleFont = UIFont(name: Config.Font.bold, size: Config.FontSize.day)
     }
     
     
