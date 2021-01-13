@@ -126,8 +126,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="newspaper" catalog="system" width="32" height="32"/>
-        <image name="newspaper.fill" catalog="system" width="32" height="32"/>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
+        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
