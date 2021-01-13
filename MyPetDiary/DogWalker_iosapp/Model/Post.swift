@@ -23,14 +23,14 @@ struct Post{
     {
         var posts = [Post]()
         
-        let Howard = FeedUser(username: "Howard", profileImage: UIImage(named: "Dongguk"))
+        let Howard = FeedUser(username: "Howard", profileImage: UIImage(named: "hana"))
+        
+        let Mary = FeedUser(username: "Mary", profileImage: UIImage(named: "mary"))
         
         let post1 = Post(createdBy: Howard, image: UIImage(named: "1"))
         let post2 = Post(createdBy: Howard, image: UIImage(named: "2"))
         let post3 = Post(createdBy: Howard, image: UIImage(named: "3"))
-        
-        let Mary = FeedUser(username: "Mary", profileImage: UIImage(named: "Hana"))
-        
+       
         let post4 = Post(createdBy: Mary, image: UIImage(named: "4"))
         let post5 = Post(createdBy: Mary, image: UIImage(named: "5"))
         let post6 = Post(createdBy: Mary, image: UIImage(named: "6"))

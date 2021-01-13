@@ -15,6 +15,7 @@
 		05FA7B1C25A7227C00E4A253 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FA7B1B25A7227C00E4A253 /* GoogleService-Info.plist */; };
 		47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */; };
 		47FAB61A25AF4CDE005BEBAF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB61925AF4CDE005BEBAF /* Post.swift */; };
+		47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
 		76005369259DB48B0058F313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005368259DB48B0058F313 /* ViewController.swift */; };
@@ -45,6 +46,8 @@
 		0643566F6D350D71265F9BFD /* Pods-DogWalker_iosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.debug.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
 		47FAB61925AF4CDE005BEBAF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		47FAB62425AF5343005BEBAF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		5F3146EC17AD24BC32DC027B /* Pods-DogWalker_iosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.release.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.release.xcconfig"; sourceTree = "<group>"; };
 		76005361259DB48B0058F313 /* DogWalker_iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalker_iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76005364259DB48B0058F313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				05DA67FC25A879CE000CE91D /* SettingViewController.swift */,
 				05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */,
 				766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */,
+				47FAB62425AF5343005BEBAF /* PostCell.swift */,
+				47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -306,10 +311,12 @@
 				7640D69B25AECF5100A15B14 /* GlobalConstant.swift in Sources */,
 				05DA67FD25A879CE000CE91D /* SettingViewController.swift in Sources */,
 				76005365259DB48B0058F313 /* AppDelegate.swift in Sources */,
+				47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */,
 				05DA67E425A82FF0000CE91D /* SignUpViewController.swift in Sources */,
 				7655053925A31D2300FA5CFE /* FeedViewController.swift in Sources */,
 				05DA67FA25A87600000CE91D /* MyPageViewController.swift in Sources */,
 				7640D69F25AED1B000A15B14 /* UICollectionViewCell+Extension.swift in Sources */,
+				47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */,
 				05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */,
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,
 				76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */,

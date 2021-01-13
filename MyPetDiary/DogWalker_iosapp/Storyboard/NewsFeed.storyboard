@@ -11,13 +11,13 @@
         <!--My Pet Diary-->
         <scene sceneID="LQV-8S-sbB">
             <objects>
-                <tableViewController id="dj7-0e-Vpm" sceneMemberID="viewController">
+                <tableViewController id="dj7-0e-Vpm" customClass="NewsFeedTableViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c16-QR-Cnd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="564" id="TcT-n4-GGj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="564" id="TcT-n4-GGj" customClass="PostCell" customModule="DogWalker_iosapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="564"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TcT-n4-GGj" id="Sf5-Pn-dYh">
@@ -65,6 +65,11 @@
                                         <constraint firstItem="dFW-qW-ZWH" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="topMargin" constant="12" id="hkz-nj-pde"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="postImageView" destination="NU0-k7-iDo" id="Ho8-Z1-KOa"/>
+                                    <outlet property="profileImageView" destination="dFW-qW-ZWH" id="ZvV-RJ-ByF"/>
+                                    <outlet property="usernameLabel" destination="0Lq-Ho-HVf" id="7ZK-9k-GKt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
