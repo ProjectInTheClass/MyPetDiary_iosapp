@@ -118,7 +118,7 @@
                                             <color key="titleColor" red="0.78092810120245426" green="0.35974350001763439" blue="0.49855727010254058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUp:" destination="wbW-7b-uVI" eventType="touchUpInside" id="qE0-lS-Sa9"/>
+                                            <action selector="signUp:nickName:" destination="wbW-7b-uVI" eventType="touchUpInside" id="6we-oD-eo7"/>
                                         </connections>
                                     </button>
                                 </subviews>

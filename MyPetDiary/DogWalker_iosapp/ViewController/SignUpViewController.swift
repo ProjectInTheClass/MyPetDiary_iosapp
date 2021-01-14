@@ -11,12 +11,6 @@ import FirebaseDatabase
 import FirebaseAuth
 //import Alamofire
 
-struct User: Codable {
-    var user_index: Int
-    var user_name: String
-    var user_token: String
-}
-
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     //var ref: FirebaseDatabase.DatabaseReference! = FirebaseDatabase.Database.reference(self: Database)
@@ -26,7 +20,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //    ref = Database.database().reference()
     
     @IBOutlet weak var nickName: UITextField!
-    @IBAction func signUp(_ sender: Any) {
+    @IBAction func signUp(_ sender: Any, nickName: UITextField) {
         UserDefaults.standard.setValue(UUID().uuidString, forKey: "token")
         //UserDefaults.standard.setValue(self.nickName, forKey: "nickName")
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
@@ -45,7 +39,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_identifier": UUID().uuidString]))
-        
         
     }
 
@@ -66,7 +59,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.nickName.becomeFirstResponder()
         
         if let user = Auth.auth().currentUser {
-            guard let dvc = self.storyboard?.instantiateViewController(identifier: "ViewController") as? ViewController else {
+            guard let dvc = self.storyboard?.instantiateViewController(identifier: "MainView") as? ViewController else {
                 return
             }
             self.present(dvc, animated: true, completion: nil)
