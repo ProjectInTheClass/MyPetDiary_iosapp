@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05AFB1CC25B05D4F00A2F562 /* PetDiFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AFB1CB25B05D4F00A2F562 /* PetDiFirebaseManager.swift */; };
 		05DA67E425A82FF0000CE91D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67E325A82FF0000CE91D /* SignUpViewController.swift */; };
 		05DA67E725A834C0000CE91D /* MPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67E625A834C0000CE91D /* MPMainViewController.swift */; };
 		05DA67FA25A87600000CE91D /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67F925A87600000CE91D /* MyPageViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05AFB1CB25B05D4F00A2F562 /* PetDiFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDiFirebaseManager.swift; sourceTree = "<group>"; };
 		05DA67E325A82FF0000CE91D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05DA67E625A834C0000CE91D /* MPMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPMainViewController.swift; sourceTree = "<group>"; };
 		05DA67F925A87600000CE91D /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */,
 				47FAB62425AF5343005BEBAF /* PostCell.swift */,
 				47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */,
+				05AFB1CB25B05D4F00A2F562 /* PetDiFirebaseManager.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,
 				76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */,
 				47FAB61A25AF4CDE005BEBAF /* Post.swift in Sources */,
+				05AFB1CC25B05D4F00A2F562 /* PetDiFirebaseManager.swift in Sources */,
 				769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */,
 				05DA67E725A834C0000CE91D /* MPMainViewController.swift in Sources */,
 			);
