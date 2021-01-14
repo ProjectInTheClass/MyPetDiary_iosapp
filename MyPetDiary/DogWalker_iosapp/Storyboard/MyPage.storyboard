@@ -63,8 +63,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
-                                <rect key="frame" x="354" y="239" width="40" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-SB-93I">
+                                <rect key="frame" x="372" y="239" width="22" height="44"/>
                                 <color key="tintColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="person.crop.circle.badge.exclam.fill" catalog="system">
                                     <color key="titleShadowColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,11 +83,14 @@
                             <constraint firstItem="eys-lX-Myl" firstAttribute="leading" secondItem="eyX-vQ-wRm" secondAttribute="leading" constant="5" id="Hl3-AV-soK"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="Miu-SB-93I" secondAttribute="trailing" constant="20" id="NRZ-o1-xPG"/>
                             <constraint firstItem="kVU-Zm-bKE" firstAttribute="centerY" secondItem="Irs-gG-w4T" secondAttribute="centerY" id="NdT-Tp-OAn"/>
+                            <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="Irs-gG-w4T" secondAttribute="bottom" constant="102" id="PDA-0H-4Fn"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="bottom" secondItem="eys-lX-Myl" secondAttribute="bottom" constant="5" id="SMt-hl-gf5"/>
+                            <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="Miu-SB-93I" secondAttribute="bottom" constant="5" id="Y7u-Mx-KGg"/>
                             <constraint firstItem="kVU-Zm-bKE" firstAttribute="leading" secondItem="eyX-vQ-wRm" secondAttribute="leading" constant="20" id="YSk-Em-HhD"/>
                             <constraint firstItem="kVU-Zm-bKE" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="40" id="cRS-Ti-GFi"/>
                             <constraint firstItem="Irs-gG-w4T" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="67" id="ekd-KH-fhS"/>
                             <constraint firstItem="Irs-gG-w4T" firstAttribute="leading" secondItem="kVU-Zm-bKE" secondAttribute="trailing" constant="20" id="icA-dF-2Hc"/>
+                            <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="kVU-Zm-bKE" secondAttribute="bottom" constant="75" id="lEb-mr-DsE"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="bottom" secondItem="kVU-Zm-bKE" secondAttribute="bottom" constant="600" id="mrx-pE-Ffe"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="eys-lX-Myl" secondAttribute="trailing" constant="5" id="xYG-6b-g1g"/>
                         </constraints>
