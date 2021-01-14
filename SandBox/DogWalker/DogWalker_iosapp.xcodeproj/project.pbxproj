@@ -127,6 +127,7 @@
 				7600535E259DB48B0058F313 /* Frameworks */,
 				7600535F259DB48B0058F313 /* Resources */,
 				19528D10F2B24501631B9D01 /* [CP] Embed Pods Frameworks */,
+				3205A9D7A2D5D384CD08E83C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +203,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3205A9D7A2D5D384CD08E83C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F19F1E55197DF4D21A0570C8 /* [CP] Check Pods Manifest.lock */ = {
