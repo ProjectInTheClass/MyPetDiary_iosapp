@@ -36,7 +36,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1w6-SA-rrX">
-                                                    <rect key="frame" x="-138" y="-196" width="404" height="520"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="1w6-SA-rrX" secondAttribute="height" multiplier="1:1" id="x0A-lQ-CHy"/>
@@ -87,7 +87,6 @@
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="bottom" secondItem="eys-lX-Myl" secondAttribute="bottom" constant="5" id="SMt-hl-gf5"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="Miu-SB-93I" secondAttribute="bottom" constant="5" id="Y7u-Mx-KGg"/>
                             <constraint firstItem="kVU-Zm-bKE" firstAttribute="leading" secondItem="eyX-vQ-wRm" secondAttribute="leading" constant="20" id="YSk-Em-HhD"/>
-                            <constraint firstItem="kVU-Zm-bKE" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="40" id="cRS-Ti-GFi"/>
                             <constraint firstItem="Irs-gG-w4T" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="67" id="ekd-KH-fhS"/>
                             <constraint firstItem="Irs-gG-w4T" firstAttribute="leading" secondItem="kVU-Zm-bKE" secondAttribute="trailing" constant="20" id="icA-dF-2Hc"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="kVU-Zm-bKE" secondAttribute="bottom" constant="75" id="lEb-mr-DsE"/>

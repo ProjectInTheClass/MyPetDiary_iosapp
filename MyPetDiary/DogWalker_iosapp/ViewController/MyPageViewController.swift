@@ -9,8 +9,10 @@ import UIKit
 
 class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
-    let images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
+    // image - db
+    var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
+    // collectionview 설정 - 가로3장
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
@@ -58,5 +60,6 @@ class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollecti
 //커스텀 셀 구현
 class CustomCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
+//    imageView.contentMode = .scaleAspectFill
     
 }
