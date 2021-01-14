@@ -19,7 +19,14 @@ struct User: Codable {
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    var ref: DatabaseReference! = Database.database().reference()
+//    var ref: FirebaseDatabase.DatabaseReference! = FirebaseDatabase.Database.reference(self: Database)
+//    //var ref: DatabaseReference! = Database.database().reference()
+//
+//    var userRef = ref.self.child("User")
+    
+//    var ref: DatabaseReference!
+//
+//    var ref = Database.database().reference()
     
     @IBOutlet weak var nickName: UITextField!
     @IBAction func signUp(_ sender: Any) {
