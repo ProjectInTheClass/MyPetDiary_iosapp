@@ -23,6 +23,11 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
+        // 현재 날짜 가져오기
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        var current_date_string = formatter.string(from: Date())
+        
         if textField.text == nil {
             // create the alert
             let alert = UIAlertController(title: "내용이 비어있음", message: "글을 작성해주세요", preferredStyle: UIAlertController.Style.alert)
@@ -39,9 +44,13 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             
             let postRef = self.ref.child("Post")
             let userTokenRef = postRef.child("\(deviceToken)").childByAutoId()
-            let postContentRef = userTokenRef.child("post_content")
             
+            let postContentRef = userTokenRef.child("post_content")
             postContentRef.setValue(contentToDB)
+            
+            let postDateRef = userTokenRef.child("post_date")
+            postDateRef.setValue(current_date_string)
+            
         }
         
     }

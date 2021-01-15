@@ -37,18 +37,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
         //self.ref.child("User/\(user.uid)/user_name").setValue(["user_name": nickName])
         
-        Auth.auth().signInAnonymously() { (authResult, error) in
-            guard let user = authResult?.user else { return }
-            let isAnonymous = user.isAnonymous // true
-            let uid = user.uid
-            print("User's nickName : \(self.nickName.text)")
-            
-        }
+//        Auth.auth().signInAnonymously() { (authResult, error) in
+//            guard let user = authResult?.user else { return }
+//            let isAnonymous = user.isAnonymous // true
+//            let uid = user.uid
+//            print("User's nickName : \(self.nickName.text)")
+//            
+//        }
         
         let userRef = self.ref.child("User")
         // let userRef = self.ref.child("User").childByAutoId()
         let userTokenRef = userRef.child(deviceUniqueToken)
-        let userNicknameRef = userTokenRef.child("user_nickname")
+        let userNicknameRef = userTokenRef.child("userInfo").child("user_nickname")
         
         if let inputNickname = self.nickName.text {
 //            let userTokenRef = self.ref.child("User").child("user_token")
