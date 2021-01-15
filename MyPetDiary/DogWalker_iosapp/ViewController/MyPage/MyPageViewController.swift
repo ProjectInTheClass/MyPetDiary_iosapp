@@ -38,8 +38,8 @@ class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UserDefaults.standard.value(forKey: "CustomKey") // Load
-        self.userNickName.text = UserDefaults.standard.string(forKey: "nickName")
+//        UserDefaults.standard.value(forKey: "CustomKey") // Load
+//        self.userNickName.text = UserDefaults.standard.string(forKey: "nickName")
         
         // Do any additional setup after loading the view.
     }

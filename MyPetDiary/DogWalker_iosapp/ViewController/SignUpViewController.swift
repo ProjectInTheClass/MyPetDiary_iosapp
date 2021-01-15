@@ -24,13 +24,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     // 회원가입 버튼 눌렀을 경우
     @IBAction func signUp(_ sender: Any, nickName: UITextField) {
         let deviceUniqueToken = UUID().uuidString
+        // 기기 정보 기반 토큰 생성하기
         UserDefaults.standard.setValue(deviceUniqueToken, forKey: "token")
-        //UserDefaults.standard.setValue(self.nickName, forKey: "nickName")
+        
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
     
         print("UUID(token) 1: "+deviceUniqueToken)
         print("UUID(token) 2: "+deviceUniqueToken)
+        
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
         //self.ref.child("User/\(user.uid)/user_name").setValue(["user_name": nickName])
@@ -43,7 +45,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        let userRef = self.ref.child("User").childByAutoId()
+        let userRef = self.ref.child("User")
+        // let userRef = self.ref.child("User").childByAutoId()
         let userTokenRef = userRef.child(deviceUniqueToken)
         let userNicknameRef = userTokenRef.child("user_nickname")
         

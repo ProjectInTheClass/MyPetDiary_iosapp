@@ -6,11 +6,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
+// 탈퇴하기 누른 후 모달
 class WithdrawalViewController: UIViewController {
+    
+    var ref: DatabaseReference! = Database.database().reference()
     
     var window: UIWindow?
 
+    // 탈퇴하기 - 예 눌렀을 경우
     @IBAction func deleteUser(_ sender: Any) {
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "backToSetting" {
@@ -21,20 +27,30 @@ class WithdrawalViewController: UIViewController {
         // create the alert
         let alert = UIAlertController(title: "탈퇴 완료", message: "기존 데이터가 삭제되었습니다", preferredStyle: UIAlertController.Style.alert)
         
-        // delete userDefaults key value
-        UserDefaults.standard.removeObject(forKey: "CustomKey")
+        // 삭제 전 기기 토큰 확인하기
+        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        print("삭제하기 전 저장된 기기토큰 확인:"+deviceToken)
+        
+        // 디비에서 해당 토큰 정보 삭제
+        let deleteRef = self.ref.child("User").child("\(deviceToken)")
+        deleteRef.removeValue()
+        
+        // delete userDefaults key value 기기 토큰 삭제
         UserDefaults.standard.removeObject(forKey: "token")
-        UserDefaults.standard.removeObject(forKey: "nickName")
         
         // add an action (button)
         alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler:
                                         { _ in self.goBackToSignUp()}
         ))
-
         // show the alert
         self.present(alert, animated: true, completion: nil)
+        
+        print("삭제 완료")
     }
     
+    
+    
+    // 탈퇴하기 - 아니오 눌렀을 경우
     @IBAction func keepUser(_ sender: Any) {
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             performSegue(withIdentifier: "backToSetting", sender: self)
@@ -45,6 +61,7 @@ class WithdrawalViewController: UIViewController {
         }
     }
     
+    // 탈퇴하고 
     func goBackToSignUp() {
         let window = UIApplication.shared.keyWindow!
         let frame = window.rootViewController!.view.frame
