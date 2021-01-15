@@ -20,13 +20,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //    ref = Database.database().reference()
     
     @IBOutlet weak var nickName: UITextField!
+    
+    // 회원가입 버튼 눌렀을 경우
     @IBAction func signUp(_ sender: Any, nickName: UITextField) {
-        UserDefaults.standard.setValue(UUID().uuidString, forKey: "token")
+        let deviceUniqueToken = UUID().uuidString
+        UserDefaults.standard.setValue(deviceUniqueToken, forKey: "token")
         //UserDefaults.standard.setValue(self.nickName, forKey: "nickName")
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
     
-        print("UUID(token) : "+UUID().uuidString)
+        print("UUID(token) 1: "+deviceUniqueToken)
+        print("UUID(token) 2: "+deviceUniqueToken)
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
         //self.ref.child("User/\(user.uid)/user_name").setValue(["user_name": nickName])
@@ -35,10 +39,24 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             guard let user = authResult?.user else { return }
             let isAnonymous = user.isAnonymous // true
             let uid = user.uid
-            print("User's nickName : \(self.nickName)")
+            print("User's nickName : \(self.nickName.text)")
+            
         }
         
-        //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_identifier": UUID().uuidString]))
+        let userRef = self.ref.child("User").childByAutoId()
+        let userTokenRef = userRef.child(deviceUniqueToken)
+        let userNicknameRef = userTokenRef.child("user_nickname")
+        
+        if let inputNickname = self.nickName.text {
+//            let userTokenRef = self.ref.child("User").child("user_token")
+//            let userRef = self.ref.child("User").child("user_nickname")
+//            userTokenRef.setValue(uniqueToken)
+//            userRef.setValue(inputNickName)
+            
+            userNicknameRef.setValue(inputNickname)
+            
+        }
+        
         
     }
 
