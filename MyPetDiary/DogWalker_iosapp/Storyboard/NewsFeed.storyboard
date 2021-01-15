@@ -85,11 +85,11 @@
             </objects>
             <point key="canvasLocation" x="2485.507246376812" y="610.71428571428567"/>
         </scene>
-        <!--Feed-->
+        <!--Navigation Controller-->
         <scene sceneID="IwN-j0-dOh">
             <objects>
                 <navigationController id="puh-Ft-Bp3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="hxP-bM-S1K"/>
+                    <tabBarItem key="tabBarItem" title="" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="hxP-bM-S1K"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vyq-0e-KdY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
