@@ -15,6 +15,33 @@ class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
     var ref: DatabaseReference! = Database.database().reference()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        
+        // 기기 토큰 확인하기
+        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        print("마이페이지 기기 토큰 확인:"+deviceToken)
+        
+        ref.child("User").child("\(deviceToken)").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let username = value?["user_nickname"] as? String ?? ""
+            
+            print("username:"+username)
+            
+            self.userNickName.text = username
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+//    let userRef = self.ref.child("User")
+//    // let userRef = self.ref.child("User").childByAutoId()
+//    let userTokenRef = userRef.child(deviceUniqueToken)
+//    let userNicknameRef = userTokenRef.child("user_nickname")
+    
     // image - db
     var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
@@ -39,15 +66,6 @@ class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-//        UserDefaults.standard.value(forKey: "CustomKey") // Load
-//        self.userNickName.text = UserDefaults.standard.string(forKey: "nickName")
-        
-        // Do any additional setup after loading the view.
     }
     
 

@@ -32,8 +32,10 @@ class WithdrawalViewController: UIViewController {
         print("삭제하기 전 저장된 기기토큰 확인:"+deviceToken)
         
         // 디비에서 해당 토큰 정보 삭제
-        let deleteRef = self.ref.child("User").child("\(deviceToken)")
-        deleteRef.removeValue()
+        let deleteUserRef = self.ref.child("User").child("\(deviceToken)")
+        deleteUserRef.removeValue()
+        let deletePostRef = self.ref.child("Post").child("\(deviceToken)")
+        deletePostRef.removeValue()
         
         // delete userDefaults key value 기기 토큰 삭제
         UserDefaults.standard.removeObject(forKey: "token")
