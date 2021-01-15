@@ -309,6 +309,7 @@
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="btnSave:" destination="MWh-eI-Zpx" eventType="touchUpInside" id="fXE-za-9Pi"/>
                                             <segue destination="Rsu-Hm-Ayc" kind="unwind" identifier="backtoVC1" unwindAction="unwindFromVC3WithSeque:" id="bVg-fO-EbR"/>
                                         </connections>
                                     </button>

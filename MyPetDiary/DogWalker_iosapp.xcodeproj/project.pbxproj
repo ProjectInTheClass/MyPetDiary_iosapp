@@ -95,6 +95,14 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
+		053BDC4525B1E625003B3180 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		76005358259DB48B0058F313 = {
 			isa = PBXGroup;
 			children = (
@@ -164,11 +172,11 @@
 		769BF40F25A6E0E60098DC87 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				053BDC4525B1E625003B3180 /* Feed */,
 				053BDC4325B1D66F003B3180 /* MyPage */,
 				76005368259DB48B0058F313 /* ViewController.swift */,
 				7655053825A31D2300FA5CFE /* FeedViewController.swift */,
 				7655054325A4763600FA5CFE /* AddDiaryViewController.swift */,
-				769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */,
 				05DA67E325A82FF0000CE91D /* SignUpViewController.swift */,
 				05DA67E625A834C0000CE91D /* MPMainViewController.swift */,
 				05DA67FC25A879CE000CE91D /* SettingViewController.swift */,

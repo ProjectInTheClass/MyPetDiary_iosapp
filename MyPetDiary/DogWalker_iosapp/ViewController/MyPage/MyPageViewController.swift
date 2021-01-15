@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var userNickName: UILabel!
+    
+    var ref: DatabaseReference! = Database.database().reference()
     
     // image - db
     var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
@@ -34,7 +40,7 @@ class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    @IBOutlet weak var userNickName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
