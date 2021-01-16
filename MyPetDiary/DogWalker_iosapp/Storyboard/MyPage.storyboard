@@ -55,7 +55,7 @@
                                 <rect key="frame" x="20" y="128" width="94" height="85"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irs-gG-w4T">
-                                <rect key="frame" x="134" y="155" width="54.5" height="31"/>
+                                <rect key="frame" x="134" y="155" width="102" height="31"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -74,6 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="eyX-vQ-wRm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="Irs-gG-w4T" secondAttribute="trailing" constant="178" id="3iB-M0-Jm5"/>
                             <constraint firstItem="eys-lX-Myl" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="200" id="9tA-4U-yUe"/>
                             <constraint firstItem="eyX-vQ-wRm" firstAttribute="trailing" secondItem="kVU-Zm-bKE" secondAttribute="trailing" constant="300" id="BJD-SB-X82"/>
                             <constraint firstItem="Miu-SB-93I" firstAttribute="top" secondItem="eyX-vQ-wRm" secondAttribute="top" constant="151" id="CHY-mx-dXI"/>
