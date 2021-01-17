@@ -35,6 +35,7 @@
 		7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655054325A4763600FA5CFE /* AddDiaryViewController.swift */; };
 		766EFA5825AEC1CD00643504 /* SubMemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */; };
 		769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */; };
+		76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */; };
 		D2729DE7BE144748584B6206 /* Pods_DogWalker_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		7655054325A4763600FA5CFE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMemoViewController.swift; path = DogWalker_iosapp/ViewController/Feed/TodayMemoViewController.swift; sourceTree = SOURCE_ROOT; };
 		A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogWalker_iosapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,10 @@
 		053BDC4525B1E625003B3180 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				7655053825A31D2300FA5CFE /* FeedViewController.swift */,
+				7655054325A4763600FA5CFE /* AddDiaryViewController.swift */,
+				766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */,
+				76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */,
 				769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */,
 			);
 			path = Feed;
@@ -175,12 +181,9 @@
 				053BDC4525B1E625003B3180 /* Feed */,
 				053BDC4325B1D66F003B3180 /* MyPage */,
 				76005368259DB48B0058F313 /* ViewController.swift */,
-				7655053825A31D2300FA5CFE /* FeedViewController.swift */,
-				7655054325A4763600FA5CFE /* AddDiaryViewController.swift */,
 				05DA67E325A82FF0000CE91D /* SignUpViewController.swift */,
 				05DA67E625A834C0000CE91D /* MPMainViewController.swift */,
 				05DA67FC25A879CE000CE91D /* SettingViewController.swift */,
-				766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */,
 				47FAB62425AF5343005BEBAF /* PostCell.swift */,
 				47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */,
 				05AFB1CB25B05D4F00A2F562 /* PetDiFirebaseManager.swift */,
@@ -327,6 +330,7 @@
 				766EFA5825AEC1CD00643504 /* SubMemoCollectionViewCell.swift in Sources */,
 				7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */,
 				76005369259DB48B0058F313 /* ViewController.swift in Sources */,
+				76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */,
 				7640D6A925AED38C00A15B14 /* UIColor+Extension.swift in Sources */,
 				7640D69B25AECF5100A15B14 /* GlobalConstant.swift in Sources */,
 				05DA67FD25A879CE000CE91D /* SettingViewController.swift in Sources */,

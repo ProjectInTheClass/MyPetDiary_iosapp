@@ -86,6 +86,60 @@
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="-102.45535714285714"/>
         </scene>
+        <!--Today Memo View Controller-->
+        <scene sceneID="BCI-E6-Fx7">
+            <objects>
+                <viewController id="uCq-ng-aoP" customClass="TodayMemoViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHb-xd-dWE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kv6-vZ-TIN">
+                                <rect key="frame" x="50" y="194" width="314" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="O8V-Ff-Cas"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
+                                <rect key="frame" x="87" y="435" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="iyF-mz-Vod"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-ni-4WZ">
+                                <rect key="frame" x="166" y="124" width="82.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vAs-7h-VGR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vAs-7h-VGR" firstAttribute="trailing" secondItem="Kv6-vZ-TIN" secondAttribute="trailing" constant="50" id="03N-lO-Fh3"/>
+                            <constraint firstItem="vAs-7h-VGR" firstAttribute="bottom" secondItem="UAh-Sh-2UX" secondAttribute="bottom" constant="299" id="1gQ-Dj-Dn4"/>
+                            <constraint firstItem="hpF-ni-4WZ" firstAttribute="centerX" secondItem="IHb-xd-dWE" secondAttribute="centerX" id="5Mj-el-aRF"/>
+                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="centerX" secondItem="UAh-Sh-2UX" secondAttribute="centerX" id="8N9-gH-Dk7"/>
+                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="centerX" secondItem="IHb-xd-dWE" secondAttribute="centerX" id="TK3-ba-bJg"/>
+                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="leading" secondItem="vAs-7h-VGR" secondAttribute="leading" constant="50" id="YaV-g1-60L"/>
+                            <constraint firstItem="hpF-ni-4WZ" firstAttribute="top" secondItem="vAs-7h-VGR" secondAttribute="top" constant="80" id="aBn-4P-qJz"/>
+                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="top" secondItem="vAs-7h-VGR" secondAttribute="top" constant="150" id="hHC-UQ-Pv8"/>
+                            <constraint firstItem="UAh-Sh-2UX" firstAttribute="leading" secondItem="vAs-7h-VGR" secondAttribute="leading" constant="87" id="mj6-yk-rV3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showDate2" destination="hpF-ni-4WZ" id="Gq4-4J-N63"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voh-wI-nTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1916" y="611"/>
+        </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="ErJ-aU-pzO">
             <objects>
