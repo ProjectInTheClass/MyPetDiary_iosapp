@@ -224,7 +224,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="종류" id="X9T-rl-gyt">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="q5P-eA-N1S" rowHeight="43" style="IBUITableViewCellStyleDefault" id="GQ9-T8-Wq8">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="q5P-eA-N1S" detailTextLabel="kD6-9v-vkI" rowHeight="43" style="IBUITableViewCellStyleValue1" id="GQ9-T8-Wq8">
                                         <rect key="frame" x="0.0" y="616" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GQ9-T8-Wq8" id="VmV-ab-mfg">
@@ -232,7 +232,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="종류를 골라주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q5P-eA-N1S">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43"/>
+                                                    <rect key="frame" x="20" y="15" width="86.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="모름" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kD6-9v-vkI">
+                                                    <rect key="frame" x="373" y="15" width="21" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -309,6 +316,9 @@
                                                     <rect key="frame" x="8" y="11" width="398" height="37"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" title="등록하기!"/>
+                                                    <connections>
+                                                        <action selector="DoneButtonTapped:" destination="ZFp-oD-xpf" eventType="touchUpInside" id="aqt-sh-AmK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -332,6 +342,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="프로필 수정" id="9BH-r5-lny"/>
+                    <connections>
+                        <outlet property="NameTextField" destination="iRL-n2-PYa" id="UsH-BP-QDi"/>
+                        <outlet property="SexSegmentedControl" destination="AaZ-j4-VDY" id="QjS-XS-aPr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A3v-ZE-bbc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
