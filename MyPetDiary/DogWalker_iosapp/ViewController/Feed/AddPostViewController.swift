@@ -14,7 +14,8 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var contentToDB = "";
 
     @IBOutlet weak var textField: UITextField!
-    var receivedImage = "" // 이전 페이지 선택이미지
+    var receivedPostDate = ""
+    var receivedImage = UIImageView() // 이전 페이지 선택이미지
     var receivedWalkSwitch = false // 이전 페이지 산책 스위치
     var receivedWashSwitch = false // 이전 페이지 목욕 스위치
     var receivedMedicineSwitch = false // 이전 페이지 약 스위치
@@ -67,6 +68,11 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // var receivedImage = UIImageView() // 이전 페이지 선택이미지
+        print("산책 스위치 확인: \(receivedWalkSwitch)")
+        print("목욕 스위치 확인: \(receivedWashSwitch)")
+        print("약 스위치 확인: \(receivedMedicineSwitch)")
+        print("병원 스위치 확인: \(receivedHospitalSwitch)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
