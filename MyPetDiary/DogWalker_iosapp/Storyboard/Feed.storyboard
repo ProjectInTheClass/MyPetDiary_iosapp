@@ -250,21 +250,33 @@
                                                         <rect key="frame" x="0.0" y="6" width="51" height="50.5"/>
                                                         <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="thumbTintColor" red="1" green="0.68522844452365117" blue="0.67853194624338664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="isOnWalk:" destination="Q0i-WC-PRY" eventType="valueChanged" id="u5y-l5-Htn"/>
+                                                        </connections>
                                                     </switch>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i60-1u-5tf">
                                                         <rect key="frame" x="76" y="6" width="51" height="50.5"/>
                                                         <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="thumbTintColor" red="1" green="0.68522844449999998" blue="0.67853194620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="isOnWash:" destination="Q0i-WC-PRY" eventType="valueChanged" id="Hzg-Tl-71u"/>
+                                                        </connections>
                                                     </switch>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="co2-Um-MfL">
                                                         <rect key="frame" x="152" y="6" width="51" height="50.5"/>
                                                         <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="thumbTintColor" red="1" green="0.68522844449999998" blue="0.67853194620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="isOnMedicine:" destination="Q0i-WC-PRY" eventType="valueChanged" id="O4E-9s-dfb"/>
+                                                        </connections>
                                                     </switch>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4T6-Cc-WRC">
                                                         <rect key="frame" x="228" y="6" width="51" height="50.5"/>
                                                         <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="thumbTintColor" red="1" green="0.68522844449999998" blue="0.67853194620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="isOnHospital:" destination="Q0i-WC-PRY" eventType="valueChanged" id="nBK-Mu-vnh"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <constraints>
@@ -310,12 +322,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="neh-fS-ZmF"/>
                     <connections>
+                        <outlet property="hospital" destination="J3U-ZT-Kfm" id="L5m-ps-Qot"/>
                         <outlet property="imageView" destination="9Zy-TI-Gr5" id="A1O-M3-h4Y"/>
                         <outlet property="isHospital" destination="4T6-Cc-WRC" id="Whm-3j-MF7"/>
                         <outlet property="isMedicine" destination="co2-Um-MfL" id="0vW-nq-tZK"/>
                         <outlet property="isWalked" destination="zAa-rV-01v" id="esV-nd-msc"/>
                         <outlet property="isWashed" destination="i60-1u-5tf" id="ZcC-tR-PdZ"/>
+                        <outlet property="medicine" destination="svq-f7-rXG" id="NWJ-kZ-vU8"/>
                         <outlet property="showDate" destination="B8s-tr-XK4" id="tZx-RG-0Dp"/>
+                        <outlet property="walk" destination="ZyJ-Wo-8VT" id="AFI-gh-DrN"/>
+                        <outlet property="wash" destination="LER-zY-md6" id="Nlh-fi-MHP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mU-E8-7MU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

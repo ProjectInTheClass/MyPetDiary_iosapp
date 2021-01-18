@@ -16,12 +16,45 @@ class AddDiaryViewController: UIViewController{
     let picker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var isWalked: UISwitch! // 산책 스위치
+    @IBOutlet weak var walk: UILabel! // 산책 라벨
     @IBOutlet weak var isWashed: UISwitch! // 목욕 스위치
+    @IBOutlet weak var wash: UILabel! // 목욕 라벨
     @IBOutlet weak var isMedicine: UISwitch! // 약 스위치
+    @IBOutlet weak var medicine: UILabel! // 약 라벨
     @IBOutlet weak var isHospital: UISwitch! // 병원 스위치
+    @IBOutlet weak var hospital: UILabel! // 병원 라벨
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
+    
+    @IBAction func isOnWalk(_ sender: UISwitch) {
+        if sender.isOn {
+            self.walk.text = "산책완료!😄"
+        } else {
+            self.walk.text = "산책"
+        }
+    }
+    @IBAction func isOnWash(_ sender: UISwitch) {
+        if sender.isOn {
+            self.wash.text = "목욕완료!😄"
+        } else {
+            self.wash.text = "목욕"
+        }
+    }
+    @IBAction func isOnMedicine(_ sender: UISwitch) {
+        if sender.isOn {
+            self.medicine.text = "약완료!😄"
+        } else {
+            self.medicine.text = "약"
+        }
+    }
+    @IBAction func isOnHospital(_ sender: UISwitch) {
+        if sender.isOn {
+            self.hospital.text = "병원완료!😄"
+        } else {
+            self.hospital.text = "병원"
+        }
+    }
     
     func getCurrentDateTime(){
         let formatter = DateFormatter() //객체 생성
@@ -123,6 +156,13 @@ class AddDiaryViewController: UIViewController{
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // destView : UIViewController
+        let destView = segue.destination
+        
+        // AddPostViewController로 타입캐스팅
+        
+    }
     
 }
 
