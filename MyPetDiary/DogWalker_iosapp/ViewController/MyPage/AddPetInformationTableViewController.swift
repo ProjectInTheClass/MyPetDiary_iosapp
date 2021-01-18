@@ -9,7 +9,7 @@ import UIKit
 
 class AddPetInformationTableViewController: UITableViewController {
 
-    @IBOutlet weak var NameTextField: UITextField!
+
     
     
     
