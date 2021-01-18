@@ -15,6 +15,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     @IBAction func unwindFromVC3(seque: UIStoryboardSegue){ }
     @IBOutlet weak var subView: UICollectionView!
     
+    var dates = [Date]()
+
     func setCalendar(){ // 달력 기본 설정
         // 달력의 평일 날짜 색
         calendarView.appearance.titleDefaultColor = .black
@@ -40,8 +42,30 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.appearance.eventDefaultColor = .red
         // 캘린더에 이번달 날짜만 표시하기 위함
         calendarView.placeholderType = .none
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let xmas = formatter.date(from: "2021-01-09")
+        let sampledate = formatter.date(from: "2021-01-17")
+        dates = [xmas!, sampledate!]
     }
     
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if dates.contains(date){
+            return 1
+        }
+        return 0
+    }
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+            guard let modalPresentView = self.storyboard?.instantiateViewController(identifier: "TdMemoViewController") as? TdMemoViewController else { return }
+            
+            // 날짜를 원하는 형식으로 저장하기 위한 방법입니다.
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            modalPresentView.date = dateFormatter.string(from: date)
+
+            self.present(modalPresentView, animated: true, completion: nil)
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
