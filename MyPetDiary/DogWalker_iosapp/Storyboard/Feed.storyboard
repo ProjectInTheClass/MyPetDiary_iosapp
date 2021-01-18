@@ -134,6 +134,8 @@
                     </view>
                     <connections>
                         <outlet property="showDate2" destination="hpF-ni-4WZ" id="1j8-5l-pHh"/>
+                        <outlet property="showImage" destination="Kv6-vZ-TIN" id="NrP-ry-wGM"/>
+                        <outlet property="showMemo" destination="UAh-Sh-2UX" id="iqm-hJ-aBH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voh-wI-nTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

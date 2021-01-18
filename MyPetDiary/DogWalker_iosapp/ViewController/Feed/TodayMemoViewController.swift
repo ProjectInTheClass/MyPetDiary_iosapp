@@ -12,7 +12,8 @@ class TodayMemoViewController: UIViewController {
     static let identifier = "TdMemoViewController"
     
     @IBOutlet weak var showDate2: UILabel!
-    
+    @IBOutlet weak var showImage: UIImageView!
+    @IBOutlet weak var showMemo: UITextView!
     
     
     
