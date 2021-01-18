@@ -11,8 +11,6 @@ class AddPetInformationTableViewController: UITableViewController {
 
     @IBOutlet weak var NameTextField: UITextField!
     
-    @IBOutlet weak var SexSegmentedControl: UISegmentedControl!
-    
     
     
     
