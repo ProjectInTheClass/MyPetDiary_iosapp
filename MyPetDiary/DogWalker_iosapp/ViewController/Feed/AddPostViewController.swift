@@ -14,6 +14,12 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var contentToDB = "";
 
     @IBOutlet weak var textField: UITextField!
+    var receivedImage = "" // 이전 페이지 선택이미지
+    var receivedWalkSwitch = false // 이전 페이지 산책 스위치
+    var receivedWashSwitch = false // 이전 페이지 목욕 스위치
+    var receivedMedicineSwitch = false // 이전 페이지 약 스위치
+    var receivedHospitalSwitch = false // 이전 페이지 병원 스위치
+    
     
     var ref: DatabaseReference! = Database.database().reference()
     
