@@ -9,26 +9,18 @@ import UIKit
 
 class TodayMemoViewController: UIViewController {
 
+    static let identifier = "TdMemoViewController"
+    
     @IBOutlet weak var showDate2: UILabel!
     
     
     
-    func getCurrentDateTime(){
-        let formatter = DateFormatter() //객체 생성
-        formatter.dateStyle = .long
-        formatter.timeStyle = .medium
-        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
-        let str = formatter.string(from: Date()) //문자열로 바꾸기
-        showDate2.text = "\(str)"   //라벨에 출력
-        
-    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        getCurrentDateTime()
     }
     
 

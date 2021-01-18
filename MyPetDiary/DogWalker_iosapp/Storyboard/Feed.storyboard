@@ -346,18 +346,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="UDG-i0-VcE">
-                                        <rect key="frame" x="35.5" y="140" width="333" height="250"/>
+                                        <rect key="frame" x="55.5" y="140" width="293" height="220"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UDG-i0-VcE" secondAttribute="height" multiplier="4:3" id="dBp-Wc-XhC"/>
-                                            <constraint firstAttribute="height" constant="250" id="u0H-qY-7Zv"/>
+                                            <constraint firstAttribute="height" constant="220" id="u0H-qY-7Zv"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-Wl-eqg">
-                                        <rect key="frame" x="168.5" y="420" width="67" height="48"/>
+                                        <rect key="frame" x="168.5" y="390" width="67" height="28"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                         <state key="normal" title="DONE">
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -368,7 +368,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhP-F8-4Qe">
-                                        <rect key="frame" x="177" y="498" width="50" height="217"/>
+                                        <rect key="frame" x="177" y="448" width="50" height="267"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
