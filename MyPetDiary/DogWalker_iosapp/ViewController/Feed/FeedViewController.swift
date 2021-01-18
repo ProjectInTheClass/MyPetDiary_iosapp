@@ -62,7 +62,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     // 날짜 선택 시 콜백 메소드
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print(formatter.string(from: date) + " 선택됨")
+        var selectedDate = formatter.string(from: date)
+        print(selectedDate + " 선택됨")
     }
     
     override func viewDidLoad() {

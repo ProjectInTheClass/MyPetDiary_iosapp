@@ -65,6 +65,7 @@ class AddDiaryViewController: UIViewController{
         let str = formatter.string(from: Date()) //문자열로 바꾸기
         showDate.text = "\(str)"   //라벨에 출력
         
+        
     }
     
 
