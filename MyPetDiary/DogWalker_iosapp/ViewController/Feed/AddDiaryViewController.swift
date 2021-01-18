@@ -56,6 +56,7 @@ class AddDiaryViewController: UIViewController{
         }
     }
     
+    // 선택된 날짜
     func getCurrentDateTime(){
         let formatter = DateFormatter() //객체 생성
         formatter.dateStyle = .long
@@ -65,6 +66,7 @@ class AddDiaryViewController: UIViewController{
         showDate.text = "\(str)"   //라벨에 출력
         
     }
+    
 
 
     override func viewDidLoad() {
