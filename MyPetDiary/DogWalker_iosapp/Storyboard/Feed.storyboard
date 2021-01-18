@@ -309,6 +309,10 @@
                     <navigationItem key="navigationItem" id="neh-fS-ZmF"/>
                     <connections>
                         <outlet property="imageView" destination="9Zy-TI-Gr5" id="A1O-M3-h4Y"/>
+                        <outlet property="isHospital" destination="4T6-Cc-WRC" id="Whm-3j-MF7"/>
+                        <outlet property="isMedicine" destination="co2-Um-MfL" id="0vW-nq-tZK"/>
+                        <outlet property="isWalked" destination="zAa-rV-01v" id="esV-nd-msc"/>
+                        <outlet property="isWashed" destination="i60-1u-5tf" id="ZcC-tR-PdZ"/>
                         <outlet property="showDate" destination="B8s-tr-XK4" id="tZx-RG-0Dp"/>
                     </connections>
                 </viewController>
