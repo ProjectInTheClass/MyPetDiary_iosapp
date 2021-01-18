@@ -9,11 +9,18 @@ import UIKit
 
 class AddPetInformationTableViewController: UITableViewController {
 
+    @IBOutlet weak var NameTextField: UITextField!
+    
+    @IBOutlet weak var SexSegmentedControl: UISegmentedControl!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
     }
 
+    
     
 }
