@@ -56,6 +56,7 @@ class AddDiaryViewController: UIViewController{
         }
     }
     
+    // 선택된 날짜
     func getCurrentDateTime(){
         let formatter = DateFormatter() //객체 생성
         formatter.dateStyle = .long
@@ -64,7 +65,9 @@ class AddDiaryViewController: UIViewController{
         let str = formatter.string(from: Date()) //문자열로 바꾸기
         showDate.text = "\(str)"   //라벨에 출력
         
+        
     }
+    
 
 
     override func viewDidLoad() {
@@ -161,7 +164,18 @@ class AddDiaryViewController: UIViewController{
         let destView = segue.destination
         
         // AddPostViewController로 타입캐스팅
+        // 캐스팅시에는 항상 실패할 상황을 염두하여 옵셔널 바인딩을 해준다.
+        guard let nextViewController = destView as? AddPostViewController else {
+            return
+        }
         
+        // 타입 캐스팅후 값 할당
+        nextViewController.receivedImage = self.imageView
+        nextViewController.receivedWalkSwitch = self.isWalked.isOn
+        nextViewController.receivedWashSwitch = self.isWashed.isOn
+        nextViewController.receivedMedicineSwitch = self.isMedicine.isOn
+        nextViewController.receivedHospitalSwitch = self.isHospital.isOn
+        nextViewController.receivedPostDate = self.showDate.text!
     }
     
 }

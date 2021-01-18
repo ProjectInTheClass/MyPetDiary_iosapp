@@ -16,6 +16,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     @IBOutlet weak var subView: UICollectionView!
     
     var dates = [Date]()
+    let formatter = DateFormatter()
 
     func setCalendar(){ // 달력 기본 설정
         // 달력의 평일 날짜 색
@@ -40,11 +41,13 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.scope = .month
         // event 색
         calendarView.appearance.eventDefaultColor = .red
+        calendarView.appearance.eventSelectionColor = .red
         // 캘린더에 이번달 날짜만 표시하기 위함
         calendarView.placeholderType = .none
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+    }
+    
+    // eventdot 표현 -> 오늘 한 일 표현한걸로 바꾸기
+    func presentEventDot(){
         let xmas = formatter.date(from: "2021-01-09")
         let sampledate = formatter.date(from: "2021-01-17")
         dates = [xmas!, sampledate!]
@@ -56,19 +59,16 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         }
         return 0
     }
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-////            guard let modalPresentView = self.storyboard?.instantiateViewController(identifier: "TdMemoViewController") as? TdMemoViewController else { return }
-//
-//            // 날짜를 원하는 형식으로 저장하기 위한 방법입니다.
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd"
-//            modalPresentView.date = dateFormatter.string(from: date)
-//
-//            self.present(modalPresentView, animated: true, completion: nil)
-//        }
+    
+    // 날짜 선택 시 콜백 메소드
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        var selectedDate = formatter.string(from: date)
+        print(selectedDate + " 선택됨")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        formatter.dateFormat = "yyyy-MM-dd"
         // Do any additional setup after loading the view.
         
         calendarView.delegate = self
