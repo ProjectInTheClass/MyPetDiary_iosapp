@@ -200,12 +200,16 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="117" id="SAw-ki-IwC">
                                         <rect key="frame" x="0.0" y="443" width="414" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SAw-ki-IwC" id="GpC-nH-6dg">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SAw-ki-IwC" id="GpC-nH-6dg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ch5-QZ-g5I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="ch5-QZ-g5I">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="rRu-nL-iQm"/>
+                                                        <constraint firstAttribute="width" constant="414" id="ytA-C1-RVV"/>
+                                                    </constraints>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -240,12 +244,16 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="193" id="NXt-Em-ZpE">
                                         <rect key="frame" x="0.0" y="659" width="414" height="193"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NXt-Em-ZpE" id="zPb-jR-8O3">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NXt-Em-ZpE" id="zPb-jR-8O3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="193"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAD-he-R4z">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="193"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="SD3-A5-3J0"/>
+                                                        <constraint firstAttribute="width" constant="414" id="xKt-3o-mwt"/>
+                                                    </constraints>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
@@ -278,6 +286,40 @@
                                                 <constraint firstItem="Epc-kX-9gk" firstAttribute="leading" secondItem="Pql-Hz-WOO" secondAttribute="leadingMargin" id="VWb-Ad-BDK"/>
                                                 <constraint firstItem="Epc-kX-9gk" firstAttribute="top" secondItem="Pql-Hz-WOO" secondAttribute="topMargin" id="fuk-vj-xzC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Epc-kX-9gk" secondAttribute="trailing" id="kvR-gg-9bz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="b2q-Fd-4TR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="59" id="RRG-JQ-KSg">
+                                        <rect key="frame" x="0.0" y="1157" width="414" height="59"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RRG-JQ-KSg" id="u0L-LQ-1Hd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E4h-gg-tHT">
+                                                    <rect key="frame" x="8" y="11" width="398" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abs-FO-F1n">
+                                                    <rect key="frame" x="8" y="11" width="398" height="37"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="등록하기!"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="E4h-gg-tHT" secondAttribute="trailing" id="4Ab-mN-NXD"/>
+                                                <constraint firstItem="abs-FO-F1n" firstAttribute="top" secondItem="u0L-LQ-1Hd" secondAttribute="topMargin" id="7SG-Tk-EHh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="abs-FO-F1n" secondAttribute="bottom" id="OkM-9d-1mt"/>
+                                                <constraint firstItem="abs-FO-F1n" firstAttribute="leading" secondItem="u0L-LQ-1Hd" secondAttribute="leadingMargin" id="RFb-is-ktw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="abs-FO-F1n" secondAttribute="trailing" id="U9C-Eb-SAb"/>
+                                                <constraint firstItem="E4h-gg-tHT" firstAttribute="top" secondItem="u0L-LQ-1Hd" secondAttribute="topMargin" id="VVi-1l-4HY"/>
+                                                <constraint firstItem="E4h-gg-tHT" firstAttribute="leading" secondItem="u0L-LQ-1Hd" secondAttribute="leadingMargin" id="YxE-if-8RE"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="E4h-gg-tHT" secondAttribute="bottom" id="hVI-4N-Lp2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
