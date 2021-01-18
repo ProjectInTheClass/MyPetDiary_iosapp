@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voh-wI-nTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="651"/>
+            <point key="canvasLocation" x="1029" y="554"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="ErJ-aU-pzO">

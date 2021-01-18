@@ -56,16 +56,16 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         }
         return 0
     }
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-            guard let modalPresentView = self.storyboard?.instantiateViewController(identifier: "TdMemoViewController") as? TdMemoViewController else { return }
-            
-            // 날짜를 원하는 형식으로 저장하기 위한 방법입니다.
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            modalPresentView.date = dateFormatter.string(from: date)
-
-            self.present(modalPresentView, animated: true, completion: nil)
-        }
+//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+////            guard let modalPresentView = self.storyboard?.instantiateViewController(identifier: "TdMemoViewController") as? TdMemoViewController else { return }
+//
+//            // 날짜를 원하는 형식으로 저장하기 위한 방법입니다.
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd"
+//            modalPresentView.date = dateFormatter.string(from: date)
+//
+//            self.present(modalPresentView, animated: true, completion: nil)
+//        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
