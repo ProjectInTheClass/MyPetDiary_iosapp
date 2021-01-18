@@ -89,7 +89,7 @@
         <!--Today Memo View Controller-->
         <scene sceneID="BCI-E6-Fx7">
             <objects>
-                <viewController id="uCq-ng-aoP" customClass="TodayMemoViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TdMemoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uCq-ng-aoP" customClass="TodayMemoViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IHb-xd-dWE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,12 +133,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="showDate2" destination="hpF-ni-4WZ" id="Gq4-4J-N63"/>
+                        <outlet property="showDate2" destination="hpF-ni-4WZ" id="1j8-5l-pHh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voh-wI-nTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="611"/>
+            <point key="canvasLocation" x="1916" y="651"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="ErJ-aU-pzO">
