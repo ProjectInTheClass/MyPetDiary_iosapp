@@ -15,6 +15,10 @@ class AddDiaryViewController: UIViewController{
     @IBOutlet weak var showDate: UILabel!
     let picker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var isWalked: UISwitch! // 산책 스위치
+    @IBOutlet weak var isWashed: UISwitch! // 목욕 스위치
+    @IBOutlet weak var isMedicine: UISwitch! // 약 스위치
+    @IBOutlet weak var isHospital: UISwitch! // 병원 스위치
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []

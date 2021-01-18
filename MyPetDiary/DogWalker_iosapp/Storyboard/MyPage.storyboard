@@ -236,66 +236,73 @@
         <!--Withdrawal View Controller-->
         <scene sceneID="Cxw-EG-UtL">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="formSheet" id="hcT-dO-e2X" customClass="WithdrawalViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="fullScreen" id="hcT-dO-e2X" customClass="WithdrawalViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GuZ-g1-TZ4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Der-pf-gnb">
-                                <rect key="frame" x="144" y="375" width="126" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xQ-wh-1gl">
-                                <rect key="frame" x="129" y="490" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="예">
-                                    <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="bQj-p2-Ka2"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴할 경우 데이터가 모두 사라집니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-kb-6WW">
-                                <rect key="frame" x="78" y="300" width="258" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e28-f7-0ld">
-                                <rect key="frame" x="231" y="490" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="아니오">
-                                    <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="keepUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="5UT-Kg-xDD"/>
-                                    <segue destination="e3g-Mb-nBV" kind="unwind" identifier="backToSetting" unwindAction="unwindFromModalWithSeque:" id="br3-Gc-wRi"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 작업은 되돌릴 수 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idy-C2-I9X">
-                                <rect key="frame" x="107.5" y="338" width="199" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-ql-unO">
+                                <rect key="frame" x="63" y="187" width="288" height="99"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Der-pf-gnb">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="23"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴할 경우 데이터가 모두 사라집니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-kb-6WW">
+                                        <rect key="frame" x="0.0" y="38" width="288" height="23"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 작업은 되돌릴 수 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idy-C2-I9X">
+                                        <rect key="frame" x="0.0" y="76" width="288" height="23"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Vve-gp-NTb">
+                                <rect key="frame" x="126" y="366" width="162" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xQ-wh-1gl">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <state key="normal" title="예">
+                                            <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="bQj-p2-Ka2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e28-f7-0ld">
+                                        <rect key="frame" x="110" y="0.0" width="52" height="36"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                        <state key="normal" title="아니오">
+                                            <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="keepUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="5UT-Kg-xDD"/>
+                                            <segue destination="e3g-Mb-nBV" kind="unwind" identifier="backToSetting" unwindAction="unwindFromModalWithSeque:" id="br3-Gc-wRi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ud1-Gg-AO9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GWd-kb-6WW" firstAttribute="top" secondItem="Ud1-Gg-AO9" secondAttribute="top" constant="300" id="6Xo-Xu-Eg3"/>
-                            <constraint firstItem="Der-pf-gnb" firstAttribute="top" secondItem="idy-C2-I9X" secondAttribute="bottom" constant="17" id="L0Q-RG-cRK"/>
-                            <constraint firstItem="idy-C2-I9X" firstAttribute="top" secondItem="GWd-kb-6WW" secondAttribute="bottom" constant="17" id="NmH-nw-PUm"/>
-                            <constraint firstItem="Der-pf-gnb" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="eWv-HP-rCL"/>
-                            <constraint firstItem="idy-C2-I9X" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="kLh-Ma-5I6"/>
-                            <constraint firstItem="GWd-kb-6WW" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="nSS-DI-KNV"/>
+                            <constraint firstItem="Vve-gp-NTb" firstAttribute="top" secondItem="eRM-ql-unO" secondAttribute="bottom" constant="80" id="4SY-lE-Mpp"/>
+                            <constraint firstItem="Vve-gp-NTb" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="B19-hK-h5e"/>
+                            <constraint firstItem="eRM-ql-unO" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="d7P-ak-9Pf"/>
+                            <constraint firstItem="eRM-ql-unO" firstAttribute="top" secondItem="Ud1-Gg-AO9" secondAttribute="top" constant="187" id="ymE-IO-2pr"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Dzj-Kw-SOC"/>
-                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

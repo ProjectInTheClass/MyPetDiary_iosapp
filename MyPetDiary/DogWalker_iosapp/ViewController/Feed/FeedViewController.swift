@@ -15,7 +15,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     @IBAction func unwindFromVC3(seque: UIStoryboardSegue){ }
     @IBOutlet weak var subView: UICollectionView!
     
-    
     func setCalendar(){ // 달력 기본 설정
         // 달력의 평일 날짜 색
         calendarView.appearance.titleDefaultColor = .black
@@ -72,4 +71,3 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDelegate
     }
     
 }
-

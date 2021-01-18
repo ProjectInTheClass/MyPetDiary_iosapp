@@ -9,24 +9,19 @@ import UIKit
 
 class TodayMemoViewController: UIViewController {
 
-    @IBOutlet weak var showDate2: UILabel!
+    static let identifier = "TdMemoViewController"
     
-    func getCurrentDateTime(){
-        let formatter = DateFormatter() //객체 생성
-        formatter.dateStyle = .long
-        formatter.timeStyle = .medium
-        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
-        let str = formatter.string(from: Date()) //문자열로 바꾸기
-        showDate2.text = "\(str)"   //라벨에 출력
-        
-    }
-
+    @IBOutlet weak var showDate2: UILabel!
+    @IBOutlet weak var showImage: UIImageView!
+    @IBOutlet weak var showMemo: UITextView!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        getCurrentDateTime()
     }
     
 
@@ -41,3 +36,5 @@ class TodayMemoViewController: UIViewController {
     */
 
 }
+
+
