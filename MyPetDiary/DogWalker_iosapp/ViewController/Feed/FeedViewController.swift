@@ -17,7 +17,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     var dates = [Date]()
     let formatter = DateFormatter()
-
+    var selectedDateString: String = ""
+    
     func setCalendar(){ // 달력 기본 설정
         // 달력의 평일 날짜 색
         calendarView.appearance.titleDefaultColor = .black
@@ -62,8 +63,14 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     // 날짜 선택 시 콜백 메소드
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        var selectedDate = formatter.string(from: date)
-        print(selectedDate + " 선택됨")
+        selectedDateString = formatter.string(from: date)
+        print(selectedDateString + " 선택됨")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
+        
+        AddDiaryViewController.selectedDate = self.selectedDateString
     }
     
     override func viewDidLoad() {

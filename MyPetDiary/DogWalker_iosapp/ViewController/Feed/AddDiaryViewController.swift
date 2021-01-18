@@ -26,31 +26,32 @@ class AddDiaryViewController: UIViewController{
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
+    var selectedDate: String = ""
     
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
-            self.walk.text = "산책완료!😄"
+            self.walk.text = "산책🙆🏻‍♀️"
         } else {
             self.walk.text = "산책"
         }
     }
     @IBAction func isOnWash(_ sender: UISwitch) {
         if sender.isOn {
-            self.wash.text = "목욕완료!😄"
+            self.wash.text = "목욕🙆🏻‍♀️"
         } else {
             self.wash.text = "목욕"
         }
     }
     @IBAction func isOnMedicine(_ sender: UISwitch) {
         if sender.isOn {
-            self.medicine.text = "약완료!😄"
+            self.medicine.text = "약🙆🏻‍♀️"
         } else {
             self.medicine.text = "약"
         }
     }
     @IBAction func isOnHospital(_ sender: UISwitch) {
         if sender.isOn {
-            self.hospital.text = "병원완료!😄"
+            self.hospital.text = "병원🙆🏻‍♀️"
         } else {
             self.hospital.text = "병원"
         }
@@ -58,13 +59,13 @@ class AddDiaryViewController: UIViewController{
     
     // 선택된 날짜
     func getCurrentDateTime(){
-        let formatter = DateFormatter() //객체 생성
-        formatter.dateStyle = .long
-        formatter.timeStyle = .medium
-        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
-        let str = formatter.string(from: Date()) //문자열로 바꾸기
-        showDate.text = "\(str)"   //라벨에 출력
-        
+//        let formatter = DateFormatter() //객체 생성
+//        formatter.dateStyle = .long
+//        formatter.timeStyle = .medium
+//        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
+//        let str = formatter.string(from: Date()) //문자열로 바꾸기
+//        showDate.text = "\(str)"   //라벨에 출력
+        showDate.text = selectedDate
         
     }
     
