@@ -24,7 +24,7 @@ class MyPageViewController: UIViewController,UICollectionViewDelegate,UICollecti
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("마이페이지 기기 토큰 확인:"+deviceToken)
         
-        ref.child("User").child("\(deviceToken)").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let username = value?["user_nickname"] as? String ?? ""
             
