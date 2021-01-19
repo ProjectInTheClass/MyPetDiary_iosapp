@@ -163,6 +163,11 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                         
                     }
                 }
+            } else {
+                self.walkingLabel.isHidden = true // hide
+                self.washLabel.isHidden = true
+                self.medicineLabel.isHidden = true
+                self.hospitalLabel.isHidden = true
             }
         })
     }
