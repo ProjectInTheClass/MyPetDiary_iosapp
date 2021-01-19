@@ -14,7 +14,9 @@ import FirebaseDatabase
 class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
 
     @IBOutlet var calendarView: FSCalendar!
-    @IBAction func unwindFromVC3(seque: UIStoryboardSegue){ }
+    @IBAction func unwindFromVC3(seque: UIStoryboardSegue){
+        showTodo()
+    }
     
     var ref: DatabaseReference! = Database.database().reference()
     
