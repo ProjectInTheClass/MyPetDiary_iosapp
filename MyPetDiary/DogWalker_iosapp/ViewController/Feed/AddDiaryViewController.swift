@@ -95,22 +95,24 @@ class AddDiaryViewController: UIViewController{
 //        })
         
         ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
-            let values = snapshot.value
-            let dic = values as! [String : [String:Any]]
-            for index in dic {
-                if (index.value["post_date"] as? String == self.showDate.text) {
-                    print(index.key)
-                    print(index.value["post_content"] ?? "")
-                    print(index.value["post_walk"] ?? false)
-                    print(index.value["post_wash"] ?? false)
-                    print(index.value["post_medicine"] ?? false)
-                    print(index.value["post_hospital"] ?? false)
-                    
-                    self.isWalked.isOn = (index.value["post_walk"] ?? false) as! Bool
-                    self.isWashed.isOn = (index.value["post_wash"] ?? false) as! Bool
-                    self.isMedicine.isOn = (index.value["post_medicine"] ?? false) as! Bool
-                    self.isHospital.isOn = (index.value["post_hospital"] ?? false) as! Bool
-                    
+            if snapshot.exists() {
+                let values = snapshot.value
+                let dic = values as! [String : [String:Any]]
+                for index in dic {
+                    if (index.value["post_date"] as? String == self.showDate.text) {
+                        print(index.key)
+                        print(index.value["post_content"] ?? "")
+                        print(index.value["post_walk"] ?? false)
+                        print(index.value["post_wash"] ?? false)
+                        print(index.value["post_medicine"] ?? false)
+                        print(index.value["post_hospital"] ?? false)
+                        
+                        self.isWalked.isOn = (index.value["post_walk"] ?? false) as! Bool
+                        self.isWashed.isOn = (index.value["post_wash"] ?? false) as! Bool
+                        self.isMedicine.isOn = (index.value["post_medicine"] ?? false) as! Bool
+                        self.isHospital.isOn = (index.value["post_hospital"] ?? false) as! Bool
+                        
+                    }
                 }
             }
         })

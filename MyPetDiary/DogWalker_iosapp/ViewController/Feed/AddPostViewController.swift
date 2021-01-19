@@ -53,32 +53,61 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             print("copy Text 확인용:"+contentToDB)
             
             let postRef = self.ref.child("Post")
-            let userTokenRef = postRef.child("\(deviceToken)").childByAutoId()
+//            var key = postRef.child("\(deviceToken)").childByAutoId().key
+//
+//            ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+//                if snapshot.exists() {
+//                    let values = snapshot.value
+//                    let dic = values as! [String : [String:Any]]
+//                    for index in dic {
+//                        if (index.value["post_date"] as? String == self.receivedPostDate) {
+//                            print(index.key)
+//                            key = index.value["post_key"] as? String
+//                        }
+//                    }
+//                } else {
+//                    key = postRef.child("\(deviceToken)").childByAutoId().key
+//                }
+//            })
+//            print(key as Any)
             
-            // 글 내용 저장
-            let postContentRef = userTokenRef.child("post_content")
-            postContentRef.setValue(contentToDB)
+            let DateRefKey = postRef.child("\(deviceToken)").child("\(receivedPostDate)")
             
-            // 글 업로드 시기 저장
-            let postUpdatedDateRef = userTokenRef.child("post_updated_date")
-            postUpdatedDateRef.setValue(current_date_string)
+            let post = ["post_content": contentToDB, // 글 내용 저장
+                        "post_updated_date": current_date_string, // 글 업로드 시기 저장
+                        "post_date": receivedPostDate, // 글 자체의 날짜 저장
+                        "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+                        "post_wash": receivedWashSwitch,
+                        "post_medicine": receivedMedicineSwitch,
+                        "post_hospital": receivedHospitalSwitch] as [String : Any]
             
-            // 글 자체의 날짜 저장
-            let postDateRef = userTokenRef.child("post_date")
-            postDateRef.setValue(receivedPostDate)
+            //let childUpdates = ["/Post/\(deviceToken)/\(receivedPostDate)/": post]
+            DateRefKey.setValue(post)
             
-            // 산책, 목욕, 약, 병원 스위치 상태 저장
-            let isWalkRef = userTokenRef.child("post_walk")
-            isWalkRef.setValue(receivedWalkSwitch)
-            
-            let isWashRef = userTokenRef.child("post_wash")
-            isWashRef.setValue(receivedWashSwitch)
-            
-            let isMedicineRef = userTokenRef.child("post_medicine")
-            isMedicineRef.setValue(receivedMedicineSwitch)
-            
-            let isHospitalRef = userTokenRef.child("post_hospital")
-            isHospitalRef.setValue(receivedHospitalSwitch)
+//            // 글 내용 저장
+//            let postContentRef = userTokenRef.child("post_content")
+//            postContentRef.setValue(contentToDB)
+//
+//            // 글 업로드 시기 저장
+//            let postUpdatedDateRef = userTokenRef.child("post_updated_date")
+//            postUpdatedDateRef.setValue(current_date_string)
+//
+//            // 글 자체의 날짜 저장
+//            let postDateRef = userTokenRef.child("post_date")
+//            postDateRef.setValue(receivedPostDate)
+//
+//            // 산책, 목욕, 약, 병원 스위치 상태 저장
+//            let isWalkRef = userTokenRef.child("post_walk")
+//            isWalkRef.setValue(receivedWalkSwitch)
+//
+//            let isWashRef = userTokenRef.child("post_wash")
+//            isWashRef.setValue(receivedWashSwitch)
+//
+//            let isMedicineRef = userTokenRef.child("post_medicine")
+//            isMedicineRef.setValue(receivedMedicineSwitch)
+//
+//            let isHospitalRef = userTokenRef.child("post_hospital")
+//            isHospitalRef.setValue(receivedHospitalSwitch)
             
         }
         
@@ -111,18 +140,20 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
 //        })
         
         ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
-            let values = snapshot.value
-            let dic = values as! [String : [String:Any]]
-            for index in dic {
-                if (index.value["post_date"] as? String == self.receivedPostDate) {
-                    print(index.key)
-                    print(index.value["post_content"] ?? "")
-                    print(index.value["post_walk"] ?? false)
-                    print(index.value["post_wash"] ?? false)
-                    print(index.value["post_medicine"] ?? false)
-                    print(index.value["post_hospital"] ?? false)
-                    
-                    self.textField.text = index.value["post_content"] as? String
+            if snapshot.exists() {
+                let values = snapshot.value
+                let dic = values as! [String : [String:Any]]
+                for index in dic {
+                    if (index.value["post_date"] as? String == self.receivedPostDate) {
+                        print(index.key)
+                        print(index.value["post_content"] ?? "")
+                        print(index.value["post_walk"] ?? false)
+                        print(index.value["post_wash"] ?? false)
+                        print(index.value["post_medicine"] ?? false)
+                        print(index.value["post_hospital"] ?? false)
+                        
+                        self.textField.text = index.value["post_content"] as? String
+                    }
                 }
             }
         })
