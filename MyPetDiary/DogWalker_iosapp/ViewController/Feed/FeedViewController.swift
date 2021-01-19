@@ -13,7 +13,27 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 
     @IBOutlet var calendarView: FSCalendar!
     @IBAction func unwindFromVC3(seque: UIStoryboardSegue){ }
-    @IBOutlet weak var subView: UICollectionView!
+    
+    @IBOutlet weak var subPostView: UIStackView!
+    // subview
+    @IBOutlet weak var subImageView: UIImageView!
+    @IBOutlet weak var walkingLabel: UILabel!
+    @IBOutlet weak var washLabel: UILabel!
+    @IBOutlet weak var medicineLabel: UILabel!
+    @IBOutlet weak var hospitalLabel: UILabel!
+    
+    // tab하면 화면 넘어가기
+    @IBAction func showPostTapGesture(_ sender: Any) {
+        // 뷰 객체 얻어오기 (storyboard ID로 ViewController구분)
+        guard let uvc = storyboard?.instantiateViewController(identifier: "TdMemoViewController") else {
+            return
+        }
+        
+        // 화면 전환 애니메이션 설정
+        uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        
+        self.present(uvc, animated: true)
+    }
     
     var dates = [Date]()
     let formatter = DateFormatter()
@@ -71,34 +91,26 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
         
         AddDiaryViewController.selectedDate = self.selectedDateString
+        
+        guard let TodayMemoViewController = segue.destination as? TodayMemoViewController else {return}
+        
+        TodayMemoViewController.selectedDate = self.selectedDateString
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "yyyy-MM-dd"
         // Do any additional setup after loading the view.
+        // tab하면 모달 띄우기
+        self.subPostView.isUserInteractionEnabled = true
+        self.subPostView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showPostTapGesture)))
         
         calendarView.delegate = self
         calendarView.dataSource = self
         
+        presentEventDot()
         setCalendar()
         
     }
 
-}
-
-extension FeedViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    // dataCell과 memoCell의 사이즈를 결정하는 메소드
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let cellHeight = subView.frame.height / Config.AspectRatio.cellAspectRatio
-        let cellWidth = subView.frame.width / Config.AspectRatio.cellAspectRatio
-        
-        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize(width: 0, height: 0) }
-        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        
-        return CGSize(width: cellWidth, height: cellHeight)
-    }
-    
 }

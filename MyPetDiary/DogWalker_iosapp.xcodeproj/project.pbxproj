@@ -34,7 +34,6 @@
 		7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7640D6AB25AED43C00A15B14 /* DayInfo.swift */; };
 		7655053925A31D2300FA5CFE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655053825A31D2300FA5CFE /* FeedViewController.swift */; };
 		7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655054325A4763600FA5CFE /* AddDiaryViewController.swift */; };
-		766EFA5825AEC1CD00643504 /* SubMemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */; };
 		769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */; };
 		76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */; };
 		D2729DE7BE144748584B6206 /* Pods_DogWalker_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */; };
@@ -72,7 +71,6 @@
 		7640D6AB25AED43C00A15B14 /* DayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfo.swift; sourceTree = "<group>"; };
 		7655053825A31D2300FA5CFE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		7655054325A4763600FA5CFE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
-		766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMemoViewController.swift; path = DogWalker_iosapp/ViewController/Feed/TodayMemoViewController.swift; sourceTree = SOURCE_ROOT; };
 		A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogWalker_iosapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +103,6 @@
 			children = (
 				7655053825A31D2300FA5CFE /* FeedViewController.swift */,
 				7655054325A4763600FA5CFE /* AddDiaryViewController.swift */,
-				766EFA5725AEC1CD00643504 /* SubMemoCollectionViewCell.swift */,
 				76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */,
 				769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */,
 			);
@@ -330,7 +327,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7640D6A325AED24000A15B14 /* TodayDateCenter.swift in Sources */,
-				766EFA5825AEC1CD00643504 /* SubMemoCollectionViewCell.swift in Sources */,
 				7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */,
 				76005369259DB48B0058F313 /* ViewController.swift in Sources */,
 				76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */,

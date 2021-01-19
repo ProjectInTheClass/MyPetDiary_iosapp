@@ -7,7 +7,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,51 +18,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zkR-uU-gkM">
+                                <rect key="frame" x="152" y="348" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rp-qv-HRy" customClass="FSCalendar">
                                 <rect key="frame" x="5" y="93" width="404" height="520"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8aJ-Jb-6KR">
-                                <rect key="frame" x="5" y="618" width="404" height="190"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sDW-Fd-yIX">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="9Yf-BV-ylN">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8gw-9j-d7a">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemoCollectionViewCell" id="sa2-Hh-ye0" customClass="SubMemoCollectionViewCell" customModule="DogWalker_iosapp" customModuleProvider="target">
-                                        <rect key="frame" x="138" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t7d-lA-Jrk">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IDG-Mq-JrT">
+                                <rect key="frame" x="30" y="623" width="364" height="180"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="HnK-2z-LyL">
+                                        <rect key="frame" x="0.0" y="5" width="170" height="170"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HnK-2z-LyL" secondAttribute="height" multiplier="1:1" id="gTr-jJ-LWU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LKB-ex-846">
+                                        <rect key="frame" x="200" y="41" width="164" height="98"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌿산책" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-cB-Fon">
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="17"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🛁목욕" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoO-4F-vYd">
+                                                <rect key="frame" x="0.0" y="27" width="164" height="17"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💊약" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-gQ-VK3">
+                                                <rect key="frame" x="0.0" y="54" width="164" height="17"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏥병원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-3P-lrD">
+                                                <rect key="frame" x="0.0" y="81" width="164" height="17"/>
+                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="HnK-2z-LyL" firstAttribute="top" secondItem="IDG-Mq-JrT" secondAttribute="top" constant="5" id="5bw-GG-1Jz"/>
+                                    <constraint firstAttribute="bottom" secondItem="HnK-2z-LyL" secondAttribute="bottom" constant="5" id="Azn-iR-ajO"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6q8-WL-WCL" appends="YES" id="SCd-eD-Gji"/>
+                                </connections>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="svM-9h-cff"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="3Rp-qv-HRy" secondAttribute="trailing" constant="5" id="7ql-8t-fZu"/>
-                            <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="8aJ-Jb-6KR" secondAttribute="bottom" constant="5" id="FJY-7N-tRR"/>
+                            <constraint firstItem="IDG-Mq-JrT" firstAttribute="bottom" secondItem="svM-9h-cff" secondAttribute="bottom" constant="-10" id="JuB-mO-rE4"/>
                             <constraint firstItem="3Rp-qv-HRy" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="5" id="MLd-8K-6c2"/>
-                            <constraint firstItem="8aJ-Jb-6KR" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="5" id="Rhh-Fa-afT"/>
                             <constraint firstItem="3Rp-qv-HRy" firstAttribute="centerX" secondItem="Frm-uw-W63" secondAttribute="centerX" id="T2i-bw-YHI"/>
                             <constraint firstItem="3Rp-qv-HRy" firstAttribute="top" secondItem="svM-9h-cff" secondAttribute="top" constant="5" id="aIV-oD-Vv7"/>
+                            <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="IDG-Mq-JrT" secondAttribute="trailing" constant="20" id="dbd-IU-4Ch"/>
+                            <constraint firstItem="IDG-Mq-JrT" firstAttribute="top" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="10" id="ecX-ma-vCc"/>
+                            <constraint firstItem="IDG-Mq-JrT" firstAttribute="leading" secondItem="svM-9h-cff" secondAttribute="leading" constant="30" id="hTd-Lp-lG5"/>
                             <constraint firstItem="svM-9h-cff" firstAttribute="bottom" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="200" id="i4E-Og-PSR"/>
-                            <constraint firstItem="8aJ-Jb-6KR" firstAttribute="top" secondItem="3Rp-qv-HRy" secondAttribute="bottom" constant="5" id="qhN-qB-rLu"/>
-                            <constraint firstItem="svM-9h-cff" firstAttribute="trailing" secondItem="8aJ-Jb-6KR" secondAttribute="trailing" constant="5" id="t6J-Om-Nhs"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -79,10 +102,20 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="3Rp-qv-HRy" id="31P-l7-hbG"/>
-                        <outlet property="subView" destination="8aJ-Jb-6KR" id="GCH-qx-dse"/>
+                        <outlet property="hospitalLabel" destination="Iy1-3P-lrD" id="BTh-YW-pFG"/>
+                        <outlet property="medicineLabel" destination="qlG-gQ-VK3" id="t5T-Jq-Ya7"/>
+                        <outlet property="subImageView" destination="HnK-2z-LyL" id="vvn-6b-EvZ"/>
+                        <outlet property="subPostView" destination="IDG-Mq-JrT" id="zuO-pC-wWH"/>
+                        <outlet property="walkingLabel" destination="dkc-cB-Fon" id="30u-Ly-a7P"/>
+                        <outlet property="washLabel" destination="LoO-4F-vYd" id="i5J-FM-qWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ie8-Au-DVE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6q8-WL-WCL">
+                    <connections>
+                        <action selector="showPostTapGesture:" destination="AjM-WY-uif" id="lPP-sF-Bhv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1915.9420289855075" y="-102.45535714285714"/>
         </scene>
@@ -94,53 +127,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kv6-vZ-TIN">
-                                <rect key="frame" x="50" y="194" width="314" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="O8V-Ff-Cas"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
-                                <rect key="frame" x="87" y="435" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="iyF-mz-Vod"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-ni-4WZ">
-                                <rect key="frame" x="166" y="124" width="82.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="paG-Mi-Rmr">
+                                <rect key="frame" x="40" y="94" width="334" height="668"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-ni-4WZ">
+                                        <rect key="frame" x="107.5" y="0.0" width="119.5" height="30"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kv6-vZ-TIN">
+                                        <rect key="frame" x="35" y="80" width="264.5" height="264.5"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kv6-vZ-TIN" secondAttribute="height" multiplier="1:1" id="OnP-Rj-QrC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
+                                        <rect key="frame" x="0.0" y="394.5" width="334" height="273.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vAs-7h-VGR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vAs-7h-VGR" firstAttribute="trailing" secondItem="Kv6-vZ-TIN" secondAttribute="trailing" constant="50" id="03N-lO-Fh3"/>
-                            <constraint firstItem="vAs-7h-VGR" firstAttribute="bottom" secondItem="UAh-Sh-2UX" secondAttribute="bottom" constant="299" id="1gQ-Dj-Dn4"/>
-                            <constraint firstItem="hpF-ni-4WZ" firstAttribute="centerX" secondItem="IHb-xd-dWE" secondAttribute="centerX" id="5Mj-el-aRF"/>
-                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="centerX" secondItem="UAh-Sh-2UX" secondAttribute="centerX" id="8N9-gH-Dk7"/>
-                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="centerX" secondItem="IHb-xd-dWE" secondAttribute="centerX" id="TK3-ba-bJg"/>
-                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="leading" secondItem="vAs-7h-VGR" secondAttribute="leading" constant="50" id="YaV-g1-60L"/>
-                            <constraint firstItem="hpF-ni-4WZ" firstAttribute="top" secondItem="vAs-7h-VGR" secondAttribute="top" constant="80" id="aBn-4P-qJz"/>
-                            <constraint firstItem="Kv6-vZ-TIN" firstAttribute="top" secondItem="vAs-7h-VGR" secondAttribute="top" constant="150" id="hHC-UQ-Pv8"/>
-                            <constraint firstItem="UAh-Sh-2UX" firstAttribute="leading" secondItem="vAs-7h-VGR" secondAttribute="leading" constant="87" id="mj6-yk-rV3"/>
+                            <constraint firstItem="paG-Mi-Rmr" firstAttribute="top" secondItem="vAs-7h-VGR" secondAttribute="top" constant="50" id="1cC-ze-rka"/>
+                            <constraint firstItem="paG-Mi-Rmr" firstAttribute="centerX" secondItem="IHb-xd-dWE" secondAttribute="centerX" id="aa0-g8-BKy"/>
+                            <constraint firstItem="paG-Mi-Rmr" firstAttribute="centerX" secondItem="IHb-xd-dWE" secondAttribute="centerX" id="mX5-aH-O6H"/>
+                            <constraint firstItem="vAs-7h-VGR" firstAttribute="bottom" secondItem="paG-Mi-Rmr" secondAttribute="bottom" constant="100" id="tZa-Xe-BlH"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="showDate2" destination="hpF-ni-4WZ" id="1j8-5l-pHh"/>
-                        <outlet property="showImage" destination="Kv6-vZ-TIN" id="NrP-ry-wGM"/>
-                        <outlet property="showMemo" destination="UAh-Sh-2UX" id="iqm-hJ-aBH"/>
+                        <outlet property="cellTitle" destination="hpF-ni-4WZ" id="IKX-JW-TM3"/>
+                        <outlet property="memoContent" destination="UAh-Sh-2UX" id="cpm-9u-RHL"/>
+                        <outlet property="subImageView" destination="Kv6-vZ-TIN" id="jLf-8s-h53"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voh-wI-nTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1029" y="554"/>
+            <point key="canvasLocation" x="1915.9420289855075" y="591.96428571428567"/>
         </scene>
         <!--Add Diary View Controller-->
         <scene sceneID="ErJ-aU-pzO">
@@ -248,32 +279,32 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-rV-01v">
                                                         <rect key="frame" x="0.0" y="6" width="51" height="50.5"/>
-                                                        <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="thumbTintColor" red="1" green="0.68522844452365117" blue="0.67853194624338664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.49659388145130612" green="0.87228701813052401" blue="0.0064798640175312821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="isOnWalk:" destination="Q0i-WC-PRY" eventType="valueChanged" id="u5y-l5-Htn"/>
                                                         </connections>
                                                     </switch>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="i60-1u-5tf">
                                                         <rect key="frame" x="76" y="6" width="51" height="50.5"/>
-                                                        <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="thumbTintColor" red="1" green="0.68522844449999998" blue="0.67853194620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.12898559962565539" green="0.43474781370304511" blue="0.68912606287484213" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" red="0.16326833382250833" green="0.55029826106383661" blue="0.87228701813052401" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="isOnWash:" destination="Q0i-WC-PRY" eventType="valueChanged" id="Hzg-Tl-71u"/>
                                                         </connections>
                                                     </switch>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="co2-Um-MfL">
                                                         <rect key="frame" x="152" y="6" width="51" height="50.5"/>
-                                                        <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="thumbTintColor" red="1" green="0.68522844449999998" blue="0.67853194620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" red="0.84278053050000001" green="0.37264484170000001" blue="0.45808833840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="isOnMedicine:" destination="Q0i-WC-PRY" eventType="valueChanged" id="O4E-9s-dfb"/>
                                                         </connections>
                                                     </switch>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4T6-Cc-WRC">
                                                         <rect key="frame" x="228" y="6" width="51" height="50.5"/>
-                                                        <color key="onTintColor" red="1" green="0.33106323920000003" blue="0.35637570219999998" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="thumbTintColor" red="1" green="0.68522844449999998" blue="0.67853194620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="onTintColor" red="1" green="0.75641269443196801" blue="0.033762513762950475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" red="1" green="0.84626324620000004" blue="0.015725484389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="isOnHospital:" destination="Q0i-WC-PRY" eventType="valueChanged" id="nBK-Mu-vnh"/>
                                                         </connections>
@@ -438,11 +469,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="2" width="1086" height="1086"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
