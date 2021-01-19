@@ -94,6 +94,38 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         print("목욕 스위치 확인: \(receivedWashSwitch)")
         print("약 스위치 확인: \(receivedMedicineSwitch)")
         print("병원 스위치 확인: \(receivedHospitalSwitch)")
+        
+        
+        // 기기 토큰 확인하기
+        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        print("글 쓰기 기기 토큰 확인:"+deviceToken)
+        
+//        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+//            for child in snapshot.children {
+//                let snap = child as! DataSnapshot
+//                if dictionary["post_date"] as! String == showDate {
+//                    print(snap.key) // showDate가 들어있는 상위 디렉토리 이름
+//                    print(dictionary["post_content"] as? String)
+//                }
+//            }
+//        })
+        
+        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+            let values = snapshot.value
+            let dic = values as! [String : [String:Any]]
+            for index in dic {
+                if (index.value["post_date"] as? String == self.receivedPostDate) {
+                    print(index.key)
+                    print(index.value["post_content"] ?? "")
+                    print(index.value["post_walk"] ?? false)
+                    print(index.value["post_wash"] ?? false)
+                    print(index.value["post_medicine"] ?? false)
+                    print(index.value["post_hospital"] ?? false)
+                    
+                    self.textField.text = index.value["post_content"] as? String
+                }
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
