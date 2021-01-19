@@ -188,7 +188,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-19-noF">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-19-noF">
                                 <rect key="frame" x="5" y="91" width="404" height="715"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X54-hQ-gTU">
@@ -275,9 +275,7 @@
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="LER-zY-md6" firstAttribute="leading" secondItem="ZyJ-Wo-8VT" secondAttribute="trailing" constant="45.5" id="3nb-7c-7oK"/>
                                                     <constraint firstItem="LER-zY-md6" firstAttribute="baseline" secondItem="ZyJ-Wo-8VT" secondAttribute="firstBaseline" id="aqw-kR-EXv"/>
-                                                    <constraint firstItem="svq-f7-rXG" firstAttribute="leading" secondItem="LER-zY-md6" secondAttribute="trailing" constant="54.5" id="jbc-M1-HZE"/>
                                                     <constraint firstItem="ZyJ-Wo-8VT" firstAttribute="top" secondItem="BZ7-fF-eHY" secondAttribute="topMargin" id="wxT-kX-oeA"/>
                                                 </constraints>
                                             </stackView>
@@ -352,9 +350,9 @@
                         <color key="backgroundColor" red="1" green="0.94267677514529891" blue="0.93744017837836924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ojO-l4-thD" firstAttribute="trailing" secondItem="dcf-19-noF" secondAttribute="trailing" constant="5" id="0dd-1K-DoF"/>
-                            <constraint firstItem="ojO-l4-thD" firstAttribute="bottom" secondItem="dcf-19-noF" secondAttribute="bottom" constant="5" id="5ht-pX-Kak"/>
+                            <constraint firstItem="ojO-l4-thD" firstAttribute="bottom" secondItem="dcf-19-noF" secondAttribute="bottom" constant="7" id="5ht-pX-Kak"/>
                             <constraint firstItem="dcf-19-noF" firstAttribute="leading" secondItem="ojO-l4-thD" secondAttribute="leading" constant="5" id="VDg-OI-dii"/>
-                            <constraint firstItem="dcf-19-noF" firstAttribute="top" secondItem="ojO-l4-thD" secondAttribute="top" constant="5" id="iRc-V6-SuI"/>
+                            <constraint firstItem="dcf-19-noF" firstAttribute="top" secondItem="ojO-l4-thD" secondAttribute="top" constant="3" id="iRc-V6-SuI"/>
                             <constraint firstItem="dcf-19-noF" firstAttribute="centerX" secondItem="EGs-3Q-KZD" secondAttribute="centerX" id="jqx-So-aFn"/>
                         </constraints>
                     </view>

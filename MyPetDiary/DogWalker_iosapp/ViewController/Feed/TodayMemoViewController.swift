@@ -22,7 +22,7 @@ class TodayMemoViewController: UIViewController {
         let formatter = DateFormatter() //객체 생성
         formatter.dateStyle = .long
         formatter.timeStyle = .medium
-        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
+        formatter.dateFormat = "yyyy-MM-dd" //데이터 포멧 설정
         let str = formatter.string(from: Date()) //문자열로 바꾸기
         if selectedDate == "" {
             cellTitle.text = "\(str)"   //라벨에 출력

@@ -103,6 +103,19 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         
     }
     
+    func showTodo(){
+        walkingLabel.isHidden = true // hide
+        washLabel.isHidden = true
+        medicineLabel.isHidden = true
+        hospitalLabel.isHidden = true
+        //위에꺼 지우지말고 아래에 추가
+        // walkingLabel, washLabel, medicineLabel, hospitalLabel 데이터 있으면
+        // if 산책switchison {walkingLabel.isHidden = false}
+        // else if 목욕switchison {washLabel.isHidden = false}
+        // else if 약switchison {medicineLabel.isHidden = false}
+        // else if 병원switchison {hospitalLabel.isHidden = false
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -116,6 +129,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         
         presentEventDot()
         setCalendar()
+        
+        showTodo()
         
     }
 
