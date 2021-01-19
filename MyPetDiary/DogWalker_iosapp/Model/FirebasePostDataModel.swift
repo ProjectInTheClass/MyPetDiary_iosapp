@@ -9,7 +9,6 @@ import Foundation
 import Firebase
 
 class FirebasePostDataModel: NSObject {
-    var ref: DatabaseReference
     
     var post_content: String // 메모 내용
     var post_date: String // 메모 자체 날짜
@@ -24,8 +23,19 @@ class FirebasePostDataModel: NSObject {
          post_updated_date: String, post_image: String,
          post_walk: Bool, post_wash: Bool, post_medicine: Bool, post_hospital: Bool) {
         
-        
+        self.post_content = post_content
+        self.post_date = post_date
+        self.post_updated_date = post_updated_date
+        self.post_image = post_image
+        self.post_walk = post_walk
+        self.post_wash = post_wash
+        self.post_medicine = post_medicine
+        self.post_hospital = post_hospital
     }
     
-    func 
+    convenience override init() {
+        self.init(post_content: "", post_date: "",
+                  post_updated_date: "", post_image: "",
+                  post_walk: false, post_wash: false, post_medicine: false, post_hospital: false)
+    }
 }
