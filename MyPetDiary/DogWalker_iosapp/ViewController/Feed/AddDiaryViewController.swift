@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import MobileCoreServices
 import Photos
+import Firebase
+import FirebaseDatabase
 
 class AddDiaryViewController: UIViewController{
     
@@ -27,6 +29,8 @@ class AddDiaryViewController: UIViewController{
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
     var selectedDate: String = ""
+    
+    var ref: DatabaseReference! = Database.database().reference()
     
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
@@ -75,6 +79,45 @@ class AddDiaryViewController: UIViewController{
         super.viewDidLoad()
         picker.delegate = self
         getCurrentDateTime()
+        
+        // 기기 토큰 확인하기
+        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        print("글 쓰기 기기 토큰 확인:"+deviceToken)
+        
+//        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+//            for child in snapshot.children {
+//                let snap = child as! DataSnapshot
+//                if dictionary["post_date"] as! String == showDate {
+//                    print(snap.key) // showDate가 들어있는 상위 디렉토리 이름
+//                    print(dictionary["post_content"] as? String)
+//                }
+//            }
+//        })
+        
+        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                let values = snapshot.value
+                let dic = values as! [String : [String:Any]]
+                for index in dic {
+                    if (index.value["post_date"] as? String == self.showDate.text) {
+                        print(index.key)
+                        print(index.value["post_content"] ?? "")
+                        print(index.value["post_walk"] ?? false)
+                        print(index.value["post_wash"] ?? false)
+                        print(index.value["post_medicine"] ?? false)
+                        print(index.value["post_hospital"] ?? false)
+                        
+                        self.isWalked.isOn = (index.value["post_walk"] ?? false) as! Bool
+                        self.isWashed.isOn = (index.value["post_wash"] ?? false) as! Bool
+                        self.isMedicine.isOn = (index.value["post_medicine"] ?? false) as! Bool
+                        self.isHospital.isOn = (index.value["post_hospital"] ?? false) as! Bool
+                        
+                    }
+                }
+            }
+        })
+        
+        
     }
     
     func settingAlert(){
@@ -177,7 +220,7 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedMedicineSwitch = self.isMedicine.isOn
         nextViewController.receivedHospitalSwitch = self.isHospital.isOn
         nextViewController.receivedPostDate = self.showDate.text!
-        print("showDate:"+selectedDate)
+        print("showDate:"+showDate.text!)
     }
     
 }
