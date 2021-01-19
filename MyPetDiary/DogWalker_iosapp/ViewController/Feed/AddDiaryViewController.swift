@@ -177,6 +177,7 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedMedicineSwitch = self.isMedicine.isOn
         nextViewController.receivedHospitalSwitch = self.isHospital.isOn
         nextViewController.receivedPostDate = self.showDate.text!
+        print("showDate:"+selectedDate)
     }
     
 }

@@ -379,7 +379,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-Wl-eqg">
-                                        <rect key="frame" x="168.5" y="390" width="67" height="28"/>
+                                        <rect key="frame" x="168.5" y="390" width="67" height="48"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                         <state key="normal" title="DONE">
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -390,7 +390,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhP-F8-4Qe">
-                                        <rect key="frame" x="177" y="448" width="50" height="267"/>
+                                        <rect key="frame" x="177" y="468" width="50" height="247"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

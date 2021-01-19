@@ -7,10 +7,14 @@
 
 import UIKit
 import RealmSwift
+import Firebase
+import FirebaseDatabase
 
 class SubMemoCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "MemoCollectionViewCell"
+    
+    var ref: DatabaseReference! = Database.database().reference()
 
     @IBOutlet weak var memoView: UIView!
     @IBOutlet weak var cellTitle: UILabel!
@@ -46,6 +50,20 @@ class SubMemoCollectionViewCell: UICollectionViewCell {
         
         // section line 설정
         sectionLineWidth.constant = memoContent.bounds.width / Config.AspectRatio.sectionLine
+        
+        // 메모 불러오기 전 기기 토큰 확인하기
+        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        print("메모 불러오기 전 저장된 기기토큰 확인:"+deviceToken)
+        
+//        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: { (snapshot) in
+//            for child in snapshot.children {
+//                let snap = child as! DataSnapshot
+//                if dictionary["post_updated_date"] as! String == dateString
+//            }
+//
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
     }
     
     /// 사용자가 캘린더에서 어떤 날짜를 선택하면 memoview의 title 설정을 해주는 메소드
@@ -56,7 +74,7 @@ class SubMemoCollectionViewCell: UICollectionViewCell {
         if let noti = sender as? Notification { // 특정 날짜를 클릭하여, 노티피케이션 옵저버의 호출로 실행되었을 경우.
             guard let receivedDate = noti.object as? Date else { return }
             clickDate = receivedDate
-        }else if let today = sender as? Date {  // 초기 로드 시, viewDidLoad()에서 호출되었을 경우.
+        } else if let today = sender as? Date {  // 초기 로드 시, viewDidLoad()에서 호출되었을 경우.
             clickDate = today
         }
         
@@ -74,8 +92,7 @@ class SubMemoCollectionViewCell: UICollectionViewCell {
         cellTitle.text = dateString + " " + "cellTitle".localizedLowercase
 //        cellTitle.text = "\(year).\(month).\(day)" + " " + "cellTitle".localized
         
-        userClickDate = clickDate
-
+        
         
 //        // db에서 해당 날짜의 메모를 찾아서 memocontent textview에 보여주기
 //        if clickDay.count != 0 {    // clickDay는 초기 실행 시는 today이고, 특정 날짜 선택 시 호출될 때는 특정 날짜 date임.
