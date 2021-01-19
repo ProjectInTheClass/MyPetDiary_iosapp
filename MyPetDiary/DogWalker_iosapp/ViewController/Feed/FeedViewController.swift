@@ -88,22 +88,28 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
         
-        AddDiaryViewController.selectedDate = self.selectedDateString
+        if segue.identifier == "ShowSubSegue" {
+            
+            guard let TodayMemoViewController = segue.destination as? TodayMemoViewController else {return}
+            
+            TodayMemoViewController.selectedDate = self.selectedDateString
+        } else if segue.identifier == "AddPostSegue" {
+            
+            guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
+            
+            AddDiaryViewController.selectedDate = self.selectedDateString
+        }
         
-        guard let TodayMemoViewController = segue.destination as? TodayMemoViewController else {return}
-        
-        TodayMemoViewController.selectedDate = self.selectedDateString
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "yyyy-MM-dd"
         // Do any additional setup after loading the view.
-        // tab하면 모달 띄우기
-        self.subPostView.isUserInteractionEnabled = true
-        self.subPostView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showPostTapGesture)))
+//        // tab하면 모달 띄우기
+//        self.subPostView.isUserInteractionEnabled = true
+//        self.subPostView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showPostTapGesture)))
         
         calendarView.delegate = self
         calendarView.dataSource = self

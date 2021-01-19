@@ -15,12 +15,22 @@ class TodayMemoViewController: UIViewController {
     @IBOutlet weak var subImageView: UIImageView!
     @IBOutlet weak var memoContent: UITextView!
     
-    var userClickDate: Date?
     var selectedDate: String = ""
     
     // 선택된 날짜
     func getCurrentDateTime(){
-        cellTitle.text = selectedDate
+        let formatter = DateFormatter() //객체 생성
+        formatter.dateStyle = .long
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "yyyy.MM.dd" //데이터 포멧 설정
+        let str = formatter.string(from: Date()) //문자열로 바꾸기
+        if selectedDate == "" {
+            cellTitle.text = "\(str)"   //라벨에 출력
+        }else{
+            cellTitle.text = selectedDate
+
+        }
+        
     }
 
     override func viewDidLoad() {
