@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2eF-3M-egb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jn3-b7-InQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -101,9 +101,6 @@
                     <navigationItem key="navigationItem" title="My Page" id="KJO-4C-z8S">
                         <barButtonItem key="rightBarButtonItem" title="setting" image="gearshape" catalog="system" id="wBz-Xj-UL9">
                             <color key="tintColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="GeC-B7-BW7" kind="show" id="hLZ-Sp-bGa"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -261,12 +258,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="프로필" id="7ID-jI-s5w">
-                        <barButtonItem key="rightBarButtonItem" title="Setting" image="gearshape" catalog="system" id="JlO-Od-gav"/>
+                        <barButtonItem key="rightBarButtonItem" title="Setting" image="gearshape" catalog="system" id="JlO-Od-gav">
+                            <connections>
+                                <segue destination="GeC-B7-BW7" kind="show" id="iCY-tM-HYe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gq0-dz-vN5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592.753623188406" y="1135.0446428571429"/>
+            <point key="canvasLocation" x="2557" y="1595"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="dVJ-It-Uc1">
@@ -284,17 +285,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qVO-De-gWg">
-                                            <rect key="frame" x="143.5" y="26" width="127" height="169"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qVO-De-gWg">
+                                            <rect key="frame" x="143.5" y="15" width="127" height="191"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xS6-Ty-B0G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="xS6-Ty-B0G" secondAttribute="height" id="NMe-Ta-yMQ"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-tp-JaR">
-                                                    <rect key="frame" x="0.0" y="135" width="127" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sjZ-k9-8Hg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="149"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xS6-Ty-B0G">
+                                                            <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="xS6-Ty-B0G" secondAttribute="height" id="NMe-Ta-yMQ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6q3-If-QSW">
+                                                            <rect key="frame" x="0.0" y="127" width="127" height="22"/>
+                                                            <state key="normal" image="plus.circle" catalog="system"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="닉네임" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xv2-tp-JaR">
+                                                    <rect key="frame" x="0.0" y="157" width="127" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -340,12 +350,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ro-BN-kPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3482.608695652174" y="1630.5803571428571"/>
+            <point key="canvasLocation" x="3511.594202898551" y="2031.6964285714284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DcP-jO-emr">
             <objects>
                 <navigationController id="Jn3-b7-InQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="person.circle" catalog="system" selectedImage="person.circle.fill" id="hgb-MQ-mGe"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xTf-e0-GLf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -356,7 +368,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTn-9H-H0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="1136"/>
+            <point key="canvasLocation" x="1706" y="1594"/>
         </scene>
         <!--Add Pet Information Table View Controller-->
         <scene sceneID="iTA-hw-bNT">
@@ -425,7 +437,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LR-5p-35q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3337.68115942029" y="466.74107142857139"/>
+            <point key="canvasLocation" x="3407" y="-33"/>
         </scene>
         <!--Setting-->
         <scene sceneID="pC6-XV-pQA">
@@ -438,7 +450,7 @@
                             <tableViewSection headerTitle="사용자 설정" id="8aH-q7-JWs">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="c6q-et-GfV" style="IBUITableViewCellStyleDefault" id="okE-aC-Dtd">
-                                        <rect key="frame" x="20" y="99" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="okE-aC-Dtd" id="48A-co-MkX">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
@@ -462,13 +474,13 @@
                             <tableViewSection headerTitle="기타" id="kdY-WM-bjA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="cYs-vP-VCm" style="IBUITableViewCellStyleDefault" id="E6b-MY-6sI">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="20" y="155" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6b-MY-6sI" id="t2R-Um-Lwh">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="사용자 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cYs-vP-VCm">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="고객센터 문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cYs-vP-VCm">
                                                     <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -491,7 +503,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSA-t1-a39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3307" y="-230"/>
+            <point key="canvasLocation" x="3484" y="1299"/>
         </scene>
         <!--Withdrawal View Controller-->
         <scene sceneID="Cxw-EG-UtL">
@@ -568,7 +580,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="e3g-Mb-nBV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4082.6086956521744" y="-230.35714285714283"/>
+            <point key="canvasLocation" x="4455" y="1298"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AF0-5c-O8Z">
@@ -596,6 +608,7 @@
         <image name="person.circle" catalog="system" width="32" height="32"/>
         <image name="person.circle.fill" catalog="system" width="32" height="32"/>
         <image name="person.crop.circle.badge.exclam.fill" catalog="system" width="32" height="32"/>
+        <image name="plus.circle" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
