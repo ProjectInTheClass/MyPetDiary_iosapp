@@ -32,7 +32,11 @@ class TodayMemoViewController: UIViewController {
         }
         
     }
-
+    
+    // image 불러오기
+    
+    // memo 불러오기
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
