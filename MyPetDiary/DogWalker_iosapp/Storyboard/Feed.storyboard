@@ -145,7 +145,7 @@
                                             <constraint firstAttribute="width" constant="250" id="vX4-yh-EYI"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="memo memo" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="memo memo" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
                                         <rect key="frame" x="52" y="338.5" width="250" height="319.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
