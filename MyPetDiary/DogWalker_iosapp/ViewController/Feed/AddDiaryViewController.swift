@@ -25,6 +25,7 @@ class AddDiaryViewController: UIViewController{
     @IBOutlet weak var medicine: UILabel! // 약 라벨
     @IBOutlet weak var isHospital: UISwitch! // 병원 스위치
     @IBOutlet weak var hospital: UILabel! // 병원 라벨
+    var showDateData = "" // 넘겨줄 날짜 데이터
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
@@ -70,11 +71,13 @@ class AddDiaryViewController: UIViewController{
         let str = formatter.string(from: Date()) //문자열로 바꾸기
         if selectedDate == "" {
             showDate.text = "\(str)"   //라벨에 출력
+            formatter.dateFormat = "yyyy-MM-dd"
+            let dateData = formatter.string(from: Date()) //문자열로 바꾸기
+            showDateData = dateData
         }else{
             showDate.text = selectedDate
-
+            showDateData = selectedDate
         }
-        
     }
     
 
@@ -103,7 +106,7 @@ class AddDiaryViewController: UIViewController{
                 let values = snapshot.value
                 let dic = values as! [String : [String:Any]]
                 for index in dic {
-                    if (index.value["post_date"] as? String == self.showDate.text) {
+                    if (index.value["post_date"] as? String == self.showDateData) {
                         print(index.key)
                         print(index.value["post_content"] ?? "")
                         print(index.value["post_walk"] ?? false)
@@ -223,8 +226,7 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedWashSwitch = self.isWashed.isOn
         nextViewController.receivedMedicineSwitch = self.isMedicine.isOn
         nextViewController.receivedHospitalSwitch = self.isHospital.isOn
-        nextViewController.receivedPostDate = self.showDate.text!
-        print("showDate:"+showDate.text!)
+        nextViewController.receivedPostDate = self.showDateData
     }
     
 }

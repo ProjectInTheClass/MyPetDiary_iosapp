@@ -42,7 +42,14 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var current_date_string = formatter.string(from: Date())
         
-        if textField.text == nil { // textField에 아무것도 안썼을 경우
+        // 날짜 데이터 없을 경우 처리
+        if receivedPostDate == "" {
+            formatter.dateFormat = "yyyy-MM-dd"
+            var default_post_date = formatter.string(from: Date())
+            receivedPostDate = default_post_date
+        }
+        
+        if textField.text == "" { // textField에 아무것도 안썼을 경우
             // create the alert
             let alert = UIAlertController(title: "내용이 비어있음", message: "글을 작성해주세요", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
