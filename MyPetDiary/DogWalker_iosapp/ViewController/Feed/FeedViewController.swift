@@ -8,11 +8,15 @@
 import Foundation
 import FSCalendar
 import RealmSwift
+import Firebase
+import FirebaseDatabase
 
 class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
 
     @IBOutlet var calendarView: FSCalendar!
     @IBAction func unwindFromVC3(seque: UIStoryboardSegue){ }
+    
+    var ref: DatabaseReference! = Database.database().reference()
     
     @IBOutlet weak var subPostView: UIStackView!
     // subview
@@ -85,6 +89,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDateString = formatter.string(from: date)
         print(selectedDateString + " 선택됨")
+        showTodo()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -104,21 +109,67 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     func showTodo(){
-        walkingLabel.isHidden = true // hide
-        washLabel.isHidden = true
-        medicineLabel.isHidden = true
-        hospitalLabel.isHidden = true
-        //위에꺼 지우지말고 아래에 추가
-        // walkingLabel, washLabel, medicineLabel, hospitalLabel 데이터 있으면
-        // if 산책switchison {walkingLabel.isHidden = false}
-        // else if 목욕switchison {washLabel.isHidden = false}
-        // else if 약switchison {medicineLabel.isHidden = false}
-        // else if 병원switchison {hospitalLabel.isHidden = false
         
+        // 기기 토큰 확인하기
+        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        print("글 쓰기 기기 토큰 확인:"+deviceToken)
+        
+        
+        
+        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                let values = snapshot.value
+                let dic = values as! [String : [String:Any]]
+                
+                if self.selectedDateString == "" {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd"
+                    self.selectedDateString = formatter.string(from: Date())
+                }
+                
+                self.walkingLabel.isHidden = true // hide
+                self.washLabel.isHidden = true
+                self.medicineLabel.isHidden = true
+                self.hospitalLabel.isHidden = true
+                
+                for index in dic {
+                    if (index.value["post_date"] as? String == self.selectedDateString) {
+                        print(index.key)
+                        print(index.value["post_walk"] ?? false)
+                        print(index.value["post_wash"] ?? false)
+                        print(index.value["post_medicine"] ?? false)
+                        print(index.value["post_hospital"] ?? false)
+                        
+                        if index.value["post_walk"] as! Bool {
+                            self.walkingLabel.isHidden = false
+                        } else {
+                            self.walkingLabel.isHidden = true
+                        }
+                        if index.value["post_wash"] as! Bool {
+                            self.washLabel.isHidden = false
+                        } else {
+                            self.washLabel.isHidden = true
+                        }
+                        if index.value["post_medicine"] as! Bool {
+                            self.medicineLabel.isHidden = false
+                        } else {
+                            self.medicineLabel.isHidden = true
+                        }
+                        if index.value["post_hospital"] as! Bool {
+                            self.hospitalLabel.isHidden = false
+                        } else {
+                            self.hospitalLabel.isHidden = true
+                        }
+                        
+                    }
+                }
+            }
+        })
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "yyyy-MM-dd"
+        
         // Do any additional setup after loading the view.
 //        // tab하면 모달 띄우기
 //        self.subPostView.isUserInteractionEnabled = true
