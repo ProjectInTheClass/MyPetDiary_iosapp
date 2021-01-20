@@ -74,17 +74,28 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     // eventdot 표현 -> 오늘 한 일 표현한걸로 바꾸기
-    func presentEventDot(){
-        let xmas = formatter.date(from: "2021-01-09")
-        let sampledate = formatter.date(from: "2021-01-17")
-        dates = [xmas!, sampledate!]
-    }
+//    func presentEventDot(){
+//        let xmas = formatter.date(from: "2021-01-09")
+//        let sampledate = formatter.date(from: "2021-01-17")
+//        dates = [xmas!, sampledate!]
+//    }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         if dates.contains(date){
             return 1
         }
         return 0
+    }
+    
+    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
+
+        let labelMy2 = UILabel(frame: CGRect(x: 10, y: 20, width: cell.bounds.width, height: 30))
+        labelMy2.font = UIFont(name: "Noteworthy", size: 7)
+        labelMy2.layer.cornerRadius = cell.bounds.width/2
+        labelMy2.text = "🌿"
+        
+        cell.addSubview(labelMy2)
+
     }
     
     // 날짜 선택 시 콜백 메소드
@@ -185,7 +196,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.delegate = self
         calendarView.dataSource = self
         
-        presentEventDot()
+//        presentEventDot()
         setCalendar()
         
         showTodo()
