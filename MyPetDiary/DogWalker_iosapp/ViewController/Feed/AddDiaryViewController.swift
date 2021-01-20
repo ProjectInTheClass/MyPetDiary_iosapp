@@ -219,6 +219,7 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedHospitalSwitch = self.isHospital.isOn
         nextViewController.receivedPostDate = self.showDateData
         nextViewController.receivedImageURL = self.localFile
+        print("localFile:\(localFile)")
     }
     
 }
@@ -231,10 +232,22 @@ UINavigationControllerDelegate{
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             imageView.image = image
-//            print(info)
-            localFile = "\(info)"
-            
+            print("testImage\(image)")
         }
+        let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
+        let imageName=imageUrl?.lastPathComponent//파일이름
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+                     
+        let photoURL = NSURL(fileURLWithPath: documentDirectory)
+        print("photoURL\(photoURL)")
+        let localPath = photoURL.appendingPathComponent(imageName!)//파일경로
+        let data=NSData(contentsOf: imageUrl as! URL)!
+        print("lastURL:\(localPath)")
+        print("data:\(data)")
+        localFile = String(describing: localPath)
+        //localFile = toString(localPath)
+        //localFile = String(decoding: localPath!, as: UTF8.self)
+        print("localFile:"+localFile)
         dismiss(animated: true, completion: nil)
       
     }
