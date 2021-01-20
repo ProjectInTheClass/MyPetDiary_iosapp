@@ -11,10 +11,10 @@ import FirebaseDatabase
 
 class MyPageViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
-    @IBOutlet weak var userIntroduct: UILabel!
-
+    @IBOutlet weak var userNickName: UILabel!
+    @IBOutlet weak var userIntro: UILabel!
+    
     var ref: DatabaseReference! = Database.database().reference()
     
     var userDataModel: FirebaseUserDataModel!
@@ -48,9 +48,15 @@ class MyPageViewController: UITableViewController,UICollectionViewDelegate,UICol
 //            print(error.localizedDescription)
 //        }
     }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNonzeroMagnitude
+    }
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+            return CGFloat.leastNonzeroMagnitude
+    }
     
     // image - db
-    var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
+    var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"),#imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"),#imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
     // collectionview 설정 - 가로3장
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -89,9 +95,6 @@ class MyPageViewController: UITableViewController,UICollectionViewDelegate,UICol
 
 }
 
-//커스텀 셀 구현
-class CustomCell: UICollectionViewCell {
+class CustomCell: UICollectionViewCell{
     @IBOutlet weak var imageView: UIImageView!
-//    imageView.contentMode = .scaleAspectFill
-    
 }
