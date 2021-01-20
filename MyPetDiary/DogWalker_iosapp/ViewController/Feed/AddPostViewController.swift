@@ -58,16 +58,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
             
         } else { // textField에 글을 적었을 경우
-            
-            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-                if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-                {
-                    receivedImage.image = image
-                    print(info)
-                    receivedImageURL = info as! String
-                }
-                dismiss(animated: true, completion: nil)
-            }
+        
             // Firebase Storage에 사진 올리기
 //            // File located on disk
 //            let localFile = URL(string: "path/to/image")!
