@@ -124,6 +124,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		05E0C1D325B80179009DB146 /* DBmodel */ = {
+			isa = PBXGroup;
+			children = (
+				05E0C1BB25B7FAA3009DB146 /* FirebasePostDataModel.swift */,
+				05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */,
+			);
+			path = DBmodel;
+			sourceTree = "<group>";
+		};
 		478FB0C425B6D4A700E252FA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,8 +204,7 @@
 		7640D6A125AED23600A15B14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				05E0C1BB25B7FAA3009DB146 /* FirebasePostDataModel.swift */,
-				05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */,
+				05E0C1D325B80179009DB146 /* DBmodel */,
 				7640D6A225AED24000A15B14 /* TodayDateCenter.swift */,
 				7640D6AB25AED43C00A15B14 /* DayInfo.swift */,
 				47FAB61925AF4CDE005BEBAF /* Post.swift */,
