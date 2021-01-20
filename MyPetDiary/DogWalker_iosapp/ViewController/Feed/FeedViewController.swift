@@ -136,9 +136,9 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                 let dic = values as! [String : [String:Any]]
                 
                 if self.selectedDateString == "" {
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-dd"
-                    self.selectedDateString = formatter.string(from: Date())
+//                    let formatter = DateFormatter()
+//                    formatter.dateFormat = "yyyy-MM-dd"
+                    self.selectedDateString = self.formatter.string(from: Date())
                 }
                 
                 self.walkingLabel.isHidden = true // hide

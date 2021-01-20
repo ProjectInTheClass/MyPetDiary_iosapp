@@ -19,7 +19,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     var receivedPostDate = ""
     var receivedImage = UIImageView() // 이전 페이지 선택이미지
-    var receivedImageURL = "http://"
+    var receivedImageURL = "" // 이전 페이지 선택 이미지 파일 url
     var receivedWalkSwitch = false // 이전 페이지 산책 스위치
     var receivedWashSwitch = false // 이전 페이지 목욕 스위치
     var receivedMedicineSwitch = false // 이전 페이지 약 스위치
@@ -58,6 +58,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
             
         } else { // textField에 글을 적었을 경우
+            
             func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
                 if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
                 {
@@ -67,6 +68,30 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
                 }
                 dismiss(animated: true, completion: nil)
             }
+            // Firebase Storage에 사진 올리기
+//            // File located on disk
+//            let localFile = URL(string: "path/to/image")!
+//
+//            // Create a reference to the file you want to upload
+//            let riversRef = storageRef.child("images/rivers.jpg")
+//
+//            // Upload the file to the path "images/rivers.jpg"
+//            let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
+//              guard let metadata = metadata else {
+//                // Uh-oh, an error occurred!
+//                return
+//              }
+//              // Metadata contains file metadata such as size, content-type.
+//              let size = metadata.size
+//              // You can also access to download URL after upload.
+//              riversRef.downloadURL { (url, error) in
+//                guard let downloadURL = url else {
+//                  // Uh-oh, an error occurred!
+//                  return
+//                }
+//              }
+//            }
+                
             
             // copy text for DB
             contentToDB = textField.text!
