@@ -10,7 +10,7 @@ import Firebase
 import FirebaseDatabase
 
 class MyPageViewController: UITableViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
+
     @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var userIntroduct: UILabel!
