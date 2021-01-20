@@ -122,9 +122,18 @@
 		478FB16425B7EC1A00E252FA /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */,
+				478FB16525B7EC9200E252FA /* Cell */,
 				47FAB62425AF5343005BEBAF /* PostCell.swift */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		478FB16525B7EC9200E252FA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		76005358259DB48B0058F313 = {
@@ -204,7 +213,6 @@
 				05DA67E325A82FF0000CE91D /* SignUpViewController.swift */,
 				05DA67E625A834C0000CE91D /* MPMainViewController.swift */,
 				05DA67FC25A879CE000CE91D /* SettingViewController.swift */,
-				47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */,
 				05AFB1CB25B05D4F00A2F562 /* PetDiFirebaseManager.swift */,
 			);
 			path = ViewController;
