@@ -31,9 +31,8 @@ class FirebasePostDataModel: NSObject {
 //                  post_walk: false, post_wash: false, post_medicine: false, post_hospital: false)
 //    }
     
-    func showContentPage(deviceToken: String, todayDate: String) ->
-    (post_content: String, post_date: String, post_updated_date: String, post_image: String,
-     post_walk: Bool, post_wash: Bool, post_medicine: Bool, post_hospital: Bool) {
+    func showContentPage(deviceToken: String, todayDate: String) -> (post_content: String, post_date: String, post_updated_date: String, post_image: String,
+                         post_walk: Bool, post_wash: Bool, post_medicine: Bool, post_hospital: Bool) {
         
         let ref: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
         
@@ -63,16 +62,15 @@ class FirebasePostDataModel: NSObject {
                         post_wash = index.value["post_wash"] as! Bool
                         post_medicine = index.value["post_medicine"] as! Bool
                         post_hospital = index.value["post_hospital"] as! Bool
-                        
-                        print("test")
-                        print(post_walk)
-                        print(post_wash)
-                        print(post_medicine)
-                        print(post_hospital)
                     }
                 }
             }
         })
+        print("test")
+        print(post_walk)
+        print(post_wash)
+        print(post_medicine)
+        print(post_hospital)
         return (post_content, post_date, post_updated_date, post_image,
                 post_walk, post_wash, post_medicine, post_hospital)
     }
