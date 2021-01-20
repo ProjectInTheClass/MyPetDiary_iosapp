@@ -92,7 +92,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         let labelMy2 = UILabel(frame: CGRect(x: 10, y: 20, width: cell.bounds.width, height: 30))
         labelMy2.font = UIFont(name: "Noteworthy", size: 7)
         labelMy2.layer.cornerRadius = cell.bounds.width/2
-        labelMy2.text = "🌿💊🏥🛁"
+        labelMy2.text = "🌿"
+        labelMy2.text! += "💊🏥🛁"
         
         cell.addSubview(labelMy2)
 
