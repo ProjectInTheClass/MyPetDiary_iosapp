@@ -33,8 +33,6 @@ class AddDiaryViewController: UIViewController{
     
     var postModel = FirebasePostDataModel()
     
-    var ref: DatabaseReference! = Database.database().reference()
-    
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
             self.walk.text = "산책🙆🏻‍♀️"
@@ -99,6 +97,8 @@ class AddDiaryViewController: UIViewController{
         self.isWashed.isOn = postModelRef.post_wash
         self.isMedicine.isOn = postModelRef.post_medicine
         self.isHospital.isOn = postModelRef.post_hospital
+        
+        print("!!!!!!!!!!\(postModel.showContentPage(deviceToken: deviceToken, todayDate: showDateData).post_medicine)")
         
 //        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
 //            for child in snapshot.children {
