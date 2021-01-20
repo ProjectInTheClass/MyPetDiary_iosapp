@@ -12,14 +12,20 @@ import FirebaseDatabase
 class AddPostViewController: UIViewController, UITextFieldDelegate {
     
     var contentToDB = "";
+    
+    //let storage = Storage.storage()
+    var storage = Storage.storage(url: "gs://mypetdiary-475e9.appspot.com")
 
     @IBOutlet weak var textField: UITextField!
     var receivedPostDate = ""
     var receivedImage = UIImageView() // 이전 페이지 선택이미지
+    var receivedImageURL = "http://"
     var receivedWalkSwitch = false // 이전 페이지 산책 스위치
     var receivedWashSwitch = false // 이전 페이지 목욕 스위치
     var receivedMedicineSwitch = false // 이전 페이지 약 스위치
     var receivedHospitalSwitch = false // 이전 페이지 병원 스위치
+    
+    let picker = UIImagePickerController()
     
     @IBOutlet weak var testView: UIImageView!
     var ref: DatabaseReference! = Database.database().reference()
@@ -36,9 +42,14 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var current_date_string = formatter.string(from: Date())
         
-       
+        // 날짜 데이터 없을 경우 처리
+        if receivedPostDate == "" {
+            formatter.dateFormat = "yyyy-MM-dd"
+            var default_post_date = formatter.string(from: Date())
+            receivedPostDate = default_post_date
+        }
         
-        if textField.text == nil {
+        if textField.text == "" { // textField에 아무것도 안썼을 경우
             // create the alert
             let alert = UIAlertController(title: "내용이 비어있음", message: "글을 작성해주세요", preferredStyle: UIAlertController.Style.alert)
             // add an action (button)
@@ -46,31 +57,27 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             ))
             // show the alert
             self.present(alert, animated: true, completion: nil)
-        } else {
+            
+        } else { // textField에 글을 적었을 경우
+            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+                {
+                    receivedImage.image = image
+                    print(info)
+                    receivedImageURL = info as! String
+                }
+                dismiss(animated: true, completion: nil)
+                
+                
+            }
+            
             // copy text for DB
             contentToDB = textField.text!
             
             print("copy Text 확인용:"+contentToDB)
             
             let postRef = self.ref.child("Post")
-//            var key = postRef.child("\(deviceToken)").childByAutoId().key
-//
-//            ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
-//                if snapshot.exists() {
-//                    let values = snapshot.value
-//                    let dic = values as! [String : [String:Any]]
-//                    for index in dic {
-//                        if (index.value["post_date"] as? String == self.receivedPostDate) {
-//                            print(index.key)
-//                            key = index.value["post_key"] as? String
-//                        }
-//                    }
-//                } else {
-//                    key = postRef.child("\(deviceToken)").childByAutoId().key
-//                }
-//            })
-//            print(key as Any)
-            
+        
             let DateRefKey = postRef.child("\(deviceToken)").child("\(receivedPostDate)")
             
             let post = ["post_content": contentToDB, // 글 내용 저장
@@ -79,36 +86,12 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
                         "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
                         "post_wash": receivedWashSwitch,
                         "post_medicine": receivedMedicineSwitch,
+                        "post_image": receivedImageURL,
                         "post_hospital": receivedHospitalSwitch] as [String : Any]
             
-            //let childUpdates = ["/Post/\(deviceToken)/\(receivedPostDate)/": post]
             DateRefKey.setValue(post)
             
-//            // 글 내용 저장
-//            let postContentRef = userTokenRef.child("post_content")
-//            postContentRef.setValue(contentToDB)
-//
-//            // 글 업로드 시기 저장
-//            let postUpdatedDateRef = userTokenRef.child("post_updated_date")
-//            postUpdatedDateRef.setValue(current_date_string)
-//
-//            // 글 자체의 날짜 저장
-//            let postDateRef = userTokenRef.child("post_date")
-//            postDateRef.setValue(receivedPostDate)
-//
-//            // 산책, 목욕, 약, 병원 스위치 상태 저장
-//            let isWalkRef = userTokenRef.child("post_walk")
-//            isWalkRef.setValue(receivedWalkSwitch)
-//
-//            let isWashRef = userTokenRef.child("post_wash")
-//            isWashRef.setValue(receivedWashSwitch)
-//
-//            let isMedicineRef = userTokenRef.child("post_medicine")
-//            isMedicineRef.setValue(receivedMedicineSwitch)
-//
-//            let isHospitalRef = userTokenRef.child("post_hospital")
-//            isHospitalRef.setValue(receivedHospitalSwitch)
-            
+            //
         }
         
     }
