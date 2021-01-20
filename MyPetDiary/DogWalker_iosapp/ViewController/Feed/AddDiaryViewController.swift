@@ -33,7 +33,7 @@ class AddDiaryViewController: UIViewController{
     
     var postModel = FirebasePostDataModel()
     
-    var ref: DatabaseReference! = Database.database().reference()
+//    var ref: DatabaseReference! = Database.database().reference()
     
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
