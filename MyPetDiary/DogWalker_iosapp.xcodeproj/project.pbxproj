@@ -91,6 +91,7 @@
 		053BDC4325B1D66F003B3180 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				478FB0C425B6D4A700E252FA /* Cells */,
 				05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */,
 				05DA67F925A87600000CE91D /* MyPageViewController.swift */,
 				47FAB6C625B5671F005BEBAF /* AddPetInformationTableViewController.swift */,
@@ -107,6 +108,13 @@
 				769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		478FB0C425B6D4A700E252FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		76005358259DB48B0058F313 = {
