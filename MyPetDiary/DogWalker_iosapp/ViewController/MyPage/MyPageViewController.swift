@@ -25,7 +25,7 @@ class MyPageViewController: UITableViewController,UICollectionViewDelegate,UICol
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("마이페이지 기기 토큰 확인:"+deviceToken)
         
-        userNickName.text = userDataModel.showUserNickname(deviceToken: "\(deviceToken)")
+        //userNickName.text = userDataModel.showUserNickname(deviceToken: "\(deviceToken)")
 //
 //        ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
 //
