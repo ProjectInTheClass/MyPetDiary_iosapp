@@ -19,6 +19,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     var ref: DatabaseReference! = Database.database().reference()
+    let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
     @IBOutlet weak var subPostView: UIStackView!
     // subview
@@ -125,9 +126,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     func showTodo(){
-        
         // 기기 토큰 확인하기
-        let deviceToken = UserDefaults.standard.string(forKey: "token")!
+        
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
         showEventLabel(deviceToken: deviceToken)
 //        viewDidLoad()
