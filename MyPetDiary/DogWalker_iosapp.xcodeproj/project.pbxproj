@@ -10,7 +10,6 @@
 		05DA67FA25A87600000CE91D /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67F925A87600000CE91D /* MyPageViewController.swift */; };
 		05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */; };
 		05E0C1BC25B7FAA3009DB146 /* FirebaseUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */; };
-		05E0C1BD25B7FAA3009DB146 /* FirebasePostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1BB25B7FAA3009DB146 /* FirebasePostDataModel.swift */; };
 		05E0C1C625B7FAEC009DB146 /* MPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */; };
 		05E0C1CC25B7FB30009DB146 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1CB25B7FB30009DB146 /* SignUpViewController.swift */; };
 		05E0C1D025B7FB60009DB146 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1CF25B7FB60009DB146 /* SettingViewController.swift */; };
@@ -45,7 +44,6 @@
 		05DA67F925A87600000CE91D /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataModel.swift; sourceTree = "<group>"; };
-		05E0C1BB25B7FAA3009DB146 /* FirebasePostDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebasePostDataModel.swift; sourceTree = "<group>"; };
 		05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainViewController.swift; sourceTree = "<group>"; };
 		05E0C1CB25B7FB30009DB146 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05E0C1CF25B7FB60009DB146 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 		05E0C1D325B80179009DB146 /* DBmodel */ = {
 			isa = PBXGroup;
 			children = (
-				05E0C1BB25B7FAA3009DB146 /* FirebasePostDataModel.swift */,
 				05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */,
 			);
 			path = DBmodel;
@@ -382,7 +379,6 @@
 				7640D69B25AECF5100A15B14 /* GlobalConstant.swift in Sources */,
 				05E0C1C625B7FAEC009DB146 /* MPMainViewController.swift in Sources */,
 				76005365259DB48B0058F313 /* AppDelegate.swift in Sources */,
-				05E0C1BD25B7FAA3009DB146 /* FirebasePostDataModel.swift in Sources */,
 				05E0C1D025B7FB60009DB146 /* SettingViewController.swift in Sources */,
 				47FAB6C725B5671F005BEBAF /* AddPetInformationTableViewController.swift in Sources */,
 				47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */,
