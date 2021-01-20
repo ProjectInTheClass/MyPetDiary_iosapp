@@ -105,44 +105,51 @@
         <!--MY PAGE-->
         <scene sceneID="fLB-as-Mxa">
             <objects>
-                <viewController id="pPF-M3-KVU" customClass="MyPageViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pPF-M3-KVU" customClass="MyPageViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ivn-M3-9sv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yfB-54-Q8A">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-mw-ZdF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oup-uv-USN">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oup-uv-USN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NOs-zX-M7B">
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TtF-cc-YNu">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ouu-Wr-j9c">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="RowCell" id="ouu-Wr-j9c" customClass="CustomCell" customModule="DogWalker_iosapp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1La-OV-WAI">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WXx-dL-dIQ">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WXx-dL-dIQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="WXx-dL-dIQ" firstAttribute="leading" secondItem="1La-OV-WAI" secondAttribute="leading" id="8c4-qX-I0Q"/>
-                                                        <constraint firstItem="WXx-dL-dIQ" firstAttribute="centerY" secondItem="1La-OV-WAI" secondAttribute="centerY" id="SP3-5X-XGW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="WXx-dL-dIQ" secondAttribute="trailing" id="biR-Yo-MjW"/>
-                                                        <constraint firstAttribute="bottom" secondItem="WXx-dL-dIQ" secondAttribute="bottom" id="szR-5N-nOX"/>
+                                                        <constraint firstAttribute="bottom" secondItem="WXx-dL-dIQ" secondAttribute="bottom" id="BdI-eM-Tpl"/>
+                                                        <constraint firstItem="WXx-dL-dIQ" firstAttribute="top" secondItem="1La-OV-WAI" secondAttribute="top" id="Gsq-nx-utU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="WXx-dL-dIQ" secondAttribute="trailing" id="Jns-dL-8Sk"/>
+                                                        <constraint firstItem="WXx-dL-dIQ" firstAttribute="leading" secondItem="1La-OV-WAI" secondAttribute="leading" id="e3y-y5-hgV"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
+                                                <connections>
+                                                    <outlet property="imageView" destination="WXx-dL-dIQ" id="Yav-Cn-JvG"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="pPF-M3-KVU" id="ry2-PH-UAe"/>
+                                            <outlet property="delegate" destination="pPF-M3-KVU" id="jIl-6P-zqX"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                             </stackView>
@@ -150,10 +157,10 @@
                         <viewLayoutGuide key="safeArea" id="AvA-LF-FiP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AvA-LF-FiP" firstAttribute="bottom" secondItem="yfB-54-Q8A" secondAttribute="bottom" id="cjF-O6-1zg"/>
-                            <constraint firstItem="yfB-54-Q8A" firstAttribute="top" secondItem="AvA-LF-FiP" secondAttribute="top" id="fmc-2K-mcR"/>
-                            <constraint firstItem="yfB-54-Q8A" firstAttribute="leading" secondItem="AvA-LF-FiP" secondAttribute="leading" id="j0t-BR-FYH"/>
-                            <constraint firstItem="AvA-LF-FiP" firstAttribute="trailing" secondItem="yfB-54-Q8A" secondAttribute="trailing" id="kA6-zR-q7N"/>
+                            <constraint firstItem="uB6-mw-ZdF" firstAttribute="top" secondItem="AvA-LF-FiP" secondAttribute="top" id="2a6-tf-hSv"/>
+                            <constraint firstAttribute="trailing" secondItem="uB6-mw-ZdF" secondAttribute="trailing" id="W6Q-D7-cv9"/>
+                            <constraint firstAttribute="bottom" secondItem="uB6-mw-ZdF" secondAttribute="bottom" id="aw3-ZA-LbZ"/>
+                            <constraint firstItem="uB6-mw-ZdF" firstAttribute="leading" secondItem="AvA-LF-FiP" secondAttribute="leading" id="vyg-MB-QeX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle.fill" id="5Bt-xN-1pG"/>

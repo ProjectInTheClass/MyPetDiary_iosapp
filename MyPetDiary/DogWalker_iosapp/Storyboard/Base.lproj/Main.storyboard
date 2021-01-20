@@ -23,7 +23,7 @@
                     <connections>
                         <segue destination="9dT-g8-pwG" kind="relationship" relationship="viewControllers" id="Wxq-pF-JUf"/>
                         <segue destination="VU5-27-Va3" kind="relationship" relationship="viewControllers" id="29w-Mu-lVQ"/>
-                        <segue destination="bpa-oD-l7T" kind="relationship" relationship="viewControllers" id="bvh-EH-Wkh"/>
+                        <segue destination="s4r-g2-u83" kind="relationship" relationship="viewControllers" id="ps0-xN-5WO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeO-sX-p6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -42,14 +42,14 @@
             <point key="canvasLocation" x="-29" y="526"/>
         </scene>
         <!--MyPage-->
-        <scene sceneID="FZo-G5-0FC">
+        <scene sceneID="dxd-21-LWb">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" id="bpa-oD-l7T" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="x1U-d5-gVd"/>
+                <viewControllerPlaceholder storyboardIdentifier="MyPageViewController" storyboardName="MyPage" id="s4r-g2-u83" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="6nj-AP-lU3"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ph-Xe-hQB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEA-XC-lPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="527"/>
+            <point key="canvasLocation" x="225" y="526"/>
         </scene>
         <!--NewsFeed-->
         <scene sceneID="f2c-rq-Yz5">
