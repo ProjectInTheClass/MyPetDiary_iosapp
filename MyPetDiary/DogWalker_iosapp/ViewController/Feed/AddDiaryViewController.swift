@@ -26,6 +26,7 @@ class AddDiaryViewController: UIViewController{
     @IBOutlet weak var isHospital: UISwitch! // 병원 스위치
     @IBOutlet weak var hospital: UILabel! // 병원 라벨
     var showDateData = "" // 넘겨줄 날짜 데이터
+    var localFile = "" // 넘겨줄 사진 파일 url
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
@@ -217,6 +218,7 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedMedicineSwitch = self.isMedicine.isOn
         nextViewController.receivedHospitalSwitch = self.isHospital.isOn
         nextViewController.receivedPostDate = self.showDateData
+        nextViewController.receivedImageURL = self.localFile
     }
     
 }
@@ -230,6 +232,7 @@ UINavigationControllerDelegate{
         {
             imageView.image = image
 //            print(info)
+            localFile = "\(info)"
             
         }
         dismiss(animated: true, completion: nil)
