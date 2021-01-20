@@ -31,6 +31,8 @@ class AddDiaryViewController: UIViewController{
     var canAccessImages: [UIImage] = []
     var selectedDate: String = ""
     
+    var postModel = FirebasePostDataModel()
+    
     var ref: DatabaseReference! = Database.database().reference()
     
     @IBAction func isOnWalk(_ sender: UISwitch) {
@@ -91,6 +93,13 @@ class AddDiaryViewController: UIViewController{
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
+        let postModelRef = postModel.showContentPage(deviceToken: deviceToken, todayDate: showDateData)
+        print(postModelRef)
+        self.isWalked.isOn = postModelRef.post_walk
+        self.isWashed.isOn = postModelRef.post_wash
+        self.isMedicine.isOn = postModelRef.post_medicine
+        self.isHospital.isOn = postModelRef.post_hospital
+        
 //        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
 //            for child in snapshot.children {
 //                let snap = child as! DataSnapshot
@@ -101,30 +110,28 @@ class AddDiaryViewController: UIViewController{
 //            }
 //        })
         
-        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
-            if snapshot.exists() {
-                let values = snapshot.value
-                let dic = values as! [String : [String:Any]]
-                for index in dic {
-                    if (index.value["post_date"] as? String == self.showDateData) {
-                        print(index.key)
-                        print(index.value["post_content"] ?? "")
-                        print(index.value["post_walk"] ?? false)
-                        print(index.value["post_wash"] ?? false)
-                        print(index.value["post_medicine"] ?? false)
-                        print(index.value["post_hospital"] ?? false)
-                        
-                        self.isWalked.isOn = (index.value["post_walk"] ?? false) as! Bool
-                        self.isWashed.isOn = (index.value["post_wash"] ?? false) as! Bool
-                        self.isMedicine.isOn = (index.value["post_medicine"] ?? false) as! Bool
-                        self.isHospital.isOn = (index.value["post_hospital"] ?? false) as! Bool
-                        
-                    }
-                }
-            }
-        })
-        
-        
+//        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
+//            if snapshot.exists() {
+//                let values = snapshot.value
+//                let dic = values as! [String : [String:Any]]
+//                for index in dic {
+//                    if (index.value["post_date"] as? String == self.showDateData) {
+//                        print(index.key)
+//                        print(index.value["post_content"] ?? "")
+//                        print(index.value["post_walk"] ?? false)
+//                        print(index.value["post_wash"] ?? false)
+//                        print(index.value["post_medicine"] ?? false)
+//                        print(index.value["post_hospital"] ?? false)
+//
+//                        self.isWalked.isOn = (index.value["post_walk"] ?? false) as! Bool
+//                        self.isWashed.isOn = (index.value["post_wash"] ?? false) as! Bool
+//                        self.isMedicine.isOn = (index.value["post_medicine"] ?? false) as! Bool
+//                        self.isHospital.isOn = (index.value["post_hospital"] ?? false) as! Bool
+//
+//                    }
+//                }
+//            }
+//        })
     }
     
     func settingAlert(){
