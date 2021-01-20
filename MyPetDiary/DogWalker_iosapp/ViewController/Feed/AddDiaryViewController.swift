@@ -242,10 +242,9 @@ UINavigationControllerDelegate{
         print("photoURL\(photoURL)")
         let localPath = photoURL.appendingPathComponent(imageName!)//파일경로
         let data=NSData(contentsOf: imageUrl as! URL)!
-        print("lastURL:\(localPath)")
-        print("data:\(data)")
-        localFile = String(describing: localPath)
-        //localFile = toString(localPath)
+        print("lastURL:\(localPath!.path)")
+        //localFile = String(describing: localPath)
+        localFile = "\(localPath!.path)"
         //localFile = String(decoding: localPath!, as: UTF8.self)
         print("localFile:"+localFile)
         dismiss(animated: true, completion: nil)

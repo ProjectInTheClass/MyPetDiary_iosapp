@@ -13,8 +13,9 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     
     var contentToDB = "";
     
-    //let storage = Storage.storage()
-    var storage = Storage.storage(url: "gs://mypetdiary-475e9.appspot.com")
+    //let storage = Storage.storage(url: "gs://mypetdiary-475e9.appspot.com")
+    
+    let storageRef = Storage.storage(url: "gs://mypetdiary-475e9.appspot.com").reference() // Firebase Storage 객체
 
     @IBOutlet weak var textField: UITextField!
     var receivedPostDate = ""
@@ -60,28 +61,28 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         } else { // textField에 글을 적었을 경우
         
             // Firebase Storage에 사진 올리기
-//            // File located on disk
-//            let localFile = URL(string: "path/to/image")!
-//
-//            // Create a reference to the file you want to upload
-//            let riversRef = storageRef.child("images/rivers.jpg")
-//
-//            // Upload the file to the path "images/rivers.jpg"
-//            let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
-//              guard let metadata = metadata else {
-//                // Uh-oh, an error occurred!
-//                return
-//              }
-//              // Metadata contains file metadata such as size, content-type.
-//              let size = metadata.size
-//              // You can also access to download URL after upload.
-//              riversRef.downloadURL { (url, error) in
-//                guard let downloadURL = url else {
-//                  // Uh-oh, an error occurred!
-//                  return
-//                }
-//              }
-//            }
+            // File located on disk
+            let localFile = URL(string: receivedImageURL)!
+
+            // Create a reference to the file you want to upload
+            let riversRef = storageRef.child("images/rivers.jpg")
+
+            // Upload the file to the path "images/rivers.jpg"
+            let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
+              guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+              }
+              // Metadata contains file metadata such as size, content-type.
+              let size = metadata.size
+              // You can also access to download URL after upload.
+              riversRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                  // Uh-oh, an error occurred!
+                  return
+                }
+              }
+            }
                 
             
             // copy text for DB
