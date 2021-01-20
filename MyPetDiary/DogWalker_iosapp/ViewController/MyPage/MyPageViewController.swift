@@ -15,32 +15,37 @@ class MyPageViewController: UITableViewController,UICollectionViewDelegate,UICol
     
     var ref: DatabaseReference! = Database.database().reference()
     
+    var userDataModel: FirebaseUserDataModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         
         // 기기 토큰 확인하기
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("마이페이지 기기 토큰 확인:"+deviceToken)
         
-        ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let username = value?["user_nickname"] as? String ?? ""
-            
-            print("username:"+username)
-            
-            self.userNickName.text = username
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        //userNickName.text = userDataModel.showUserNickname(deviceToken: "\(deviceToken)")
+//
+//        ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            let value = snapshot.value as? NSDictionary
+//
+//            let userData = FirebaseUserDataModel()
+//            userData.setValuesForKeys(value! as! [String : Any])
+//
+//            print("user_nickname: \(userData.user_nickname)")
+//
+////            let username = value?["user_nickname"] as? String ?? ""
+////
+////            print("username:"+username)
+////
+////            self.userNickName.text = username
+//
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
     }
-    
-//    let userRef = self.ref.child("User")
-//    // let userRef = self.ref.child("User").childByAutoId()
-//    let userTokenRef = userRef.child(deviceUniqueToken)
-//    let userNicknameRef = userTokenRef.child("user_nickname")
     
     // image - db
     var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
