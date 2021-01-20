@@ -104,6 +104,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         selectedDateString = formatter.string(from: date)
         print(selectedDateString + " 선택됨")
         showTodo()
+        viewWillAppear(true)
+//        viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -127,9 +129,19 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         // 기기 토큰 확인하기
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
-        
-        
-        
+        showEventLabel(deviceToken: deviceToken)
+//        viewDidLoad()
+    }
+    
+    func initLabel() {
+        self.walkingLabel.isHidden = true // hide
+        self.washLabel.isHidden = true
+        self.medicineLabel.isHidden = true
+        self.hospitalLabel.isHidden = true
+    }
+    
+    // 해당 날짜 라벨 보여주기
+    func showEventLabel(deviceToken: String) {
         ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() {
                 let values = snapshot.value
@@ -140,12 +152,13 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 //                    formatter.dateFormat = "yyyy-MM-dd"
                     self.selectedDateString = self.formatter.string(from: Date())
                 }
-                
+//                initLabel()
                 self.walkingLabel.isHidden = true // hide
                 self.washLabel.isHidden = true
                 self.medicineLabel.isHidden = true
                 self.hospitalLabel.isHidden = true
-                
+
+                print("오늘날짜:\(self.selectedDateString)")
                 for index in dic {
                     if (index.value["post_date"] as? String == self.selectedDateString) {
                         print(index.key)
@@ -183,9 +196,13 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                 self.medicineLabel.isHidden = true
                 self.hospitalLabel.isHidden = true
             }
-        })
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
+    
     override func viewDidLoad() {
+        print("viewDidLoad")
         super.viewDidLoad()
         formatter.dateFormat = "yyyy-MM-dd"
         
@@ -199,9 +216,11 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         
 //        presentEventDot()
         setCalendar()
-        
-        showTodo()
+//        initLabel()
+//        showTodo()
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        showTodo()
+    }
 }
