@@ -13,7 +13,7 @@
         <!--MY PAGE-->
         <scene sceneID="UgV-u1-lfc">
             <objects>
-                <tableViewController id="YoA-uK-FPa" customClass="MyPageViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyPageStoryboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YoA-uK-FPa" customClass="MyPageViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rVq-NZ-eaV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,23 +31,14 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vCK-c2-eaA">
                                                     <rect key="frame" x="182" y="68" width="50" height="78.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="UMV-1i-VK4">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="Cab-44-2Vu">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                            <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="Cab-44-2Vu">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="50" id="BB1-R7-JH1"/>
-                                                                        <constraint firstAttribute="height" constant="50" id="CgI-2Y-qjt"/>
-                                                                        <constraint firstAttribute="width" secondItem="Cab-44-2Vu" secondAttribute="height" id="kat-Nd-9F0"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                            </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="Cab-44-2Vu" firstAttribute="centerX" secondItem="UMV-1i-VK4" secondAttribute="centerX" id="2i5-cg-2oA"/>
-                                                                <constraint firstItem="Cab-44-2Vu" firstAttribute="centerY" secondItem="UMV-1i-VK4" secondAttribute="centerY" id="EmJ-I4-nNd"/>
+                                                                <constraint firstAttribute="width" constant="50" id="BB1-R7-JH1"/>
+                                                                <constraint firstAttribute="height" constant="50" id="CgI-2Y-qjt"/>
+                                                                <constraint firstAttribute="width" secondItem="Cab-44-2Vu" secondAttribute="height" id="kat-Nd-9F0"/>
                                                             </constraints>
-                                                        </stackView>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed3-jh-qCc">
                                                             <rect key="frame" x="3" y="58" width="44.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -56,14 +47,6 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49q-xD-JFP">
-                                                    <rect key="frame" x="362" y="91" width="20" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="person.crop.circle" catalog="system"/>
-                                                    <connections>
-                                                        <segue destination="cgz-Px-L5o" kind="show" id="TYa-bL-x5o"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vCK-c2-eaA" firstAttribute="centerY" secondItem="6yK-A0-whR" secondAttribute="centerY" id="Npu-0h-PYk"/>
@@ -155,6 +138,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="hFj-CG-QIQ" id="d7f-Sf-owm"/>
+                        <outlet property="userIntroduct" destination="Hrq-T7-zL2" id="3Xm-7H-PUl"/>
+                        <outlet property="userNickName" destination="Ed3-jh-qCc" id="OKo-v2-aPZ"/>
+                        <outlet property="userPicture" destination="Cab-44-2Vu" id="ZvJ-IP-foK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gq0-dz-vN5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,27 +220,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="272" id="vfS-Yi-Ftg">
-                                        <rect key="frame" x="0.0" y="521" width="414" height="272"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vfS-Yi-Ftg" id="Ybv-Re-tKt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="272"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름, 나이, 강아지 종류 등 최대 20자 이내로 입력해주세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRJ-2q-EDO">
-                                                    <rect key="frame" x="20" y="11" width="374" height="250"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="CRJ-2q-EDO" firstAttribute="leading" secondItem="Ybv-Re-tKt" secondAttribute="leadingMargin" id="4Wd-gr-Y9Q"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="CRJ-2q-EDO" secondAttribute="trailing" id="M4e-hm-z8u"/>
-                                                <constraint firstItem="CRJ-2q-EDO" firstAttribute="top" secondItem="Ybv-Re-tKt" secondAttribute="topMargin" id="OLc-lU-OP5"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="CRJ-2q-EDO" secondAttribute="bottom" id="tl2-LZ-Op5"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -261,12 +229,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="9mf-JY-aeI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AWN-s2-bk2"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AWN-s2-bk2">
+                            <connections>
+                                <segue destination="PcQ-aE-rhz" kind="unwind" identifier="editProfileSegue" unwindAction="unwindFromEditProfileWithSeque:" id="oHp-Y4-a7e"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ro-BN-kPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="PcQ-aE-rhz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3511.594202898551" y="2031.6964285714284"/>
+            <point key="canvasLocation" x="3483" y="2067"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DcP-jO-emr">
@@ -313,7 +286,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="hcT-dO-e2X" kind="presentation" modalPresentationStyle="formSheet" id="NPz-sR-MLg"/>
+                                            <segue destination="cgz-Px-L5o" kind="show" id="TPv-7n-nj1"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="4sy-jc-bXF" style="IBUITableViewCellStyleDefault" id="T4T-XN-eg5">
@@ -332,6 +305,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hcT-dO-e2X" kind="popoverPresentation" popoverAnchorView="T4T-XN-eg5" id="kwb-Qn-Fo0">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -344,7 +322,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="고객센터 문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cYs-vP-VCm">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="의견 보내기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cYs-vP-VCm">
                                                     <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -452,7 +430,6 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
