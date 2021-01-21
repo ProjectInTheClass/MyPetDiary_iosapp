@@ -88,20 +88,23 @@ class FirebasePostDataModel: NSObject {
             if snapshot.exists() {
                 if let value = snapshot.value as? Dictionary<String, Any> {
                     for index in value {
-                        if index.key == "\(selectedDate)" { // 기존에 저장한 내용이 있는 경우
-                            let post = ["post_content": contentToDB, // 글 내용 저장
-                                        //"post_updated_date": current_date_string, // 글 업로드 시기 저장
-                                        "post_date": selectedDate, // 글 자체의 날짜 저장
-                                        "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
-                                        "post_wash": receivedWashSwitch,
-                                        "post_medicine": receivedMedicineSwitch,
-                                        "post_image": receivedImageURL,
-                                        "post_hospital": receivedHospitalSwitch] as [String : Any]
+                        if let post = index.value as? Dictionary<String, Any> {
+                            if index.key == selectedDate {
+                                let post = ["post_content": contentToDB, // 글 내용 저장
+                                            "post_updated_date": post["post_updated_date"] as Any, // 글 업로드 시기 저장
+                                            "post_date": selectedDate, // 글 자체의 날짜 저장
+                                            "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+                                            "post_wash": receivedWashSwitch,
+                                            "post_medicine": receivedMedicineSwitch,
+                                            "post_image": receivedImageURL,
+                                            "post_hospital": receivedHospitalSwitch] as [String : Any]
 
-                            postDetailRef.setValue(post)
-                            return
+                                postDetailRef.setValue(post)
+                                return
+                            }
                         }
                     }
+                    // 해당 날짜에 기존 글이 없을 경우
                     let post = ["post_content": contentToDB, // 글 내용 저장
                                 "post_updated_date": current_date_string, // 글 업로드 시기 저장
                                 "post_date": selectedDate, // 글 자체의 날짜 저장
@@ -114,6 +117,7 @@ class FirebasePostDataModel: NSObject {
                     postDetailRef.setValue(post)
                 }
             } else {
+                // 처음으로 글 작성했을 경우
                 let post = ["post_content": contentToDB, // 글 내용 저장
                             "post_updated_date": current_date_string, // 글 업로드 시기 저장
                             "post_date": selectedDate, // 글 자체의 날짜 저장
