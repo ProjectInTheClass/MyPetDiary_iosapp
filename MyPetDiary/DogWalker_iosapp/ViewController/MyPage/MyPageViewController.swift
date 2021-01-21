@@ -19,9 +19,15 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     // image - db
     var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
+    func imageCircle(){
+        userPicture.layer.cornerRadius = userPicture.frame.height / 2
+        userPicture.layer.borderWidth = 1
+        userPicture.clipsToBounds = true
+        userPicture.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imageCircle()
         // Do any additional setup after loading the view.
         // 기기 토큰 확인하기
         let deviceToken = UserDefaults.standard.string(forKey: "token")!

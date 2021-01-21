@@ -104,10 +104,17 @@ class EditProfileViewController: UIViewController {
             print("Camera not available")
         }
     }
+    func imageCircle(){
+        userImage.layer.cornerRadius = userImage.frame.height / 2
+        userImage.layer.borderWidth = 1
+        userImage.clipsToBounds = true
+        userImage.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        imageCircle()
         // Do any additional setup after loading the view.
     }
 
