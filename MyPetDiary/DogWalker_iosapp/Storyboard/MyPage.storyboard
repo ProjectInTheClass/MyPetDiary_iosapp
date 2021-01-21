@@ -95,6 +95,7 @@
                     <navigationItem key="navigationItem" id="8WB-vT-3Qy">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="vpG-1f-HtI">
                             <connections>
+                                <action selector="saveButtonAction:" destination="kuw-GN-hJd" id="ui1-Ss-Me8"/>
                                 <segue destination="pjU-oF-kD0" kind="unwind" unwindAction="unwindFromEditProfileWithSeque:" id="2vK-Nb-ot5"/>
                             </connections>
                         </barButtonItem>
@@ -103,6 +104,7 @@
                         <outlet property="editIDTextField" destination="W5n-F6-VJb" id="hmS-V7-0mc"/>
                         <outlet property="editImageButton" destination="Jjs-kN-kbf" id="a1y-MN-Xuw"/>
                         <outlet property="editIntroTextField" destination="DKq-OU-XZV" id="9cb-sh-mRb"/>
+                        <outlet property="saveButton" destination="vpG-1f-HtI" id="nSX-Lb-YIW"/>
                         <outlet property="userImage" destination="lnH-QB-rhJ" id="zZY-BZ-Ff8"/>
                     </connections>
                 </viewController>
@@ -433,22 +435,6 @@
                 <exit id="e3g-Mb-nBV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7182.6086956521749" y="1297.7678571428571"/>
-        </scene>
-        <!--Send Mail View Controller-->
-        <scene sceneID="Pxm-tm-0Kf">
-            <objects>
-                <viewController id="Mg8-Gb-YXz" customClass="SendMailViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t3X-TZ-e7U">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="BgX-nh-G3b"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="OXe-8g-UrP"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bz2-wH-5vZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7183" y="2097"/>
         </scene>
         <!--Item-->
         <scene sceneID="U4G-dh-b6J">

@@ -18,7 +18,9 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editImageButton: UIButton!
     @IBOutlet weak var editIDTextField: UITextField!
     @IBOutlet weak var editIntroTextField: UITextField!
-    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBAction func saveButtonAction(_ sender: Any) {
+    }
     let picker = UIImagePickerController()
     var localFile = "" // 넘겨줄 사진 파일 url
     
