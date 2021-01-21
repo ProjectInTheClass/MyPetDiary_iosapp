@@ -10,8 +10,7 @@ import UIKit
 class SettingViewController: UITableViewController {
 
     @IBAction func unwindFromModal (seque: UIStoryboardSegue) {}
-    @IBAction func unwindFromEditProfile(seque: UIStoryboardSegue){
-    }
+    @IBAction func unwindFromEditProfile(seque: UIStoryboardSegue){}
     override func viewDidLoad() {
         super.viewDidLoad()
 

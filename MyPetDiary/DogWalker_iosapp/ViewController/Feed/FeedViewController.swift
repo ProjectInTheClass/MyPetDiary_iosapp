@@ -10,6 +10,7 @@ import FSCalendar
 import RealmSwift
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
 
@@ -201,6 +202,26 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         }
     }
     
+    func loadMemoImage() {
+        let storage = Storage.storage()
+        let pathReference = storage.reference(withPath: "postImage/MyPetDiary.jpg")
+        
+        // Create a reference to the file you want to download
+        //let islandRef = storageRef.child("images/island.jpg")
+
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        pathReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+            print(error.localizedDescription)
+          } else {
+            // Data for "images/island.jpg" is returned
+            let downloadImage = UIImage(data: data!)
+            self.subImageView.image = downloadImage
+          }
+        }
+    }
+    
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
@@ -218,6 +239,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         setCalendar()
 //        initLabel()
 //        showTodo()
+        
+        loadMemoImage()
         
     }
     override func viewWillAppear(_ animated: Bool) {

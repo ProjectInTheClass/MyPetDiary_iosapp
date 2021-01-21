@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class AddPostViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,7 +16,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     
     //let storage = Storage.storage(url: "gs://mypetdiary-475e9.appspot.com")
     
-    let storageRef = Storage.storage(url: "gs://mypetdiary-475e9.appspot.com").reference() // Firebase Storage 객체
+    let storageRef = Storage.storage().reference() // Firebase Storage 객체
 
     @IBOutlet weak var textField: UITextField!
     var receivedPostDate = ""
@@ -63,23 +64,92 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             // Firebase Storage에 사진 올리기
             // File located on disk
             let localFile = URL(string: receivedImageURL)!
+            
+            // create the file metadata
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
 
             // Create a reference to the file you want to upload
-            let riversRef = storageRef.child("images/rivers.jpg")
-
-            // Upload the file to the path "images/rivers.jpg"
+            let riversRef = storageRef.child("postImage/1.jpeg")
+            
+            //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
+            
             let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
-              guard let metadata = metadata else {
-                // Uh-oh, an error occurred!
-                return
-              }
+                if let error = error {
+                    print(error.localizedDescription)
+                    print("업로드 실패")
+                } else {
+                    print("업로드 성공")
+                }
+                guard let metadata = metadata else {
+                  // Uh-oh, an error occurred!
+                  return
+                }
+                if let error = error {
+                    print("에러 발생")
+                }
               // Metadata contains file metadata such as size, content-type.
               let size = metadata.size
               // You can also access to download URL after upload.
-              riversRef.downloadURL { (url, error) in
+                self.storageRef.downloadURL { (url, error) in
                 guard let downloadURL = url else {
                   // Uh-oh, an error occurred!
                   return
+                }
+              }
+            }
+            
+            //
+//            var data = Data()
+//            var img: UIImage = receivedImage.image!
+//            data = img.jpegData(compressionQuality: 0.8)!
+//            storageRef.putData(data, metadata: metadata) {
+//                (metadata, error) in if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//            }
+            
+            // Listen for state changes, errors, and completion of the upload.
+            uploadTask.observe(.resume) { snapshot in
+              // Upload resumed, also fires when the upload starts
+            }
+
+            uploadTask.observe(.pause) { snapshot in
+              // Upload paused
+            }
+
+            uploadTask.observe(.progress) { snapshot in
+              // Upload reported progress
+              let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                / Double(snapshot.progress!.totalUnitCount)
+            }
+
+            uploadTask.observe(.success) { snapshot in
+              // Upload completed successfully
+            }
+            
+            uploadTask.observe(.failure) { snapshot in
+              if let error = snapshot.error as? NSError {
+                switch (StorageErrorCode(rawValue: error.code)!) {
+                case .objectNotFound:
+                  // File doesn't exist
+                  break
+                case .unauthorized:
+                  // User doesn't have permission to access file
+                  break
+                case .cancelled:
+                  // User canceled the upload
+                  break
+
+                /* ... */
+
+                case .unknown:
+                  // Unknown error occurred, inspect the server response
+                  break
+                default:
+                  // A separate error occurred. This is a good place to retry the upload.
+                  break
                 }
               }
             }

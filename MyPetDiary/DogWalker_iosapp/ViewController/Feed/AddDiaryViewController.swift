@@ -244,7 +244,10 @@ UINavigationControllerDelegate{
         let data=NSData(contentsOf: imageUrl as! URL)!
         print("lastURL:\(localPath!.path)")
         //localFile = String(describing: localPath)
-        localFile = "\(localPath!.path)"
+        var str = "file://"
+        let fileURL = "\(localPath!.path)"
+        str.append(fileURL)
+        localFile = str
         //localFile = String(decoding: localPath!, as: UTF8.self)
         print("localFile:"+localFile)
         dismiss(animated: true, completion: nil)
