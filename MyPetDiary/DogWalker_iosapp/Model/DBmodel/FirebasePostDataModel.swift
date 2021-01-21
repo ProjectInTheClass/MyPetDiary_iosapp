@@ -67,18 +67,68 @@ class FirebasePostDataModel: NSObject {
                     contentToDB: String, receivedWalkSwitch: Bool, receivedWashSwitch: Bool,
                     receivedMedicineSwitch: Bool, receivedHospitalSwitch: Bool,
                     receivedImageURL: String) {
-        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
         
-        let post = ["post_content": contentToDB, // 글 내용 저장
-                    "post_updated_date": current_date_string, // 글 업로드 시기 저장
-                    "post_date": selectedDate, // 글 자체의 날짜 저장
-                    "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
-                    "post_wash": receivedWashSwitch,
-                    "post_medicine": receivedMedicineSwitch,
-                    "post_image": receivedImageURL,
-                    "post_hospital": receivedHospitalSwitch] as [String : Any]
+        let postRef: DatabaseReference! =
+            Database.database().reference().child("Post").child("\(deviceToken)")
+
+        let postDetailRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
+
+//        let post = ["post_content": contentToDB, // 글 내용 저장
+//                    "post_updated_date": current_date_string, // 글 업로드 시기 저장
+//                    "post_date": selectedDate, // 글 자체의 날짜 저장
+//                    "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+//                    "post_wash": receivedWashSwitch,
+//                    "post_medicine": receivedMedicineSwitch,
+//                    "post_image": receivedImageURL,
+//                    "post_hospital": receivedHospitalSwitch] as [String : Any]
+//
+//        postDetailRef.setValue(post)
         
-        postRef.setValue(post)
+        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    for index in value {
+                        if index.key == "\(selectedDate)" { // 기존에 저장한 내용이 있는 경우
+                            let post = ["post_content": contentToDB, // 글 내용 저장
+                                        //"post_updated_date": current_date_string, // 글 업로드 시기 저장
+                                        "post_date": selectedDate, // 글 자체의 날짜 저장
+                                        "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+                                        "post_wash": receivedWashSwitch,
+                                        "post_medicine": receivedMedicineSwitch,
+                                        "post_image": receivedImageURL,
+                                        "post_hospital": receivedHospitalSwitch] as [String : Any]
+
+                            postDetailRef.setValue(post)
+                            return
+                        }
+                    }
+                    let post = ["post_content": contentToDB, // 글 내용 저장
+                                "post_updated_date": current_date_string, // 글 업로드 시기 저장
+                                "post_date": selectedDate, // 글 자체의 날짜 저장
+                                "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+                                "post_wash": receivedWashSwitch,
+                                "post_medicine": receivedMedicineSwitch,
+                                "post_image": receivedImageURL,
+                                "post_hospital": receivedHospitalSwitch] as [String : Any]
+
+                    postDetailRef.setValue(post)
+                }
+            } else {
+                let post = ["post_content": contentToDB, // 글 내용 저장
+                            "post_updated_date": current_date_string, // 글 업로드 시기 저장
+                            "post_date": selectedDate, // 글 자체의 날짜 저장
+                            "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+                            "post_wash": receivedWashSwitch,
+                            "post_medicine": receivedMedicineSwitch,
+                            "post_image": receivedImageURL,
+                            "post_hospital": receivedHospitalSwitch] as [String : Any]
+
+                postDetailRef.setValue(post)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
     }
     
     // get content from db
@@ -101,6 +151,26 @@ class FirebasePostDataModel: NSObject {
             }
         }) { (error) in
             print(error.localizedDescription)
+        }
+    }
+    
+    func showImageFromDB(deviceToken: String, postUpdatedDate: String,
+                         completion: @escaping (UIImage) -> Void) {
+        let storage = Storage.storage()
+        // Create a reference from a Google Cloud Storage URI
+        let gsRef = storage.reference(forURL: "gs://mypetdiary-475e9.appspot.com/2021-01-21 19:40:41E0A70A86-CD62-4D26-A218-4385A77AC8D0.jpeg")
+        
+        // Create a reference to the file you want to download
+        //let islandRef = storageRef.child("\(postUpdatedDate)\(deviceToken).jpg")
+
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        gsRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+          } else {
+            // Data for "images/island.jpg" is returned
+            let image = UIImage(data: data!)
+          }
         }
     }
 }

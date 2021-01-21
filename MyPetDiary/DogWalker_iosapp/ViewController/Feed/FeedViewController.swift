@@ -163,13 +163,12 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 //    }
     func loadMemoImage() {
         let storage = Storage.storage()
-        let pathReference = storage.reference(withPath: "postImage/MyPetDiary.jpg")
         
-        // Create a reference to the file you want to download
-        //let islandRef = storageRef.child("images/island.jpg")
+        // Create a reference from a Google Cloud Storage URI
+        let gsReference = storage.reference(forURL: "gs://mypetdiary-475e9.appspot.com/2021-01-21 19:40:41+E0A70A86-CD62-4D26-A218-4385A77AC8D0.jpeg")
 
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        pathReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+        gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
           if let error = error {
             // Uh-oh, an error occurred!
             print(error.localizedDescription)

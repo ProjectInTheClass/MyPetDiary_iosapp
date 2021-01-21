@@ -85,7 +85,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         metadata.contentType = "image/jpeg"
 
         // Create a reference to the file you want to upload
-        let photoDetailRef = storageRef.child("\(current_date_string)\(deviceToken).jpeg")
+        let photoDetailRef = storageRef.child("\(current_date_string)+\(deviceToken).jpeg")
         
         var data = receivedPhotoData
         //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)

@@ -13,12 +13,6 @@ import FirebaseAuth
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    //var ref: FirebaseDatabase.DatabaseReference! = FirebaseDatabase.Database.reference(self: Database)
-    var ref: DatabaseReference! = Database.database().reference()
-    
-//    var ref: DatabaseReference!
-//    ref = Database.database().reference()
-    
     @IBOutlet weak var nickName: UITextField!
     
     // 회원가입 버튼 눌렀을 경우
@@ -42,19 +36,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //            
 //        }
         
-        let userRef = self.ref.child("User")
-        // let userRef = self.ref.child("User").childByAutoId()
-        let userTokenRef = userRef.child(deviceUniqueToken)
-        let userNicknameRef = userTokenRef.child("userInfo").child("user_nickname")
+        let userRef: DatabaseReference! =
+            Database.database().reference()
+            .child("User").child(deviceUniqueToken).child("userInfo").child("user_nickname")
         
         if let inputNickname = self.nickName.text {
-//            let userTokenRef = self.ref.child("User").child("user_token")
-//            let userRef = self.ref.child("User").child("user_nickname")
-//            userTokenRef.setValue(uniqueToken)
-//            userRef.setValue(inputNickName)
-            
-            userNicknameRef.setValue(inputNickname)
-            
+            userRef.setValue(inputNickname)
         }
         
         

@@ -101,8 +101,6 @@ class AddDiaryViewController: UIViewController{
         })
     }
     
-    
-    
     func settingAlert(){
         if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String{
             let alert = UIAlertController(title: "Alert", message: "\(appName)이(가) 카메라 접근이 허용되지 않았습니다. 설정화면으로 이동하시겠습니까?", preferredStyle:  .alert)
