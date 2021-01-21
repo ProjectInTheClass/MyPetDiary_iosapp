@@ -30,27 +30,6 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
             .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
                 self.userNickName.text = nickname
             })
-        
-        //userNickName.text = userDataModel.showUserNickname(deviceToken: "\(deviceToken)")
-//
-//        ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//            let value = snapshot.value as? NSDictionary
-//
-//            let userData = FirebaseUserDataModel()
-//            userData.setValuesForKeys(value! as! [String : Any])
-//
-//            print("user_nickname: \(userData.user_nickname)")
-//
-////            let username = value?["user_nickname"] as? String ?? ""
-////
-////            print("username:"+username)
-////
-////            self.userNickName.text = username
-//
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
     }
     // collectionview 설정 - 이미지 개수 count
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
