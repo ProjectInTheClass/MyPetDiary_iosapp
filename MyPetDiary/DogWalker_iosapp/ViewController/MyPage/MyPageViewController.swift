@@ -28,7 +28,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         print("마이페이지 기기 토큰 확인:"+deviceToken)
         userDataModel
             .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
-                print(nickname)
+                self.userNickName.text = nickname
             })
         
         //userNickName.text = userDataModel.showUserNickname(deviceToken: "\(deviceToken)")
