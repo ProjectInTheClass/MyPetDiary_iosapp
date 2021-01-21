@@ -23,5 +23,15 @@ class PostCell: UITableViewCell
         profileImageView.image = post.createdBy.profileImage
         usernameLabel.text = post.createdBy.username
         postImageView.image = post.image
+        
+        profileImageView.layer.cornerRadius = 20
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.borderWidth = 2
+        profileImageView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        postImageView.clipsToBounds = true
+        postImageView.layer.borderWidth = 1
+        postImageView.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
 }
