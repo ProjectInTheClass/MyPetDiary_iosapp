@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0549476625B9656F00714492 /* FirebasePostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549476525B9656F00714492 /* FirebasePostDataModel.swift */; };
 		05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */; };
 		05E0C1BC25B7FAA3009DB146 /* FirebaseUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */; };
 		05E0C1C625B7FAEC009DB146 /* MPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0549476525B9656F00714492 /* FirebasePostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePostDataModel.swift; sourceTree = "<group>"; };
 		05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataModel.swift; sourceTree = "<group>"; };
 		05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */,
+				0549476525B9656F00714492 /* FirebasePostDataModel.swift */,
 			);
 			path = DBmodel;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0549476625B9656F00714492 /* FirebasePostDataModel.swift in Sources */,
 				76F1381F25B9545A0082CDB1 /* EditProfileViewController.swift in Sources */,
 				7640D6A325AED24000A15B14 /* TodayDateCenter.swift in Sources */,
 				05E0C1BC25B7FAA3009DB146 /* FirebaseUserDataModel.swift in Sources */,
