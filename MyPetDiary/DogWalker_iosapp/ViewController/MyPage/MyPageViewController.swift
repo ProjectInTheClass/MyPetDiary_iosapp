@@ -11,6 +11,9 @@ import FirebaseDatabase
 
 class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet weak var userNickName: UILabel!
+    @IBOutlet weak var userInfo: UILabel!
+    @IBOutlet weak var userPicture: UIImageView!
     var ref: DatabaseReference! = Database.database().reference()
     var userDataModel: FirebaseUserDataModel!
     // image - db
