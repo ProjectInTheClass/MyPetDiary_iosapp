@@ -220,26 +220,26 @@ UINavigationControllerDelegate{
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             imageView.image = image
-            print("testImage\(image)")
+            photoData = image.pngData() as NSData?
         }
         
-        let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
-        let imageName=imageUrl?.lastPathComponent//파일이름
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-                     
-        let photoURL = NSURL(fileURLWithPath: documentDirectory)
-        print("photoURL\(photoURL)")
-        let localPath = photoURL.appendingPathComponent(imageName!)//파일경로
-        photoData = NSData(contentsOf: imageUrl as! URL)!
-        print("lastURL:\(localPath!.path)")
-        filePath = localPath!.path
-        //localFile = String(describing: localPath)
-        var str = "file://"
-        let fileURL = "\(localPath!.path)"
-        str.append(fileURL)
-        localFile = str
-        //localFile = String(decoding: localPath!, as: UTF8.self)
-        print("localFile:"+localFile)
+//        let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
+//        let imageName=imageUrl?.lastPathComponent//파일이름
+//        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+//
+//        let photoURL = NSURL(fileURLWithPath: documentDirectory)
+//        print("photoURL\(photoURL)")
+//        let localPath = photoURL.appendingPathComponent(imageName!)//파일경로
+//        photoData = NSData(contentsOf: imageUrl as! URL)!
+//        print("lastURL:\(localPath!.path)")
+//        filePath = localPath!.path
+//        //localFile = String(describing: localPath)
+//        var str = "file://"
+//        let fileURL = "\(localPath!.path)"
+//        str.append(fileURL)
+//        localFile = str
+//        //localFile = String(decoding: localPath!, as: UTF8.self)
+//        print("localFile:"+localFile)
         dismiss(animated: true, completion: nil)
       
     }

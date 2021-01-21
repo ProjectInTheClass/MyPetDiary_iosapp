@@ -32,6 +32,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         // 기기 토큰 확인하기
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("마이페이지 기기 토큰 확인:"+deviceToken)
+        
         userDataModel
             .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
                 self.userNickName.text = nickname
