@@ -38,7 +38,7 @@ class FirebasePostDataModel: NSObject {
                   post_walk: false, post_wash: false, post_medicine: false, post_hospital: false)
     }
     
-    // DB에서 Switch 정보 불러오기
+    // get switch value from DB
     func showSwitchFromDB(deviceToken: String, selectedDate: String,
                            completion: @escaping (Bool, Bool, Bool, Bool) -> Void) {
         let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
@@ -62,7 +62,7 @@ class FirebasePostDataModel: NSObject {
         }
     }
     
-    // DB에 올리기
+    // upload post to DB
     func uploadToDB(deviceToken: String, selectedDate: String, current_date_string: String,
                     contentToDB: String, receivedWalkSwitch: Bool, receivedWashSwitch: Bool,
                     receivedMedicineSwitch: Bool, receivedHospitalSwitch: Bool,
@@ -79,5 +79,28 @@ class FirebasePostDataModel: NSObject {
                     "post_hospital": receivedHospitalSwitch] as [String : Any]
         
         postRef.setValue(post)
+    }
+    
+    // get content from db
+    func showContentFromDB(deviceToken: String, selectedDate: String,
+                           completion: @escaping (String) -> Void) {
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        
+        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    //let dic = values as! [String : [String:Any]]
+                    for index in value {
+                        if let post = index.value as? Dictionary<String, Any> {
+                            if post["post_date"] as? String == selectedDate {
+                                completion(post["post_content"] as! String)
+                            }
+                        }
+                    }
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 }

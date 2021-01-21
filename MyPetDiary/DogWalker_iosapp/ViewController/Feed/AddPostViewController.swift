@@ -163,31 +163,12 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
-        checkDB(deviceToken: deviceToken)
-    }
-    
-    // 기존에 쓴 데이터가 있는지 확인하기
-    func checkDB(deviceToken: String) {
-        let ref: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
-        
-        ref.observeSingleEvent(of: .value, with: {(snapshot) in
-            if snapshot.exists() {
-                let values = snapshot.value
-                let dic = values as! [String : [String:Any]]
-                for index in dic {
-                    if (index.value["post_date"] as? String == self.receivedPostDate) {
-                        print(index.key)
-                        print(index.value["post_content"] ?? "")
-                        print(index.value["post_walk"] ?? false)
-                        print(index.value["post_wash"] ?? false)
-                        print(index.value["post_medicine"] ?? false)
-                        print(index.value["post_hospital"] ?? false)
-                        
-                        self.textField.text = index.value["post_content"] as? String
-                    }
-                }
-            }
-        })
+        // 기존에 쓴 글이 있다면 내용 가져오기
+        postDataModel
+            .showContentFromDB(deviceToken: deviceToken, selectedDate: receivedPostDate, completion: {
+                content in
+                self.textField.text = content
+            })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
