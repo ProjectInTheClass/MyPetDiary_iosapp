@@ -250,7 +250,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="userInfo" destination="AHz-Rq-kkw" id="qej-d2-3Gz"/>
-                        <outlet property="userName" destination="q7H-3c-FYL" id="E4X-h9-5rH"/>
+                        <outlet property="userNickName" destination="q7H-3c-FYL" id="55R-7B-tst"/>
                         <outlet property="userPicture" destination="Yxz-23-Arx" id="hVh-se-JJ6"/>
                     </connections>
                 </viewController>
