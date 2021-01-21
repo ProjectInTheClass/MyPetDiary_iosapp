@@ -38,7 +38,7 @@ class FirebasePostDataModel: NSObject {
                   post_walk: false, post_wash: false, post_medicine: false, post_hospital: false)
     }
     
-    func showContentFromDB(deviceToken: String, selectedDate: String,
+    func showSwitchFromDB(deviceToken: String, selectedDate: String,
                            completion: @escaping (Bool, Bool, Bool, Bool) -> Void) {
         let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
         
@@ -48,7 +48,6 @@ class FirebasePostDataModel: NSObject {
                     //let dic = values as! [String : [String:Any]]
                     for index in value {
                         if let post = index.value as? Dictionary<String, Any> {
-                            print(post["post_date"])
                             if post["post_date"] as? String == selectedDate {
                                 completion(post["post_walk"] as! Bool, post["post_wash"] as! Bool,
                                            post["post_medicine"] as! Bool, post["post_hospital"] as! Bool)

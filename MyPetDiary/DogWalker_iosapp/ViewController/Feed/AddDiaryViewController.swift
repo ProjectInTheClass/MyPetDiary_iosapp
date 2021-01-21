@@ -92,7 +92,7 @@ class AddDiaryViewController: UIViewController{
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
-        postDataModel.showContentFromDB(deviceToken: "\(deviceToken)", selectedDate: showDateData, completion: {
+        postDataModel.showSwitchFromDB(deviceToken: "\(deviceToken)", selectedDate: showDateData, completion: {
             walkDB, washDB, medicineDB, hospitalDB in
             self.isWalked.isOn = walkDB
             self.isWashed.isOn = washDB

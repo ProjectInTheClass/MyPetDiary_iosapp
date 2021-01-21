@@ -21,6 +21,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     var ref: DatabaseReference! = Database.database().reference()
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
+    var postDataModel = FirebasePostDataModel.shared
     
     @IBOutlet weak var subPostView: UIStackView!
     // subview
@@ -126,11 +127,31 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         
     }
     
+    // 캘린더에서 해당 날짜 라벨 표시하기
     func showTodo(){
         // 기기 토큰 확인하기
-        
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
-        showEventLabel(deviceToken: deviceToken)
+        
+        postDataModel
+            .showSwitchFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
+            walkDB, washDB, medicineDB, hospitalDB in
+                if walkDB {
+                    self.walkingLabel.isHidden = false
+                    self.walkingLabel.text = "🌿산책"
+                } else { self.walkingLabel.isHidden = true }
+                if washDB {
+                    self.washLabel.isHidden = false
+                    self.washLabel.text = "🛁목욕"
+                } else { self.washLabel.isHidden = true }
+                if medicineDB {
+                    self.medicineLabel.isHidden = false
+                    self.medicineLabel.text = "💊약"
+                } else { self.medicineLabel.isHidden = true }
+                if hospitalDB {
+                    self.hospitalLabel.isHidden = false
+                    self.hospitalLabel.text = "🏥병원"
+                } else { self.hospitalLabel.isHidden = true }
+        })
 //        viewDidLoad()
     }
     
@@ -140,72 +161,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 //        self.medicineLabel.isHidden = true
 //        self.hospitalLabel.isHidden = true
 //    }
-    
-    // 해당 날짜 라벨 보여주기
-    func showEventLabel(deviceToken: String) {
-        ref.child("Post").child("\(deviceToken)").observeSingleEvent(of: .value, with: {(snapshot) in
-            if snapshot.exists() {
-                let values = snapshot.value
-                let dic = values as! [String : [String:Any]]
-                
-                if self.selectedDateString == "" {
-//                    let formatter = DateFormatter()
-//                    formatter.dateFormat = "yyyy-MM-dd"
-                    self.selectedDateString = self.formatter.string(from: Date())
-                }
-//                initLabel()
-                self.walkingLabel.isHidden = true // hide
-                self.washLabel.isHidden = true
-                self.medicineLabel.isHidden = true
-                self.hospitalLabel.isHidden = true
-
-                print("오늘날짜:\(self.selectedDateString)")
-                for index in dic {
-                    if (index.value["post_date"] as? String == self.selectedDateString) {
-                        print(index.key)
-                        print(index.value["post_walk"] ?? false)
-                        print(index.value["post_wash"] ?? false)
-                        print(index.value["post_medicine"] ?? false)
-                        print(index.value["post_hospital"] ?? false)
-                        
-                        if index.value["post_walk"] as! Bool {
-                            self.walkingLabel.isHidden = false
-                            self.walkingLabel.text = "🌿산책"
-                        } else {
-                            self.walkingLabel.isHidden = true
-                        }
-                        if index.value["post_wash"] as! Bool {
-                            self.washLabel.isHidden = false
-                            self.washLabel.text = "🛁목욕"
-                        } else {
-                            self.washLabel.isHidden = true
-                        }
-                        if index.value["post_medicine"] as! Bool {
-                            self.medicineLabel.isHidden = false
-                            self.medicineLabel.text = "💊약"
-                        } else {
-                            self.medicineLabel.isHidden = true
-                        }
-                        if index.value["post_hospital"] as! Bool {
-                            self.hospitalLabel.isHidden = false
-                            self.hospitalLabel.text = "🏥병원"
-                        } else {
-                            self.hospitalLabel.isHidden = true
-                        }
-                        
-                    }
-                }
-            } else {
-                self.walkingLabel.isHidden = true // hide
-                self.washLabel.isHidden = true
-                self.medicineLabel.isHidden = true
-                self.hospitalLabel.isHidden = true
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
     func loadMemoImage() {
         let storage = Storage.storage()
         let pathReference = storage.reference(withPath: "postImage/MyPetDiary.jpg")
