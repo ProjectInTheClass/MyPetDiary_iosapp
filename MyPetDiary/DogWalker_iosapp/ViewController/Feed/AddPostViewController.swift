@@ -26,6 +26,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var receivedWashSwitch = false // 이전 페이지 목욕 스위치
     var receivedMedicineSwitch = false // 이전 페이지 약 스위치
     var receivedHospitalSwitch = false // 이전 페이지 병원 스위치
+    var receivedFilePath = "" // 이전 페이지 사진 path
     
     let picker = UIImagePickerController()
     
@@ -63,7 +64,8 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         
             // Firebase Storage에 사진 올리기
             // File located on disk
-            let localFile = URL(string: receivedImageURL)!
+            let localFile = URL(fileURLWithPath: receivedFilePath)
+            
             
             // create the file metadata
             let metadata = StorageMetadata()

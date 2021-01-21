@@ -10,6 +10,7 @@ import Firebase
 import FirebaseDatabase
 
 class FirebaseUserDataModel: NSObject {
+    static let shared = FirebaseUserDataModel()
     
     var ref: DatabaseReference! = Database.database().reference()
     
@@ -24,20 +25,15 @@ class FirebaseUserDataModel: NSObject {
     }
     
     // 마이페이지에서 user_nickname 보이기
-    func showUserNickname(deviceToken: String) -> String {
+    func showUserNickname(deviceToken: String, completion: @escaping (String) -> Void) {
         ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            let value = snapshot.value as? NSDictionary
-            
-            let userData = FirebaseUserDataModel()
-            userData.setValuesForKeys(value! as! [String : Any])
-            
-            print("user_nickname: \(userData.user_nickname)")
-            
+            if let value = snapshot.value as? Dictionary<String, String> {
+                completion(value["user_nickname"] ?? "")
+            }
         }) { (error) in
             print(error.localizedDescription)
         }
         
-        return user_nickname
     }
 }

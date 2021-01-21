@@ -27,6 +27,7 @@ class AddDiaryViewController: UIViewController{
     @IBOutlet weak var hospital: UILabel! // 병원 라벨
     var showDateData = "" // 넘겨줄 날짜 데이터
     var localFile = "" // 넘겨줄 사진 파일 url
+    var filePath = "" // 넘겨줄 사진 path
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
@@ -219,7 +220,9 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedHospitalSwitch = self.isHospital.isOn
         nextViewController.receivedPostDate = self.showDateData
         nextViewController.receivedImageURL = self.localFile
+        nextViewController.receivedFilePath = self.filePath
         print("localFile:\(localFile)")
+        print("filePath:\(filePath)")
     }
     
 }
@@ -243,6 +246,7 @@ UINavigationControllerDelegate{
         let localPath = photoURL.appendingPathComponent(imageName!)//파일경로
         let data=NSData(contentsOf: imageUrl as! URL)!
         print("lastURL:\(localPath!.path)")
+        filePath = localPath!.path
         //localFile = String(describing: localPath)
         var str = "file://"
         let fileURL = "\(localPath!.path)"

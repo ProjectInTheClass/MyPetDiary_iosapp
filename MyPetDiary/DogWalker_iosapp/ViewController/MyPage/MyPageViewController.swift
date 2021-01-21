@@ -15,7 +15,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
     var ref: DatabaseReference! = Database.database().reference()
-    var userDataModel: FirebaseUserDataModel!
+    var userDataModel = FirebaseUserDataModel.shared
     // image - db
     var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
@@ -26,6 +26,10 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         // 기기 토큰 확인하기
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("마이페이지 기기 토큰 확인:"+deviceToken)
+        userDataModel
+            .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
+                print(nickname)
+            })
         
         //userNickName.text = userDataModel.showUserNickname(deviceToken: "\(deviceToken)")
 //
