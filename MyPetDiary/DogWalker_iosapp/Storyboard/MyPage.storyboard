@@ -37,6 +37,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjs-kN-kbf">
                                                         <rect key="frame" x="30" y="132" width="25" height="24"/>
                                                         <color key="tintColor" red="0.84278053050000001" green="0.37264484170000001" blue="0.45808833840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="addImage:" destination="kuw-GN-hJd" eventType="touchUpInside" id="tMY-qV-ccs"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
