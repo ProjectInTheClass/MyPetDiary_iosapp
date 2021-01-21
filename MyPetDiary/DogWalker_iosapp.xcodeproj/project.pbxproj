@@ -34,6 +34,7 @@
 		7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655054325A4763600FA5CFE /* AddDiaryViewController.swift */; };
 		769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */; };
 		76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */; };
+		76F1381F25B9545A0082CDB1 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F1381E25B9545A0082CDB1 /* EditProfileViewController.swift */; };
 		76F718FF25B89779009E87E1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F718FE25B89779009E87E1 /* MyPageViewController.swift */; };
 		D2729DE7BE144748584B6206 /* Pods_DogWalker_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		7655054325A4763600FA5CFE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMemoViewController.swift; path = DogWalker_iosapp/ViewController/Feed/TodayMemoViewController.swift; sourceTree = SOURCE_ROOT; };
+		76F1381E25B9545A0082CDB1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		76F718FE25B89779009E87E1 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogWalker_iosapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				05E0C1CF25B7FB60009DB146 /* SettingViewController.swift */,
 				05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */,
 				76F718FE25B89779009E87E1 /* MyPageViewController.swift */,
+				76F1381E25B9545A0082CDB1 /* EditProfileViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F1381F25B9545A0082CDB1 /* EditProfileViewController.swift in Sources */,
 				7640D6A325AED24000A15B14 /* TodayDateCenter.swift in Sources */,
 				05E0C1BC25B7FAA3009DB146 /* FirebaseUserDataModel.swift in Sources */,
 				7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */,
