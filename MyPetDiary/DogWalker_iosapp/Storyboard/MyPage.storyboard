@@ -184,7 +184,6 @@
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oup-uv-USN">
                                         <rect key="frame" x="0.0" y="220" width="414" height="475"/>
-                                        <color key="backgroundColor" red="0.99012307150000001" green="0.91628673429999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TtF-cc-YNu">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -249,6 +248,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="userInfo" destination="AHz-Rq-kkw" id="qej-d2-3Gz"/>
+                        <outlet property="userName" destination="q7H-3c-FYL" id="E4X-h9-5rH"/>
+                        <outlet property="userPicture" destination="Yxz-23-Arx" id="hVh-se-JJ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0E9-pY-tru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
