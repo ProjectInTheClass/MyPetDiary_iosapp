@@ -29,9 +29,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
-    
-        print("UUID(token) 1: "+deviceUniqueToken)
-        print("UUID(token) 2: "+deviceUniqueToken)
         
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])

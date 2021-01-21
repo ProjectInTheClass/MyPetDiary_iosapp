@@ -47,7 +47,6 @@ class FirebasePostDataModel: NSObject {
                 if let value = snapshot.value as? Dictionary<String, Any> {
                     //let dic = values as! [String : [String:Any]]
                     for index in value {
-                        
                         if let post = index.value as? Dictionary<String, Any> {
                             print(post["post_date"])
                             if post["post_date"] as? String == selectedDate {
