@@ -337,6 +337,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Mg8-Gb-YXz" kind="show" id="pfx-h4-e7M"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -430,6 +433,22 @@
                 <exit id="e3g-Mb-nBV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7182.6086956521749" y="1297.7678571428571"/>
+        </scene>
+        <!--Send Mail View Controller-->
+        <scene sceneID="Pxm-tm-0Kf">
+            <objects>
+                <viewController id="Mg8-Gb-YXz" customClass="SendMailViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t3X-TZ-e7U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BgX-nh-G3b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OXe-8g-UrP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bz2-wH-5vZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7183" y="2097"/>
         </scene>
         <!--Item-->
         <scene sceneID="U4G-dh-b6J">
