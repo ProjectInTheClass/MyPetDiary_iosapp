@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 class AddPostViewController: UIViewController, UITextFieldDelegate {
     
@@ -68,8 +69,38 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
 
-            let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
-
+            //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
+            
+            let uploadTask = storageRef.putFile(from: localFile, metadata: nil) { metadata, error in
+              guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+              }
+                if let error = error {
+                    print("에러 발생")
+                }
+              // Metadata contains file metadata such as size, content-type.
+              let size = metadata.size
+              // You can also access to download URL after upload.
+                self.storageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                  // Uh-oh, an error occurred!
+                  return
+                }
+              }
+            }
+            
+            //
+//            var data = Data()
+//            var img: UIImage = receivedImage.image!
+//            data = img.jpegData(compressionQuality: 0.8)!
+//            storageRef.putData(data, metadata: metadata) {
+//                (metadata, error) in if let error = error {
+//                    print(error.localizedDescription)
+//                    return
+//                }
+//            }
+            
             // Listen for state changes, errors, and completion of the upload.
             uploadTask.observe(.resume) { snapshot in
               // Upload resumed, also fires when the upload starts
