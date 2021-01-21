@@ -69,13 +69,22 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
 
+            // Create a reference to the file you want to upload
+            let riversRef = storageRef.child("postImage/1.jpeg")
+            
             //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
             
-            let uploadTask = storageRef.putFile(from: localFile, metadata: nil) { metadata, error in
-              guard let metadata = metadata else {
-                // Uh-oh, an error occurred!
-                return
-              }
+            let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    print("업로드 실패")
+                } else {
+                    print("업로드 성공")
+                }
+                guard let metadata = metadata else {
+                  // Uh-oh, an error occurred!
+                  return
+                }
                 if let error = error {
                     print("에러 발생")
                 }
