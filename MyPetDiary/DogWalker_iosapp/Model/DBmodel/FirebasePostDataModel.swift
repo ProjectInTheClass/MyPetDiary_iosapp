@@ -149,6 +149,29 @@ class FirebasePostDataModel: NSObject {
         }
     }
     
+    // get upload_time from db
+    func showUploadTimeFromDB(deviceToken: String, selectedDate: String,
+                           completion: @escaping (String) -> Void) {
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        
+        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    //let dic = values as! [String : [String:Any]]
+                    for index in value {
+                        if let post = index.value as? Dictionary<String, Any> {
+                            if post["post_date"] as? String == selectedDate {
+                                completion(post["post_updated_date"] as! String)
+                            }
+                        }
+                    }
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     // download image from storage database
     func showImageFromDB(deviceToken: String, postUpdatedDate: String,
                          completion: @escaping (UIImage) -> Void) {

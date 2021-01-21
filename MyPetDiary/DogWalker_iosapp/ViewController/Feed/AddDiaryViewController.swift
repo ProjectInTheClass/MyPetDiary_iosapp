@@ -34,7 +34,11 @@ class AddDiaryViewController: UIViewController{
     var canAccessImages: [UIImage] = []
     var selectedDate: String = ""
     
-    var postDataModel = FirebasePostDataModel.shared
+    let postDataModel = FirebasePostDataModel.shared // post DB reference
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
+    
+    // 기기 토큰 확인하기
+    let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
@@ -88,10 +92,17 @@ class AddDiaryViewController: UIViewController{
         picker.delegate = self
         getCurrentDateTime()
         
-        // 기기 토큰 확인하기
-        let deviceToken = UserDefaults.standard.string(forKey: "token")!
-        print("글 쓰기 기기 토큰 확인:"+deviceToken)
+        // 기존 데이터 있을 경우 image 불러오기
+        postDataModel
+            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: showDateData, completion: {
+                uploadTime in
+                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    image in
+                    self.imageView.image = image
+                })
+            })
         
+        // 기존 데이터 있을 경우 switch 정보 가져오기
         postDataModel.showSwitchFromDB(deviceToken: "\(deviceToken)", selectedDate: showDateData, completion: {
             walkDB, washDB, medicineDB, hospitalDB in
             self.isWalked.isOn = walkDB
@@ -99,6 +110,7 @@ class AddDiaryViewController: UIViewController{
             self.isMedicine.isOn = medicineDB
             self.isHospital.isOn = hospitalDB
         })
+        
     }
     
     func settingAlert(){

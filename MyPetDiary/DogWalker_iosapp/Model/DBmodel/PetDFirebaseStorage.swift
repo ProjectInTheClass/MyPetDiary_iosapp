@@ -14,6 +14,7 @@ class PetDFirebaseStorage: NSObject {
     
     let storageRef = Storage.storage().reference() // Firebase Storage 객체
     
+    // upload image to storage
     func uploadToStorage(current_date_string: String, deviceToken: String, receivedPhotoData: NSData) {
         // File located on disk
         //let localFile = URL(fileURLWithPath: receivedFilePath)
@@ -85,6 +86,27 @@ class PetDFirebaseStorage: NSObject {
               // A separate error occurred. This is a good place to retry the upload.
               break
             }
+          }
+        }
+    }
+    
+    // load image from storage
+    func loadMemoImage(post_updated_date: String, deviceToken: String,
+                       completion: @escaping (UIImage) -> Void) {
+        var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
+        imagePath.append("\(post_updated_date)+\(deviceToken).jpeg")
+        // Create a reference from a Google Cloud Storage URI
+        let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
+
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+            print(error.localizedDescription)
+          } else {
+            // Data for "images/island.jpg" is returned
+            let downloadImage = UIImage(data: data!)!
+            completion(downloadImage)
           }
         }
     }

@@ -21,7 +21,9 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     var ref: DatabaseReference! = Database.database().reference()
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
-    var postDataModel = FirebasePostDataModel.shared
+    
+    let postDataModel = FirebasePostDataModel.shared // post DB reference
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     
     @IBOutlet weak var subPostView: UIStackView!
     // subview
@@ -109,6 +111,16 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         showTodo()
         viewWillAppear(true)
 //        viewDidLoad()
+        
+        // subImage에 image 불러오기
+        postDataModel
+            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
+                uploadTime in
+                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    image in
+                    self.subImageView.image = image
+                })
+            })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -161,24 +173,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 //        self.medicineLabel.isHidden = true
 //        self.hospitalLabel.isHidden = true
 //    }
-    func loadMemoImage() {
-        let storage = Storage.storage()
-        
-        // Create a reference from a Google Cloud Storage URI
-        let gsReference = storage.reference(forURL: "gs://mypetdiary-475e9.appspot.com/2021-01-21 19:40:41+E0A70A86-CD62-4D26-A218-4385A77AC8D0.jpeg")
-
-        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
-          if let error = error {
-            // Uh-oh, an error occurred!
-            print(error.localizedDescription)
-          } else {
-            // Data for "images/island.jpg" is returned
-            let downloadImage = UIImage(data: data!)
-            self.subImageView.image = downloadImage
-          }
-        }
-    }
     
     override func viewDidLoad() {
         print("viewDidLoad")
@@ -197,9 +191,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         setCalendar()
 //        initLabel()
 //        showTodo()
-        
-        loadMemoImage()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         showTodo()
