@@ -134,12 +134,12 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 //        viewDidLoad()
     }
     
-    func initLabel() {
-        self.walkingLabel.isHidden = true // hide
-        self.washLabel.isHidden = true
-        self.medicineLabel.isHidden = true
-        self.hospitalLabel.isHidden = true
-    }
+//    func initLabel() {
+//        self.walkingLabel.isHidden = true // hide
+//        self.washLabel.isHidden = true
+//        self.medicineLabel.isHidden = true
+//        self.hospitalLabel.isHidden = true
+//    }
     
     // 해당 날짜 라벨 보여주기
     func showEventLabel(deviceToken: String) {
@@ -170,21 +170,25 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                         
                         if index.value["post_walk"] as! Bool {
                             self.walkingLabel.isHidden = false
+                            self.walkingLabel.text = "🌿산책"
                         } else {
                             self.walkingLabel.isHidden = true
                         }
                         if index.value["post_wash"] as! Bool {
                             self.washLabel.isHidden = false
+                            self.washLabel.text = "🛁목욕"
                         } else {
                             self.washLabel.isHidden = true
                         }
                         if index.value["post_medicine"] as! Bool {
                             self.medicineLabel.isHidden = false
+                            self.medicineLabel.text = "💊약"
                         } else {
                             self.medicineLabel.isHidden = true
                         }
                         if index.value["post_hospital"] as! Bool {
                             self.hospitalLabel.isHidden = false
+                            self.hospitalLabel.text = "🏥병원"
                         } else {
                             self.hospitalLabel.isHidden = true
                         }
