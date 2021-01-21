@@ -321,7 +321,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="기타" id="kdY-WM-bjA">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="cYs-vP-VCm" style="IBUITableViewCellStyleDefault" id="E6b-MY-6sI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sendEmailCell" textLabel="cYs-vP-VCm" style="IBUITableViewCellStyleDefault" id="E6b-MY-6sI">
                                         <rect key="frame" x="20" y="198.5" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6b-MY-6sI" id="t2R-Um-Lwh">
@@ -337,9 +337,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Mg8-Gb-YXz" kind="show" id="pfx-h4-e7M"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -351,6 +348,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Setting" id="vBu-Gj-REV"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="sendEmailCell" destination="E6b-MY-6sI" id="gc2-hw-OC3"/>
+                        <outlet property="tableView" destination="NEW-Sc-qu3" id="Ied-dJ-ajk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSA-t1-a39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="pjU-oF-kD0" userLabel="Exit" sceneMemberID="exit"/>

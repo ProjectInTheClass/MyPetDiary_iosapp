@@ -10,9 +10,12 @@ import Foundation
 import MessageUI
 
 class SendMailViewController: UIViewController, MFMailComposeViewControllerDelegate {
+    
+    let composeVC = MFMailComposeViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeVC.mailComposeDelegate = self
         if !MFMailComposeViewController.canSendMail() {
             print("Mail services are not available")
             return
@@ -21,7 +24,6 @@ class SendMailViewController: UIViewController, MFMailComposeViewControllerDeleg
         // Do any additional setup after loading the view.
     }
     func sendEmail() {
-        let composeVC = MFMailComposeViewController()
         composeVC.mailComposeDelegate = self
         // Configure the fields of the interface.
         composeVC.setToRecipients(["jjy1000@dgu.ac.kr"])
@@ -31,7 +33,7 @@ class SendMailViewController: UIViewController, MFMailComposeViewControllerDeleg
         self.present(composeVC, animated: true, completion: nil)
     }
 
-    func mailComposeController(controller: MFMailComposeViewController,
+    private func mailComposeController(controller: MFMailComposeViewController,
                            didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         // Check the result or perform other tasks.
         // Dismiss the mail compose view controller.
