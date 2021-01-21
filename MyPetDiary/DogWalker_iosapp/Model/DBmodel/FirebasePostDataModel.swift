@@ -38,6 +38,7 @@ class FirebasePostDataModel: NSObject {
                   post_walk: false, post_wash: false, post_medicine: false, post_hospital: false)
     }
     
+    // DB에서 Switch 정보 불러오기
     func showSwitchFromDB(deviceToken: String, selectedDate: String,
                            completion: @escaping (Bool, Bool, Bool, Bool) -> Void) {
         let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
@@ -59,5 +60,24 @@ class FirebasePostDataModel: NSObject {
         }) { (error) in
             print(error.localizedDescription)
         }
+    }
+    
+    // DB에 올리기
+    func uploadToDB(deviceToken: String, selectedDate: String, current_date_string: String,
+                    contentToDB: String, receivedWalkSwitch: Bool, receivedWashSwitch: Bool,
+                    receivedMedicineSwitch: Bool, receivedHospitalSwitch: Bool,
+                    receivedImageURL: String) {
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
+        
+        let post = ["post_content": contentToDB, // 글 내용 저장
+                    "post_updated_date": current_date_string, // 글 업로드 시기 저장
+                    "post_date": selectedDate, // 글 자체의 날짜 저장
+                    "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
+                    "post_wash": receivedWashSwitch,
+                    "post_medicine": receivedMedicineSwitch,
+                    "post_image": receivedImageURL,
+                    "post_hospital": receivedHospitalSwitch] as [String : Any]
+        
+        postRef.setValue(post)
     }
 }
