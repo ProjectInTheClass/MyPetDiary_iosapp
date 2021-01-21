@@ -13,6 +13,7 @@
 		05E0C1C625B7FAEC009DB146 /* MPMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */; };
 		05E0C1CC25B7FB30009DB146 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1CB25B7FB30009DB146 /* SignUpViewController.swift */; };
 		05E0C1D025B7FB60009DB146 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1CF25B7FB60009DB146 /* SettingViewController.swift */; };
+		05F8ECF825B9E95400958D06 /* PetDFirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8ECF725B9E95400958D06 /* PetDFirebaseStorage.swift */; };
 		05FA7B1C25A7227C00E4A253 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 05FA7B1B25A7227C00E4A253 /* GoogleService-Info.plist */; };
 		47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */; };
 		47FAB61A25AF4CDE005BEBAF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB61925AF4CDE005BEBAF /* Post.swift */; };
@@ -47,6 +48,7 @@
 		05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainViewController.swift; sourceTree = "<group>"; };
 		05E0C1CB25B7FB30009DB146 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05E0C1CF25B7FB60009DB146 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		05F8ECF725B9E95400958D06 /* PetDFirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDFirebaseStorage.swift; sourceTree = "<group>"; };
 		05FA7B1B25A7227C00E4A253 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0643566F6D350D71265F9BFD /* Pods-DogWalker_iosapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.debug.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.debug.xcconfig"; sourceTree = "<group>"; };
 		47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */,
 				0549476525B9656F00714492 /* FirebasePostDataModel.swift */,
+				05F8ECF725B9E95400958D06 /* PetDFirebaseStorage.swift */,
 			);
 			path = DBmodel;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				7640D6AC25AED43C00A15B14 /* DayInfo.swift in Sources */,
 				76005369259DB48B0058F313 /* ViewController.swift in Sources */,
 				76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */,
+				05F8ECF825B9E95400958D06 /* PetDFirebaseStorage.swift in Sources */,
 				7640D6A925AED38C00A15B14 /* UIColor+Extension.swift in Sources */,
 				76F718FF25B89779009E87E1 /* MyPageViewController.swift in Sources */,
 				7640D69B25AECF5100A15B14 /* GlobalConstant.swift in Sources */,
