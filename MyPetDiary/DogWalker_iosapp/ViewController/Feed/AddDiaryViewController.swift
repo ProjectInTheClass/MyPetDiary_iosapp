@@ -28,10 +28,13 @@ class AddDiaryViewController: UIViewController{
     var showDateData = "" // 넘겨줄 날짜 데이터
     var localFile = "" // 넘겨줄 사진 파일 url
     var filePath = "" // 넘겨줄 사진 path
+    var photoData: NSData? = nil // 넘겨줄 사진 data
     
     var fetchResult: PHFetchResult<PHAsset>?
     var canAccessImages: [UIImage] = []
     var selectedDate: String = ""
+    
+    var postDataModel = FirebasePostDataModel.shared
     
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
@@ -89,35 +92,16 @@ class AddDiaryViewController: UIViewController{
         let deviceToken = UserDefaults.standard.string(forKey: "token")!
         print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
-        showContentFromDB(deviceToken: deviceToken, todayDate: showDateData)
-    }
-    
-    func showContentFromDB(deviceToken: String, todayDate: String) {
-        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
-        
-        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
-            if snapshot.exists() {
-                let values = snapshot.value
-                let dic = values as! [String : [String:Any]]
-                for index in dic {
-                    if (index.value["post_date"] as? String == self.showDateData) {
-                        print(index.key)
-                        print(index.value["post_content"] ?? "")
-                        print(index.value["post_walk"] ?? false)
-                        print(index.value["post_wash"] ?? false)
-                        print(index.value["post_medicine"] ?? false)
-                        print(index.value["post_hospital"] ?? false)
-
-                        self.isWalked.isOn = (index.value["post_walk"] ?? false) as! Bool
-                        self.isWashed.isOn = (index.value["post_wash"] ?? false) as! Bool
-                        self.isMedicine.isOn = (index.value["post_medicine"] ?? false) as! Bool
-                        self.isHospital.isOn = (index.value["post_hospital"] ?? false) as! Bool
-
-                    }
-                }
-            }
+        postDataModel.showContentFromDB(deviceToken: "\(deviceToken)", selectedDate: showDateData, completion: {
+            walkDB, washDB, medicineDB, hospitalDB in
+            self.isWalked.isOn = walkDB
+            self.isWashed.isOn = washDB
+            self.isMedicine.isOn = medicineDB
+            self.isHospital.isOn = hospitalDB
         })
     }
+    
+    
     
     func settingAlert(){
         if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String{
@@ -221,6 +205,7 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedPostDate = self.showDateData
         nextViewController.receivedImageURL = self.localFile
         nextViewController.receivedFilePath = self.filePath
+        nextViewController.receivedPhotoData = self.photoData
         print("localFile:\(localFile)")
         print("filePath:\(filePath)")
     }
@@ -237,6 +222,7 @@ UINavigationControllerDelegate{
             imageView.image = image
             print("testImage\(image)")
         }
+        
         let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
         let imageName=imageUrl?.lastPathComponent//파일이름
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -244,7 +230,7 @@ UINavigationControllerDelegate{
         let photoURL = NSURL(fileURLWithPath: documentDirectory)
         print("photoURL\(photoURL)")
         let localPath = photoURL.appendingPathComponent(imageName!)//파일경로
-        let data=NSData(contentsOf: imageUrl as! URL)!
+        photoData = NSData(contentsOf: imageUrl as! URL)!
         print("lastURL:\(localPath!.path)")
         filePath = localPath!.path
         //localFile = String(describing: localPath)

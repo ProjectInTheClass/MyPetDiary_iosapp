@@ -27,6 +27,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var receivedMedicineSwitch = false // 이전 페이지 약 스위치
     var receivedHospitalSwitch = false // 이전 페이지 병원 스위치
     var receivedFilePath = "" // 이전 페이지 사진 path
+    var receivedPhotoData: NSData? = nil // 넘겨받은 사진 data
     
     let picker = UIImagePickerController()
     
@@ -72,45 +73,25 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             metadata.contentType = "image/jpeg"
 
             // Create a reference to the file you want to upload
-            let riversRef = storageRef.child("postImage/1.jpeg")
+            let riversRef = storageRef.child("postImage/1")
             
+            var data = receivedPhotoData
             //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
-            
-            let uploadTask = riversRef.putFile(from: localFile, metadata: nil) { metadata, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    print("업로드 실패")
-                } else {
-                    print("업로드 성공")
-                }
-                guard let metadata = metadata else {
-                  // Uh-oh, an error occurred!
-                  return
-                }
-                if let error = error {
-                    print("에러 발생")
-                }
+            let uploadTask = riversRef.putData(data as! Data, metadata: nil) { (metadata, error) in
+              guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+              }
               // Metadata contains file metadata such as size, content-type.
               let size = metadata.size
               // You can also access to download URL after upload.
-                self.storageRef.downloadURL { (url, error) in
+              riversRef.downloadURL { (url, error) in
                 guard let downloadURL = url else {
                   // Uh-oh, an error occurred!
                   return
                 }
               }
             }
-            
-            //
-//            var data = Data()
-//            var img: UIImage = receivedImage.image!
-//            data = img.jpegData(compressionQuality: 0.8)!
-//            storageRef.putData(data, metadata: metadata) {
-//                (metadata, error) in if let error = error {
-//                    print(error.localizedDescription)
-//                    return
-//                }
-//            }
             
             // Listen for state changes, errors, and completion of the upload.
             uploadTask.observe(.resume) { snapshot in
