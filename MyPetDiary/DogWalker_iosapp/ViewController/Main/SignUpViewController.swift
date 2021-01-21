@@ -15,15 +15,29 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nickName: UITextField!
     
+    var userDataModel = FirebaseUserDataModel.shared
+    
     // 회원가입 버튼 눌렀을 경우
     @IBAction func signUp(_ sender: Any, nickName: UITextField) {
-        let deviceUniqueToken = UUID().uuidString
-        // 기기 정보 기반 토큰 생성하기
-        UserDefaults.standard.setValue(deviceUniqueToken, forKey: "token")
         
-        guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
-        
+        if self.nickName.text == "" { // 닉네임을 입력하지 않았을 경우 alert
+            // create the alert
+            let alert = UIAlertController(title: "닉네임 필수 입력", message: "닉네임 입력 후 사용이 가능합니다", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler:nil
+            ))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            // 기기 정보 기반 토큰 생성하기
+            let deviceToken = UUID().uuidString
+            UserDefaults.standard.setValue(deviceToken, forKey: "token")
+            
+            userDataModel.signUpFirst(deviceToken: deviceToken, nickname: self.nickName.text!)
+            
+            guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
+        }
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
         //self.ref.child("User/\(user.uid)/user_name").setValue(["user_name": nickName])
@@ -35,16 +49,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //            print("User's nickName : \(self.nickName.text)")
 //            
 //        }
-        
-        let userRef: DatabaseReference! =
-            Database.database().reference()
-            .child("User").child(deviceUniqueToken).child("userInfo").child("user_nickname")
-        
-        if let inputNickname = self.nickName.text {
-            userRef.setValue(inputNickname)
-        }
-        
-        
     }
 
     override func viewDidLoad() {

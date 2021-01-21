@@ -24,6 +24,15 @@ class FirebaseUserDataModel: NSObject {
         self.init(user_nickname: "")
     }
     
+    // 회원가입
+    func signUpFirst(deviceToken: String, nickname: String) {
+        let userRef: DatabaseReference! =
+            Database.database().reference()
+            .child("User").child(deviceToken).child("userInfo").child("user_nickname")
+        
+        userRef.setValue(nickname)
+    }
+    
     // 마이페이지에서 user_nickname 보이기
     func showUserNickname(deviceToken: String, completion: @escaping (String) -> Void) {
         ref.child("User").child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
