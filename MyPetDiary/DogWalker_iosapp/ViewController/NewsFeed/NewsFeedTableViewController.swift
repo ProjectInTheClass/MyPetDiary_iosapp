@@ -9,11 +9,14 @@ import UIKit
 
 class NewsFeedTableViewController: UITableViewController
 {
+    let newsfeedDataModel = FirebaseNewsFeedDataModel.shared // newsfeed DB reference
+    
     var posts: [Post]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
+        newsfeedDataModel.getTodayFeed()
     }
     
     func fetchPosts() {
