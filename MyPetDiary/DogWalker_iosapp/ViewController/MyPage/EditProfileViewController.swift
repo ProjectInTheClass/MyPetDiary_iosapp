@@ -41,12 +41,10 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     @IBAction func infoTextSize(_ sender: Any) {
         checkMaxLength(textField: editIntroTextField, maxLength: 20)
     }
-    // save 버튼 눌렀을 경우
-    @IBAction func saveButtonAction(_ sender: Any) {
-        // ***********************segue 넣으면 데이터 저장이 안됨...........(지금은 segue없애고 데이터 저장하게 했음)******************
-    }
+    // save 버튼 눌렀을 경우 디비저장 > 마이페이지로 넘어가기
+    @IBAction func saveButtonAction(_ sender: Any) {}
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-           print("aaaa")
+           print("segue")
            return true
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

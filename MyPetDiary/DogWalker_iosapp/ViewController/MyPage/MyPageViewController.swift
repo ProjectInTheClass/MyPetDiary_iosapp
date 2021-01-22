@@ -12,7 +12,9 @@ import FirebaseDatabase
 class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet weak var collectionV: UICollectionView!
-    @IBAction func backToMyPage (segue : UIStoryboardSegue){}
+    @IBAction func backToMyPage (segue : UIStoryboardSegue){
+        viewWillAppear(true)
+    }
 
     @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userInfo: UILabel!
@@ -21,8 +23,6 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
     let postDataModel = FirebasePostDataModel.shared // post DB reference
     let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
-    // image - db
-    //var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
     var images: Array<UIImage> = []
     // 기기 토큰 확인하기
@@ -38,50 +38,44 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     var imgs: Array<UIImage> = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageCircle()
         // Do any additional setup after loading the view.
-        
-        // 올린 사진 보이기
+        imageCircle()
         showImage()
-        // 프로필 사진 보이기
         showProfile()
-        // 닉네임 보이기
-        userDataModel
-            .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
-                self.userNickName.text = nickname
-            })
-        // 소개글 보이기
-        userDataModel
-            .showIntro(deviceToken: deviceToken, completion: {
-                intro in
-                self.userInfo.text = intro
-            })
-        viewWillAppear(true)
+        showNickname()
+        showIntro()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        showImage()
+        showProfile()
+        showNickname()
+        showIntro()
+    }
+    func showNickname(){
         // 닉네임 보이기
         userDataModel
             .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
                 self.userNickName.text = nickname
-            })
+        })
+    }
+    func showIntro(){
         // 소개글 보이기
         userDataModel
             .showIntro(deviceToken: deviceToken, completion: {
                 intro in
                 self.userInfo.text = intro
-            })
-        showImage()
-        showProfile()
+        })
     }
-    
     // 프로필 사진 보여주기
     func showProfile() {
         userDataModel.showUserNickname(deviceToken: deviceToken, completion: {
             usernickname in
-            self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: {
-                profileImage in
-                self.userPicture.image = profileImage
+            self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: { profileImage in
+                DispatchQueue.main.async {
+                    self.userPicture.image = profileImage
+                }
+                
             })
         })
     }
@@ -96,6 +90,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
             })
         })
     }
+    
     // collectionview 설정 - 이미지 개수 count
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
