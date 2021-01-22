@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-QZ-95Z">
-                                <rect key="frame" x="50" y="138" width="314" height="508.5"/>
+                                <rect key="frame" x="50" y="50" width="314" height="508.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="shk-sA-pSh">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="104.5"/>
@@ -376,7 +376,7 @@
                     <navigationItem key="navigationItem" title="Setting" id="vBu-Gj-REV"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="NEW-Sc-qu3" id="Ied-dJ-ajk"/>
+                        <outlet property="settingTableView" destination="NEW-Sc-qu3" id="zZ9-GT-qZP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tSA-t1-a39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

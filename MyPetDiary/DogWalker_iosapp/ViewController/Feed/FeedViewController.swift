@@ -83,6 +83,23 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     // event dot
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         if dates.contains(date) {
+//            switch flag{
+//            case 1:
+//                print("event1")
+//                return 1
+//            case 2:
+//                print("event2")
+//                return 2
+//            case 3:
+//                print("event3")
+//                return 3
+//            case 4:
+//                print("event4")
+//                return 4
+//            default:
+//                print("event0")
+//                return 1
+//            }
             return 1
         } else {
             return 0
@@ -128,18 +145,22 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                         self.walkingLabel.isHidden = false
                         self.walkingLabel.text = "🌿산책"
                     } else { self.walkingLabel.isHidden = true }
+                    
                     if washDB {
                         self.washLabel.isHidden = false
                         self.washLabel.text = "🛁목욕"
                     } else { self.washLabel.isHidden = true }
+                    
                     if medicineDB {
                         self.medicineLabel.isHidden = false
                         self.medicineLabel.text = "💊약"
                     } else { self.medicineLabel.isHidden = true }
+                    
                     if hospitalDB {
                         self.hospitalLabel.isHidden = false
                         self.hospitalLabel.text = "🏥병원"
                     } else { self.hospitalLabel.isHidden = true }
+                    
                 } else { // DB에 데이터가 없는 경우
                     print("데이터 없음")
                     self.walkingLabel.isHidden = true
