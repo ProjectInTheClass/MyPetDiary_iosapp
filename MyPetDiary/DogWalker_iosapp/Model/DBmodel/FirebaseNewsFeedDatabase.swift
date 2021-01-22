@@ -26,7 +26,10 @@ class FirebaseNewsFeedDataModel: NSObject {
         self.init(post_content: "", post_updated_date: "", post_date: "")
     }
     
-    func getTodayFeed() {
+    // 오늘 날짜 게시물 전체 가져오기
+    func getTodayFeed(completion: @escaping (Array<Any>) -> Void) {
+        
+        var todayPost: Array<Any> = [] // return할 오늘 날짜 게시물 전체
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         let todayDate = formatter.string(from: Date())
@@ -35,9 +38,12 @@ class FirebaseNewsFeedDataModel: NSObject {
         newsfeedRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.exists() { // 오늘의 게시물이 있다면
                 if let value = snapshot.value as? Dictionary<String, Any> {
+                    var postCount: Int = 0
                     for index in value {
                         if let news = index.value as? Dictionary<String, Any> {
-                            print(news["device_token"])
+                            todayPost.append(value)
+                            postCount += 1
+                            if postCount == value.count { completion(todayPost) }
                         }
                     }
                 }

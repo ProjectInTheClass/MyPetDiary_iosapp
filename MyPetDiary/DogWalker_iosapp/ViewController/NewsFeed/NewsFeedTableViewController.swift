@@ -16,7 +16,10 @@ class NewsFeedTableViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
-        newsfeedDataModel.getTodayFeed()
+        newsfeedDataModel.getTodayFeed(completion: {
+            todayPost in
+            print(todayPost)
+        })
     }
     
     func fetchPosts() {
