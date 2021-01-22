@@ -104,11 +104,13 @@ class AddDiaryViewController: UIViewController{
         
         // 기존 데이터 있을 경우 switch 정보 가져오기
         postDataModel.showSwitchFromDB(deviceToken: "\(deviceToken)", selectedDate: showDateData, completion: {
-            walkDB, washDB, medicineDB, hospitalDB in
-            self.isWalked.isOn = walkDB
-            self.isWashed.isOn = washDB
-            self.isMedicine.isOn = medicineDB
-            self.isHospital.isOn = hospitalDB
+            walkDB, washDB, medicineDB, hospitalDB, something in
+            if something {
+                self.isWalked.isOn = walkDB
+                self.isWashed.isOn = washDB
+                self.isMedicine.isOn = medicineDB
+                self.isHospital.isOn = hospitalDB
+            }
         })
         
     }

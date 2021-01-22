@@ -44,10 +44,18 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         
         self.present(uvc, animated: true)
     }
-    
+
     var dates = [Date]()
     let formatter = DateFormatter()
+    
     var selectedDateString: String = ""
+    var flag: Int = 0
+    
+    func todayDateFirst() {
+        formatter.dateFormat = "yyyy-MM-dd"
+        selectedDateString = formatter.string(from: Date())
+        print("selected\(selectedDateString)")
+    }
     
     func setCalendar(){ // 달력 기본 설정
         // 달력의 평일 날짜 색
@@ -77,18 +85,21 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.placeholderType = .none
     }
     
-    // eventdot 표현 -> 오늘 한 일 표현한걸로 바꾸기
-    func presentEventDot(){
-        let xmas = formatter.date(from: "2021-01-09")
-        let sampledate = formatter.date(from: "2021-01-17")
-        dates = [xmas!, sampledate!]
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if dates.contains(date) {
+            return 1
+        } else {
+            return 0
+        }
     }
     
-    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        if dates.contains(date){
-            return 1
-        }
-        return 0
+    // eventdot 표현 -> 오늘 한 일 표현한걸로 바꾸기
+    func getDB() {
+        postDataModel.showAllDate(deviceToken: deviceToken, completion: { [self] alldate in
+            self.dates = alldate.compactMap { self.formatter.date(from: $0) }
+            
+            self.calendarView.reloadData()
+        })
     }
     
 //    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -107,30 +118,10 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDateString = formatter.string(from: date)
         print(selectedDateString + " 선택됨")
-        showTodo()
-        viewWillAppear(true)
-//        viewDidLoad()
         
-        viewDidLoad()
-    }
-    
-    func loadMemoImage(post_updated_date: String, deviceToken: String) {
-        var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
-        imagePath.append("\(post_updated_date)+\(deviceToken).jpeg")
-        // Create a reference from a Google Cloud Storage URI
-        let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
+        showTodo()
+        showImage()
 
-        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
-          if let error = error {
-            // Uh-oh, an error occurred!
-            print(error.localizedDescription)
-          } else {
-            // Data for "images/island.jpg" is returned
-            let downloadImage = UIImage(data: data!)!
-            self.subImageView.image = downloadImage
-          }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -151,90 +142,92 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     // 캘린더에서 해당 날짜 라벨 표시하기
     func showTodo(){
-        // 기기 토큰 확인하기
-        print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
         postDataModel
             .showSwitchFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
-            walkDB, washDB, medicineDB, hospitalDB in
-                if walkDB {
-                    self.walkingLabel.isHidden = false
-                    self.walkingLabel.text = "🌿산책"
-                } else { self.walkingLabel.isHidden = true }
-                if washDB {
-                    self.washLabel.isHidden = false
-                    self.washLabel.text = "🛁목욕"
-                } else { self.washLabel.isHidden = true }
-                if medicineDB {
-                    self.medicineLabel.isHidden = false
-                    self.medicineLabel.text = "💊약"
-                } else { self.medicineLabel.isHidden = true }
-                if hospitalDB {
-                    self.hospitalLabel.isHidden = false
-                    self.hospitalLabel.text = "🏥병원"
-                } else { self.hospitalLabel.isHidden = true }
+            walkDB, washDB, medicineDB, hospitalDB, nothing in
+                print("printlabel")
+                if nothing { // DB에 데이터가 있는 경우
+                    print("데이터 있음")
+                    if walkDB {
+                        self.walkingLabel.isHidden = false
+                        self.walkingLabel.text = "🌿산책"
+                    } else { self.walkingLabel.isHidden = true }
+                    if washDB {
+                        self.washLabel.isHidden = false
+                        self.washLabel.text = "🛁목욕"
+                    } else { self.washLabel.isHidden = true }
+                    if medicineDB {
+                        self.medicineLabel.isHidden = false
+                        self.medicineLabel.text = "💊약"
+                    } else { self.medicineLabel.isHidden = true }
+                    if hospitalDB {
+                        self.hospitalLabel.isHidden = false
+                        self.hospitalLabel.text = "🏥병원"
+                    } else { self.hospitalLabel.isHidden = true }
+                } else { // DB에 데이터가 없는 경우
+                    print("데이터 없음")
+                    self.walkingLabel.isHidden = true
+                    self.washLabel.isHidden = true
+                    self.medicineLabel.isHidden = true
+                    self.hospitalLabel.isHidden = true
+                }
         })
-//        viewDidLoad()
     }
     
-//    func initLabel() {
-//        self.walkingLabel.isHidden = true // hide
-//        self.washLabel.isHidden = true
-//        self.medicineLabel.isHidden = true
-//        self.hospitalLabel.isHidden = true
-//    }
+    func showImage() {
+        let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
+        // subImage에 image 불러오기
+        postDataModel
+            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
+                uploadTime in
+                petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    image in
+                    self.subImageView.image = image
+                })
+            })
+    }
+    
+    func showEventDate() {
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        var strArr: [String] = [] // string 날짜 배열
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    for index in value {
+                        strArr.append(index.key)
+                    }
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        self.dates = strArr.compactMap { self.formatter.date(from: $0) }
+        print("alldate:\(self.dates)")
+    }
     
     override func viewDidLoad() {
         print("viewDidLoad")
         super.viewDidLoad()
-        formatter.dateFormat = "yyyy-MM-dd"
-        
         // Do any additional setup after loading the view.
 //        // tab하면 모달 띄우기
 //        self.subPostView.isUserInteractionEnabled = true
 //        self.subPostView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showPostTapGesture)))
         
+        todayDateFirst()
+        
+        getDB()
+        
+        //presentEventDot()
+        setCalendar()
+
+        showTodo()
+        showImage()
+        
         calendarView.delegate = self
         calendarView.dataSource = self
-        
-        presentEventDot()
-        setCalendar()
-//        initLabel()
-//        showTodo()
-        
-//        let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
-//        // subImage에 image 불러오기
-//        postDataModel
-//            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
-//                uploadTime in
-//                petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
-//                    image in
-//                    self.subImageView.image = image
-//                })
-//            })
-        
-        postDataModel
-            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
-                uploadTime in
-                var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
-                imagePath.append("\(uploadTime)+\(self.deviceToken).jpeg")
-                // Create a reference from a Google Cloud Storage URI
-                let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
-
-                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
-                  if let error = error {
-                    // Uh-oh, an error occurred!
-                    print(error.localizedDescription)
-                  } else {
-                    // Data for "images/island.jpg" is returned
-                    let downloadImage = UIImage(data: data!)!
-                    self.subImageView.image = downloadImage
-                  }
-                }
-            })
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        showTodo()
     }
 }

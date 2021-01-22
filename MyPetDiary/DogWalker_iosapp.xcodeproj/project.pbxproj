@@ -38,6 +38,7 @@
 		769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */; };
 		76B621CA25B4CEEC0049493B /* TodayMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */; };
 		76F1381F25B9545A0082CDB1 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F1381E25B9545A0082CDB1 /* EditProfileViewController.swift */; };
+		76F1383025BAC8C90082CDB1 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F1382F25BAC8C90082CDB1 /* UIImage+.swift */; };
 		76F718FF25B89779009E87E1 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F718FE25B89779009E87E1 /* MyPageViewController.swift */; };
 		D2729DE7BE144748584B6206 /* Pods_DogWalker_iosapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,8 @@
 		769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMemoViewController.swift; path = DogWalker_iosapp/ViewController/Feed/TodayMemoViewController.swift; sourceTree = SOURCE_ROOT; };
 		76F1381E25B9545A0082CDB1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		76F1382B25BAC0010082CDB1 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = "<group>"; };
+		76F1382F25BAC8C90082CDB1 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		76F718FE25B89779009E87E1 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DogWalker_iosapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -193,6 +196,7 @@
 				7640D69A25AECF5100A15B14 /* GlobalConstant.swift */,
 				7640D69E25AED1B000A15B14 /* UICollectionViewCell+Extension.swift */,
 				7640D6A825AED38C00A15B14 /* UIColor+Extension.swift */,
+				76F1382F25BAC8C90082CDB1 /* UIImage+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -235,6 +239,7 @@
 		9B9437F486FC93184341254B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76F1382B25BAC0010082CDB1 /* Carthage */,
 				A26A2BB11DF6DAF865C3E163 /* Pods_DogWalker_iosapp.framework */,
 			);
 			name = Frameworks;
@@ -385,6 +390,7 @@
 				47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */,
 				7655053925A31D2300FA5CFE /* FeedViewController.swift in Sources */,
 				7640D69F25AED1B000A15B14 /* UICollectionViewCell+Extension.swift in Sources */,
+				76F1383025BAC8C90082CDB1 /* UIImage+.swift in Sources */,
 				47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */,
 				05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */,
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,
