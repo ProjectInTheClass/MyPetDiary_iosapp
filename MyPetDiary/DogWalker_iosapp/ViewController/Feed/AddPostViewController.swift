@@ -15,6 +15,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var contentToDB = "";
     
     let postDataModel = FirebasePostDataModel.shared // post DB reference
+    let userDataModel = FirebaseUserDataModel.shared // user DB reference
     let newsfeedDataModel = FirebaseNewsFeedDataModel.shared // newsfeed DB reference
     let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
 
@@ -83,8 +84,17 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
                 .uploadToDB(deviceToken: deviceToken, selectedDate: receivedPostDate, current_date_string: current_date_string, contentToDB: contentToDB, receivedWalkSwitch: receivedWalkSwitch, receivedWashSwitch: receivedWashSwitch, receivedMedicineSwitch: receivedMedicineSwitch, receivedHospitalSwitch: receivedHospitalSwitch, receivedImageURL: receivedImageURL)
             
             // upload to newsfeed database
-            newsfeedDataModel
-                .uploadTodayPost(deviceToken: deviceToken, selectedDate: receivedPostDate, current_date_string: current_date_string, contentToDB: contentToDB)
+            userDataModel
+                .showUserNickname(deviceToken: deviceToken, completion: {
+                    nickname in
+                    self.newsfeedDataModel
+                        .uploadTodayPost(deviceToken: self.deviceToken,
+                                         selectedDate: self.receivedPostDate,
+                                         current_date_string: self.current_date_string,
+                                         contentToDB: self.contentToDB,
+                                         nickname: nickname)
+                })
+            
         }
         
     }

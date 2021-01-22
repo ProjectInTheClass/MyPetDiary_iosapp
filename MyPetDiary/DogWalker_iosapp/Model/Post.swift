@@ -22,6 +22,8 @@ struct Post {
 class PostService {
     static let shared = PostService()
     
+    let newsfeedDataModel = FirebaseNewsFeedDataModel.shared // newsfeed DB reference
+    
     func posts(completion: @escaping ([Post]) -> Void) {
         let result = fetchPosts()
         
@@ -30,6 +32,16 @@ class PostService {
     
     func fetchPosts() -> [Post] {
         var posts = [Post]()
+        
+        newsfeedDataModel.getTodayFeed(completion: {
+            todayPost in
+            // todayPost : 오늘 날짜의 게시물 전체 값(배열 형태)
+            print(todayPost)
+            
+            for index in todayPost {
+                //posts.append(Post(createdBy: FeedUser(username: index["user_nickname"], profileImage: <#T##UIImage?#>), image: <#T##UIImage?#>), image: )
+            }
+        })
         
         let Howard = FeedUser(username: "Howard", profileImage: UIImage(named: "hana"))
         
