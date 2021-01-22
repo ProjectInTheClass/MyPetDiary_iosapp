@@ -15,7 +15,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nickName: UITextField!
     
-    var userDataModel = FirebaseUserDataModel.shared
+    var userDataModel = FirebaseUserDataModel.shared // user DB reference
     
     // 회원가입 버튼 눌렀을 경우
     @IBAction func signUp(_ sender: Any, nickName: UITextField) {
