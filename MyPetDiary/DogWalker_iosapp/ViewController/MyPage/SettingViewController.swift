@@ -12,7 +12,6 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
 
     @IBOutlet var settingTableView: UITableView!
     @IBAction func unwindFromModal (seque: UIStoryboardSegue) {}
-//    @IBAction func unwindFromEditProfile(seque: UIStoryboardSegue){}
     var composeVC = MFMailComposeViewController()
 
     override func viewDidLoad() {

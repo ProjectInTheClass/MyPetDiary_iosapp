@@ -43,6 +43,13 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     // save 버튼 눌렀을 경우
     @IBAction func saveButtonAction(_ sender: Any) {
+        // ***********************segue 넣으면 데이터 저장이 안됨...........(지금은 segue없애고 데이터 저장하게 했음)******************
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+           print("aaaa")
+           return true
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 소개글 저장하기
         userDataModel.saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
         // 닉네임 저장하기
@@ -51,16 +58,6 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         userDataModel.saveProfileImage(deviceToken: deviceToken, nickname: editIDTextField.text!)
         if photoData != nil {
             petDStorage.uploadProfileToStorage(deviceToken: deviceToken, receivedPhotoData: photoData!, nickname: editIDTextField.text!)
-        }
-        
-        // ***********************segue 넣으면 데이터 저장이 안됨...........(지금은 segue없애고 데이터 저장하게 했음)******************
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToProMyPage" {
-            if let MyPageVC = segue.destination as? MyPageViewController {
-                
-            }
         }
     }
     

@@ -13,6 +13,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var collectionV: UICollectionView!
     @IBAction func backToMyPage (segue : UIStoryboardSegue){}
+
     @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
