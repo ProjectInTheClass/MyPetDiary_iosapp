@@ -154,6 +154,7 @@ class FirebasePostDataModel: NSObject {
         }
     }
     
+    // 캘린더에서 데이터가 있는 모든 날짜 가져오기
     func showAllDate(deviceToken: String, completion: @escaping (Array<String>) -> Void){
         let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
         var strArr: [String] = [] // string 날짜 배열

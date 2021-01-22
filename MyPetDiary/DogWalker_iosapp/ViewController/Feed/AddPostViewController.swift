@@ -95,9 +95,6 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         print("약 스위치 확인: \(receivedMedicineSwitch)")
         print("병원 스위치 확인: \(receivedHospitalSwitch)")
         
-        // 기기 토큰 확인하기
-        let deviceToken = UserDefaults.standard.string(forKey: "token")!
-        print("글 쓰기 기기 토큰 확인:"+deviceToken)
         
         // 기존에 쓴 글이 있다면 내용 가져오기
         postDataModel

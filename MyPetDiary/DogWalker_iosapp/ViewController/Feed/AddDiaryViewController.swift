@@ -34,6 +34,7 @@ class AddDiaryViewController: UIViewController{
     var canAccessImages: [UIImage] = []
     var selectedDate: String = ""
     
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     let postDataModel = FirebasePostDataModel.shared // post DB reference
     
     // 기기 토큰 확인하기
@@ -91,12 +92,11 @@ class AddDiaryViewController: UIViewController{
         picker.delegate = self
         getCurrentDateTime()
         
-        let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
         // 기존 데이터 있을 경우 image 불러오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: showDateData, completion: {
                 uploadTime in
-                petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
                     image in
                     self.imageView.image = image
                 })

@@ -22,6 +22,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     var ref: DatabaseReference! = Database.database().reference()
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     let postDataModel = FirebasePostDataModel.shared // post DB reference
     
     @IBOutlet weak var subPostView: UIStackView!
@@ -176,12 +177,11 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     func showImage() {
-        let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
         // subImage에 image 불러오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
                 uploadTime in
-                petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
                     image in
                     self.subImageView.image = image
                 })

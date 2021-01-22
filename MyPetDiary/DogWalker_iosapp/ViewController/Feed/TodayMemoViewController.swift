@@ -17,6 +17,11 @@ class TodayMemoViewController: UIViewController {
     
     var selectedDate: String = ""
     
+    let deviceToken = UserDefaults.standard.string(forKey: "token")!
+    
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
+    let postDataModel = FirebasePostDataModel.shared // post DB reference
+    
     // 선택된 날짜
     func getCurrentDateTime(){
         let formatter = DateFormatter() //객체 생성
@@ -40,6 +45,23 @@ class TodayMemoViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getCurrentDateTime()
+        
+        // image 가져오기
+        postDataModel
+            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDate, completion: {
+                uploadTime in
+                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    image in
+                    self.subImageView.image = image
+                })
+            })
+        
+        // content 가져오기
+        postDataModel
+            .showContentFromDB(deviceToken: deviceToken, selectedDate: selectedDate, completion: {
+                content in
+                self.memoContent.text = content
+            })
     }
 
 }
