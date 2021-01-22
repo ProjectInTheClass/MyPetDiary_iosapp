@@ -95,11 +95,15 @@ class AddDiaryViewController: UIViewController{
         // 기존 데이터 있을 경우 image 불러오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: showDateData, completion: {
-                uploadTime in
-                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
-                    image in
-                    self.imageView.image = image
-                })
+                uploadTime, isSomething in
+                if isSomething {
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                        image in
+                        self.imageView.image = image
+                    })
+                } else {
+                    self.imageView.image = nil
+                }
             })
         
         // 기존 데이터 있을 경우 switch 정보 가져오기

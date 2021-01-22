@@ -49,11 +49,16 @@ class TodayMemoViewController: UIViewController {
         // image 가져오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDate, completion: {
-                uploadTime in
-                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
-                    image in
-                    self.subImageView.image = image
-                })
+                uploadTime, isSomething in
+                if isSomething {
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                        image in
+                        self.subImageView.image = image
+                    })
+                } else {
+                    self.subImageView.image = nil
+                }
+                
             })
         
         // content 가져오기

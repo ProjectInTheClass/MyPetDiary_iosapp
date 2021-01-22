@@ -180,11 +180,16 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         // subImage에 image 불러오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
-                uploadTime in
-                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
-                    image in
-                    self.subImageView.image = image
-                })
+                uploadTime, isSomething in
+                if isSomething { // 저장된 사진이 있으면
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                        image in
+                        self.subImageView.image = image
+                    })
+                }
+                else {
+                    self.subImageView.image = nil
+                }
             })
     }
     
