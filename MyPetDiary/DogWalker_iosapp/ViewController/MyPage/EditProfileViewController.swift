@@ -19,8 +19,27 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editIDTextField: UITextField!
     @IBOutlet weak var editIntroTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var userDataModel = FirebaseUserDataModel.shared // user DB reference
+    
+    let deviceToken = UserDefaults.standard.string(forKey: "token")!
+    
+    // save 버튼 눌렀을 경우
     @IBAction func saveButtonAction(_ sender: Any) {
+        userDataModel
+            .saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
+        
+        performSegue(withIdentifier: "backToProfile", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToProfile" {
+            if let MyPageVC = segue.destination as? MyPageViewController {
+                
+            }
+        }
+    }
+    
     let picker = UIImagePickerController()
     var localFile = "" // 넘겨줄 사진 파일 url
     
