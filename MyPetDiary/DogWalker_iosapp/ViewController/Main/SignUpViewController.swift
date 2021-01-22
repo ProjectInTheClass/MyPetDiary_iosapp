@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let deviceToken = UUID().uuidString
             UserDefaults.standard.setValue(deviceToken, forKey: "token")
             
-            userDataModel.signUpFirst(deviceToken: deviceToken, nickname: self.nickName.text!)
+            userDataModel.saveNickname(deviceToken: deviceToken, nickname: self.nickName.text!)
             
             guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)

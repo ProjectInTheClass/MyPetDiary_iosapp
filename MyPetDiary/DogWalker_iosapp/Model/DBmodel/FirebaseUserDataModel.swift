@@ -24,8 +24,8 @@ class FirebaseUserDataModel: NSObject {
         self.init(user_nickname: "")
     }
     
-    // 회원가입
-    func signUpFirst(deviceToken: String, nickname: String) {
+    // 회원가입 시 닉네임 설정& 닉네임 변경
+    func saveNickname(deviceToken: String, nickname: String) {
         let userNicknameRef = userRef.child(deviceToken).child("userInfo").child("user_nickname")
         
         userNicknameRef.setValue(nickname)
@@ -48,5 +48,17 @@ class FirebaseUserDataModel: NSObject {
         let userIntroRef = userRef.child("\(deviceToken)").child("userInfo").child("user_intro")
         
         userIntroRef.setValue(userIntro)
+    }
+    
+    // 소개글 가져오기
+    func showIntro(deviceToken: String, completion: @escaping (String) -> Void) {
+        userRef.child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let value = snapshot.value as? Dictionary<String, String> {
+                completion(value["user_intro"] ?? "")
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 }

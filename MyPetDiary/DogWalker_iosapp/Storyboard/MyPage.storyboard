@@ -121,7 +121,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="vpG-1f-HtI">
                             <connections>
                                 <action selector="saveButtonAction:" destination="kuw-GN-hJd" id="AiP-js-H6H"/>
-                                <segue destination="BMi-DN-rRr" kind="unwind" unwindAction="backToMyPageWithSegue:" id="Gcc-7R-pmP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -289,7 +288,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0E9-pY-tru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="BMi-DN-rRr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5289.8550724637689" y="1590.4017857142856"/>
         </scene>

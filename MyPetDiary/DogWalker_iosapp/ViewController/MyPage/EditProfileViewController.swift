@@ -29,6 +29,11 @@ class EditProfileViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: Any) {
         userDataModel
             .saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
+        userDataModel
+            .saveNickname(deviceToken: deviceToken, nickname: editIDTextField.text!)
+        
+        // segue 넣으면 데이터 저장이 안됨...........
+        // 그놈의 클로저...
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -143,13 +148,26 @@ class EditProfileViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         return true
     }
-    // 닉네임 불러오기 & 수정
-    // 소개 불러오기 & 수정
+
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
         imageCircle()
         // Do any additional setup after loading the view.
+        
+        // 소개글 보여주기
+        userDataModel
+            .showIntro(deviceToken: deviceToken, completion: {
+                intro in
+                self.editIntroTextField.text = intro
+            })
+        
+        // 닉네임 보여주기
+        userDataModel
+            .showUserNickname(deviceToken: deviceToken, completion: {
+                nickname in
+                self.editIDTextField.text = nickname
+            })
     }
 
 }

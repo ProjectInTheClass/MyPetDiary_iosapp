@@ -20,6 +20,9 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     // image - db
     var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
+    // 기기 토큰 확인하기
+    let deviceToken = UserDefaults.standard.string(forKey: "token")!
+    
     func imageCircle(){
         userPicture.layer.cornerRadius = userPicture.frame.height / 2
         userPicture.layer.borderWidth = 1
@@ -30,13 +33,31 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         imageCircle()
         // Do any additional setup after loading the view.
-        // 기기 토큰 확인하기
-        let deviceToken = UserDefaults.standard.string(forKey: "token")!
-        print("마이페이지 기기 토큰 확인:"+deviceToken)
         
+        // 닉네임 보이기
         userDataModel
             .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
                 self.userNickName.text = nickname
+            })
+        // 소개글 보이기
+        userDataModel
+            .showIntro(deviceToken: deviceToken, completion: {
+                intro in
+                self.userInfo.text = intro
+            })
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        // 닉네임 보이기
+        userDataModel
+            .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
+                self.userNickName.text = nickname
+            })
+        // 소개글 보이기
+        userDataModel
+            .showIntro(deviceToken: deviceToken, completion: {
+                intro in
+                self.userInfo.text = intro
             })
     }
     // collectionview 설정 - 이미지 개수 count
