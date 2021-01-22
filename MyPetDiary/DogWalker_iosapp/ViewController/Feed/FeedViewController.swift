@@ -23,7 +23,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
     let postDataModel = FirebasePostDataModel.shared // post DB reference
-    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     
     @IBOutlet weak var subPostView: UIStackView!
     // subview
@@ -112,15 +111,26 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         viewWillAppear(true)
 //        viewDidLoad()
         
-        // subImage에 image 불러오기
-        postDataModel
-            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
-                uploadTime in
-                self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
-                    image in
-                    self.subImageView.image = image
-                })
-            })
+        viewDidLoad()
+    }
+    
+    func loadMemoImage(post_updated_date: String, deviceToken: String) {
+        var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
+        imagePath.append("\(post_updated_date)+\(deviceToken).jpeg")
+        // Create a reference from a Google Cloud Storage URI
+        let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
+
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+            print(error.localizedDescription)
+          } else {
+            // Data for "images/island.jpg" is returned
+            let downloadImage = UIImage(data: data!)!
+            self.subImageView.image = downloadImage
+          }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -191,6 +201,38 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         setCalendar()
 //        initLabel()
 //        showTodo()
+        
+//        let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
+//        // subImage에 image 불러오기
+//        postDataModel
+//            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
+//                uploadTime in
+//                petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+//                    image in
+//                    self.subImageView.image = image
+//                })
+//            })
+        
+        postDataModel
+            .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
+                uploadTime in
+                var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
+                imagePath.append("\(uploadTime)+\(self.deviceToken).jpeg")
+                // Create a reference from a Google Cloud Storage URI
+                let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
+
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
+                  if let error = error {
+                    // Uh-oh, an error occurred!
+                    print(error.localizedDescription)
+                  } else {
+                    // Data for "images/island.jpg" is returned
+                    let downloadImage = UIImage(data: data!)!
+                    self.subImageView.image = downloadImage
+                  }
+                }
+            })
     }
     override func viewWillAppear(_ animated: Bool) {
         showTodo()

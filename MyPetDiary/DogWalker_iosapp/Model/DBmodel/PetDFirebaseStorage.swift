@@ -12,13 +12,12 @@ import FirebaseStorage
 class PetDFirebaseStorage: NSObject {
     static let shared = PetDFirebaseStorage()
     
-    let storageRef = Storage.storage().reference() // Firebase Storage 객체
-    
     // upload image to storage
     func uploadToStorage(current_date_string: String, deviceToken: String, receivedPhotoData: NSData) {
         // File located on disk
         //let localFile = URL(fileURLWithPath: receivedFilePath)
         
+        let storageRef = Storage.storage().reference() // Firebase Storage 객체
         
         // create the file metadata
         let metadata = StorageMetadata()
