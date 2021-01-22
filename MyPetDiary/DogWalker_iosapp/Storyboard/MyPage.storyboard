@@ -423,35 +423,37 @@
                                     <action selector="keepUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="rzk-7X-0uW"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8M-xf-1ih">
-                                <rect key="frame" x="0.0" y="122.5" width="414" height="1"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WnP-Wu-xah">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="펫다이어리계정 탈퇴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qma-6M-Wv4">
+                                        <rect key="frame" x="20" y="79" width="240" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.84705882352941175" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="4mS-0G-EG1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qma-6M-Wv4" secondAttribute="bottom" constant="8" id="beR-0U-uVk"/>
+                                    <constraint firstItem="Qma-6M-Wv4" firstAttribute="leading" secondItem="WnP-Wu-xah" secondAttribute="leading" constant="20" symbolic="YES" id="il9-nL-3DX"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="펫다이어리계정 탈퇴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qma-6M-Wv4">
-                                <rect key="frame" x="20" y="78" width="240" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ud1-Gg-AO9"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="MTl-lm-1ka" firstAttribute="top" secondItem="WnP-Wu-xah" secondAttribute="bottom" constant="30.5" id="0FF-SG-UJ9"/>
                             <constraint firstItem="MTl-lm-1ka" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" constant="20" id="8WD-jv-tHF"/>
                             <constraint firstItem="MTl-lm-1ka" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" constant="-168.5" id="94P-Pc-Bvi"/>
                             <constraint firstItem="Ud1-Gg-AO9" firstAttribute="trailing" secondItem="MTl-lm-1ka" secondAttribute="trailing" constant="20" id="CHI-bv-zql"/>
-                            <constraint firstItem="c8M-xf-1ih" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" id="Mou-xC-87e"/>
-                            <constraint firstItem="c8M-xf-1ih" firstAttribute="trailing" secondItem="Ud1-Gg-AO9" secondAttribute="trailing" id="RkF-11-xBy"/>
                             <constraint firstItem="MTl-lm-1ka" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="URl-WO-BsM"/>
-                            <constraint firstItem="c8M-xf-1ih" firstAttribute="top" secondItem="Qma-6M-Wv4" secondAttribute="bottom" constant="8.5" id="cEy-YO-ZQ3"/>
-                            <constraint firstItem="MTl-lm-1ka" firstAttribute="top" secondItem="c8M-xf-1ih" secondAttribute="bottom" constant="30" id="dGa-Ej-64w"/>
-                            <constraint firstItem="Qma-6M-Wv4" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" constant="20" id="g0O-Qv-27q"/>
+                            <constraint firstItem="WnP-Wu-xah" firstAttribute="trailing" secondItem="Ud1-Gg-AO9" secondAttribute="trailing" id="ZyZ-as-prq"/>
                             <constraint firstItem="nsi-xD-7iT" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" constant="41" id="hgw-ju-hke"/>
                             <constraint firstItem="sOj-Gh-Q2B" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" constant="-88" id="owh-q6-Tff"/>
                             <constraint firstItem="sOj-Gh-Q2B" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" constant="41" id="thK-Pi-UIi"/>
+                            <constraint firstItem="WnP-Wu-xah" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" id="vYX-jd-CWg"/>
+                            <constraint firstItem="WnP-Wu-xah" firstAttribute="top" secondItem="GuZ-g1-TZ4" secondAttribute="top" id="ww3-mw-9lp"/>
                             <constraint firstItem="nsi-xD-7iT" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" constant="88" id="xEq-Bt-4dr"/>
                         </constraints>
                     </view>
