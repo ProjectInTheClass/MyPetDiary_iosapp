@@ -112,6 +112,19 @@ class EditProfileViewController: UIViewController {
         userImage.clipsToBounds = true
         userImage.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
     }
+    // 화면터치하면 키보드 없어짐
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.editIDTextField.resignFirstResponder()
+        self.editIntroTextField.resignFirstResponder()
+
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.editIDTextField.resignFirstResponder()
+        self.editIntroTextField.resignFirstResponder()
+        self.dismiss(animated: true, completion: nil)
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,7 +142,11 @@ UINavigationControllerDelegate{
 
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
+            //        let size = CGSize(width: testImg!.size.width * 0.5, height: testImg!.size.height * 0.5)
+            //        let resized = testImg!.resizeImage(targetSize: size)
             userImage.image = image
+            let size = CGSize(width: image.size.width * 0.3, height: image.size.height * 0.3)
+            let resizeImg = image.resizeImage(targetSize: size)
         }
         let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
         _=imageUrl?.lastPathComponent//파일이름

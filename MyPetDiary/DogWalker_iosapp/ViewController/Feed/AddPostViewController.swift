@@ -107,7 +107,6 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "backtoVC1" {
 //            let vc = segue.destination as! ViewController
-            
         }
     }
     
