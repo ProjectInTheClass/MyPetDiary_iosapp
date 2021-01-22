@@ -17,7 +17,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var editImageButton: UIButton!
     @IBOutlet weak var editIDTextField: UITextField!
-    @IBOutlet weak var editIntroTextField: UITextField!
+    @IBOutlet weak var editIntroTextField: UITextField! // 소개글 부분
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
