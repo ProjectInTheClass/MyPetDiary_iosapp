@@ -40,8 +40,10 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         imageCircle()
         // Do any additional setup after loading the view.
         
+        // 올린 사진 보이기
         showImage()
-        
+        // 프로필 사진 보이기
+        showProfile()
         // 닉네임 보이기
         userDataModel
             .showUserNickname(deviceToken: "\(deviceToken)", completion: { nickname in
@@ -69,11 +71,22 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
                 self.userInfo.text = intro
             })
         showImage()
+        showProfile()
     }
     
+    // 프로필 사진 보여주기
+    func showProfile() {
+        userDataModel.showUserNickname(deviceToken: deviceToken, completion: {
+            usernickname in
+            self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: {
+                profileImage in
+                self.userPicture.image = profileImage
+            })
+        })
+    }
+    
+    // 올린 모든 사진 보이기
     func showImage(){
-        print("showImage 실행")
-        // 올린 사진 보이기
         postDataModel.showAllImage(deviceToken: deviceToken, completion: {
             allImage in
             self.petDStorage.showImageArray(allImage: allImage, completion: { newImage in
