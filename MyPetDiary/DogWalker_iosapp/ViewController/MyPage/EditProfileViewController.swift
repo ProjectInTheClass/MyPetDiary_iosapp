@@ -131,7 +131,7 @@ class EditProfileViewController: UIViewController {
     }
     func imageCircle(){
         userImage.layer.cornerRadius = userImage.frame.height / 2
-        userImage.layer.borderWidth = 1
+        userImage.layer.borderWidth = 0
         userImage.clipsToBounds = true
         userImage.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
     }
