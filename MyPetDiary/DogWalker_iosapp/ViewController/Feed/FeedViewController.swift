@@ -114,7 +114,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
             guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
             AddDiaryViewController.selectedDate = self.selectedDateString
         }
-        
     }
     
     // 캘린더에서 해당 날짜 라벨 표시하기
@@ -157,8 +156,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
                 (uploadTime, isSomething) in
                 if isSomething { // 저장된 사진이 있으면
-                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken,
-                                                   selectedDate: self.selectedDateString, completion: {
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, selectedDate: self.selectedDateString, completion: {
                         image in
                         self.subImageView.image = image
                     })
@@ -176,7 +174,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         dateFormatter.dateFormat = "yyyy-MM-dd"
         postRef.observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() {
-                
                 if let value = snapshot.value as? Dictionary<String, Any> {
                     for index in value {
                         strArr.append(index.key)
