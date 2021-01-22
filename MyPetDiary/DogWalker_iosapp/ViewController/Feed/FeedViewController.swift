@@ -182,7 +182,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
                 uploadTime, isSomething in
                 if isSomething { // 저장된 사진이 있으면
-                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken,
+                                                   selectedDate: self.selectedDateString, completion: {
                         image in
                         self.subImageView.image = image
                     })

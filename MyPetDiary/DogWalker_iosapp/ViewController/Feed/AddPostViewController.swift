@@ -72,7 +72,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         } else { // textField에 글을 적었을 경우
         
             // upload image to Firebase Storage
-            petDStorage.uploadToStorage(current_date_string: current_date_string, deviceToken: deviceToken, receivedPhotoData: receivedPhotoData!)
+            petDStorage.uploadToStorage(current_date_string: current_date_string, deviceToken: deviceToken, receivedPhotoData: receivedPhotoData!, selectedDate: receivedPostDate)
             
             // copy text for DB
             contentToDB = textField.text!

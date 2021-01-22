@@ -97,7 +97,10 @@ class AddDiaryViewController: UIViewController{
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: showDateData, completion: {
                 uploadTime, isSomething in
                 if isSomething {
-                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime,
+                                                   deviceToken: self.deviceToken,
+                                                   selectedDate: self.selectedDate,
+                                                   completion: {
                         image in
                         self.imageView.image = image
                     })

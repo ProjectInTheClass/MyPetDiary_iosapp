@@ -11,9 +11,10 @@ import FirebaseStorage
 
 class PetDFirebaseStorage: NSObject {
     static let shared = PetDFirebaseStorage()
+    let postDataModel = FirebasePostDataModel.shared // post DB reference
     
     // upload image to storage
-    func uploadToStorage(current_date_string: String, deviceToken: String, receivedPhotoData: NSData) {
+    func uploadToStorage(current_date_string: String, deviceToken: String, receivedPhotoData: NSData, selectedDate: String) {
         // File located on disk
         //let localFile = URL(fileURLWithPath: receivedFilePath)
         
@@ -24,7 +25,7 @@ class PetDFirebaseStorage: NSObject {
         metadata.contentType = "image/jpeg"
 
         // Create a reference to the file you want to upload
-        let photoDetailRef = storageRef.child("\(current_date_string)+\(deviceToken).jpeg")
+        let photoDetailRef = storageRef.child("\(selectedDate)+\(deviceToken).jpeg")
         
         let data = receivedPhotoData
         //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
@@ -90,10 +91,10 @@ class PetDFirebaseStorage: NSObject {
     }
     
     // load image from storage
-    func loadMemoImage(post_updated_date: String, deviceToken: String,
+    func loadMemoImage(post_updated_date: String, deviceToken: String, selectedDate: String,
                        completion: @escaping (UIImage) -> Void) {
         var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
-        imagePath.append("\(post_updated_date)+\(deviceToken).jpeg")
+        imagePath.append("\(selectedDate)+\(deviceToken).jpeg")
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
 
