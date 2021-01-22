@@ -68,7 +68,7 @@ class FirebasePostDataModel: NSObject {
 
         let postDetailRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
         
-        imagePath.append("\(current_date_string)+\(deviceToken)")
+        imagePath.append("\(selectedDate)+\(deviceToken).jpeg")
         
         postDetailRef.observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() { // 기존에 쓴 데이터가 있는 경우 (글 수정)
@@ -194,6 +194,28 @@ class FirebasePostDataModel: NSObject {
                 }
             } else {
                 completion(strArr)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    // 사용자의 모든 이미지 가져오기(string값)
+    func showAllImage(deviceToken: String, completion: @escaping (Array<String>) -> Void) {
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        var imgArr: [String] = [] // image url 배열
+        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    for index in value {
+                        if let post = index.value as? Dictionary<String, Any> {
+                            imgArr.append(post["post_image"] as! String)
+                        }
+                    }
+                    completion(imgArr)
+                }
+            } else {
+                completion(imgArr)
             }
         }) { (error) in
             print(error.localizedDescription)

@@ -11,15 +11,19 @@ import FirebaseDatabase
 
 class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    @IBOutlet weak var collectionV: UICollectionView!
     @IBAction func backToMyPage (segue : UIStoryboardSegue){}
     @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
     var ref: DatabaseReference! = Database.database().reference()
-    var userDataModel = FirebaseUserDataModel.shared
+    var userDataModel = FirebaseUserDataModel.shared // user DB reference
+    let postDataModel = FirebasePostDataModel.shared // post DB reference
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     // image - db
-    var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
+    //var images = [#imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog"), #imageLiteral(resourceName: "mary"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "hana"), #imageLiteral(resourceName: "dog"), #imageLiteral(resourceName: "dog (1)"), #imageLiteral(resourceName: "ddog")]
     
+    var images: Array<UIImage> = []
     // 기기 토큰 확인하기
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
@@ -29,10 +33,14 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         userPicture.clipsToBounds = true
         userPicture.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
     }
+    
+    var imgs: Array<UIImage> = []
     override func viewDidLoad() {
         super.viewDidLoad()
         imageCircle()
         // Do any additional setup after loading the view.
+        
+        showImage()
         
         // 닉네임 보이기
         userDataModel
@@ -45,6 +53,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
                 intro in
                 self.userInfo.text = intro
             })
+        viewWillAppear(true)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -59,6 +68,19 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
                 intro in
                 self.userInfo.text = intro
             })
+        showImage()
+    }
+    
+    func showImage(){
+        print("showImage 실행")
+        // 올린 사진 보이기
+        postDataModel.showAllImage(deviceToken: deviceToken, completion: {
+            allImage in
+            self.petDStorage.showImageArray(allImage: allImage, completion: { newImage in
+                self.images = newImage
+                self.collectionV.reloadData()
+            })
+        })
     }
     // collectionview 설정 - 이미지 개수 count
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
