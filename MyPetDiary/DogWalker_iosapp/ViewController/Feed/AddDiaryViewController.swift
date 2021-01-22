@@ -97,9 +97,13 @@ class AddDiaryViewController: UIViewController{
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: showDateData, completion: {
                 uploadTime, isSomething in
                 if isSomething {
-                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
+                    self.petDStorage.loadMemoImage(post_updated_date: uploadTime,
+                                                   deviceToken: self.deviceToken,
+                                                   selectedDate: self.selectedDate,
+                                                   completion: {
                         image in
                         self.imageView.image = image
+                        self.photoData = image.jpegData(compressionQuality: 0.7) as NSData?
                     })
                 } else {
                     self.imageView.image = nil
@@ -222,8 +226,9 @@ class AddDiaryViewController: UIViewController{
         nextViewController.receivedImageURL = self.localFile
         nextViewController.receivedFilePath = self.filePath
         nextViewController.receivedPhotoData = self.photoData
-        print("localFile:\(localFile)")
-        print("filePath:\(filePath)")
+        if photoData == nil {
+            photoData = imageView.image!.jpegData(compressionQuality: 0.7) as NSData?;
+        }
     }
     
 }

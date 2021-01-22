@@ -49,7 +49,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             receivedPostDate = default_post_date
         }
         
-        // 입력한 사진이 없을 경우
+        // 처음 게시글을 작성할 경우 입력한 사진이 없을 경우
         if receivedPhotoData == nil {
             // create the alert
             let alert = UIAlertController(title: "사진이 비어있음", message: "입력할 사진을 넣어주세요", preferredStyle: UIAlertController.Style.alert)
@@ -72,7 +72,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         } else { // textField에 글을 적었을 경우
         
             // upload image to Firebase Storage
-            petDStorage.uploadToStorage(current_date_string: current_date_string, deviceToken: deviceToken, receivedPhotoData: receivedPhotoData!)
+            petDStorage.uploadToStorage(current_date_string: current_date_string, deviceToken: deviceToken, receivedPhotoData: receivedPhotoData!, selectedDate: receivedPostDate)
             
             // copy text for DB
             contentToDB = textField.text!
