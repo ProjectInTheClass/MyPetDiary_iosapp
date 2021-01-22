@@ -244,11 +244,9 @@ UINavigationControllerDelegate{
             //
             //        print(resized?.size)
             imageView.image = image
-            print(image.size)
             let size = CGSize(width: image.size.width * 0.1, height: image.size.height * 0.1)
             let resizedImage = image.resizeImage(targetSize: size)
             photoData = resizedImage!.pngData() as NSData?
-            print(resizedImage?.size)
         }
         
 //        let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL

@@ -13,17 +13,18 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
-
-    @IBOutlet var calendarView: FSCalendar!
-    @IBAction func unwindFromVC3(seque: UIStoryboardSegue){
-        showTodo()
-    }
     
     var ref: DatabaseReference! = Database.database().reference()
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
-    
     let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     let postDataModel = FirebasePostDataModel.shared // post DB reference
+    var dates = [Date]()
+    let formatter = DateFormatter()
+    var selectedDateString: String = ""
+    var flag: Int = 0
+
+    @IBOutlet var calendarView: FSCalendar!
+    @IBAction func unwindFromVC3(seque: UIStoryboardSegue){}
     
     @IBOutlet weak var subPostView: UIStackView!
     // subview
@@ -39,19 +40,12 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         guard let uvc = storyboard?.instantiateViewController(identifier: "TdMemoViewController") else {
             return
         }
-        
         // 화면 전환 애니메이션 설정
         uvc.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        
         self.present(uvc, animated: true)
     }
-
-    var dates = [Date]()
-    let formatter = DateFormatter()
-    
-    var selectedDateString: String = ""
-    var flag: Int = 0
-    
+ 
+    // 오늘날짜!
     func todayDateFirst() {
         formatter.dateFormat = "yyyy-MM-dd"
         selectedDateString = formatter.string(from: Date())
@@ -86,6 +80,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.placeholderType = .none
     }
     
+    // event dot
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         if dates.contains(date) {
             return 1
@@ -98,44 +93,25 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     func getDB() {
         postDataModel.showAllDate(deviceToken: deviceToken, completion: { [self] alldate in
             self.dates = alldate.compactMap { self.formatter.date(from: $0) }
-            
             self.calendarView.reloadData()
         })
     }
-    
-//    func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at monthPosition: FSCalendarMonthPosition) {
-//
-//        let labelMy2 = UILabel(frame: CGRect(x: 10, y: 20, width: cell.bounds.width, height: 30))
-//        labelMy2.font = UIFont(name: "Noteworthy", size: 7)
-//        labelMy2.layer.cornerRadius = cell.bounds.width/2
-//        labelMy2.text = "🌿"
-//        labelMy2.text! += "💊🏥🛁"
-//
-//        cell.addSubview(labelMy2)
-//
-//    }
-//
+
     // 날짜 선택 시 콜백 메소드
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDateString = formatter.string(from: date)
         print(selectedDateString + " 선택됨")
-        
+        getDB()
         showTodo()
         showImage()
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        
         if segue.identifier == "ShowSubSegue" {
-            
             guard let TodayMemoViewController = segue.destination as? TodayMemoViewController else {return}
-            
             TodayMemoViewController.selectedDate = self.selectedDateString
         } else if segue.identifier == "AddPostSegue" {
-            
             guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
-            
             AddDiaryViewController.selectedDate = self.selectedDateString
         }
         
@@ -143,7 +119,6 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
     // 캘린더에서 해당 날짜 라벨 표시하기
     func showTodo(){
-        
         postDataModel
             .showSwitchFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
             walkDB, washDB, medicineDB, hospitalDB, nothing in
@@ -180,7 +155,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         // subImage에 image 불러오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
-                uploadTime, isSomething in
+                (uploadTime, isSomething) in
                 if isSomething { // 저장된 사진이 있으면
                     self.petDStorage.loadMemoImage(post_updated_date: uploadTime, deviceToken: self.deviceToken, completion: {
                         image in
@@ -218,10 +193,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         print("viewDidLoad")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        // tab하면 모달 띄우기
-//        self.subPostView.isUserInteractionEnabled = true
-//        self.subPostView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showPostTapGesture)))
-        
+
         todayDateFirst()
         getDB()
         setCalendar()
@@ -230,5 +202,13 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     
         calendarView.delegate = self
         calendarView.dataSource = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("viewwillappear")
+        getDB()
+        showTodo()
+        showImage()
+//        self.calendarView.reloadData()
     }
 }
