@@ -15,6 +15,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var contentToDB = "";
     
     let postDataModel = FirebasePostDataModel.shared // post DB reference
+    let newsfeedDataModel = FirebaseNewsFeedDataModel.shared // newsfeed DB reference
     let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
 
     @IBOutlet weak var textField: UITextField!
@@ -80,6 +81,10 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             // upload to realtime database
             postDataModel
                 .uploadToDB(deviceToken: deviceToken, selectedDate: receivedPostDate, current_date_string: current_date_string, contentToDB: contentToDB, receivedWalkSwitch: receivedWalkSwitch, receivedWashSwitch: receivedWashSwitch, receivedMedicineSwitch: receivedMedicineSwitch, receivedHospitalSwitch: receivedHospitalSwitch, receivedImageURL: receivedImageURL)
+            
+            // upload to newsfeed database
+            newsfeedDataModel
+                .uploadTodayPost(deviceToken: deviceToken, selectedDate: receivedPostDate, current_date_string: current_date_string, contentToDB: contentToDB)
         }
         
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0519EFF425BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0519EFF325BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift */; };
 		0549476625B9656F00714492 /* FirebasePostDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549476525B9656F00714492 /* FirebasePostDataModel.swift */; };
 		05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */; };
 		05E0C1BC25B7FAA3009DB146 /* FirebaseUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0519EFF325BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNewsFeedDatabase.swift; sourceTree = "<group>"; };
 		0549476525B9656F00714492 /* FirebasePostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePostDataModel.swift; sourceTree = "<group>"; };
 		05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataModel.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */,
 				0549476525B9656F00714492 /* FirebasePostDataModel.swift */,
 				05F8ECF725B9E95400958D06 /* PetDFirebaseStorage.swift */,
+				0519EFF325BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift */,
 			);
 			path = DBmodel;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				7640D69F25AED1B000A15B14 /* UICollectionViewCell+Extension.swift in Sources */,
 				76F1383025BAC8C90082CDB1 /* UIImage+.swift in Sources */,
 				47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */,
+				0519EFF425BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift in Sources */,
 				05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */,
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,
 				76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */,
