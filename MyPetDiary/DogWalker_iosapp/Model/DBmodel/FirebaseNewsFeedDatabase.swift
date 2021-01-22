@@ -29,7 +29,7 @@ class FirebaseNewsFeedDataModel: NSObject {
     // upload post to DB
     func uploadTodayPost(deviceToken: String, selectedDate: String, current_date_string: String, contentToDB: String) {
         
-        let newsfeedRef: DatabaseReference! = Database.database().reference().child("NewsFeed").child("\(selectedDate)")
+        let newsfeedRef: DatabaseReference! = Database.database().reference().child("NewsFeed").child("\(selectedDate)").childByAutoId()
         
         var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
         
