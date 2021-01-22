@@ -13,6 +13,7 @@ import Firebase
 import FirebaseDatabase
 
 class EditProfileViewController: UIViewController {
+    var window: UIWindow?
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var editImageButton: UIButton!
@@ -28,12 +29,10 @@ class EditProfileViewController: UIViewController {
     @IBAction func saveButtonAction(_ sender: Any) {
         userDataModel
             .saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
-        
-        performSegue(withIdentifier: "backToProfile", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "backToProfile" {
+        if segue.identifier == "backToProMyPage" {
             if let MyPageVC = segue.destination as? MyPageViewController {
                 
             }

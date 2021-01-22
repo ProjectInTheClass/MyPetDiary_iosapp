@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    @IBAction func backToMyPage (segue : UIStoryboardSegue){}
     @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userInfo: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
