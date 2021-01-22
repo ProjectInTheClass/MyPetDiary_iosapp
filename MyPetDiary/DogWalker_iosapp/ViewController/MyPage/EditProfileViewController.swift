@@ -157,11 +157,12 @@ class EditProfileViewController: UIViewController {
 
     // 프로필 사진 보여주기
     func showProfile() {
-        print("프로필 사진")
-        petDStorage.loadProfileImage(deviceToken: deviceToken, nickname: editIDTextField.text!, completion: {
-            profileImage in
-            print("\(profileImage)")
-            self.userImage.image = profileImage
+        userDataModel.showUserNickname(deviceToken: deviceToken, completion: {
+            usernickname in
+            self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: {
+                profileImage in
+                self.userImage.image = profileImage
+            })
         })
     }
     

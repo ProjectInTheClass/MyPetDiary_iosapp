@@ -191,6 +191,7 @@ class PetDFirebaseStorage: NSObject {
     // load profile image from storage
     func loadProfileImage(deviceToken: String, nickname: String, completion: @escaping (UIImage) -> Void) {
         var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
+        print("nickname:\(nickname)")
         imagePath.append("\(nickname)+\(deviceToken).jpeg")
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(imagePath)")
