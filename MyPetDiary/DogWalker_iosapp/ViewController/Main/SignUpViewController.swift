@@ -76,7 +76,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.nickName.becomeFirstResponder()
         
-        if let user = Auth.auth().currentUser {
+        if Auth.auth().currentUser != nil {
             guard let dvc = self.storyboard?.instantiateViewController(identifier: "MainView") as? ViewController else {
                 return
             }

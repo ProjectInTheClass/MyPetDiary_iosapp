@@ -40,7 +40,7 @@ class WithdrawalViewController: UIViewController {
     @IBAction func deleteUser(_ sender: Any) {
         func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "backToSetting" {
-                let vc = segue.destination as! SettingViewController
+                _ = segue.destination as! SettingViewController
             }
             
         }
@@ -78,7 +78,7 @@ class WithdrawalViewController: UIViewController {
             performSegue(withIdentifier: "backToSetting", sender: self)
 
             if segue.identifier == "backToSetting" {
-                let vc = segue.destination as! SettingViewController
+                _ = segue.destination as! SettingViewController
             }
         }
     }

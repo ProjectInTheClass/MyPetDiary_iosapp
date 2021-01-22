@@ -145,11 +145,11 @@ class FirebasePostDataModel: NSObject {
 
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
         gsRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-          if let error = error {
+            if error != nil {
             // Uh-oh, an error occurred!
           } else {
             // Data for "images/island.jpg" is returned
-            let image = UIImage(data: data!)
+            _ = UIImage(data: data!)
           }
         }
     }

@@ -132,7 +132,7 @@ UINavigationControllerDelegate{
             userImage.image = image
         }
         let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
-        let imageName=imageUrl?.lastPathComponent//파일이름
+        _=imageUrl?.lastPathComponent//파일이름
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
         let photoURL = NSURL(fileURLWithPath: documentDirectory)

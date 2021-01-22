@@ -20,7 +20,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = VCArray.index(of: viewController) else {
+        guard let viewControllerIndex = VCArray.firstIndex(of: viewController) else {
             return nil
         }
         
@@ -38,7 +38,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = VCArray.index(of: viewController) else {
+        guard let viewControllerIndex = VCArray.firstIndex(of: viewController) else {
             return nil
         }
         
@@ -60,7 +60,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     }
     
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = VCArray.index(of: firstViewController) else{
+        guard let firstViewController = viewControllers?.first, let firstViewControllerIndex = VCArray.firstIndex(of: firstViewController) else{
             return 0
         }
         

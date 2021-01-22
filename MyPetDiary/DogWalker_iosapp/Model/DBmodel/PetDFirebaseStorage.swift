@@ -26,18 +26,18 @@ class PetDFirebaseStorage: NSObject {
         // Create a reference to the file you want to upload
         let photoDetailRef = storageRef.child("\(current_date_string)+\(deviceToken).jpeg")
         
-        var data = receivedPhotoData
+        let data = receivedPhotoData
         //let uploadTask = storageRef.putFile(from: localFile, metadata: metadata)
-        let uploadTask = photoDetailRef.putData(data as! Data, metadata: nil) { (metadata, error) in
+        let uploadTask = photoDetailRef.putData(data as Data, metadata: nil) { (metadata, error) in
           guard let metadata = metadata else {
             // Uh-oh, an error occurred!
             return
           }
           // Metadata contains file metadata such as size, content-type.
-          let size = metadata.size
+            _ = metadata.size
           // You can also access to download URL after upload.
           photoDetailRef.downloadURL { (url, error) in
-            guard let downloadURL = url else {
+            guard url != nil else {
               // Uh-oh, an error occurred!
               return
             }
@@ -55,7 +55,7 @@ class PetDFirebaseStorage: NSObject {
 
         uploadTask.observe(.progress) { snapshot in
           // Upload reported progress
-          let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+            _ = 100.0 * Double(snapshot.progress!.completedUnitCount)
             / Double(snapshot.progress!.totalUnitCount)
         }
 
@@ -64,7 +64,7 @@ class PetDFirebaseStorage: NSObject {
         }
         
         uploadTask.observe(.failure) { snapshot in
-          if let error = snapshot.error as? NSError {
+            if let error = snapshot.error as NSError? {
             switch (StorageErrorCode(rawValue: error.code)!) {
             case .objectNotFound:
               // File doesn't exist
