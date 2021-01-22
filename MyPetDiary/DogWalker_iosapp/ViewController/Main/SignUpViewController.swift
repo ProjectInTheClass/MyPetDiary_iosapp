@@ -17,6 +17,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = nickName.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 10
+    }
     // 회원가입 버튼 눌렀을 경우
     @IBAction func signUp(_ sender: Any, nickName: UITextField) {
         

@@ -88,12 +88,18 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="idTextSize:" destination="kuw-GN-hJd" eventType="editingChanged" id="bNK-Jd-zM9"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="  강아지를 소개해주세요!" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-OU-XZV">
                                                 <rect key="frame" x="0.0" y="55" width="314" height="49.5"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="infoTextSize:" destination="kuw-GN-hJd" eventType="editingChanged" id="tY9-Co-tqJ"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>

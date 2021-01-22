@@ -12,7 +12,7 @@ import Photos
 import Firebase
 import FirebaseDatabase
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UITextFieldDelegate {
     var window: UIWindow?
 
     @IBOutlet weak var userImage: UIImageView!
@@ -20,6 +20,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editIDTextField: UITextField!
     @IBOutlet weak var editIntroTextField: UITextField! // 소개글 부분
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     var photoData: NSData? = nil // 프로필 사진 data
     
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
@@ -27,6 +28,19 @@ class EditProfileViewController: UIViewController {
     
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
+    //글자수제한
+    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        if (textField.text?.count ?? 0 > maxLength) {
+            textField.deleteBackward()
+        }
+    }
+
+    @IBAction func idTextSize(_ sender: Any) {
+        checkMaxLength(textField: editIDTextField, maxLength: 10)
+    }
+    @IBAction func infoTextSize(_ sender: Any) {
+        checkMaxLength(textField: editIntroTextField, maxLength: 20)
+    }
     // save 버튼 눌렀을 경우
     @IBAction func saveButtonAction(_ sender: Any) {
         // 소개글 저장하기
@@ -165,6 +179,8 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        editIDTextField.delegate = self
+        editIntroTextField.delegate = self
         picker.delegate = self
         imageCircle()
         // Do any additional setup after loading the view.
