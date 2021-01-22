@@ -36,7 +36,9 @@ class FirebaseNewsFeedDataModel: NSObject {
             if snapshot.exists() { // 오늘의 게시물이 있다면
                 if let value = snapshot.value as? Dictionary<String, Any> {
                     for index in value {
-                        
+                        if let news = index.value as? Dictionary<String, Any> {
+                            print(news["device_token"])
+                        }
                     }
                 }
             } else { // 오늘의 게시물이 아무것도 없음
