@@ -26,6 +26,25 @@ class FirebaseNewsFeedDataModel: NSObject {
         self.init(post_content: "", post_updated_date: "", post_date: "")
     }
     
+    func getTodayFeed() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDate = formatter.string(from: Date())
+        let newsfeedRef: DatabaseReference! = Database.database().reference().child("NewsFeed").child("\(todayDate)")
+        
+        newsfeedRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists() { // 오늘의 게시물이 있다면
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    for index in value {
+                        
+                    }
+                }
+            } else { // 오늘의 게시물이 아무것도 없음
+                
+            }
+        })
+    }
+    
     // upload post to DB
     func uploadTodayPost(deviceToken: String, selectedDate: String, current_date_string: String, contentToDB: String) {
         
