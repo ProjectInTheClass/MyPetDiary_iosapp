@@ -49,6 +49,17 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             receivedPostDate = default_post_date
         }
         
+        // 입력한 사진이 없을 경우
+        if receivedPhotoData == nil {
+            // create the alert
+            let alert = UIAlertController(title: "사진이 비어있음", message: "입력할 사진을 넣어주세요", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler:nil
+            ))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         if textField.text == "" { // textField에 아무것도 안썼을 경우
             // create the alert
             let alert = UIAlertController(title: "내용이 비어있음", message: "글을 작성해주세요", preferredStyle: UIAlertController.Style.alert)
