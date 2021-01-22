@@ -31,6 +31,21 @@ class FirebaseUserDataModel: NSObject {
         userNicknameRef.setValue(nickname)
     }
     
+    // 마이페이지에서 소개글 저장하기
+    func saveIntro(deviceToken: String, userIntro: String) {
+        let userIntroRef = userRef.child("\(deviceToken)").child("userInfo").child("user_intro")
+        
+        userIntroRef.setValue(userIntro)
+    }
+    
+    // 유저 프로필 사진 등록하기
+    func saveProfileImage(deviceToken: String, nickname: String) {
+        let userProfileRef = userRef.child("\(deviceToken)").child("userInfo").child("user_profile")
+        var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
+        imagePath.append("\(nickname)+\(deviceToken).jpeg")
+        userProfileRef.setValue("\(imagePath)")
+    }
+    
     // 마이페이지에서 user_nickname 보이기
     func showUserNickname(deviceToken: String, completion: @escaping (String) -> Void) {
         userRef.child("\(deviceToken)").child("userInfo").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -41,13 +56,6 @@ class FirebaseUserDataModel: NSObject {
         }) { (error) in
             print(error.localizedDescription)
         }
-    }
-    
-    // 마이페이지에서 소개글 저장하기
-    func saveIntro(deviceToken: String, userIntro: String) {
-        let userIntroRef = userRef.child("\(deviceToken)").child("userInfo").child("user_intro")
-        
-        userIntroRef.setValue(userIntro)
     }
     
     // 소개글 가져오기
