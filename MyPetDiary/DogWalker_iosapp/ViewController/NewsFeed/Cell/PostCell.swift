@@ -13,26 +13,26 @@ class PostCell: UITableViewCell
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
    
-    
     var post: Post!{
         didSet {
             updateUI()
         }
     }
-    
+    func imageCircle(){
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.layer.borderWidth = 1
+        profileImageView.clipsToBounds = true
+        profileImageView.layer.borderColor = UIColor.clear.cgColor  //원형 이미지의 테두리 제거
+    }
     func updateUI(){
+        imageCircle()
         profileImageView.image = post.createdBy.profileImage
         usernameLabel.text = post.createdBy.username
         postImageView.image = post.image
         
-        profileImageView.layer.cornerRadius = 20
-        profileImageView.clipsToBounds = true
-        profileImageView.layer.borderWidth = 2
-        profileImageView.layer.borderColor = UIColor.lightGray.cgColor
-        
         postImageView.clipsToBounds = true
-        postImageView.layer.borderWidth = 1
-        postImageView.layer.borderColor = UIColor.lightGray.cgColor
+        postImageView.layer.borderWidth = 5
+        postImageView.layer.borderColor = UIColor.white.cgColor
         
     }
 }

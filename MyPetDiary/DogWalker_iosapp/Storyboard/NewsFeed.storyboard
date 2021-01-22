@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed-->
+        <!--OTHERS-->
         <scene sceneID="LQV-8S-sbB">
             <objects>
                 <tableViewController id="dj7-0e-Vpm" customClass="NewsFeedTableViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,51 +17,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="570" id="TcT-n4-GGj" customClass="PostCell" customModule="DogWalker_iosapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="570"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" id="TcT-n4-GGj" customClass="PostCell" customModule="DogWalker_iosapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="450.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TcT-n4-GGj" id="Sf5-Pn-dYh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="570"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="450.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-qW-ZWH">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kid-2" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-qW-ZWH">
                                             <rect key="frame" x="12" y="12" width="36" height="36"/>
+                                            <color key="backgroundColor" red="0.94309888161797406" green="0.91214962862233251" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="36" id="73z-aL-Jb2"/>
                                                 <constraint firstAttribute="width" constant="36" id="f0d-ih-uDa"/>
+                                                <constraint firstAttribute="width" secondItem="dFW-qW-ZWH" secondAttribute="height" multiplier="1:1" id="vng-J9-r5g"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Howard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lq-Ho-HVf">
-                                            <rect key="frame" x="60" y="17" width="91" height="30"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lq-Ho-HVf">
+                                            <rect key="frame" x="60" y="17" width="37" height="22"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-k7-iDo">
-                                            <rect key="frame" x="0.0" y="56" width="414" height="414"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squareshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-k7-iDo">
+                                            <rect key="frame" x="10" y="57" width="394" height="392"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="414" id="1om-xS-E1v"/>
-                                                <constraint firstAttribute="width" constant="414" id="jkv-AL-eQN"/>
                                                 <constraint firstAttribute="width" secondItem="NU0-k7-iDo" secondAttribute="height" multiplier="1:1" id="nXi-ii-G1W"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R53-lm-qXk">
-                                            <rect key="frame" x="0.0" y="533" width="414" height="37"/>
-                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="37" id="IH0-cb-a1r"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="R53-lm-qXk" secondAttribute="trailing" id="0Hu-o0-cT8"/>
-                                        <constraint firstItem="R53-lm-qXk" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" id="2wr-yo-Snv"/>
-                                        <constraint firstItem="R53-lm-qXk" firstAttribute="top" secondItem="NU0-k7-iDo" secondAttribute="bottom" constant="63" id="89M-rf-ccs"/>
+                                        <constraint firstAttribute="bottom" secondItem="NU0-k7-iDo" secondAttribute="bottom" id="Bgp-wq-mav"/>
                                         <constraint firstItem="dFW-qW-ZWH" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="12" id="C5W-pV-Ihq"/>
                                         <constraint firstItem="dFW-qW-ZWH" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="top" constant="12" id="T86-ta-uuJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="NU0-k7-iDo" secondAttribute="trailing" id="VgV-NI-TUE"/>
-                                        <constraint firstItem="NU0-k7-iDo" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" id="XAs-1C-0Q2"/>
-                                        <constraint firstAttribute="bottom" secondItem="R53-lm-qXk" secondAttribute="bottom" id="Yuw-Qb-7CM"/>
+                                        <constraint firstAttribute="trailing" secondItem="NU0-k7-iDo" secondAttribute="trailing" constant="10" id="VgV-NI-TUE"/>
+                                        <constraint firstItem="NU0-k7-iDo" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="10" id="XAs-1C-0Q2"/>
                                         <constraint firstItem="0Lq-Ho-HVf" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="topMargin" constant="6" id="az5-Ke-koO"/>
                                         <constraint firstItem="NU0-k7-iDo" firstAttribute="top" secondItem="dFW-qW-ZWH" secondAttribute="bottom" constant="8" symbolic="YES" id="jiT-es-lvE"/>
                                         <constraint firstItem="0Lq-Ho-HVf" firstAttribute="leading" secondItem="dFW-qW-ZWH" secondAttribute="trailing" constant="12" id="qXi-Qk-kl7"/>
@@ -80,7 +71,7 @@
                             <outlet property="delegate" destination="dj7-0e-Vpm" id="6Jx-bo-nvW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Feed" id="U93-5C-Uik"/>
+                    <navigationItem key="navigationItem" title="OTHERS" id="U93-5C-Uik"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZQ-74-Nkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,14 +98,12 @@
     </scenes>
     <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
     <resources>
-        <image name="dog" width="256" height="256"/>
+        <image name="kid-2" width="256" height="256"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
+        <image name="squareshape" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

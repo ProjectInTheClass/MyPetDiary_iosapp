@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Pet Diary-->
+        <!--DIARY-->
         <scene sceneID="n75-gN-yJp">
             <objects>
                 <viewController storyboardIdentifier="MainFeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AjM-WY-uif" customClass="FeedViewController" customModule="DogWalker_iosapp" sceneMemberID="viewController">
@@ -91,7 +91,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="My Pet Diary" id="bXY-3X-Y5q">
+                    <navigationItem key="navigationItem" title="DIARY" id="bXY-3X-Y5q">
                         <barButtonItem key="rightBarButtonItem" title="addPost" id="t0p-s8-Olf">
                             <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
                             <color key="tintColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
