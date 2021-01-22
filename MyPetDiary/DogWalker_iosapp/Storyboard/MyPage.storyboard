@@ -18,16 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< HEAD
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-QZ-95Z">
                                 <rect key="frame" x="50" y="138" width="314" height="508.5"/>
-=======
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-QZ-95Z">
-                                <rect key="frame" x="0.0" y="50" width="414" height="702"/>
-<<<<<<< HEAD
->>>>>>> 066ebfc (add mypage segue)
-=======
->>>>>>> main
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="shk-sA-pSh">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="104.5"/>
@@ -525,13 +517,7 @@
         <segue reference="gbj-4z-tv1"/>
     </inferredMetricsTieBreakers>
     <resources>
-<<<<<<< HEAD
-<<<<<<< HEAD
         <image name="camera.circle" catalog="system" width="128" height="121"/>
-=======
->>>>>>> 066ebfc (add mypage segue)
-=======
->>>>>>> main
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="kid-2" width="256" height="256"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
