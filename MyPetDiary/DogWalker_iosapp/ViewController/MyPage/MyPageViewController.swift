@@ -13,7 +13,6 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     @IBOutlet weak var collectionV: UICollectionView!
     @IBAction func backToMyPage (segue : UIStoryboardSegue){
-        viewWillAppear(true)
     }
 
     @IBOutlet weak var userNickName: UILabel!
@@ -69,15 +68,20 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     // 프로필 사진 보여주기
     func showProfile() {
-        userDataModel.showUserNickname(deviceToken: deviceToken, completion: {
-            usernickname in
-            self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: { profileImage in
-                DispatchQueue.main.async {
-                    self.userPicture.image = profileImage
-                }
-                
-            })
-        })
+        DispatchQueue.global(qos: .background).async {
+            
+            DispatchQueue.main.async {
+                self.userDataModel.showUserNickname(deviceToken: self.deviceToken, completion: {
+                usernickname in
+                    self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: { profileImage in
+                            self.userPicture.image = profileImage
+                            print("img refreshed!!")
+                    })
+                })
+            // Run UI Updates or call completion block
+            }
+        }
+    
     }
     
     // 올린 모든 사진 보이기
