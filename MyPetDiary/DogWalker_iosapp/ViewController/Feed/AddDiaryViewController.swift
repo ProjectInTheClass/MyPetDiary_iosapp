@@ -126,7 +126,7 @@ class AddDiaryViewController: UIViewController{
     
     func settingAlert(){
         if let appName = Bundle.main.infoDictionary!["CFBundleName"] as? String{
-            let alert = UIAlertController(title: "Alert", message: "\(appName)이(가) 카메라 접근이 허용되지 않았습니다. 설정화면으로 이동하시겠습니까?", preferredStyle:  .alert)
+            let alert = UIAlertController(title: "Alert", message: "\(appName)이(가) 카메라 접근이 허용되지 않았습니다. 설정으로 이동하시겠습니까?", preferredStyle:  .alert)
             let cancelAction = UIAlertAction(title: "취소", style: .default){ (action) in
                 //
             }
@@ -143,24 +143,19 @@ class AddDiaryViewController: UIViewController{
 
 
     @IBAction func addImage(_ sender: Any) {
-        let alert =  UIAlertController(title: "사진을 등록하세요!", message: " ", preferredStyle: .actionSheet)
-
-        let library =  UIAlertAction(title: "사진앨범", style: .default) { (action) in self.openLibrary()
+        let alert =  UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let library =  UIAlertAction(title: "앨범에서 선택", style: .default) { (action) in self.openLibrary()
         }
-
-        let camera =  UIAlertAction(title: "카메라", style: .default) { (action) in
+        let camera =  UIAlertAction(title: "카메라 쵤영", style: .default) { (action) in
             self.openCamera()
         }
-
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "닫기", style: .cancel, handler: nil)
         
         switch PHPhotoLibrary.authorizationStatus(){
         case .denied:
             settingAlert()
         case .restricted:
             break
-//        case .limited:
-            
         case .authorized:
             alert.addAction(library)
             alert.addAction(camera)
@@ -182,12 +177,6 @@ class AddDiaryViewController: UIViewController{
         default:
             break
         }
-
-//        alert.addAction(library)
-//        alert.addAction(camera)
-//        alert.addAction(cancel)
-//        present(alert, animated: true, completion: nil)
-
     }
     
     // picker = UIImagePickerController

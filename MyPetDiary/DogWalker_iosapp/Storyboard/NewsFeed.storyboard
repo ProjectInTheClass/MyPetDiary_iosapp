@@ -96,7 +96,7 @@
             <point key="canvasLocation" x="1581" y="611"/>
         </scene>
     </scenes>
-    <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="kid-2" width="256" height="256"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>

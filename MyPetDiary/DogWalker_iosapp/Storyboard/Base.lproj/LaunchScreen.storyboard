@@ -21,7 +21,8 @@
             <point key="canvasLocation" x="-428" y="494"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="launchscreen" width="1539" height="2183"/>
+        <image name="launchscreen" width="769.5" height="1091.5"/>
     </resources>
 </document>
