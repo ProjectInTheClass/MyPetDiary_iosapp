@@ -367,72 +367,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eRM-ql-unO">
-                                <rect key="frame" x="63" y="187" width="288" height="99"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="MTl-lm-1ka">
+                                <rect key="frame" x="20" y="153.5" width="374" height="198.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Der-pf-gnb">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="23"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴하시기 전에 꼭 확인해 주세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYX-mE-BtS">
+                                        <rect key="frame" x="21" y="0.0" width="332.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴할 경우 데이터가 모두 사라집니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-kb-6WW">
-                                        <rect key="frame" x="0.0" y="38" width="288" height="23"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴된 계정은 되돌릴 수 없습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gq-aJ-2J5">
+                                        <rect key="frame" x="41" y="89" width="292" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 작업은 되돌릴 수 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idy-C2-I9X">
-                                        <rect key="frame" x="0.0" y="76" width="288" height="23"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*신중하게 선택하시길 바랍니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5E-3f-qI1">
+                                        <rect key="frame" x="63" y="174.5" width="248.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Vve-gp-NTb">
-                                <rect key="frame" x="126" y="366" width="162" height="36"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9xQ-wh-1gl">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <state key="normal" title="예">
-                                            <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deleteUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="bQj-p2-Ka2"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e28-f7-0ld">
-                                        <rect key="frame" x="110" y="0.0" width="52" height="36"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                        <state key="normal" title="아니오">
-                                            <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="keepUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="5UT-Kg-xDD"/>
-                                            <segue destination="e3g-Mb-nBV" kind="unwind" identifier="backToSetting" unwindAction="unwindFromModalWithSeque:" id="br3-Gc-wRi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nsi-xD-7iT">
+                                <rect key="frame" x="235" y="402" width="120" height="120"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.1720759593" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="L8a-VJ-biN"/>
+                                    <constraint firstAttribute="width" constant="120" id="zuc-5I-9vK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="31"/>
+                                <state key="normal" title="예">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="PYf-6b-dlL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOj-Gh-Q2B">
+                                <rect key="frame" x="59" y="402" width="120" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="3TA-ml-Pyj"/>
+                                    <constraint firstAttribute="height" constant="120" id="NDl-SP-BDg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <state key="normal" title="아니오">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="keepUser:" destination="hcT-dO-e2X" eventType="touchUpInside" id="rzk-7X-0uW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8M-xf-1ih">
+                                <rect key="frame" x="0.0" y="122.5" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.82745098039215681" green="0.83921568627450982" blue="0.84705882352941175" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="4mS-0G-EG1"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="펫다이어리계정 탈퇴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qma-6M-Wv4">
+                                <rect key="frame" x="20" y="78" width="240" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ud1-Gg-AO9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Vve-gp-NTb" firstAttribute="top" secondItem="eRM-ql-unO" secondAttribute="bottom" constant="80" id="4SY-lE-Mpp"/>
-                            <constraint firstItem="Vve-gp-NTb" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="B19-hK-h5e"/>
-                            <constraint firstItem="eRM-ql-unO" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="d7P-ak-9Pf"/>
-                            <constraint firstItem="eRM-ql-unO" firstAttribute="top" secondItem="Ud1-Gg-AO9" secondAttribute="top" constant="187" id="ymE-IO-2pr"/>
+                            <constraint firstItem="MTl-lm-1ka" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" constant="20" id="8WD-jv-tHF"/>
+                            <constraint firstItem="MTl-lm-1ka" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" constant="-168.5" id="94P-Pc-Bvi"/>
+                            <constraint firstItem="Ud1-Gg-AO9" firstAttribute="trailing" secondItem="MTl-lm-1ka" secondAttribute="trailing" constant="20" id="CHI-bv-zql"/>
+                            <constraint firstItem="c8M-xf-1ih" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" id="Mou-xC-87e"/>
+                            <constraint firstItem="c8M-xf-1ih" firstAttribute="trailing" secondItem="Ud1-Gg-AO9" secondAttribute="trailing" id="RkF-11-xBy"/>
+                            <constraint firstItem="MTl-lm-1ka" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" id="URl-WO-BsM"/>
+                            <constraint firstItem="c8M-xf-1ih" firstAttribute="top" secondItem="Qma-6M-Wv4" secondAttribute="bottom" constant="8.5" id="cEy-YO-ZQ3"/>
+                            <constraint firstItem="MTl-lm-1ka" firstAttribute="top" secondItem="c8M-xf-1ih" secondAttribute="bottom" constant="30" id="dGa-Ej-64w"/>
+                            <constraint firstItem="Qma-6M-Wv4" firstAttribute="leading" secondItem="Ud1-Gg-AO9" secondAttribute="leading" constant="20" id="g0O-Qv-27q"/>
+                            <constraint firstItem="nsi-xD-7iT" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" constant="41" id="hgw-ju-hke"/>
+                            <constraint firstItem="sOj-Gh-Q2B" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" constant="-88" id="owh-q6-Tff"/>
+                            <constraint firstItem="sOj-Gh-Q2B" firstAttribute="centerY" secondItem="GuZ-g1-TZ4" secondAttribute="centerY" constant="41" id="thK-Pi-UIi"/>
+                            <constraint firstItem="nsi-xD-7iT" firstAttribute="centerX" secondItem="GuZ-g1-TZ4" secondAttribute="centerX" constant="88" id="xEq-Bt-4dr"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="Dzj-Kw-SOC"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="DeleteButton" destination="nsi-xD-7iT" id="igi-Hb-qwp"/>
+                        <outlet property="KeepDataButton" destination="sOj-Gh-Q2B" id="N66-nF-jYy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sT-dN-BpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="e3g-Mb-nBV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7182.6086956521749" y="1297.7678571428571"/>
         </scene>

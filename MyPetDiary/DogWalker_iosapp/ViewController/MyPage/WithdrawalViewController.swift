@@ -12,6 +12,22 @@ import FirebaseDatabase
 // 탈퇴하기 누른 후 모달
 class WithdrawalViewController: UIViewController {
     
+
+    @IBOutlet weak var DeleteButton: UIButton!
+    @IBOutlet weak var KeepDataButton: UIButton!
+    
+    func updateUI()  {
+        DeleteButton.layer.cornerRadius = 20
+        DeleteButton.layer.borderWidth = 2
+        DeleteButton.layer.borderColor = UIColor.lightGray.cgColor
+        
+        KeepDataButton.layer.cornerRadius = 20
+        KeepDataButton.layer.borderWidth = 2
+        KeepDataButton.layer.borderColor = UIColor.lightGray.cgColor
+        
+    }
+    
+    
     var ref: DatabaseReference! = Database.database().reference()
     
     var window: UIWindow?
@@ -83,6 +99,7 @@ class WithdrawalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateUI()
         // Do any additional setup after loading the view.
     }
     

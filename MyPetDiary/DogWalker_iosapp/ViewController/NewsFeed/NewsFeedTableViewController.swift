@@ -11,10 +11,6 @@ class NewsFeedTableViewController: UITableViewController
 {
     var posts: [Post]?
     
-    
-   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +18,12 @@ class NewsFeedTableViewController: UITableViewController
     }
     
     func fetchPosts() {
-        posts = Post.fetchPosts()
-        tableView.reloadData()
+        PostService.shared.posts { result in
+            self.posts = result
+            self.tableView.reloadData()
+        }
+//        posts = PostService.shared.fetchPosts()
+//        tableView.reloadData()
     }
 }
 

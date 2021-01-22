@@ -8,19 +8,27 @@
 import UIKit
 
 
-struct FeedUser
-{
+struct FeedUser {
     var username: String?
     var profileImage: UIImage?
 }
 
-struct Post{
-    
+struct Post {
     var createdBy: FeedUser
     var image: UIImage?
+}
+
+
+class PostService {
+    static let shared = PostService()
     
-    static func fetchPosts() -> [Post]
-    {
+    func posts(completion: @escaping ([Post]) -> Void) {
+        let result = fetchPosts()
+        
+        completion(result)
+    }
+    
+    func fetchPosts() -> [Post] {
         var posts = [Post]()
         
         let Howard = FeedUser(username: "Howard", profileImage: UIImage(named: "hana"))
@@ -55,6 +63,4 @@ struct Post{
         return posts
         
     }
-    
-    
 }
