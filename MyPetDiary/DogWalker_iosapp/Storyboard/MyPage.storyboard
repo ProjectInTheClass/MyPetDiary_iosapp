@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="kuw-GN-hJd" customClass="EditProfileViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QX7-EI-JWO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PHo-QZ-95Z">
@@ -121,6 +121,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="vpG-1f-HtI">
                             <connections>
                                 <action selector="saveButtonAction:" destination="kuw-GN-hJd" id="AiP-js-H6H"/>
+                                <segue destination="BMi-DN-rRr" kind="unwind" unwindAction="backToMyPageWithSegue:" id="Gcc-7R-pmP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -130,7 +131,6 @@
                         <outlet property="editIntroTextField" destination="DKq-OU-XZV" id="9cb-sh-mRb"/>
                         <outlet property="saveButton" destination="vpG-1f-HtI" id="nSX-Lb-YIW"/>
                         <outlet property="userImage" destination="lnH-QB-rhJ" id="zZY-BZ-Ff8"/>
-                        <segue destination="pPF-M3-KVU" kind="show" identifier="backToProfile" id="gbj-4z-tv1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3QF-uy-n4s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,11 +142,11 @@
             <objects>
                 <viewController storyboardIdentifier="MyPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pPF-M3-KVU" customClass="MyPageViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ivn-M3-9sv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-mw-ZdF">
-                                <rect key="frame" x="0.0" y="30" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="695"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NCm-oM-QLP">
                                         <rect key="frame" x="46" y="0.0" width="322.5" height="220"/>
@@ -217,7 +217,7 @@
                                         </constraints>
                                     </stackView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oup-uv-USN">
-                                        <rect key="frame" x="0.0" y="220" width="414" height="509"/>
+                                        <rect key="frame" x="0.0" y="220" width="414" height="475"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TtF-cc-YNu">
                                             <size key="itemSize" width="128" height="128"/>
@@ -289,6 +289,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0E9-pY-tru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BMi-DN-rRr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5289.8550724637689" y="1590.4017857142856"/>
         </scene>
@@ -513,9 +514,6 @@
             <point key="canvasLocation" x="4422" y="1590"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gbj-4z-tv1"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.circle" catalog="system" width="128" height="121"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
