@@ -17,7 +17,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var editImageButton: UIButton!
     @IBOutlet weak var editIDTextField: UITextField!
-    @IBOutlet weak var editIntroTextField: UITextField!
+    @IBOutlet weak var editIntroTextField: UITextField! // 소개글 부분
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
@@ -30,6 +30,7 @@ class EditProfileViewController: UIViewController {
             .saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
         
         performSegue(withIdentifier: "backToProfile", sender: self)
+<<<<<<< HEAD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,6 +41,18 @@ class EditProfileViewController: UIViewController {
         }
     }
     
+=======
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "backToProfile" {
+            if let MyPageVC = segue.destination as? MyPageViewController {
+                
+            }
+        }
+    }
+    
+>>>>>>> main
     let picker = UIImagePickerController()
     var localFile = "" // 넘겨줄 사진 파일 url
     
