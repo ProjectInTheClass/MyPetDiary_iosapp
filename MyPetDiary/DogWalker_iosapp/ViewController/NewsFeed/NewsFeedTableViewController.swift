@@ -13,7 +13,6 @@ class NewsFeedTableViewController: UITableViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchPosts()
     }
     
@@ -27,8 +26,7 @@ class NewsFeedTableViewController: UITableViewController
     }
 }
 
-extension NewsFeedTableViewController
-{
+extension NewsFeedTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let posts = posts {
             return posts.count
@@ -39,13 +37,7 @@ extension NewsFeedTableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-        
         cell.post = posts![indexPath.row]
         return cell
     }
-
-
-
-
-
 }
