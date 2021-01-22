@@ -110,4 +110,25 @@ class PetDFirebaseStorage: NSObject {
           }
         }
     }
+    
+    func showImageArray(allImage: Array<String>, completion: @escaping (Array<UIImage>) -> Void) {
+        var imgArr: Array<UIImage> = []
+        var count: Int = 0
+        for index in allImage {
+            let gsReference = Storage.storage().reference(forURL: "\(index)")
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
+              if let error = error {
+                // Uh-oh, an error occurred!
+                print(error.localizedDescription)
+              } else {
+                // Data for "images/island.jpg" is returned
+                let downloadImage = UIImage(data: data!)!
+                imgArr.append(downloadImage)
+                count += 1
+                if count == allImage.count { completion(imgArr) }
+              }
+            }
+        }
+    }
 }
