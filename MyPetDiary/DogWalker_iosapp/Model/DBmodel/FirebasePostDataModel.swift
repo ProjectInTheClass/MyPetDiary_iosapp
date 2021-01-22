@@ -40,26 +40,22 @@ class FirebasePostDataModel: NSObject {
     
     // get switch value from DB
     func showSwitchFromDB(deviceToken: String, selectedDate: String,
-                           completion: @escaping (Bool, Bool, Bool, Bool) -> Void) {
-        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+                           completion: @escaping (Bool, Bool, Bool, Bool, Bool) -> Void) {
+
+        let postDetailRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
         
-        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
-            if snapshot.exists() {
+        postDetailRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() { // 기존에 쓴 데이터가 있는 경우 (글 수정)
                 if let value = snapshot.value as? Dictionary<String, Any> {
-                    //let dic = values as! [String : [String:Any]]
-                    for index in value {
-                        if let post = index.value as? Dictionary<String, Any> {
-                            if post["post_date"] as? String == selectedDate {
-                                completion(post["post_walk"] as! Bool, post["post_wash"] as! Bool,
-                                           post["post_medicine"] as! Bool, post["post_hospital"] as! Bool)
-                            }
-                        }
-                    }
+                    completion(value["post_walk"] as! Bool, value["post_wash"] as! Bool,
+                               value["post_medicine"] as! Bool, value["post_hospital"] as! Bool, true)
                 }
             }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+            else {
+                let something = false
+                completion(false, false, false, false, something)
+            }
+        })
     }
     
     // upload post to DB
@@ -69,46 +65,28 @@ class FirebasePostDataModel: NSObject {
                     receivedImageURL: String) {
         
         var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
-        let postRef: DatabaseReference! =
-            Database.database().reference().child("Post").child("\(deviceToken)")
 
         let postDetailRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
         
         imagePath.append("\(current_date_string)+\(deviceToken)")
-        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
-            if snapshot.exists() {
-                if let value = snapshot.value as? Dictionary<String, Any> {
-                    for index in value {
-                        if let post = index.value as? Dictionary<String, Any> {
-                            if index.key == selectedDate {
-                                let post = ["post_content": contentToDB, // 글 내용 저장
-                                            "post_updated_date": post["post_updated_date"] as Any, // 글 업로드 시기 저장
-                                            "post_date": selectedDate, // 글 자체의 날짜 저장
-                                            "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
-                                            "post_wash": receivedWashSwitch,
-                                            "post_medicine": receivedMedicineSwitch,
-                                            "post_image": imagePath,
-                                            "post_hospital": receivedHospitalSwitch] as [String : Any]
-
-                                postDetailRef.setValue(post)
-                                return
-                            }
-                        }
-                    }
-                    // 해당 날짜에 기존 글이 없을 경우
+        
+        postDetailRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() { // 기존에 쓴 데이터가 있는 경우 (글 수정)
+                if let exist = snapshot.value as? [String: Any] {
                     let post = ["post_content": contentToDB, // 글 내용 저장
-                                "post_updated_date": current_date_string, // 글 업로드 시기 저장
+                                "post_updated_date": exist["post_updated_date"] as Any, // 글 업로드 시기 저장
                                 "post_date": selectedDate, // 글 자체의 날짜 저장
                                 "post_walk": receivedWalkSwitch, // 산책, 목욕, 약, 병원, 스위치 상태 저장
                                 "post_wash": receivedWashSwitch,
                                 "post_medicine": receivedMedicineSwitch,
                                 "post_image": imagePath,
                                 "post_hospital": receivedHospitalSwitch] as [String : Any]
-
-                    postDetailRef.setValue(post)
+    
+                     postDetailRef.setValue(post)
                 }
+
             } else {
-                // 처음으로 글 작성했을 경우
+                // 해당 날짜에 글이 없는 경우(처음 글을 쓰는 경우)
                 let post = ["post_content": contentToDB, // 글 내용 저장
                             "post_updated_date": current_date_string, // 글 업로드 시기 저장
                             "post_date": selectedDate, // 글 자체의 날짜 저장
@@ -120,28 +98,18 @@ class FirebasePostDataModel: NSObject {
 
                 postDetailRef.setValue(post)
             }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
+        })
     }
     
     // get content from db
     func showContentFromDB(deviceToken: String, selectedDate: String,
                            completion: @escaping (String) -> Void) {
-        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        let postDetailRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
         
-        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+        postDetailRef.observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() {
                 if let value = snapshot.value as? Dictionary<String, Any> {
-                    //let dic = values as! [String : [String:Any]]
-                    for index in value {
-                        if let post = index.value as? Dictionary<String, Any> {
-                            if post["post_date"] as? String == selectedDate {
-                                completion(post["post_content"] as! String)
-                            }
-                        }
-                    }
+                    completion(value["post_content"] as! String)
                 }
             }
         }) { (error) in
@@ -152,19 +120,12 @@ class FirebasePostDataModel: NSObject {
     // get upload_time from db
     func showUploadTimeFromDB(deviceToken: String, selectedDate: String,
                            completion: @escaping (String) -> Void) {
-        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
         
         postRef.observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() {
                 if let value = snapshot.value as? Dictionary<String, Any> {
-                    //let dic = values as! [String : [String:Any]]
-                    for index in value {
-                        if let post = index.value as? Dictionary<String, Any> {
-                            if post["post_date"] as? String == selectedDate {
-                                completion(post["post_updated_date"] as! String)
-                            }
-                        }
-                    }
+                    completion(value["post_updated_date"] as! String)
                 }
             }
         }) { (error) in
@@ -190,6 +151,27 @@ class FirebasePostDataModel: NSObject {
             // Data for "images/island.jpg" is returned
             let image = UIImage(data: data!)
           }
+        }
+    }
+    
+    func showAllDate(deviceToken: String, completion: @escaping (Array<String>) -> Void){
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)")
+        var strArr: [String] = [] // string 날짜 배열
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        postRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    for index in value {
+                        strArr.append(index.key)
+                    }
+                    completion(strArr)
+                }
+            } else {
+                completion(strArr)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
 }

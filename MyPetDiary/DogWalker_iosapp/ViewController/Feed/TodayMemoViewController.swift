@@ -28,7 +28,6 @@ class TodayMemoViewController: UIViewController {
             cellTitle.text = "\(str)"   //라벨에 출력
         }else{
             cellTitle.text = selectedDate
-
         }
         
     }
