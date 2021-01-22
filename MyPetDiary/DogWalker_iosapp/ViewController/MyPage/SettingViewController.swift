@@ -28,13 +28,6 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         // Present the view controller modally.
         self.present(composeVC, animated: true, completion: nil)
     }
-
-//    private func mailComposeController(controller: MFMailComposeViewController,
-//                           didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-//        // Check the result or perform other tasks.
-//        // Dismiss the mail compose view controller.
-//        dismiss(animated: true, completion: nil)
-//    }
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }

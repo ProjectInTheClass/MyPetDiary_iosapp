@@ -105,6 +105,7 @@
             <point key="canvasLocation" x="1581" y="611"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
     <resources>
         <image name="dog" width="256" height="256"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>

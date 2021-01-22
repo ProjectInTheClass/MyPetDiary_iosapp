@@ -154,7 +154,7 @@ class EditProfileViewController: UIViewController {
         picker.delegate = self
         imageCircle()
         // Do any additional setup after loading the view.
-        
+
         // 소개글 보여주기
         userDataModel
             .showIntro(deviceToken: deviceToken, completion: {

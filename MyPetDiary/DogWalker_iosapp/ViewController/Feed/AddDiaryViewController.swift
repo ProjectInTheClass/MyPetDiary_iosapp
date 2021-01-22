@@ -89,6 +89,7 @@ class AddDiaryViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         picker.delegate = self
         getCurrentDateTime()
         

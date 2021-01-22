@@ -474,6 +474,7 @@
             <point key="canvasLocation" x="892.75362318840587" y="-102.45535714285714"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
     <resources>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
