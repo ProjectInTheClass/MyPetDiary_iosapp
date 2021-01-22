@@ -13,7 +13,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
     @IBOutlet var settingTableView: UITableView!
     @IBAction func unwindFromModal (seque: UIStoryboardSegue) {}
     @IBAction func unwindFromEditProfile(seque: UIStoryboardSegue){}
-    let composeVC = MFMailComposeViewController()
+    var composeVC = MFMailComposeViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +48,7 @@ class SettingViewController: UITableViewController, MFMailComposeViewControllerD
         tableView.deselectRow(at: indexPath, animated: false)
         if indexPath.section == 0 {
         } else if indexPath.section == 1 {
+            composeVC = MFMailComposeViewController()
             composeVC.delegate = self
             composeVC.mailComposeDelegate = self
             if !MFMailComposeViewController.canSendMail() {
