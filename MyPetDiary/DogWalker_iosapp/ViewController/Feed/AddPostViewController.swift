@@ -49,7 +49,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
             receivedPostDate = default_post_date
         }
         
-        // 입력한 사진이 없을 경우
+        // 처음 게시글을 작성할 경우 입력한 사진이 없을 경우
         if receivedPhotoData == nil {
             // create the alert
             let alert = UIAlertController(title: "사진이 비어있음", message: "입력할 사진을 넣어주세요", preferredStyle: UIAlertController.Style.alert)
