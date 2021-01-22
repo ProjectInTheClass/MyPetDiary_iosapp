@@ -125,7 +125,8 @@ class EditProfileViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         return true
     }
-    
+    // 닉네임 불러오기 & 수정
+    // 소개 불러오기 & 수정
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self

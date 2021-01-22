@@ -37,7 +37,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     // tab하면 화면 넘어가기
     @IBAction func showPostTapGesture(_ sender: Any) {
         // 뷰 객체 얻어오기 (storyboard ID로 ViewController구분)
-        guard let uvc = storyboard?.instantiateViewController(identifier: "TdMemoViewController") else {
+        guard let uvc = self.storyboard?.instantiateViewController(identifier: "TdMemoViewController") else {
             return
         }
         // 화면 전환 애니메이션 설정
