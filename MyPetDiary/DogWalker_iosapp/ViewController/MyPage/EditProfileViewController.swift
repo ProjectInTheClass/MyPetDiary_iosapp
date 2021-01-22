@@ -20,20 +20,26 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editIDTextField: UITextField!
     @IBOutlet weak var editIntroTextField: UITextField! // 소개글 부분
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    var photoData: NSData? = nil // 프로필 사진 data
     
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
+    let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
     
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
     // save 버튼 눌렀을 경우
     @IBAction func saveButtonAction(_ sender: Any) {
-        userDataModel
-            .saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
-        userDataModel
-            .saveNickname(deviceToken: deviceToken, nickname: editIDTextField.text!)
+        // 소개글 저장하기
+        userDataModel.saveIntro(deviceToken: deviceToken, userIntro: editIntroTextField.text!)
+        // 닉네임 저장하기
+        userDataModel.saveNickname(deviceToken: deviceToken, nickname: editIDTextField.text!)
+        // 프로필 사진 저장하기(realtime database)
+        userDataModel.saveProfileImage(deviceToken: deviceToken, nickname: editIDTextField.text!)
+        if photoData != nil {
+            petDStorage.uploadProfileToStorage(deviceToken: deviceToken, receivedPhotoData: photoData!, nickname: editIDTextField.text!)
+        }
         
-        // segue 넣으면 데이터 저장이 안됨...........
-        // 그놈의 클로저...
+        // ***********************segue 넣으면 데이터 저장이 안됨...........(지금은 segue없애고 데이터 저장하게 했음)******************
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -146,12 +152,26 @@ class EditProfileViewController: UIViewController {
         return true
     }
 
+    // 프로필 사진 보여주기
+    func showProfile() {
+        userDataModel.showUserNickname(deviceToken: deviceToken, completion: {
+            usernickname in
+            self.petDStorage.loadProfileImage(deviceToken: self.deviceToken, nickname: usernickname, completion: {
+                profileImage in
+                self.userImage.image = profileImage
+            })
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
         imageCircle()
         // Do any additional setup after loading the view.
 
+        // 프로필 사진 보여주기
+        showProfile()
+        
         // 소개글 보여주기
         userDataModel
             .showIntro(deviceToken: deviceToken, completion: {
@@ -165,9 +185,12 @@ class EditProfileViewController: UIViewController {
                 nickname in
                 self.editIDTextField.text = nickname
             })
+        
+        
     }
-
 }
+
+
 
 extension EditProfileViewController : UIImagePickerControllerDelegate,
 UINavigationControllerDelegate{
@@ -177,8 +200,9 @@ UINavigationControllerDelegate{
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             userImage.image = image
-//            let size = CGSize(width: image.size.width * 0.3, height: image.size.height * 0.3)
-//            let resizeImg = image.resizeImage(targetSize: size)
+            let size = CGSize(width: image.size.width * 0.05, height: image.size.height * 0.05)
+            let resizedImage = image.resizeImage(targetSize: size)
+            photoData = resizedImage!.pngData() as NSData?
         }
         let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
         _=imageUrl?.lastPathComponent//파일이름
