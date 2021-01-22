@@ -54,16 +54,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-//        let testImg = UIImage(named: "hana")
-//
-//        print(testImg!.size)
-//        let size = CGSize(width: testImg!.size.width * 0.5, height: testImg!.size.height * 0.5)
-//        let resized = testImg!.resizeImage(targetSize: size)
-//
-//        print(resized?.size)
-        
-        
         self.nickName.delegate = self
     }
     

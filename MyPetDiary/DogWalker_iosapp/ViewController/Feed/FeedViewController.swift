@@ -218,15 +218,11 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
 //        self.subPostView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.showPostTapGesture)))
         
         todayDateFirst()
-        
         getDB()
-        
-        //presentEventDot()
         setCalendar()
-
         showTodo()
         showImage()
-        
+    
         calendarView.delegate = self
         calendarView.dataSource = self
     }

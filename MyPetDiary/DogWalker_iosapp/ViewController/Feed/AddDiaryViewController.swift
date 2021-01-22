@@ -232,8 +232,19 @@ UINavigationControllerDelegate{
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             // **이미지용량줄이기**
+            //        let testImg = UIImage(named: "hana")
+            //
+            //        print(testImg!.size)
+            //        let size = CGSize(width: testImg!.size.width * 0.5, height: testImg!.size.height * 0.5)
+            //        let resized = testImg!.resizeImage(targetSize: size)
+            //
+            //        print(resized?.size)
             imageView.image = image
-            photoData = image.pngData() as NSData?
+            print(image.size)
+            let size = CGSize(width: image.size.width * 0.1, height: image.size.height * 0.1)
+            let resizedImage = image.resizeImage(targetSize: size)
+            photoData = resizedImage!.pngData() as NSData?
+            print(resizedImage?.size)
         }
         
 //        let imageUrl=info[UIImagePickerController.InfoKey.imageURL] as? NSURL
