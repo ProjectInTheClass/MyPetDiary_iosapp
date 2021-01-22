@@ -13,17 +13,21 @@ import FirebaseDatabase
 class WithdrawalViewController: UIViewController {
     
 
-    @IBOutlet weak var DeleteButton: UIButton!
-    @IBOutlet weak var KeepDataButton: UIButton!
+    @IBOutlet weak var deleteUser: UIButton!
     
+    @IBOutlet weak var keepUser: UIButton!
+    
+    
+    
+ 
     func updateUI()  {
-        DeleteButton.layer.cornerRadius = 20
-        DeleteButton.layer.borderWidth = 2
-        DeleteButton.layer.borderColor = UIColor.lightGray.cgColor
+        deleteUser.layer.cornerRadius = 20
+        deleteUser.layer.borderWidth = 2
+        deleteUser.layer.borderColor = UIColor.lightGray.cgColor
         
-        KeepDataButton.layer.cornerRadius = 20
-        KeepDataButton.layer.borderWidth = 2
-        KeepDataButton.layer.borderColor = UIColor.lightGray.cgColor
+        keepUser.layer.cornerRadius = 20
+        keepUser.layer.borderWidth = 2
+        keepUser.layer.borderColor = UIColor.lightGray.cgColor
         
     }
     
