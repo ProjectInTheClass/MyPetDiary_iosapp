@@ -229,6 +229,7 @@ UINavigationControllerDelegate{
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
+            // **이미지용량줄이기**
             imageView.image = image
             photoData = image.pngData() as NSData?
         }
