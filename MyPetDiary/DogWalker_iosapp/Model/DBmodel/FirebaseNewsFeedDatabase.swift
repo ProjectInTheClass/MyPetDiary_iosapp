@@ -41,8 +41,10 @@ class FirebaseNewsFeedDataModel: NSObject {
                     var postCount: Int = 0
                     for index in value {
                         if let news = index.value as? Dictionary<String, Any> {
+                            print("news:\(news)")
                             todayPost.append(news)
                             postCount += 1
+                            print("todaysPost:\(todayPost)")
                             if postCount == value.count { completion(todayPost) }
                         }
                     }
@@ -59,14 +61,17 @@ class FirebaseNewsFeedDataModel: NSObject {
         let newsfeedRef: DatabaseReference! = Database.database().reference().child("NewsFeed").child("\(selectedDate)").child("\(deviceToken)")
         
         var imagePath: String = "gs://mypetdiary-475e9.appspot.com/"
+        var profilePath: String = "gs://mypetdiary-475e9.appspot.com/"
         
         imagePath.append("\(selectedDate)+\(deviceToken).jpeg")
+        profilePath.append("\(nickname)+\(deviceToken).jpeg")
         
         newsfeedRef.observeSingleEvent(of: .value, with: {(snapshot) in
             if snapshot.exists() { // 기존에 쓴 데이터가 있는 경우 (글 수정)
                 if let exist = snapshot.value as? [String: Any] {
                     let today = ["device_token": deviceToken, // 글 쓴 사람
                                  "user_nickname": nickname, // 유저 닉네임
+                                 "user_profile": profilePath, // 유저 프로필 사진
                                 "post_content": contentToDB, // 글 내용 저장
                                 "post_updated_date": exist["post_updated_date"] as Any, // 글 업로드 시기 저장
                                 "post_date": selectedDate, // 글 자체의 날짜 저장
@@ -79,6 +84,7 @@ class FirebaseNewsFeedDataModel: NSObject {
                 // 해당 날짜에 글이 없는 경우(처음 글을 쓰는 경우)
                 let today = ["device_token": deviceToken, // 글 쓴 사람
                              "user_nickname": nickname, // 유저 닉네임
+                             "user_profile": profilePath, // 유저 프로필 사진
                             "post_content": contentToDB, // 글 내용 저장
                             "post_updated_date": current_date_string, // 글 업로드 시기 저장
                             "post_date": selectedDate, // 글 자체의 날짜 저장

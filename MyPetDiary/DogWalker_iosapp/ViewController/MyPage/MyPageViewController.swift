@@ -12,8 +12,7 @@ import FirebaseDatabase
 class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet weak var collectionV: UICollectionView!
-    @IBAction func backToMyPage (segue : UIStoryboardSegue){
-    }
+    @IBAction func backToMyPage (segue : UIStoryboardSegue){}
 
     @IBOutlet weak var userNickName: UILabel!
     @IBOutlet weak var userInfo: UILabel!
@@ -86,11 +85,11 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     // 올린 모든 사진 보이기
     func showImage(){
-        postDataModel.showAllImage(deviceToken: deviceToken, completion: {
-            allImage in
+        postDataModel.showAllImage(deviceToken: deviceToken, completion: { allImage in
             self.petDStorage.showImageArray(allImage: allImage, completion: { newImage in
                 self.images = newImage
                 self.collectionV.reloadData()
+                print("MY PICTURE")
             })
         })
     }
