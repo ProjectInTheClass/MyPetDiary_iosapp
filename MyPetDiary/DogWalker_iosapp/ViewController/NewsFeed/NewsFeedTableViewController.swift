@@ -17,10 +17,15 @@ class NewsFeedTableViewController: UITableViewController
     }
     
     func fetchPosts() {
-        PostService.shared.posts { result in
-            self.posts = result
-            self.tableView.reloadData()
-        }
+        PostService.shared.fetchPosts(completion: {
+            result in
+                self.posts = result
+                self.tableView.reloadData()
+        })
+//        PostService.shared.posts { result in
+//            self.posts = result
+//            self.tableView.reloadData()
+//        }
 //        posts = PostService.shared.fetchPosts()
 //        tableView.reloadData()
     }
