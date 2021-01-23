@@ -12,7 +12,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     lazy var VCArray:[UIViewController] = {
         return [self.VCInstance(name: "FirstVC"),
                 self.VCInstance(name: "SecondVC"),
-                self.VCInstance(name: "ThirdVC")]
+                self.VCInstance(name: "ThirdVC"),
+                self.VCInstance(name: "FourthVC")]
     }()
     private func VCInstance(name: String)->UIViewController{
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)

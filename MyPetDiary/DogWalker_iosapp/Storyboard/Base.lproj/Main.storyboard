@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +29,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CeO-sX-p6E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="805"/>
+            <point key="canvasLocation" x="407" y="863"/>
         </scene>
         <!--Feed-->
         <scene sceneID="Mb1-Bl-8Yv">
@@ -39,7 +40,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7O-mK-lhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="1223"/>
+            <point key="canvasLocation" x="152" y="1481"/>
         </scene>
         <!--MyPage-->
         <scene sceneID="dxd-21-LWb">
@@ -49,7 +50,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEA-XC-lPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955" y="1223"/>
+            <point key="canvasLocation" x="652" y="1481"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="4QZ-YR-bik">
@@ -57,40 +58,32 @@
                 <pageViewController storyboardIdentifier="PageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fdf-yJ-oPK" customClass="PageViewController" customModule="DogWalker_iosapp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ER-2N-NIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2868" y="100"/>
+            <point key="canvasLocation" x="-2836" y="-542"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="LaV-yk-OVC">
             <objects>
-                <viewController restorationIdentifier="FirstVC" storyboardIdentifier="FirstVC" id="dvV-dA-FqM" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FirstVC" storyboardIdentifier="FirstVC" id="dvV-dA-FqM" customClass="IntroViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hEP-sR-wfO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="안녕하세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onh-F8-ktX">
-                                <rect key="frame" x="84" y="520" width="247" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <color key="textColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-puppy-96" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-ff-Xfv">
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1c-r0-7NA">
-                                <rect key="frame" x="26" y="64" width="362" height="259"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="펫 다이어리 입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdb-pQ-Oxp">
+                                <rect key="frame" x="144" y="549" width="127" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Pet Diary">
-                                        <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="NSColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" metaFont="system" size="36"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="반갑습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K32-E9-8gO">
+                                <rect key="frame" x="170" y="520" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -100,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4v-Eg-II4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2097.1014492753625" y="99.776785714285708"/>
+            <point key="canvasLocation" x="-2836" y="100"/>
         </scene>
         <!--NewsFeed-->
         <scene sceneID="f2c-rq-Yz5">
@@ -110,7 +103,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0U-IE-CMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="1223"/>
+            <point key="canvasLocation" x="409" y="1481"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="eE3-HY-8ba">
@@ -124,31 +117,31 @@
                                 <rect key="frame" x="5" y="150" width="404" height="508"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 닉네임 입력으로" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-4t-bpo">
-                                        <rect key="frame" x="119.5" y="0.0" width="165.5" height="22"/>
+                                        <rect key="frame" x="119.5" y="0.0" width="165.5" height="21.5"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물과의 추억을 기록하세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-Kv-veS">
-                                        <rect key="frame" x="86" y="29" width="232.5" height="22"/>
+                                        <rect key="frame" x="86" y="28.5" width="232.5" height="22"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-6C-54k">
-                                        <rect key="frame" x="0.0" y="58" width="404" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="57.5" width="404" height="71"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-u0-prR">
-                                        <rect key="frame" x="179.5" y="135.5" width="45" height="54"/>
+                                        <rect key="frame" x="179.5" y="135.5" width="45" height="53.5"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nts-ok-BHG">
-                                        <rect key="frame" x="102" y="196.5" width="200" height="50"/>
+                                        <rect key="frame" x="102" y="196" width="200" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Vk1-ua-Jov"/>
                                             <constraint firstAttribute="height" constant="50" id="l4j-Ez-dvB"/>
@@ -157,13 +150,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-Fl-hCI">
-                                        <rect key="frame" x="0.0" y="253.5" width="404" height="225.5"/>
+                                        <rect key="frame" x="0.0" y="253" width="404" height="227.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
-                                        <rect key="frame" x="171" y="486" width="62" height="22"/>
+                                        <rect key="frame" x="171" y="487.5" width="62" height="20.5"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="Start!">
                                             <color key="titleColor" red="0.78092810120245426" green="0.35974350001763439" blue="0.49855727010254058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -191,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dY3-Dc-AZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="805"/>
+            <point key="canvasLocation" x="-559" y="863"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZFT-mN-RZ3">
@@ -205,11 +198,11 @@
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="펫다이어리는 익명으로 운영되는 반려동물 Diary입니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTb-AI-7Ea">
-                                <rect key="frame" x="23" y="548" width="371" height="223"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="펫 다이어리는 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0b-Mi-q81">
+                                <rect key="frame" x="186" y="520" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -219,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afC-Jj-n3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1181.1594202898552" y="99.776785714285708"/>
+            <point key="canvasLocation" x="-2000" y="100"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="PmQ-ce-Wxx">
@@ -236,9 +229,6 @@
                                 <state key="normal" title="시작하기">
                                     <color key="titleColor" red="0.60784313729999995" green="0.34901960780000002" blue="0.71372549019999998" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <segue destination="wbW-7b-uVI" kind="show" id="F4U-JE-pN6"/>
-                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-calendar-480" translatesAutoresizingMaskIntoConstraints="NO" id="vVp-9G-n8N">
                                 <rect key="frame" x="87" y="384" width="240" height="128"/>
@@ -258,7 +248,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6r-zg-ZM3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-278" y="100"/>
+            <point key="canvasLocation" x="-1113" y="100"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Eih-HN-Oon">
+            <objects>
+                <viewController restorationIdentifier="FourthVC" storyboardIdentifier="FourthVC" id="zGl-A0-5YC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uz7-sY-AlE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-Y6-K3K">
+                                <rect key="frame" x="56" y="619" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="wbW-7b-uVI" kind="show" id="AB2-pr-Qbz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zdl-RR-KPu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qtW-jX-Dh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-260.86956521739131" y="113.83928571428571"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
@@ -268,5 +283,8 @@
         <image name="icons8-puppy-96 (1)" width="48" height="48"/>
         <image name="newspaper" catalog="system" width="32" height="32"/>
         <image name="newspaper.fill" catalog="system" width="32" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

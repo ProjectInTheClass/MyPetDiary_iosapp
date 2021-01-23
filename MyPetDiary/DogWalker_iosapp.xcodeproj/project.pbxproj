@@ -23,6 +23,7 @@
 		47FD397E25BAC8710062CBAB /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD397D25BAC8710062CBAB /* PageViewController.swift */; };
 		47FD39DC25BBDB850062CBAB /* SDSamliphopangcheOutline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */; };
 		47FD39DF25BBDB900062CBAB /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */; };
+		47FD39E225BBDC9E0062CBAB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD39E125BBDC9E0062CBAB /* IntroViewController.swift */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
 		76005369259DB48B0058F313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005368259DB48B0058F313 /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		47FD397D25BAC8710062CBAB /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDSamliphopangcheOutline.otf; sourceTree = "<group>"; };
 		47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
+		47FD39E125BBDC9E0062CBAB /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5F3146EC17AD24BC32DC027B /* Pods-DogWalker_iosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.release.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.release.xcconfig"; sourceTree = "<group>"; };
 		76005361259DB48B0058F313 /* DogWalker_iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalker_iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76005364259DB48B0058F313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				05E0C1CB25B7FB30009DB146 /* SignUpViewController.swift */,
 				05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */,
 				47FD397D25BAC8710062CBAB /* PageViewController.swift */,
+				47FD39E125BBDC9E0062CBAB /* IntroViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				0519EFF425BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift in Sources */,
 				05DA680025A87EFC000CE91D /* WithdrawalViewController.swift in Sources */,
 				7655054425A4763600FA5CFE /* AddDiaryViewController.swift in Sources */,
+				47FD39E225BBDC9E0062CBAB /* IntroViewController.swift in Sources */,
 				76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */,
 				47FAB61A25AF4CDE005BEBAF /* Post.swift in Sources */,
 				769BF41625A6F4EA0098DC87 /* AddPostViewController.swift in Sources */,
