@@ -61,15 +61,17 @@ class PostService {
                     var profileRealImage: UIImage = UIImage(named: "white")!
                     var contentRealImage: UIImage = UIImage(named: "white")!
                     
-                    self.petDStorage.getImage(downloadURL: postImage, completion: {
+                    self.petDStorage.getImage(downloadURL: profileImage, completion: {
                         profileUIImage in
                         profileRealImage = profileUIImage
                         self.petDStorage.getImage(downloadURL: postImage, completion: {
                             contentUIImage in
                             contentRealImage = contentUIImage
                             
-                            posts.append(Post(createdBy: FeedUser(username: username, profileImage: profileRealImage),
-                                              image: contentRealImage))
+                            print("THIS IS TEST")
+                            print("\(username)\(profileRealImage)\(contentRealImage))")
+                            posts.append(Post(createdBy: FeedUser(username: username, profileImage: profileUIImage),
+                                              image: contentUIImage))
                             postCount += 1
                             print("post확인:\(posts)")
                             if postCount == todayPost.count {
