@@ -21,6 +21,8 @@
 		47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62425AF5343005BEBAF /* PostCell.swift */; };
 		47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */; };
 		47FD397E25BAC8710062CBAB /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD397D25BAC8710062CBAB /* PageViewController.swift */; };
+		47FD39DC25BBDB850062CBAB /* SDSamliphopangcheOutline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */; };
+		47FD39DF25BBDB900062CBAB /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
 		76005367259DB48B0058F313 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005366259DB48B0058F313 /* SceneDelegate.swift */; };
 		76005369259DB48B0058F313 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005368259DB48B0058F313 /* ViewController.swift */; };
@@ -60,6 +62,8 @@
 		47FAB62425AF5343005BEBAF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		47FD397D25BAC8710062CBAB /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDSamliphopangcheOutline.otf; sourceTree = "<group>"; };
+		47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
 		5F3146EC17AD24BC32DC027B /* Pods-DogWalker_iosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.release.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.release.xcconfig"; sourceTree = "<group>"; };
 		76005361259DB48B0058F313 /* DogWalker_iosapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogWalker_iosapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76005364259DB48B0058F313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		47FD39D925BBDB740062CBAB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */,
+				47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		76005358259DB48B0058F313 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +193,7 @@
 		76005363259DB48B0058F313 /* DogWalker_iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				47FD39D925BBDB740062CBAB /* Fonts */,
 				7640D6A125AED23600A15B14 /* Model */,
 				7640D69925AECF2B00A15B14 /* Extension */,
 				769BF40F25A6E0E60098DC87 /* ViewController */,
@@ -316,11 +330,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FD39DF25BBDB900062CBAB /* Cafe24Oneprettynight.ttf in Resources */,
 				76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */,
 				7600538F259DF1F10058F313 /* MyPage.storyboard in Resources */,
 				47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */,
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
 				7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */,
+				47FD39DC25BBDB850062CBAB /* SDSamliphopangcheOutline.otf in Resources */,
 				7600536C259DB48B0058F313 /* Main.storyboard in Resources */,
 				05FA7B1C25A7227C00E4A253 /* GoogleService-Info.plist in Resources */,
 			);

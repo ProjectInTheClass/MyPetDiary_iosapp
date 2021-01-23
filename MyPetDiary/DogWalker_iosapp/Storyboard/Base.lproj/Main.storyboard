@@ -86,7 +86,7 @@
                                         <attributes>
                                             <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="NSColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="36" name="SangSangShinb7OTF"/>
+                                            <font key="NSFont" metaFont="system" size="36"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
