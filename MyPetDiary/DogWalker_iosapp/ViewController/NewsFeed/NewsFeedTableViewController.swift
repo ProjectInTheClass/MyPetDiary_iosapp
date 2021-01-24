@@ -16,6 +16,11 @@ class NewsFeedTableViewController: UITableViewController
         fetchPosts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        //super.viewWillAppear(true)
+        fetchPosts()
+    }
+    
     func fetchPosts() {
         PostService.shared.fetchPosts(completion: {
             result in
