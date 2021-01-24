@@ -19,6 +19,7 @@
 		475BB55125BC0EE000934A43 /* SecondIntroViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475BB55025BC0EE000934A43 /* SecondIntroViewViewController.swift */; };
 		475BB55425BC0EEE00934A43 /* ThirdIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475BB55325BC0EEE00934A43 /* ThirdIntroViewController.swift */; };
 		475BB55725BC0F0E00934A43 /* FourthIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475BB55625BC0F0E00934A43 /* FourthIntroViewController.swift */; };
+		475BB55A25BCFB1000934A43 /* SDSamliphopangcheBasic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 475BB55925BCFB1000934A43 /* SDSamliphopangcheBasic.otf */; };
 		47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */; };
 		47FAB61A25AF4CDE005BEBAF /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB61925AF4CDE005BEBAF /* Post.swift */; };
 		47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62425AF5343005BEBAF /* PostCell.swift */; };
@@ -64,6 +65,7 @@
 		475BB55025BC0EE000934A43 /* SecondIntroViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondIntroViewViewController.swift; sourceTree = "<group>"; };
 		475BB55325BC0EEE00934A43 /* ThirdIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdIntroViewController.swift; sourceTree = "<group>"; };
 		475BB55625BC0F0E00934A43 /* FourthIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthIntroViewController.swift; sourceTree = "<group>"; };
+		475BB55925BCFB1000934A43 /* SDSamliphopangcheBasic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDSamliphopangcheBasic.otf; sourceTree = "<group>"; };
 		47C846BC25A44E39005DAB89 /* NewsFeed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsFeed.storyboard; sourceTree = "<group>"; };
 		47FAB61925AF4CDE005BEBAF /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		47FAB62425AF5343005BEBAF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		47FD39D925BBDB740062CBAB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				475BB55925BCFB1000934A43 /* SDSamliphopangcheBasic.otf */,
 				47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */,
 				47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */,
 			);
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47FD39DF25BBDB900062CBAB /* Cafe24Oneprettynight.ttf in Resources */,
+				475BB55A25BCFB1000934A43 /* SDSamliphopangcheBasic.otf in Resources */,
 				76005371259DB48C0058F313 /* LaunchScreen.storyboard in Resources */,
 				7600538F259DF1F10058F313 /* MyPage.storyboard in Resources */,
 				47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */,

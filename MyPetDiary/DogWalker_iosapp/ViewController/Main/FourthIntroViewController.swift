@@ -33,6 +33,19 @@ class FourthIntroViewController: UIViewController {
     
     }
     
+    
+    @IBAction func ButtonTapped(_ sender: Any) {
+        
+        StartButton.font = UIFont(name: "SDSamliphopangcheBasic", size: 45)
+        
+        StartButton.textColor = UIColor.darkGray
+    }
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

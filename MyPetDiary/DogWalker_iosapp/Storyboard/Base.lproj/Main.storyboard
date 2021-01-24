@@ -98,7 +98,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dp0-VN-8yn"/>
-                        <color key="backgroundColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="KeepNextLabel" destination="hle-6b-z4T" id="TCT-Hp-z3f"/>
@@ -133,19 +133,19 @@
                                 <rect key="frame" x="5" y="150" width="404" height="508"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간단한 닉네임 입력으로" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-4t-bpo">
-                                        <rect key="frame" x="119.5" y="0.0" width="165.5" height="21.5"/>
+                                        <rect key="frame" x="119.5" y="0.0" width="165.5" height="22"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물과의 추억을 기록하세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-Kv-veS">
-                                        <rect key="frame" x="86" y="28.5" width="232.5" height="22"/>
+                                        <rect key="frame" x="86" y="29" width="232.5" height="22"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-6C-54k">
-                                        <rect key="frame" x="0.0" y="57.5" width="404" height="70.5"/>
+                                        <rect key="frame" x="0.0" y="58" width="404" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -166,13 +166,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2EU-Fl-hCI">
-                                        <rect key="frame" x="0.0" y="252.5" width="404" height="228"/>
+                                        <rect key="frame" x="0.0" y="252.5" width="404" height="227"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
-                                        <rect key="frame" x="171" y="487.5" width="62" height="20.5"/>
+                                        <rect key="frame" x="171" y="486.5" width="62" height="21.5"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                         <state key="normal" title="Start!">
                                             <color key="titleColor" red="0.78092810120245426" green="0.35974350001763439" blue="0.49855727010254058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -224,18 +224,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-calendar-480 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-6S-4CL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-calendar-480 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="4zX-6S-4CL">
+                                <rect key="frame" x="32" y="323" width="350" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vKc-h0-MWC"/>
-                        <color key="backgroundColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="4zX-6S-4CL" firstAttribute="top" secondItem="vKc-h0-MWC" secondAttribute="top" id="Hes-GX-CZn"/>
-                            <constraint firstItem="vKc-h0-MWC" firstAttribute="trailing" secondItem="4zX-6S-4CL" secondAttribute="trailing" id="aqa-Us-zYc"/>
-                            <constraint firstItem="4zX-6S-4CL" firstAttribute="leading" secondItem="vKc-h0-MWC" secondAttribute="leading" id="g1e-3e-R8C"/>
-                            <constraint firstItem="vKc-h0-MWC" firstAttribute="bottom" secondItem="4zX-6S-4CL" secondAttribute="bottom" id="i4B-ua-64d"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="CalendarTextLabel" destination="qqI-ve-FND" id="KFh-Nf-8nx"/>
@@ -268,18 +263,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-share-500" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-Ke-S6B">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-share-500" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-Ke-S6B">
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ccI-GE-Q6a"/>
-                        <color key="backgroundColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="KBx-Ke-S6B" firstAttribute="top" secondItem="4wW-0u-F2C" secondAttribute="top" id="1GG-Dp-Xs3"/>
-                            <constraint firstItem="ccI-GE-Q6a" firstAttribute="bottom" secondItem="KBx-Ke-S6B" secondAttribute="bottom" id="SHZ-6s-GdG"/>
-                            <constraint firstItem="KBx-Ke-S6B" firstAttribute="leading" secondItem="ccI-GE-Q6a" secondAttribute="leading" id="V3O-oM-zkQ"/>
-                            <constraint firstItem="ccI-GE-Q6a" firstAttribute="trailing" secondItem="KBx-Ke-S6B" secondAttribute="trailing" id="w1e-Wd-jUO"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="ShareTextLabel" destination="2f0-UJ-Pal" id="KET-ar-MfN"/>
@@ -312,10 +302,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-happy-100" translatesAutoresizingMaskIntoConstraints="NO" id="lZ0-VO-xxy">
-                                <rect key="frame" x="104" y="375" width="207" height="147"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-Y6-K3K">
                                 <rect key="frame" x="92" y="581" width="231" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -323,6 +309,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="ButtonTapped:" destination="zGl-A0-5YC" eventType="touchUpInside" id="G9k-5H-P3v"/>
                                     <segue destination="wbW-7b-uVI" kind="show" id="Dhq-k0-H6R"/>
                                 </connections>
                             </button>
@@ -333,9 +320,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-happy-100" translatesAutoresizingMaskIntoConstraints="NO" id="lZ0-VO-xxy">
+                                <rect key="frame" x="57" y="323" width="300" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zdl-RR-KPu"/>
-                        <color key="backgroundColor" red="0.88627450980392153" green="0.74509803921568629" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="RealStartLabel" destination="Tuv-Ya-aQA" id="N6P-G9-NlP"/>
