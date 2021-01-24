@@ -38,6 +38,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
         } else {
             // 기기 정보 기반 토큰 생성하기
+            
+            
             let deviceToken = UUID().uuidString
             UserDefaults.standard.setValue(deviceToken, forKey: "token")
             
@@ -45,6 +47,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
             guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
+            
+            
         }
         
         //self.ref.child("User").child((Auth.auth().currentUser?.uid)!.(["user_index": nickName])
@@ -59,11 +63,37 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //        }
     }
 
+    
+    
+    @IBOutlet weak var ExplainLabel: UILabel!
+    
+    @IBOutlet weak var resisterButtonLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.nickName.delegate = self
+        fontChange()
     }
+    
+    func fontChange() {
+        ExplainLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
+        
+        resisterButtonLabel.font = UIFont(name: "SDSamliphopangcheOutline", size: 45)
+    
+    }
+    
+    
+    @IBAction func ResisterButtonTapped(_ sender: Any) {
+       
+        resisterButtonLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 45)
+        
+        resisterButtonLabel.textColor = UIColor.darkGray
+       
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
