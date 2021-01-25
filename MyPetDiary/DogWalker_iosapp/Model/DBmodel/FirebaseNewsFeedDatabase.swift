@@ -41,10 +41,10 @@ class FirebaseNewsFeedDataModel: NSObject {
                     var postCount: Int = 0
                     for index in value {
                         if let news = index.value as? Dictionary<String, Any> {
-                            print("news:\(news)")
+                            //print("news:\(news)")
                             todayPost.append(news)
                             postCount += 1
-                            print("todaysPost:\(todayPost)")
+                            //print("todaysPost:\(todayPost)")
                             if postCount == value.count { completion(todayPost) }
                         }
                     }

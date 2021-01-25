@@ -14,7 +14,9 @@ struct FeedUser {
 }
 
 struct Post {
-    var createdBy: FeedUser
+    //var createdBy: FeedUser
+    var username: String?
+    var profileImage: UIImage?
     var image: UIImage?
 }
 
@@ -33,7 +35,10 @@ class PostService {
         }
     }
     
+    
+    
     func fetchPosts(completion: @escaping ([Post]) -> Void) {
+        
         var posts = [Post]()
         
         newsfeedDataModel.getTodayFeed(completion: {
@@ -50,35 +55,38 @@ class PostService {
             
             for index in todayPost {
                 if let postDetail = index as? Dictionary<String, String> {
-                    print("index22:\(index)")
-                    print("postDetail:\(postDetail)")
+                    //print("index22:\(index)")
+                    //print("postDetail:\(postDetail)")
                     postContent = postDetail["post_content"] ?? ""
                     username = postDetail["user_nickname"] ?? ""
                     postImage = postDetail["post_image"] ?? ""
                     profileImage = postDetail["user_profile"] ?? ""
                     deviceToken = postDetail["device_token"] ?? ""
                     
-                    var profileRealImage: UIImage = UIImage(named: "white")!
-                    var contentRealImage: UIImage = UIImage(named: "white")!
+//                    var profileRealImage: UIImage = UIImage(named: "kid-2")!
+//                    var contentRealImage: UIImage = UIImage(named: "white")!
                     
                     self.petDStorage.getProfileImage(downloadURL: profileImage, username: username, completion: {
                         profileUIImage, username in
-                        print("\(profileUIImage)")
-                        profileRealImage = profileUIImage
+                        postImage = postDetail["post_image"] ?? ""
+                        //print("PROFILEIMAGE\(profileUIImage)")
+                        //profileRealImage = profileUIImage
                         self.petDStorage.getTwoImage(downloadURL: postImage,
                                                      profileImage: profileUIImage,
                                                      username: username,
                                                      completion: {
                             contentUIImage,profileUIImage, username  in
-                            print("\(contentUIImage)")
-                            contentRealImage = contentUIImage
-                            
-                            print("THIS IS TEST")
-                            print("\(username)\(profileUIImage)\(contentUIImage))")
-                            posts.append(Post(createdBy: FeedUser(username: username, profileImage: profileUIImage),
+                            //print("\(contentUIImage)")
+                            //contentRealImage = contentUIImage
+                            //postImage = postDetail["post_image"] ?? ""
+                            //print("post전:\(posts)")
+                            //print("\(username)\(profileUIImage)\(contentUIImage))")
+                            posts.append(Post(username: username,
+                                              profileImage: profileUIImage,
                                               image: contentUIImage))
+                            //print("post후:\(posts)")
                             postCount += 1
-                            print("post확인:\(posts)")
+                            //print("post확인:\(posts)")
                             if postCount == todayPost.count {
                                 completion(posts)
                             }

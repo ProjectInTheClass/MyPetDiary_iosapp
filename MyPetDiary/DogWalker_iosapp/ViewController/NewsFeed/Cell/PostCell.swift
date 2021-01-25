@@ -26,8 +26,8 @@ class PostCell: UITableViewCell
     }
     func updateUI(){
         imageCircle()
-        profileImageView.image = post.createdBy.profileImage
-        usernameLabel.text = post.createdBy.username
+        profileImageView.image = post.profileImage
+        usernameLabel.text = post.username
         postImageView.image = post.image
         
         postImageView.clipsToBounds = true

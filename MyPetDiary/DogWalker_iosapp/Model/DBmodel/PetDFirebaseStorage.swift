@@ -221,7 +221,7 @@ class PetDFirebaseStorage: NSObject {
           if let error = error {
             // Uh-oh, an error occurred!
             print(error.localizedDescription)
-            print("하지만 오류처리 해줬지.")
+            print("처리된 오류")
             completion(UIImage(named:"kid-2")!, username)
           } else {
             // Data for "images/island.jpg" is returned
