@@ -34,8 +34,9 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     @IBOutlet weak var medicineLabel: UILabel!
     @IBOutlet weak var hospitalLabel: UILabel!
     
-    @IBAction func DeletePostBtn(_ sender: UIButton) {
-    }
+
+    @IBOutlet weak var DeletePostBtn: UIButton!
+    
     // tab하면 화면 넘어가기
     @IBAction func showPostTapGesture(_ sender: Any) {
         // 뷰 객체 얻어오기 (storyboard ID로 ViewController구분)
