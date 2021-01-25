@@ -233,7 +233,6 @@ class PetDFirebaseStorage: NSObject {
     
     func getContentImage(downloadURL: String, completion: @escaping (UIImage) -> Void) {
         
-        var downloadImageURL = ""
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
 

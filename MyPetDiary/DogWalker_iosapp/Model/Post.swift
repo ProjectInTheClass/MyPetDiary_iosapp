@@ -63,9 +63,11 @@ class PostService {
                     
                     self.petDStorage.getProfileImage(downloadURL: profileImage, completion: {
                         profileUIImage in
+                        print("\(profileUIImage)")
                         profileRealImage = profileUIImage
                         self.petDStorage.getContentImage(downloadURL: postImage, completion: {
                             contentUIImage in
+                            print("\(contentUIImage)")
                             contentRealImage = contentUIImage
                             
                             print("THIS IS TEST")
