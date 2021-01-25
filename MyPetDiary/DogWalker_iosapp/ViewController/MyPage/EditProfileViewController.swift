@@ -84,7 +84,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
         let alert =  UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let library =  UIAlertAction(title: "앨범에서 선택", style: .default) { (action) in self.openLibrary()
         }
-        let camera =  UIAlertAction(title: "카메라 쵤영", style: .default) { (action) in
+        let camera =  UIAlertAction(title: "카메라 촬영", style: .default) { (action) in
             self.openCamera()
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
