@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6CU-Ut-o6v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6CU-Ut-o6v">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,32 +37,40 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LKB-ex-846">
-                                        <rect key="frame" x="200" y="41" width="164" height="98"/>
+                                        <rect key="frame" x="200" y="15" width="164" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-cB-Fon">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="22"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoO-4F-vYd">
-                                                <rect key="frame" x="0.0" y="27" width="164" height="17"/>
+                                                <rect key="frame" x="0.0" y="32" width="164" height="22"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-gQ-VK3">
-                                                <rect key="frame" x="0.0" y="54" width="164" height="17"/>
+                                                <rect key="frame" x="0.0" y="64" width="164" height="22"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-3P-lrD">
-                                                <rect key="frame" x="0.0" y="81" width="164" height="17"/>
+                                                <rect key="frame" x="0.0" y="96" width="164" height="22"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-5g-G0Y">
+                                                <rect key="frame" x="0.0" y="128" width="164" height="22"/>
+                                                <color key="tintColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="trash" catalog="system"/>
+                                                <connections>
+                                                    <action selector="DeletePostBtn:" destination="AjM-WY-uif" eventType="touchUpInside" id="cfg-R5-kAv"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -103,6 +111,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="3Rp-qv-HRy" id="31P-l7-hbG"/>
+                        <outlet property="deletePostBtn" destination="POm-5g-G0Y" id="D8Q-RP-3Kx"/>
                         <outlet property="hospitalLabel" destination="Iy1-3P-lrD" id="BTh-YW-pFG"/>
                         <outlet property="medicineLabel" destination="qlG-gQ-VK3" id="t5T-Jq-Ya7"/>
                         <outlet property="subImageView" destination="HnK-2z-LyL" id="vvn-6b-EvZ"/>
@@ -478,11 +487,12 @@
     </scenes>
     <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
     <resources>
-        <image name="book.closed" catalog="system" width="32" height="32"/>
-        <image name="book.closed.fill" catalog="system" width="32" height="32"/>
-        <image name="plus.circle" catalog="system" width="32" height="32"/>
-        <image name="square" catalog="system" width="32" height="32"/>
-        <image name="square.fill" catalog="system" width="32" height="32"/>
+        <image name="book.closed" catalog="system" width="115" height="128"/>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="square.fill" catalog="system" width="128" height="114"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

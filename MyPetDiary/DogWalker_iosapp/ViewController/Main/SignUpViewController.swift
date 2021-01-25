@@ -62,13 +62,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 //            
 //        }
     }
-
-    
-    
-    @IBOutlet weak var ExplainLabel: UILabel!
-    
-    @IBOutlet weak var SignUpLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
