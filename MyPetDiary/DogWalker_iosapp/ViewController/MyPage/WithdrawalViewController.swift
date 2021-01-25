@@ -23,11 +23,11 @@ class WithdrawalViewController: UIViewController {
     func updateUI()  {
         deleteUser.layer.cornerRadius = 20
         deleteUser.layer.borderWidth = 2
-        deleteUser.layer.borderColor = UIColor.lightGray.cgColor
+        deleteUser.layer.borderColor = UIColor.clear.cgColor
         
         keepUser.layer.cornerRadius = 20
         keepUser.layer.borderWidth = 2
-        keepUser.layer.borderColor = UIColor.lightGray.cgColor
+        keepUser.layer.borderColor = UIColor.clear.cgColor
         
     }
     
