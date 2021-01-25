@@ -7,23 +7,29 @@
 
 import UIKit
 
-class NewsFeedTableViewController: UITableViewController
-{
+class NewsFeedTableViewController: UITableViewController {
+    
     var posts: [Post]?
+
+    func initRefresh(){
+        let refresh = UIRefreshControl()
+        tableView.refreshControl = refresh
+        refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
+        refresh.attributedTitle = NSAttributedString(string: "새로고침")
+
+    }
     
-    
+    @objc func updateUI(refresh: UIRefreshControl){
+        fetchPosts()
+        refresh.endRefreshing()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
-       
+        initRefresh()
     }
-    
-    
-    
-  
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         //super.viewWillAppear(true)
         fetchPosts()
