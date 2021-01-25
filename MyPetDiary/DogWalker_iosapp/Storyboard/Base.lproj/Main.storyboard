@@ -143,8 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-8P-nwo">
-                                <rect key="frame" x="10" y="100" width="394" height="374"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-8P-nwo">
+                                <rect key="frame" x="10" y="100" width="394" height="490"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록까지 3초" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9J-Kv-veS">
                                         <rect key="frame" x="151" y="0.0" width="92.5" height="54"/>
@@ -153,38 +153,46 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRZ-Iv-ob2">
-                                        <rect key="frame" x="77" y="64" width="240" height="54"/>
+                                        <rect key="frame" x="77" y="109" width="240" height="54"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐶" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-u0-prR">
-                                        <rect key="frame" x="179.5" y="128" width="35" height="54"/>
+                                        <rect key="frame" x="179.5" y="218" width="35" height="54"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" placeholder="닉네임을 입력해 주세요" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="nts-ok-BHG">
-                                        <rect key="frame" x="70" y="192" width="254" height="54"/>
+                                        <rect key="frame" x="70" y="327" width="254" height="54"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kE0-uU-9J6">
-                                        <rect key="frame" x="77" y="256" width="240" height="54"/>
+                                        <rect key="frame" x="77" y="436" width="240" height="54"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
-                                        <rect key="frame" x="169.5" y="320" width="55" height="54"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
-                                        <state key="normal" title="Start">
-                                            <color key="titleColor" red="0.78092810120245426" green="0.35974350001763439" blue="0.49855727010254058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="signUp:nickName:" destination="wbW-7b-uVI" eventType="touchUpInside" id="IB1-S5-XOb"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="nts-ok-BHG" secondAttribute="trailing" constant="70" id="dvT-Ua-nLJ"/>
                                     <constraint firstItem="nts-ok-BHG" firstAttribute="leading" secondItem="Hpn-8P-nwo" secondAttribute="leading" constant="70" id="n02-us-aHc"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBC-UQ-7Z8">
+                                <rect key="frame" x="144" y="601" width="137" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.78092810120245426" green="0.35974350001763439" blue="0.49855727010254058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUp:nickName:" destination="wbW-7b-uVI" eventType="touchUpInside" id="IB1-S5-XOb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-6d-HQm">
+                                <rect key="frame" x="144" y="598" width="137" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bj0-Za-YKU"/>
                         <color key="backgroundColor" red="1" green="0.93101913581198192" blue="0.8569204672881896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -198,6 +206,7 @@
                     <navigationItem key="navigationItem" id="34f-5O-YRs"/>
                     <connections>
                         <outlet property="ExplainLabel" destination="i9J-Kv-veS" id="ebV-vV-e8w"/>
+                        <outlet property="SignUpLabel" destination="qfk-6d-HQm" id="FqR-Ye-apc"/>
                         <outlet property="nickName" destination="nts-ok-BHG" id="bcj-cY-dAj"/>
                     </connections>
                 </viewController>

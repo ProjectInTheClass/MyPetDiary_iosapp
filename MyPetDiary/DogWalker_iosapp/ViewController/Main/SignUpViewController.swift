@@ -67,12 +67,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var ExplainLabel: UILabel!
     
+    @IBOutlet weak var SignUpLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.nickName.delegate = self
+        fontChange()
+    }
+    
+  
+    func fontChange(){
+        
+        SignUpLabel.font = UIFont(name:"Cafe24Oneprettynight", size: 45)
+        ExplainLabel.font = UIFont(name:"Cafe24Oneprettynight", size: 45)
+        
     }
     
    
