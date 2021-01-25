@@ -9,6 +9,11 @@ import UIKit
 
 class ThirdIntroViewController: UIViewController {
 
+    
+    
+    
+    @IBOutlet weak var SecondLabel: UILabel!
+    
     @IBOutlet weak var ShareTitleLabel: UILabel!
     
     @IBOutlet weak var ShareTextLabel: UILabel!
@@ -21,6 +26,8 @@ fontChange()
     }
     
     func fontChange() {
+        
+        SecondLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 40)
         ShareTitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
         ShareTextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 25)
     }

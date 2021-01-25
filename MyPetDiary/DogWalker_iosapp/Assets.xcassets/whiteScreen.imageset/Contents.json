@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "whiteScreen.JPG",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "흰색종이질감.JPG",
       "idiom" : "universal",
       "scale" : "2x"
     },

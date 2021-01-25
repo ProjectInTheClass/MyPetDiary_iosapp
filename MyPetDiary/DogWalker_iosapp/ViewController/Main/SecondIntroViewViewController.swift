@@ -9,6 +9,10 @@ import UIKit
 
 class SecondIntroViewViewController: UIViewController {
 
+    
+    @IBOutlet weak var FirstLabel: UILabel!
+    
+    
     @IBOutlet weak var CalendarTitleLabel: UILabel!
     
     @IBOutlet weak var CalendarTextLabel: UILabel!
@@ -22,6 +26,7 @@ fontChange()
     }
     
     func fontChange() {
+        FirstLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 40)
         CalendarTitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
         CalendarTextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 25)
     }
