@@ -10,6 +10,7 @@ import UIKit
 class FourthIntroViewController: UIViewController {
 
    
+    @IBOutlet weak var LastLabel: UILabel!
     
     @IBOutlet weak var StartTitleLabel: UILabel!
     
@@ -25,6 +26,9 @@ class FourthIntroViewController: UIViewController {
     }
     
     func fontChange() {
+        
+        LastLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 40)
+        
     
     StartTitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
     RealStartLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 25)
