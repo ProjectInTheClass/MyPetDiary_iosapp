@@ -85,7 +85,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-Lp-whT">
-                                <rect key="frame" x="20" y="104" width="170.5" height="109"/>
+                                <rect key="frame" x="20" y="144" width="170.5" height="109"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반갑습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oop-SA-OWG">
                                         <rect key="frame" x="0.0" y="0.0" width="170.5" height="20.5"/>
@@ -107,7 +107,7 @@
                         <constraints>
                             <constraint firstItem="hle-6b-z4T" firstAttribute="top" secondItem="Swz-RG-bTy" secondAttribute="bottom" constant="8" symbolic="YES" id="2zT-xl-ODO"/>
                             <constraint firstItem="Xvu-Lp-whT" firstAttribute="leading" secondItem="dp0-VN-8yn" secondAttribute="leading" constant="20" id="5FR-PP-qYO"/>
-                            <constraint firstItem="Xvu-Lp-whT" firstAttribute="top" secondItem="dp0-VN-8yn" secondAttribute="top" constant="60" id="8Gk-Bg-LOU"/>
+                            <constraint firstItem="Xvu-Lp-whT" firstAttribute="top" secondItem="dp0-VN-8yn" secondAttribute="top" constant="100" id="8Gk-Bg-LOU"/>
                             <constraint firstItem="Swz-RG-bTy" firstAttribute="centerY" secondItem="hEP-sR-wfO" secondAttribute="centerY" id="CI4-wR-WeM"/>
                             <constraint firstItem="Swz-RG-bTy" firstAttribute="centerX" secondItem="hEP-sR-wfO" secondAttribute="centerX" id="gCF-xM-jGr"/>
                             <constraint firstItem="dp0-VN-8yn" firstAttribute="trailing" secondItem="hle-6b-z4T" secondAttribute="trailing" constant="20" id="huf-Bq-7qf"/>
@@ -223,7 +223,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="첫번째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-Qv-INM">
-                                <rect key="frame" x="20" y="104" width="44.5" height="20.5"/>
+                                <rect key="frame" x="20" y="144" width="44.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -250,7 +250,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WfY-JB-mAJ" firstAttribute="centerY" secondItem="HLE-80-Amv" secondAttribute="centerY" id="AbT-4e-7ZX"/>
-                            <constraint firstItem="wwq-Qv-INM" firstAttribute="top" secondItem="vKc-h0-MWC" secondAttribute="top" constant="60" id="FYs-tD-rOQ"/>
+                            <constraint firstItem="wwq-Qv-INM" firstAttribute="top" secondItem="vKc-h0-MWC" secondAttribute="top" constant="100" id="FYs-tD-rOQ"/>
                             <constraint firstItem="wwq-Qv-INM" firstAttribute="leading" secondItem="vKc-h0-MWC" secondAttribute="leading" constant="20" id="N9n-MZ-LL6"/>
                             <constraint firstItem="WfY-JB-mAJ" firstAttribute="leading" secondItem="vKc-h0-MWC" secondAttribute="leading" constant="20" id="gRZ-s5-blZ"/>
                         </constraints>
@@ -291,7 +291,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="두번째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqc-Gq-EDg">
-                                <rect key="frame" x="20" y="104" width="44.5" height="20.5"/>
+                                <rect key="frame" x="20" y="144" width="44.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -302,7 +302,7 @@
                         <constraints>
                             <constraint firstItem="6pR-g2-7PA" firstAttribute="leading" secondItem="ccI-GE-Q6a" secondAttribute="leading" constant="20" id="4sr-5h-Emr"/>
                             <constraint firstItem="6pR-g2-7PA" firstAttribute="centerY" secondItem="4wW-0u-F2C" secondAttribute="centerY" id="Fc8-he-FWj"/>
-                            <constraint firstItem="Lqc-Gq-EDg" firstAttribute="top" secondItem="ccI-GE-Q6a" secondAttribute="top" constant="60" id="h2E-2a-umo"/>
+                            <constraint firstItem="Lqc-Gq-EDg" firstAttribute="top" secondItem="ccI-GE-Q6a" secondAttribute="top" constant="100" id="h2E-2a-umo"/>
                             <constraint firstItem="Lqc-Gq-EDg" firstAttribute="leading" secondItem="ccI-GE-Q6a" secondAttribute="leading" constant="20" id="se0-cb-ciH"/>
                         </constraints>
                     </view>
@@ -341,7 +341,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwO-Jl-dZY">
-                                <rect key="frame" x="20" y="104" width="44.5" height="20.5"/>
+                                <rect key="frame" x="20" y="144" width="44.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -367,7 +367,7 @@
                         <viewLayoutGuide key="safeArea" id="zdl-RR-KPu"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iwO-Jl-dZY" firstAttribute="top" secondItem="zdl-RR-KPu" secondAttribute="top" constant="60" id="478-8D-ZU0"/>
+                            <constraint firstItem="iwO-Jl-dZY" firstAttribute="top" secondItem="zdl-RR-KPu" secondAttribute="top" constant="100" id="478-8D-ZU0"/>
                             <constraint firstItem="wFd-tJ-87L" firstAttribute="centerX" secondItem="Uz7-sY-AlE" secondAttribute="centerX" id="Mk4-49-FCO"/>
                             <constraint firstItem="MmE-Y6-K3K" firstAttribute="centerX" secondItem="Uz7-sY-AlE" secondAttribute="centerX" id="fKG-KK-J23"/>
                             <constraint firstItem="gsG-dv-hmG" firstAttribute="leading" secondItem="zdl-RR-KPu" secondAttribute="leading" constant="20" id="gPg-Uu-OZ4"/>
