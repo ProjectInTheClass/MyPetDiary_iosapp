@@ -67,34 +67,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var ExplainLabel: UILabel!
     
-    @IBOutlet weak var resisterButtonLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.nickName.delegate = self
-        fontChange()
     }
     
-    func fontChange() {
-        ExplainLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
-        
-        resisterButtonLabel.font = UIFont(name: "SDSamliphopangcheOutline", size: 45)
-    
-    }
-    
-    
-    @IBAction func ResisterButtonTapped(_ sender: Any) {
-       
-        resisterButtonLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 45)
-        
-        resisterButtonLabel.textColor = UIColor.darkGray
-       
-    }
-    
-    
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
