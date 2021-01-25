@@ -249,7 +249,6 @@ class PetDFirebaseStorage: NSObject {
             // Uh-oh, an error occurred!
             print(error.localizedDescription)
           } else {
-            // Data for "images/island.jpg" is returned
             let downloadImage = UIImage(data: data!) ?? UIImage(named: "white")
             completion(downloadImage!,profileImage, username, content)
           }
@@ -268,7 +267,6 @@ class PetDFirebaseStorage: NSObject {
                 // Uh-oh, an error occurred!
                 print(error.localizedDescription)
               } else {
-                // Data for "images/island.jpg" is returned
                 let downloadImage = UIImage(data: data!)!
                 imgArr.append(downloadImage)
                 count += 1

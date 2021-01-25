@@ -7,14 +7,7 @@
 
 import UIKit
 
-
-struct FeedUser {
-    var username: String?
-    var profileImage: UIImage?
-}
-
 struct Post {
-    //var createdBy: FeedUser
     var username: String?
     var profileImage: UIImage?
     var image: UIImage?
@@ -53,16 +46,11 @@ class PostService {
             
             for index in todayPost {
                 if let postDetail = index as? Dictionary<String, String> {
-                    //print("index22:\(index)")
-                    //print("postDetail:\(postDetail)")
                     postContent = postDetail["post_content"] ?? ""
                     username = postDetail["user_nickname"] ?? ""
                     postImage = postDetail["post_image"] ?? ""
                     profileImage = postDetail["user_profile"] ?? ""
                     deviceToken = postDetail["device_token"] ?? ""
-                    
-//                    var profileRealImage: UIImage = UIImage(named: "kid-2")!
-//                    var contentRealImage: UIImage = UIImage(named: "white")!
                     
                     self.petDStorage.getProfileImage(downloadURL: profileImage,
                                                      username: username,
@@ -70,26 +58,17 @@ class PostService {
                                                      completion: {
                         profileUIImage, username, postContent in
                         postImage = postDetail["post_image"] ?? ""
-                        //print("PROFILEIMAGE\(profileUIImage)")
-                        //profileRealImage = profileUIImage
                         self.petDStorage.getTwoImage(downloadURL: postImage,
                                                      profileImage: profileUIImage,
                                                      username: username,
                                                      content: postContent,
                                                      completion: {
                             contentUIImage,profileUIImage, username, postContent  in
-                            //print("\(contentUIImage)")
-                            //contentRealImage = contentUIImage
-                            //postImage = postDetail["post_image"] ?? ""
-                            //print("post전:\(posts)")
-                            //print("\(username)\(profileUIImage)\(contentUIImage))")
                             posts.append(Post(username: username,
                                               profileImage: profileUIImage,
                                               image: contentUIImage,
                                               content: postContent))
-                            //print("post후:\(posts)")
                             postCount += 1
-                            //print("post확인:\(posts)")
                             if postCount == todayPost.count {
                                 completion(posts)
                             }
