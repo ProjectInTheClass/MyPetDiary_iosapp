@@ -30,6 +30,7 @@ class PostCell: UITableViewCell
         profileImageView.image = post.profileImage
         usernameLabel.text = post.username
         postImageView.image = post.image
+        showContentTextView.text = post.content
         
         postImageView.clipsToBounds = true
         postImageView.layer.borderWidth = 5

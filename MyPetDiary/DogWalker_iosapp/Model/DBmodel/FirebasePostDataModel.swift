@@ -221,4 +221,13 @@ class FirebasePostDataModel: NSObject {
             print(error.localizedDescription)
         }
     }
+    
+    // 개별 포스트 삭제하기
+    func deletePost(deviceToken: String, selectedDate: String) {
+        let postRef: DatabaseReference! = Database.database().reference().child("Post").child("\(deviceToken)").child("\(selectedDate)")
+        postRef.removeValue()
+        
+        let postNewsfeedRef: DatabaseReference! = Database.database().reference().child("NewsFeed").child("\(selectedDate)").child("\(deviceToken)")
+        postNewsfeedRef.removeValue()
+    }
 }

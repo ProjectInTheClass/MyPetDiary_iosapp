@@ -109,6 +109,29 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         }
     }
     
+    // 게시글 삭제 버튼
+    @IBAction func deletePostBtn(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "일기를 삭제하시겠습니까?", message: "한번 삭제된 일기는 되돌릴 수 없습니다", preferredStyle: UIAlertController.Style.alert)
+        
+        // add an action (button)
+        
+        let cancel = UIAlertAction(title: "아니오", style: .cancel, handler : nil)
+        let ok = UIAlertAction(title: "예", style: .default, handler : { [self]_ in
+            postDataModel.deletePost(deviceToken: self.deviceToken, selectedDate: selectedDateString)
+            getDB()
+            showTodo()
+            showImage()
+            self.calendarView.reloadData()
+        })
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     // eventdot 표현 -> 오늘 한 일 표현한걸로 바꾸기
     func getDB() {
         postDataModel.showAllDate(deviceToken: deviceToken, completion: { [self] alldate in
@@ -144,6 +167,8 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                 print("printlabel")
                 if nothing { // DB에 데이터가 있는 경우
                     print("데이터 있음")
+                    self.DeletePostBtn.isHidden = false
+                    
                     if walkDB {
                         self.walkingLabel.isHidden = false
                         self.walkingLabel.text = "🌿산책"
@@ -170,6 +195,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                     self.washLabel.isHidden = true
                     self.medicineLabel.isHidden = true
                     self.hospitalLabel.isHidden = true
+                    self.DeletePostBtn.isHidden = true
                 }
         })
     }
@@ -185,7 +211,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
                         self.subImageView.image = image
                     })
                 }
-                else {
+                else { // 사진이 없을 경우
                     self.subImageView.image = nil
                 }
             })

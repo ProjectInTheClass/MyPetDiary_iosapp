@@ -211,7 +211,10 @@ class PetDFirebaseStorage: NSObject {
     }
     
     // get image from download url
-    func getProfileImage(downloadURL: String, username: String, completion: @escaping (UIImage, String) -> Void) {
+    func getProfileImage(downloadURL: String,
+                         username: String,
+                         content: String,
+                         completion: @escaping (UIImage, String, String) -> Void) {
         
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
@@ -222,17 +225,20 @@ class PetDFirebaseStorage: NSObject {
             // Uh-oh, an error occurred!
             print(error.localizedDescription)
             print("처리된 오류")
-            completion(UIImage(named:"kid-2")!, username)
+            completion(UIImage(named:"kid-2")!, username, content)
           } else {
             // Data for "images/island.jpg" is returned
             let downloadImage = UIImage(data: data!) ?? UIImage(named: "white")
-            completion(downloadImage!, username)
+            completion(downloadImage!, username, content)
           }
         }
     }
     
-    func getTwoImage(downloadURL: String, profileImage: UIImage,
-                     username: String, completion: @escaping (UIImage, UIImage, String) -> Void) {
+    func getTwoImage(downloadURL: String,
+                     profileImage: UIImage,
+                     username: String,
+                     content: String,
+                     completion: @escaping (UIImage, UIImage, String, String) -> Void) {
         
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
@@ -243,9 +249,8 @@ class PetDFirebaseStorage: NSObject {
             // Uh-oh, an error occurred!
             print(error.localizedDescription)
           } else {
-            // Data for "images/island.jpg" is returned
             let downloadImage = UIImage(data: data!) ?? UIImage(named: "white")
-            completion(downloadImage!,profileImage, username)
+            completion(downloadImage!,profileImage, username, content)
           }
         }
     }
@@ -262,7 +267,6 @@ class PetDFirebaseStorage: NSObject {
                 // Uh-oh, an error occurred!
                 print(error.localizedDescription)
               } else {
-                // Data for "images/island.jpg" is returned
                 let downloadImage = UIImage(data: data!)!
                 imgArr.append(downloadImage)
                 count += 1

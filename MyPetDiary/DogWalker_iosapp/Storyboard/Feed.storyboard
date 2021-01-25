@@ -72,6 +72,9 @@
                                         </constraints>
                                         <color key="tintColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="trash" catalog="system"/>
+                                        <connections>
+                                            <action selector="deletePostBtn:" destination="AjM-WY-uif" eventType="touchUpInside" id="Qtc-VS-ChP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
