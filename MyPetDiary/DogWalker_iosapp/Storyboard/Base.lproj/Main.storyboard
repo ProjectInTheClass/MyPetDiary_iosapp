@@ -68,20 +68,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="흰색종이질감" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-rO-5ba">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="whiteScreen" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-rO-5ba">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="펫 다이어리를 소개합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W6-DC-PoM">
-                                <rect key="frame" x="20" y="186" width="350" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="펫 다이어리를 소개합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W6-DC-PoM">
+                                <rect key="frame" x="20" y="164" width="350" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Op0-4u-xva"/>
+                                    <constraint firstAttribute="height" constant="100" id="Pe0-FK-eRZ"/>
+                                    <constraint firstAttribute="width" constant="350" id="YmE-KS-Qih"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="oh5-9G-4EF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="반갑습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oop-SA-OWG">
-                                <rect key="frame" x="20" y="78" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반갑습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oop-SA-OWG">
+                                <rect key="frame" x="20" y="64" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="BbO-BH-u2i"/>
+                                    <constraint firstAttribute="height" constant="100" id="lfn-6H-GFU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -94,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="펫다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swz-RG-bTy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="47" y="272" width="320" height="295"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -103,6 +111,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dp0-VN-8yn"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9W6-DC-PoM" firstAttribute="leading" secondItem="dp0-VN-8yn" secondAttribute="leading" constant="20" id="0uJ-Dt-55u"/>
+                            <constraint firstItem="oop-SA-OWG" firstAttribute="top" secondItem="dp0-VN-8yn" secondAttribute="top" constant="20" id="ZiA-BM-bUC"/>
+                            <constraint firstItem="9W6-DC-PoM" firstAttribute="top" secondItem="oop-SA-OWG" secondAttribute="bottom" id="gSE-8C-bhG"/>
+                            <constraint firstItem="oop-SA-OWG" firstAttribute="leading" secondItem="dp0-VN-8yn" secondAttribute="leading" constant="20" id="i3G-02-qtk"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="KeepNextLabel" destination="hle-6b-z4T" id="TCT-Hp-z3f"/>
@@ -360,7 +374,7 @@
     <resources>
         <image name="newspaper" catalog="system" width="32" height="32"/>
         <image name="newspaper.fill" catalog="system" width="32" height="32"/>
-        <image name="흰색종이질감" width="250" height="187"/>
+        <image name="whiteScreen" width="500" height="374"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
