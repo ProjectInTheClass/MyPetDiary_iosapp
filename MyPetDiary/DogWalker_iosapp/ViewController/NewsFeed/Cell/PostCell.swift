@@ -13,6 +13,7 @@ class PostCell: UITableViewCell
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var postImageView: UIImageView!
    
+    @IBOutlet weak var showContentTextView: UITextView!
     var post: Post!{
         didSet {
             updateUI()

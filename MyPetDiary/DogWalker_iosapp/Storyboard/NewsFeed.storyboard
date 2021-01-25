@@ -49,7 +49,7 @@
                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Lxk-0n-prS">
                                             <rect key="frame" x="20" y="445.5" width="374" height="50"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-Ba-frz">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-Ba-frz">
                                                     <rect key="frame" x="2" y="2" width="370" height="46"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -84,6 +84,7 @@
                                 <connections>
                                     <outlet property="postImageView" destination="NU0-k7-iDo" id="Ho8-Z1-KOa"/>
                                     <outlet property="profileImageView" destination="dFW-qW-ZWH" id="ZvV-RJ-ByF"/>
+                                    <outlet property="showContentTextView" destination="MUC-Ba-frz" id="98P-4l-NT5"/>
                                     <outlet property="usernameLabel" destination="0Lq-Ho-HVf" id="7ZK-9k-GKt"/>
                                 </connections>
                             </tableViewCell>
@@ -95,9 +96,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Today's PetD" id="U93-5C-Uik"/>
-                    <connections>
-                        <outlet property="contentTextView" destination="MUC-Ba-frz" id="mnr-8g-sNL"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZQ-74-Nkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
