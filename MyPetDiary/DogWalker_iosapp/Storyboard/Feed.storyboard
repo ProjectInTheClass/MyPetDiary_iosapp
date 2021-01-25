@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6CU-Ut-o6v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6CU-Ut-o6v">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -359,6 +359,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="neh-fS-ZmF"/>
                     <connections>
+                        <outlet property="RecordWhatHappen" destination="PHJ-TS-Ydl" id="Ym9-qU-juS"/>
                         <outlet property="hospital" destination="J3U-ZT-Kfm" id="L5m-ps-Qot"/>
                         <outlet property="imageView" destination="9Zy-TI-Gr5" id="A1O-M3-h4Y"/>
                         <outlet property="isHospital" destination="4T6-Cc-WRC" id="Whm-3j-MF7"/>
@@ -476,11 +477,11 @@
     </scenes>
     <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
     <resources>
-        <image name="book.closed" catalog="system" width="115" height="128"/>
-        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <image name="square" catalog="system" width="128" height="114"/>
-        <image name="square.fill" catalog="system" width="128" height="114"/>
+        <image name="book.closed" catalog="system" width="32" height="32"/>
+        <image name="book.closed.fill" catalog="system" width="32" height="32"/>
+        <image name="plus.circle" catalog="system" width="32" height="32"/>
+        <image name="square" catalog="system" width="32" height="32"/>
+        <image name="square.fill" catalog="system" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

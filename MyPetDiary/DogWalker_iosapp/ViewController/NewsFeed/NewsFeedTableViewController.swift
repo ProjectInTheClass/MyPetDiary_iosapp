@@ -11,6 +11,8 @@ class NewsFeedTableViewController: UITableViewController
 {
     var posts: [Post]?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()

@@ -16,6 +16,10 @@ class AddDiaryViewController: UIViewController{
 
     @IBOutlet weak var showDate: UILabel!
     let picker = UIImagePickerController()
+    
+    @IBOutlet weak var RecordWhatHappen: UILabel!
+    
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var isWalked: UISwitch! // 산책 스위치
     @IBOutlet weak var walk: UILabel! // 산책 라벨
@@ -87,11 +91,27 @@ class AddDiaryViewController: UIViewController{
         }
     }
     
+    
+    
+   
+    
+    func fontChange() {
+        showDate.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        RecordWhatHappen.font = UIFont(name: "Cafe24Oneprettynight", size: 15)
+
+        
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         picker.delegate = self
         getCurrentDateTime()
+        
+        fontChange()
         
         // 기존 데이터 있을 경우 image 불러오기
         postDataModel
