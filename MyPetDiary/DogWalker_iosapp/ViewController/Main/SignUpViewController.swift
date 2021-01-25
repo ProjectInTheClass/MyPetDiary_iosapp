@@ -74,24 +74,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.nickName.delegate = self
-        fontChange()
-    }
-    
-  
-    @IBAction func ButtonTapped(_ sender: Any) {
-        
-        
-        SignUpLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 45)
-        
-        SignUpLabel.textColor = UIColor.darkGray
-    }
-    
-    
-    func fontChange(){
-        
-        SignUpLabel.font = UIFont(name: "SDSamliphopangcheOutline", size: 45)
-        ExplainLabel.font = UIFont(name:"Cafe24Oneprettynight", size: 45)
-        
     }
     
    
