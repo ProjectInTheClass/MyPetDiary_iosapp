@@ -56,6 +56,20 @@ class WithdrawalViewController: UIViewController {
         deleteUserRef.removeValue()
         let deletePostRef = self.ref.child("Post").child("\(deviceToken)")
         deletePostRef.removeValue()
+        let deleteNewsfeedRef = self.ref.child("NewsFeed")
+        deleteNewsfeedRef.observeSingleEvent(of: .value, with: {(snapshot) in
+            if snapshot.exists() {
+                if let value = snapshot.value as? Dictionary<String, Any> {
+                    for index in value.keys {
+                        let realDeleteRef = self.ref.child("NewsFeed").child("\(index)").child("\(deviceToken)")
+                        realDeleteRef.removeValue()
+                    }
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
         
         // delete userDefaults key value 기기 토큰 삭제
         UserDefaults.standard.removeObject(forKey: "token")
