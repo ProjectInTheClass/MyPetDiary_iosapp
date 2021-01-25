@@ -24,6 +24,7 @@ class IntroViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
 
         func fontChange() {
             TitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)

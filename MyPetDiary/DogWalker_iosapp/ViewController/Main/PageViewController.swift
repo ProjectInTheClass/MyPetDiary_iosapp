@@ -27,11 +27,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
         let previousIndex = viewControllerIndex - 1
         
-        guard previousIndex >= 0 else{
-            return VCArray.last
-        }
-        
-        guard VCArray.count > previousIndex else{
+        if previousIndex <= 0 {
             return nil
         }
         
@@ -45,11 +41,9 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
         let nextIndex = viewControllerIndex + 1
         
-        guard nextIndex < VCArray.count else{
-            return VCArray.first
-        }
+
         
-        guard VCArray.count > nextIndex else{
+        if nextIndex == 4 {
             return nil
         }
         

@@ -16,7 +16,13 @@ class NewsFeedTableViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
+       
     }
+    
+    
+    
+  
+    
     
     override func viewWillAppear(_ animated: Bool) {
         //super.viewWillAppear(true)
