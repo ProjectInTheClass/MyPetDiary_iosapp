@@ -96,12 +96,9 @@ class AddDiaryViewController: UIViewController{
    
     
     func fontChange() {
-        showDate.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
-        RecordWhatHappen.font = UIFont(name: "Cafe24Oneprettynight", size: 15)
-
-        
-        
-    }
+        showDate.font = UIFont(name: "SDSamliphopangcheBasic", size: 20)
+        RecordWhatHappen.font = UIFont(name: "SDSamliphopangcheBasic", size: 15)
+}
     
     
     
