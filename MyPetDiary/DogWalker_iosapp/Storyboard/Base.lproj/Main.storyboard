@@ -55,7 +55,7 @@
         <!--Page View Controller-->
         <scene sceneID="4QZ-YR-bik">
             <objects>
-                <pageViewController storyboardIdentifier="PageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="fdf-yJ-oPK" customClass="PageViewController" customModule="DogWalker_iosapp" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageView" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="fdf-yJ-oPK" customClass="PageViewController" customModule="DogWalker_iosapp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ER-2N-NIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2836" y="-542"/>
