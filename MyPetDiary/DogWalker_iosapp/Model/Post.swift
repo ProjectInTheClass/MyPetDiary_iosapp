@@ -18,6 +18,7 @@ struct Post {
     var username: String?
     var profileImage: UIImage?
     var image: UIImage?
+    var content: String?
 }
 
 
@@ -30,12 +31,9 @@ class PostService {
     func posts(completion: @escaping ([Post]) -> Void) {
         fetchPosts{
             receivedPost in
-            print("receivedPost확인!!!!!!!!!!\(receivedPost)")
             completion(receivedPost)
         }
     }
-    
-    
     
     func fetchPosts(completion: @escaping ([Post]) -> Void) {
         
@@ -66,16 +64,20 @@ class PostService {
 //                    var profileRealImage: UIImage = UIImage(named: "kid-2")!
 //                    var contentRealImage: UIImage = UIImage(named: "white")!
                     
-                    self.petDStorage.getProfileImage(downloadURL: profileImage, username: username, completion: {
-                        profileUIImage, username in
+                    self.petDStorage.getProfileImage(downloadURL: profileImage,
+                                                     username: username,
+                                                     content: postContent,
+                                                     completion: {
+                        profileUIImage, username, postContent in
                         postImage = postDetail["post_image"] ?? ""
                         //print("PROFILEIMAGE\(profileUIImage)")
                         //profileRealImage = profileUIImage
                         self.petDStorage.getTwoImage(downloadURL: postImage,
                                                      profileImage: profileUIImage,
                                                      username: username,
+                                                     content: postContent,
                                                      completion: {
-                            contentUIImage,profileUIImage, username  in
+                            contentUIImage,profileUIImage, username, postContent  in
                             //print("\(contentUIImage)")
                             //contentRealImage = contentUIImage
                             //postImage = postDetail["post_image"] ?? ""
@@ -83,7 +85,8 @@ class PostService {
                             //print("\(username)\(profileUIImage)\(contentUIImage))")
                             posts.append(Post(username: username,
                                               profileImage: profileUIImage,
-                                              image: contentUIImage))
+                                              image: contentUIImage,
+                                              content: postContent))
                             //print("post후:\(posts)")
                             postCount += 1
                             //print("post확인:\(posts)")
