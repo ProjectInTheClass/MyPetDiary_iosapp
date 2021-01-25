@@ -15,7 +15,7 @@ class NewsFeedTableViewController: UITableViewController {
         let refresh = UIRefreshControl()
         tableView.refreshControl = refresh
         refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
-        refresh.attributedTitle = NSAttributedString(string: nil)
+        refresh.attributedTitle = NSAttributedString(string: " ")
 
     }
     
