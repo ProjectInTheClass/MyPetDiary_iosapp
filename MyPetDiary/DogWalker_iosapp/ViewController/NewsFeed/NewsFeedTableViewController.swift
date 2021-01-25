@@ -11,6 +11,7 @@ class NewsFeedTableViewController: UITableViewController {
     
     var posts: [Post]?
 
+    @IBOutlet weak var contentTextView: UITextView!
     func initRefresh(){
         let refresh = UIRefreshControl()
         tableView.refreshControl = refresh

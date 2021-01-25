@@ -18,10 +18,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" id="TcT-n4-GGj" customClass="PostCell" customModule="DogWalker_iosapp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="450.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="500.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TcT-n4-GGj" id="Sf5-Pn-dYh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="450.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="500.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kid-2" translatesAutoresizingMaskIntoConstraints="NO" id="dFW-qW-ZWH">
@@ -40,21 +40,44 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="squareshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NU0-k7-iDo">
-                                            <rect key="frame" x="10" y="57" width="394" height="392"/>
+                                            <rect key="frame" x="20" y="57" width="374" height="372"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NU0-k7-iDo" secondAttribute="height" multiplier="1:1" id="nXi-ii-G1W"/>
                                             </constraints>
                                         </imageView>
+                                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Lxk-0n-prS">
+                                            <rect key="frame" x="20" y="445.5" width="374" height="50"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-Ba-frz">
+                                                    <rect key="frame" x="2" y="2" width="370" height="46"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="MUC-Ba-frz" firstAttribute="top" secondItem="Lxk-0n-prS" secondAttribute="top" constant="2" id="64K-sR-9Rg"/>
+                                                <constraint firstItem="MUC-Ba-frz" firstAttribute="leading" secondItem="Lxk-0n-prS" secondAttribute="leading" constant="2" id="G1z-MY-ZpD"/>
+                                                <constraint firstAttribute="trailing" secondItem="MUC-Ba-frz" secondAttribute="trailing" constant="2" id="XVy-5i-IAQ"/>
+                                                <constraint firstAttribute="height" constant="50" id="fVH-Wm-WWH"/>
+                                                <constraint firstAttribute="bottom" secondItem="MUC-Ba-frz" secondAttribute="bottom" constant="2" id="w2J-iH-vBV"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="NU0-k7-iDo" secondAttribute="bottom" id="Bgp-wq-mav"/>
+                                        <constraint firstAttribute="bottom" secondItem="Lxk-0n-prS" secondAttribute="bottom" constant="5" id="6cD-Rh-iZY"/>
+                                        <constraint firstItem="Lxk-0n-prS" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="20" id="8EQ-rX-MTk"/>
+                                        <constraint firstAttribute="bottom" secondItem="NU0-k7-iDo" secondAttribute="bottom" constant="70" id="Bgp-wq-mav"/>
                                         <constraint firstItem="dFW-qW-ZWH" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="12" id="C5W-pV-Ihq"/>
                                         <constraint firstItem="dFW-qW-ZWH" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="top" constant="12" id="T86-ta-uuJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="NU0-k7-iDo" secondAttribute="trailing" constant="10" id="VgV-NI-TUE"/>
-                                        <constraint firstItem="NU0-k7-iDo" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="10" id="XAs-1C-0Q2"/>
+                                        <constraint firstAttribute="trailing" secondItem="NU0-k7-iDo" secondAttribute="trailing" constant="20" id="VgV-NI-TUE"/>
+                                        <constraint firstItem="NU0-k7-iDo" firstAttribute="leading" secondItem="Sf5-Pn-dYh" secondAttribute="leading" constant="20" id="XAs-1C-0Q2"/>
                                         <constraint firstItem="0Lq-Ho-HVf" firstAttribute="top" secondItem="Sf5-Pn-dYh" secondAttribute="topMargin" constant="6" id="az5-Ke-koO"/>
                                         <constraint firstItem="NU0-k7-iDo" firstAttribute="top" secondItem="dFW-qW-ZWH" secondAttribute="bottom" constant="8" symbolic="YES" id="jiT-es-lvE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lxk-0n-prS" secondAttribute="trailing" constant="20" id="l1u-8h-HL4"/>
                                         <constraint firstItem="0Lq-Ho-HVf" firstAttribute="leading" secondItem="dFW-qW-ZWH" secondAttribute="trailing" constant="12" id="qXi-Qk-kl7"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -72,6 +95,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Today's PetD" id="U93-5C-Uik"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="MUC-Ba-frz" id="mnr-8g-sNL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZQ-74-Nkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,6 +128,9 @@
         <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
