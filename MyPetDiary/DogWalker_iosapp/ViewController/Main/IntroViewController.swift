@@ -13,28 +13,16 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var Title2Label: UILabel!
     @IBOutlet weak var KeepNextLabel: UILabel!
-
-    @IBOutlet weak var PetDiaryTitle: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fontChange()
-        // Do any additional setup after loading the view.
     }
     
-    
-
-        func fontChange() {
-            TitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
-            Title2Label.font = UIFont(name: "Cafe24Oneprettynight", size: 25)
-            KeepNextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
-            PetDiaryTitle.font = UIFont(name: "SDSamliphopangcheOutline", size: 45)
-            
-        }
-       
-
-   
+    func fontChange() {
+        TitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        Title2Label.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        KeepNextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+    }
 }
 

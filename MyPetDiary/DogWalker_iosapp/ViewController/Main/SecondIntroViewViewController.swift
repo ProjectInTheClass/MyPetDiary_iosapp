@@ -8,36 +8,21 @@
 import UIKit
 
 class SecondIntroViewViewController: UIViewController {
-
-    
-    @IBOutlet weak var FirstLabel: UILabel!
-    
     
     @IBOutlet weak var CalendarTitleLabel: UILabel!
-    
     @IBOutlet weak var CalendarTextLabel: UILabel!
-    
+    @IBOutlet weak var thirdTextLabel: UILabel!
+    @IBOutlet weak var forthTextLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-fontChange()
-        
+        fontChange()
     }
     
     func fontChange() {
-        FirstLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 40)
-        CalendarTitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 33)
-        CalendarTextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 25)
+        CalendarTitleLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        CalendarTextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        thirdTextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        forthTextLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

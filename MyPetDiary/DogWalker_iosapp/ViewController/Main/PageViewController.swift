@@ -12,13 +12,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     lazy var VCArray:[UIViewController] = {
         return [self.VCInstance(name: "FirstVC"),
                 self.VCInstance(name: "SecondVC"),
-                self.VCInstance(name: "ThirdVC"),
                 self.VCInstance(name: "FourthVC")]
     }()
+    
     private func VCInstance(name: String)->UIViewController{
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
-    
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = VCArray.firstIndex(of: viewController) else {
@@ -43,7 +42,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
 
         
-        if nextIndex == 4 {
+        if nextIndex == 3 {
             return nil
         }
         

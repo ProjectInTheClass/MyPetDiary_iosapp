@@ -13,8 +13,12 @@ import FirebaseAuth
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var nickName: UITextField!
     
+    func fontChange() {
+        firstLabel.font = UIFont(name: "Cafe24Oneprettynight", size: 16)
+    }
     var userDataModel = FirebaseUserDataModel.shared // user DB reference
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -67,6 +71,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.nickName.delegate = self
+        fontChange()
     }
     
    
