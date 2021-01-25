@@ -222,13 +222,23 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         calendarView.delegate = self
         calendarView.dataSource = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidappear")
+        getDB()
+        showTodo()
+        showImage()
+        self.calendarView.reloadData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("viewwillappear")
         getDB()
         showTodo()
         showImage()
-//        self.calendarView.reloadData()
+        self.calendarView.reloadData()
     }
     
     

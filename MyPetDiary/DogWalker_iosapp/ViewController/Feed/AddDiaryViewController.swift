@@ -13,7 +13,8 @@ import Firebase
 import FirebaseDatabase
 
 class AddDiaryViewController: UIViewController{
-
+    
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var showDate: UILabel!
     let picker = UIImagePickerController()
     
@@ -44,6 +45,39 @@ class AddDiaryViewController: UIViewController{
     // 기기 토큰 확인하기
     let deviceToken = UserDefaults.standard.string(forKey: "token")!
     
+    @IBAction func goNextPage(_ sender: UIButton) {
+        
+        
+        // 처음 게시글을 작성할 경우 입력한 사진이 없을 경우
+        if imageView.image == nil {
+            // create the alert
+            let alert = UIAlertController(title: "사진이 비어있음", message: "입력할 사진을 넣어주세요", preferredStyle: UIAlertController.Style.alert)
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler:nil
+            ))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Feed", bundle: nil)
+            let vc = storyBoard.instantiateViewController(identifier:"SecondAddViewController") as! AddPostViewController
+            
+            // 타입 캐스팅후 값 할당
+            vc.receivedImage = self.imageView
+            vc.receivedWalkSwitch = self.isWalked.isOn
+            vc.receivedWashSwitch = self.isWashed.isOn
+            vc.receivedMedicineSwitch = self.isMedicine.isOn
+            vc.receivedHospitalSwitch = self.isHospital.isOn
+            vc.receivedPostDate = self.showDateData
+            vc.receivedImageURL = self.localFile
+            vc.receivedFilePath = self.filePath
+            vc.receivedPhotoData = self.photoData
+            if photoData == nil {
+                photoData = imageView.image!.jpegData(compressionQuality: 0.7) as NSData?;
+            }
+//            self.present(vc, animated: true, completion: nil)
+            self.show(vc, sender: self)
+        }
+    }
     @IBAction func isOnWalk(_ sender: UISwitch) {
         if sender.isOn {
             self.walk.text = "산책🙆🏻‍♀️"
@@ -223,19 +257,6 @@ class AddDiaryViewController: UIViewController{
             return
         }
         
-        // 타입 캐스팅후 값 할당
-        nextViewController.receivedImage = self.imageView
-        nextViewController.receivedWalkSwitch = self.isWalked.isOn
-        nextViewController.receivedWashSwitch = self.isWashed.isOn
-        nextViewController.receivedMedicineSwitch = self.isMedicine.isOn
-        nextViewController.receivedHospitalSwitch = self.isHospital.isOn
-        nextViewController.receivedPostDate = self.showDateData
-        nextViewController.receivedImageURL = self.localFile
-        nextViewController.receivedFilePath = self.filePath
-        nextViewController.receivedPhotoData = self.photoData
-        if photoData == nil {
-            photoData = imageView.image!.jpegData(compressionQuality: 0.7) as NSData?;
-        }
     }
     
 }
