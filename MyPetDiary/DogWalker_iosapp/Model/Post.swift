@@ -61,10 +61,10 @@ class PostService {
                     var profileRealImage: UIImage = UIImage(named: "white")!
                     var contentRealImage: UIImage = UIImage(named: "white")!
                     
-                    self.petDStorage.getImage(downloadURL: profileImage, completion: {
+                    self.petDStorage.getProfileImage(downloadURL: profileImage, completion: {
                         profileUIImage in
                         profileRealImage = profileUIImage
-                        self.petDStorage.getImage(downloadURL: postImage, completion: {
+                        self.petDStorage.getContentImage(downloadURL: postImage, completion: {
                             contentUIImage in
                             contentRealImage = contentUIImage
                             

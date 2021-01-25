@@ -241,6 +241,4 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         self.calendarView.reloadData()
     }
     
-    
-  
 }

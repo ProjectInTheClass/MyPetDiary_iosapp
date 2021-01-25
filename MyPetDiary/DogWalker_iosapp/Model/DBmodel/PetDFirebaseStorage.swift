@@ -211,8 +211,29 @@ class PetDFirebaseStorage: NSObject {
     }
     
     // get image from download url
-    func getImage(downloadURL: String, completion: @escaping (UIImage) -> Void) {
+    func getProfileImage(downloadURL: String, completion: @escaping (UIImage) -> Void) {
         
+        // Create a reference from a Google Cloud Storage URI
+        let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
+
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        gsReference.getData(maxSize: 20 * 1024 * 1024) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+            print(error.localizedDescription)
+            print("하지만 오류처리 해줬지.")
+            completion(UIImage(named:"kid-2")!)
+          } else {
+            // Data for "images/island.jpg" is returned
+            let downloadImage = UIImage(data: data!) ?? UIImage(named: "white")
+            completion(downloadImage!)
+          }
+        }
+    }
+    
+    func getContentImage(downloadURL: String, completion: @escaping (UIImage) -> Void) {
+        
+        var downloadImageURL = ""
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
 
