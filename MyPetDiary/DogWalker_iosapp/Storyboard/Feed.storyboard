@@ -335,7 +335,7 @@
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="MWh-eI-Zpx" kind="show" id="cB8-ka-0On"/>
+                                            <action selector="goNextPage:" destination="Q0i-WC-PRY" eventType="touchUpInside" id="jXL-3e-lRc"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-2J-GQi">
@@ -367,6 +367,7 @@
                         <outlet property="isWalked" destination="zAa-rV-01v" id="esV-nd-msc"/>
                         <outlet property="isWashed" destination="i60-1u-5tf" id="ZcC-tR-PdZ"/>
                         <outlet property="medicine" destination="svq-f7-rXG" id="NWJ-kZ-vU8"/>
+                        <outlet property="nextBtn" destination="vId-9K-gyO" id="6oL-tK-ETs"/>
                         <outlet property="showDate" destination="B8s-tr-XK4" id="tZx-RG-0Dp"/>
                         <outlet property="walk" destination="ZyJ-Wo-8VT" id="AFI-gh-DrN"/>
                         <outlet property="wash" destination="LER-zY-md6" id="Nlh-fi-MHP"/>
@@ -385,7 +386,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eE5-vu-4Lf">
-                                <rect key="frame" x="5" y="93" width="404" height="715"/>
+                                <rect key="frame" x="5" y="49" width="404" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-Cn-MxN">
                                         <rect key="frame" x="197.5" y="0.0" width="9" height="30"/>
@@ -428,7 +429,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhP-F8-4Qe">
-                                        <rect key="frame" x="177" y="468" width="50" height="247"/>
+                                        <rect key="frame" x="177" y="468" width="50" height="340"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

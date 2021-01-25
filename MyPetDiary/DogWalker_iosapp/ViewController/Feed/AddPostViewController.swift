@@ -33,13 +33,13 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     let picker = UIImagePickerController()
     var current_date_string: String = "" // 현재 시각
     let deviceToken = UserDefaults.standard.string(forKey: "token")! // 기기 토큰
-    
+    let formatter = DateFormatter()
+
     @IBOutlet weak var testView: UIImageView!
     
     // DONE 버튼 눌렀을 경우
     @IBAction func btnSave(_ sender: Any) {
         // 현재 날짜 가져오기
-        let formatter = DateFormatter()
         //formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         current_date_string = formatter.string(from: Date())
@@ -109,6 +109,15 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         print("목욕 스위치 확인: \(receivedWashSwitch)")
         print("약 스위치 확인: \(receivedMedicineSwitch)")
         print("병원 스위치 확인: \(receivedHospitalSwitch)")
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        current_date_string = formatter.string(from: Date())
+        
+        // 날짜 데이터 없을 경우 처리
+        if receivedPostDate == "" {
+            formatter.dateFormat = "yyyy-MM-dd"
+            let default_post_date = formatter.string(from: Date())
+            receivedPostDate = default_post_date
+        }
         
         
         // 기존에 쓴 글이 있다면 내용 가져오기
