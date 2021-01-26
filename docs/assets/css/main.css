@@ -1935,7 +1935,7 @@ button,
   color: #ffffff !important;
   cursor: pointer;
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 1em;
   font-weight: bold;
   height: calc(4.75em + 2px);
   letter-spacing: 0.25em;
@@ -3801,7 +3801,7 @@ body.is-ie #sidebar > .inner {
   border: 0;
   color: rgba(255, 255, 255, 0.35);
   display: block;
-  font-size: 0.6em;
+  font-size: 1em;
   font-weight: bold;
   letter-spacing: 0.25em;
   line-height: 1.75;
