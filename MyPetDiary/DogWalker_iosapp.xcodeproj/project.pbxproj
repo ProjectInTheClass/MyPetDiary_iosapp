@@ -88,7 +88,6 @@
 		7640D6AB25AED43C00A15B14 /* DayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInfo.swift; sourceTree = "<group>"; };
 		7655053825A31D2300FA5CFE /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		7655054325A4763600FA5CFE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
-		766A44DB25C0064100CA47A1 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Main.strings"; sourceTree = "<group>"; };
 		769BF41525A6F4EA0098DC87 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		76B621C925B4CEEC0049493B /* TodayMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMemoViewController.swift; path = DogWalker_iosapp/ViewController/Feed/TodayMemoViewController.swift; sourceTree = SOURCE_ROOT; };
 		76F1381E25B9545A0082CDB1 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -324,7 +323,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"en-GB",
 			);
 			mainGroup = 76005358259DB48B0058F313;
 			productRefGroup = 76005362259DB48B0058F313 /* Products */;
@@ -442,7 +440,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				7600536B259DB48B0058F313 /* Base */,
-				766A44DB25C0064100CA47A1 /* en-GB */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
