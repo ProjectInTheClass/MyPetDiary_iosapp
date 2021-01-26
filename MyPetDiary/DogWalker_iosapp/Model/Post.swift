@@ -84,7 +84,6 @@ class PostService {
                                   profileImage: UIImage(named: "white"),
                                   image: UIImage(named: "nothing"),
                                   content: "오늘의 petD를 작성해보세요!"))
-                print(posts)
                 completion(posts)
             }
         })
