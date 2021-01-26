@@ -272,7 +272,17 @@ class PetDFirebaseStorage: NSObject {
                 let downloadImage = UIImage(data: data!)!
                 imgArr.append(downloadImage)
                 count += 1
-                if count == allImage.count { completion(imgArr) }
+                if count == allImage.count {
+//                    imgArr.sort(by: { lhs, rhs in
+//                        if let limage = lhs as? String,
+//                           let rimage = rhs as? String {
+//                            return limage > rimage
+//                        } else {
+//                            return false
+//                        }
+//                    })
+                    completion(imgArr)
+                }
               }
             }
         }
