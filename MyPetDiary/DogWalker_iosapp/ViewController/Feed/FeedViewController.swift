@@ -45,7 +45,7 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         postDataModel
             .showSwitchFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
             walkDB, washDB, medicineDB, hospitalDB, nothing in
-                let storyboard  = UIStoryboard(name: "Feed", bundle: nil)
+                _  = UIStoryboard(name: "Feed", bundle: nil)
                 if nothing{
                     guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TdMemoViewController") as? TodayMemoViewController else { return }
                     vc.selectedDate = self.selectedDateString
