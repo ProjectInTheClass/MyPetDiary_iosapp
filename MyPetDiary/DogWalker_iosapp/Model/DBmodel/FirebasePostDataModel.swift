@@ -213,14 +213,7 @@ class FirebasePostDataModel: NSObject {
                         }
                     }
                     imgArr.sort(by: { lhs, rhs in
-                        if let ldic = lhs as? String,
-                           let rdic = rhs as? String,
-                           let lup = ldic as? String,
-                           let rup = rdic as? String{
-                            return lup > rup
-                        } else {
-                            return false
-                        }
+                        return lhs > rhs
                     })
                     completion(imgArr)
                 }
