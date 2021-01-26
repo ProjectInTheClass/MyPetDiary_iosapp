@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24Oneprettynight.ttf">
+            <string>Cafe24Oneprettynight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--DIARY-->
         <scene sceneID="n75-gN-yJp">
@@ -37,29 +42,29 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LKB-ex-846">
-                                        <rect key="frame" x="200" y="41" width="104" height="98"/>
+                                        <rect key="frame" x="200" y="45" width="104" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkc-cB-Fon">
-                                                <rect key="frame" x="0.0" y="0.0" width="104" height="17"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="15"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoO-4F-vYd">
-                                                <rect key="frame" x="0.0" y="27" width="104" height="17"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="25" width="104" height="15"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-gQ-VK3">
-                                                <rect key="frame" x="0.0" y="54" width="104" height="17"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="50" width="104" height="15"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅤ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-3P-lrD">
-                                                <rect key="frame" x="0.0" y="81" width="104" height="17"/>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                <rect key="frame" x="0.0" y="75" width="104" height="15"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -145,8 +150,8 @@
                                 <rect key="frame" x="30" y="50" width="354" height="658"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-ni-4WZ">
-                                        <rect key="frame" x="122" y="0.0" width="110.5" height="28.5"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="20"/>
+                                        <rect key="frame" x="126" y="0.0" width="102" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -158,11 +163,11 @@
                                             <constraint firstAttribute="width" constant="250" id="vX4-yh-EYI"/>
                                         </constraints>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="ㅤㅤ" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="오늘의 일기를 작성해 주세요😀" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
                                         <rect key="frame" x="52" y="338.5" width="250" height="319.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" calendarEvent="YES"/>
                                     </textView>
@@ -214,7 +219,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CCF-Sw-oSx">
-                                        <rect key="frame" x="94.5" y="51.5" width="215.5" height="61.5"/>
+                                        <rect key="frame" x="94.5" y="52.5" width="215.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8s-tr-XK4">
                                                 <rect key="frame" x="58" y="0.0" width="99.5" height="40"/>
@@ -236,7 +241,7 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Zy-TI-Gr5">
-                                        <rect key="frame" x="102" y="154" width="200" height="200"/>
+                                        <rect key="frame" x="102" y="156" width="200" height="200"/>
                                         <color key="backgroundColor" red="1" green="0.92788973949999998" blue="0.9270296509" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="1" green="0.94267677510000003" blue="0.93744017840000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -247,8 +252,8 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVY-sY-1OQ">
-                                        <rect key="frame" x="151.5" y="395.5" width="101" height="37"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                        <rect key="frame" x="156" y="398.5" width="92" height="33"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                         <state key="normal" title="select image">
                                             <color key="titleColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -257,32 +262,32 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="cwE-Ou-fO6">
-                                        <rect key="frame" x="63.5" y="473.5" width="277" height="90.5"/>
+                                        <rect key="frame" x="63.5" y="473.5" width="277" height="88.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" alignment="bottom" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="BZ7-fF-eHY">
-                                                <rect key="frame" x="0.0" y="0.0" width="277" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="277" height="15"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyJ-Wo-8VT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="17"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="15"/>
+                                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목욕" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LER-zY-md6">
-                                                        <rect key="frame" x="72" y="0.0" width="61" height="17"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                        <rect key="frame" x="72" y="0.0" width="61" height="15"/>
+                                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="약" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svq-f7-rXG">
-                                                        <rect key="frame" x="144" y="0.0" width="61" height="17"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                        <rect key="frame" x="144" y="0.0" width="61" height="15"/>
+                                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="병원" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3U-ZT-Kfm">
-                                                        <rect key="frame" x="216" y="0.0" width="61" height="17"/>
-                                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                        <rect key="frame" x="216" y="0.0" width="61" height="15"/>
+                                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -293,7 +298,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="c9N-b6-LpS">
-                                                <rect key="frame" x="0.0" y="28" width="277" height="62.5"/>
+                                                <rect key="frame" x="0.0" y="26" width="277" height="62.5"/>
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zAa-rV-01v">
                                                         <rect key="frame" x="0.0" y="6" width="51" height="50.5"/>
@@ -341,7 +346,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vId-9K-gyO">
-                                        <rect key="frame" x="170.5" y="605.5" width="63" height="48"/>
+                                        <rect key="frame" x="170.5" y="604.5" width="63" height="48"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
                                         <state key="normal" title="NEXT">
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -379,7 +384,8 @@
                         <outlet property="isWalked" destination="zAa-rV-01v" id="esV-nd-msc"/>
                         <outlet property="isWashed" destination="i60-1u-5tf" id="ZcC-tR-PdZ"/>
                         <outlet property="medicine" destination="svq-f7-rXG" id="NWJ-kZ-vU8"/>
-                        <outlet property="nextBtn" destination="vId-9K-gyO" id="6oL-tK-ETs"/>
+                        <outlet property="nextBtn" destination="vId-9K-gyO" id="aqi-Ao-L3C"/>
+                        <outlet property="selectImgBtn" destination="KVY-sY-1OQ" id="7RX-xc-GhI"/>
                         <outlet property="showDate" destination="B8s-tr-XK4" id="tZx-RG-0Dp"/>
                         <outlet property="walk" destination="ZyJ-Wo-8VT" id="AFI-gh-DrN"/>
                         <outlet property="wash" destination="LER-zY-md6" id="Nlh-fi-MHP"/>
@@ -410,11 +416,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Write More!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-Pf-Lcx">
-                                        <rect key="frame" x="156" y="60" width="92" height="50"/>
+                                        <rect key="frame" x="160" y="60" width="84.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RCv-pS-GeN"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -460,6 +466,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="anX-Nl-4Uy"/>
                     <connections>
+                        <outlet property="doneBtn" destination="WRk-Wl-eqg" id="ytb-SE-p1C"/>
+                        <outlet property="firstLabel" destination="4x6-Pf-Lcx" id="tUT-K9-ISQ"/>
                         <outlet property="textField" destination="UDG-i0-VcE" id="XJW-6k-zdH"/>
                     </connections>
                 </viewController>

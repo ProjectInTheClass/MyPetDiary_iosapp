@@ -19,7 +19,7 @@ class AddDiaryViewController: UIViewController{
     let picker = UIImagePickerController()
     
     @IBOutlet weak var RecordWhatHappen: UILabel!
-    
+    @IBOutlet weak var selectImgBtn: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var isWalked: UISwitch! // 산책 스위치
@@ -132,7 +132,9 @@ class AddDiaryViewController: UIViewController{
     func fontChange() {
         showDate.font = UIFont(name: "SDSamliphopangcheBasic", size: 20)
         RecordWhatHappen.font = UIFont(name: "SDSamliphopangcheBasic", size: 15)
-}
+        selectImgBtn.titleLabel?.font = UIFont(name: "SDSamliphopangcheBasic", size: 15)
+        nextBtn.titleLabel?.font = UIFont(name: "SDSamliphopangcheBasic", size: 20)
+    }
     
     
     

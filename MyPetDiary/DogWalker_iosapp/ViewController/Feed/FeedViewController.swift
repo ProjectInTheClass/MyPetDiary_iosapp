@@ -56,6 +56,9 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     }
     
     func setCalendar(){ // 달력 기본 설정
+        calendarView.appearance.titleFont = UIFont(name: "Cafe24Oneprettynight", size: 14)
+        calendarView.appearance.weekdayFont = UIFont(name: "Cafe24Oneprettynight", size: 14)
+        calendarView.appearance.headerTitleFont = UIFont(name: "Cafe24Oneprettynight", size: 17)
         // 달력의 평일 날짜 색
         calendarView.appearance.titleDefaultColor = .black
         // 달력의 토,일 날짜 색
