@@ -43,6 +43,7 @@ class EditProfileViewController: UIViewController, UITextFieldDelegate {
     }
     // save 버튼 눌렀을 경우 디비저장 > 마이페이지로 넘어가기
     @IBAction func saveButtonAction(_ sender: Any) {}
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
            print("segue")
            return true
@@ -211,7 +212,7 @@ UINavigationControllerDelegate{
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             userImage.image = image
-            let size = CGSize(width: image.size.width * 0.05, height: image.size.height * 0.05)
+            let size = CGSize(width: image.size.width * 0.3, height: image.size.height * 0.3)
             let resizedImage = image.resizeImage(targetSize: size)
             photoData = resizedImage!.pngData() as NSData?
         }

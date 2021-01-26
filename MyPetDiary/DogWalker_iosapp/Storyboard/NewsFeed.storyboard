@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Today's PetD-->
+        <!--오늘의 펫디-->
         <scene sceneID="LQV-8S-sbB">
             <objects>
                 <tableViewController id="dj7-0e-Vpm" customClass="NewsFeedTableViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -100,7 +100,7 @@
                             <outlet property="delegate" destination="dj7-0e-Vpm" id="6Jx-bo-nvW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Today's PetD" id="U93-5C-Uik"/>
+                    <navigationItem key="navigationItem" title="오늘의 펫디" id="U93-5C-Uik"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZQ-74-Nkp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
