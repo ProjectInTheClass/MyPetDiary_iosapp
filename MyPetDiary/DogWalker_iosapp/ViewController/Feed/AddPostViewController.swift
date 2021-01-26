@@ -19,7 +19,9 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     let newsfeedDataModel = FirebaseNewsFeedDataModel.shared // newsfeed DB reference
     let petDStorage = PetDFirebaseStorage.shared // firebase storage reference
 
+    @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneBtn: UIButton!
     var receivedPostDate = ""
     var receivedImage = UIImageView() // 이전 페이지 선택이미지
     var receivedImageURL = "" // 이전 페이지 선택 이미지 파일 url
@@ -35,8 +37,13 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     let deviceToken = UserDefaults.standard.string(forKey: "token")! // 기기 토큰
     let formatter = DateFormatter()
 
-    @IBOutlet weak var testView: UIImageView!
+//    @IBOutlet weak var testView: UIImageView!
     
+    func fontChange() {
+        firstLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 20)
+        doneBtn.titleLabel?.font = UIFont(name: "SDSamliphopangcheBasic", size: 20)
+        textField.font = UIFont(name: "SDSamliphopangcheBasic", size: 15)
+    }
     // DONE 버튼 눌렀을 경우
     @IBAction func btnSave(_ sender: Any) {
         // 현재 날짜 가져오기
@@ -101,7 +108,7 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fontChange()
         // Do any additional setup after loading the view.
         // var receivedImage = UIImageView() // 이전 페이지 선택이미지
         //testView.image = receivedImage.image

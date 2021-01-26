@@ -36,6 +36,7 @@ class PostService {
             todayPost in
             // todayPost : 오늘 날짜의 게시물 전체 값(배열 형태)
             
+            print("todayPost:\(todayPost)")
             var postContent: String = "" // 받아올 내용
             var username: String = "" // 받아올 유저 이름
             var postImage: String = "" // 받아올 내용 이미지 다운로드 url
@@ -44,37 +45,46 @@ class PostService {
             
             var postCount: Int = 0
             
-            for index in todayPost {
-                if let postDetail = index as? Dictionary<String, String> {
-                    postContent = postDetail["post_content"] ?? ""
-                    username = postDetail["user_nickname"] ?? ""
-                    postImage = postDetail["post_image"] ?? ""
-                    profileImage = postDetail["user_profile"] ?? ""
-                    deviceToken = postDetail["device_token"] ?? ""
-                    
-                    self.petDStorage.getProfileImage(downloadURL: profileImage,
-                                                     username: username,
-                                                     content: postContent,
-                                                     completion: {
-                        profileUIImage, username, postContent in
+            if todayPost.count != 0 { // 오늘의 게시물이 있는 경우
+                for index in todayPost {
+                    if let postDetail = index as? Dictionary<String, String> {
+                        postContent = postDetail["post_content"] ?? ""
+                        username = postDetail["user_nickname"] ?? ""
                         postImage = postDetail["post_image"] ?? ""
-                        self.petDStorage.getTwoImage(downloadURL: postImage,
-                                                     profileImage: profileUIImage,
-                                                     username: username,
-                                                     content: postContent,
-                                                     completion: {
-                            contentUIImage,profileUIImage, username, postContent  in
-                            posts.append(Post(username: username,
-                                              profileImage: profileUIImage,
-                                              image: contentUIImage,
-                                              content: postContent))
-                            postCount += 1
-                            if postCount == todayPost.count {
-                                completion(posts)
-                            }
+                        profileImage = postDetail["user_profile"] ?? ""
+                        deviceToken = postDetail["device_token"] ?? ""
+                        
+                        self.petDStorage.getProfileImage(downloadURL: profileImage,
+                                                         username: username,
+                                                         content: postContent,
+                                                         completion: {
+                            profileUIImage, username, postContent in
+                            postImage = postDetail["post_image"] ?? ""
+                            self.petDStorage.getTwoImage(downloadURL: postImage,
+                                                         profileImage: profileUIImage,
+                                                         username: username,
+                                                         content: postContent,
+                                                         completion: {
+                                contentUIImage,profileUIImage, username, postContent  in
+                                posts.append(Post(username: username,
+                                                  profileImage: profileUIImage,
+                                                  image: contentUIImage,
+                                                  content: postContent))
+                                postCount += 1
+                                if postCount == todayPost.count {
+                                    completion(posts)
+                                }
+                            })
                         })
-                    })
+                    }
                 }
+            } else { // 오늘의 게시물이 없는 경우
+                posts = [Post]()
+                posts.append(Post(username: "",
+                                  profileImage: UIImage(named: "white"),
+                                  image: UIImage(named: "nothing"),
+                                  content: "오늘의 petD를 작성해보세요!"))
+                completion(posts)
             }
         })
     }

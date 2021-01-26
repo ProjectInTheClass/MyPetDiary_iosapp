@@ -37,6 +37,11 @@ class TodayMemoViewController: UIViewController {
         
     }
     
+    func fontChange() {
+        cellTitle.font = UIFont(name: "Cafe24Oneprettynight", size: 20)
+        memoContent.font = UIFont(name: "Cafe24Oneprettynight", size: 15)
+    }
+    
     // image 불러오기
     
     // memo 불러오기
@@ -45,7 +50,7 @@ class TodayMemoViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getCurrentDateTime()
-        
+        fontChange()
         // image 가져오기
         postDataModel
             .showUploadTimeFromDB(deviceToken: deviceToken, selectedDate: selectedDate, completion: {
