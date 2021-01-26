@@ -214,7 +214,8 @@ class PetDFirebaseStorage: NSObject {
     func getProfileImage(downloadURL: String,
                          username: String,
                          content: String,
-                         completion: @escaping (UIImage, String, String) -> Void) {
+                         updatedTime: String,
+                         completion: @escaping (UIImage, String, String, String) -> Void) {
         
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
@@ -225,11 +226,11 @@ class PetDFirebaseStorage: NSObject {
             // Uh-oh, an error occurred!
             print(error.localizedDescription)
             print("처리된 오류")
-            completion(UIImage(named:"kid-2")!, username, content)
+            completion(UIImage(named:"kid-2")!, username, content, updatedTime)
           } else {
             // Data for "images/island.jpg" is returned
             let downloadImage = UIImage(data: data!) ?? UIImage(named: "white")
-            completion(downloadImage!, username, content)
+            completion(downloadImage!, username, content, updatedTime)
           }
         }
     }
@@ -238,7 +239,8 @@ class PetDFirebaseStorage: NSObject {
                      profileImage: UIImage,
                      username: String,
                      content: String,
-                     completion: @escaping (UIImage, UIImage, String, String) -> Void) {
+                     updatedTime: String,
+                     completion: @escaping (UIImage, UIImage, String, String, String) -> Void) {
         
         // Create a reference from a Google Cloud Storage URI
         let gsReference = Storage.storage().reference(forURL: "\(downloadURL)")
@@ -250,7 +252,7 @@ class PetDFirebaseStorage: NSObject {
             print(error.localizedDescription)
           } else {
             let downloadImage = UIImage(data: data!) ?? UIImage(named: "white")
-            completion(downloadImage!,profileImage, username, content)
+            completion(downloadImage!,profileImage, username, content, updatedTime)
           }
         }
     }

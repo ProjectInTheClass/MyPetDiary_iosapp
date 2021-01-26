@@ -212,10 +212,20 @@ class FirebasePostDataModel: NSObject {
                             imgArr.append(post["post_image"] as! String)
                         }
                     }
+                    imgArr.sort(by: { lhs, rhs in
+                        if let ldic = lhs as? String,
+                           let rdic = rhs as? String,
+                           let lup = ldic as? String,
+                           let rup = rdic as? String{
+                            return lup > rup
+                        } else {
+                            return false
+                        }
+                    })
                     completion(imgArr)
                 }
             } else {
-                completion(imgArr)
+                completion(imgArr) // 사용자의 이미지에 아무것도 없을 때
             }
         }) { (error) in
             print(error.localizedDescription)
