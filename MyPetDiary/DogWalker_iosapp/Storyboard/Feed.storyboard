@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--DIARY-->
+        <!--일기-->
         <scene sceneID="n75-gN-yJp">
             <objects>
                 <viewController storyboardIdentifier="MainFeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AjM-WY-uif" customClass="FeedViewController" customModule="DogWalker_iosapp" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="DIARY" id="bXY-3X-Y5q">
+                    <navigationItem key="navigationItem" title="일기" id="bXY-3X-Y5q">
                         <barButtonItem key="rightBarButtonItem" title="addPost" id="t0p-s8-Olf">
                             <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
                             <color key="tintColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -219,10 +219,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CCF-Sw-oSx">
-                                        <rect key="frame" x="94.5" y="52.5" width="215.5" height="61.5"/>
+                                        <rect key="frame" x="138.5" y="52.5" width="127.5" height="61.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8s-tr-XK4">
-                                                <rect key="frame" x="58" y="0.0" width="99.5" height="40"/>
+                                                <rect key="frame" x="14" y="0.0" width="99.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3ig-QF-Jgf"/>
                                                 </constraints>
@@ -231,8 +231,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHJ-TS-Ydl">
-                                                <rect key="frame" x="0.0" y="40" width="215.5" height="21.5"/>
-                                                <string key="text">Record what happened today!
+                                                <rect key="frame" x="0.0" y="40" width="127.5" height="21.5"/>
+                                                <string key="text">오늘을 기록해보세요!
 </string>
                                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -252,9 +252,9 @@
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVY-sY-1OQ">
-                                        <rect key="frame" x="156" y="398.5" width="92" height="33"/>
+                                        <rect key="frame" x="166.5" y="398.5" width="71" height="33"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
-                                        <state key="normal" title="select image">
+                                        <state key="normal" title="사진 추가">
                                             <color key="titleColor" red="0.84278053050000001" green="0.37019831219999999" blue="0.45320882600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -346,9 +346,9 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vId-9K-gyO">
-                                        <rect key="frame" x="170.5" y="604.5" width="63" height="48"/>
+                                        <rect key="frame" x="180" y="604.5" width="44" height="48"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
-                                        <state key="normal" title="NEXT">
+                                        <state key="normal" title="다음">
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -415,8 +415,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Write More!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-Pf-Lcx">
-                                        <rect key="frame" x="160" y="60" width="84.5" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="더 기록해 보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x6-Pf-Lcx">
+                                        <rect key="frame" x="138" y="60" width="128.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RCv-pS-GeN"/>
                                         </constraints>
@@ -436,9 +436,9 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-Wl-eqg">
-                                        <rect key="frame" x="168.5" y="390" width="67" height="48"/>
+                                        <rect key="frame" x="180" y="390" width="44" height="48"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="25"/>
-                                        <state key="normal" title="DONE">
+                                        <state key="normal" title="등록">
                                             <color key="titleColor" red="0.49242231580000001" green="0.22164211019999999" blue="0.27268387420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>

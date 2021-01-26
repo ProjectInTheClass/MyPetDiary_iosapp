@@ -148,7 +148,7 @@
             </objects>
             <point key="canvasLocation" x="6212" y="2127"/>
         </scene>
-        <!--MY PAGE-->
+        <!--내 정보-->
         <scene sceneID="fLB-as-Mxa">
             <objects>
                 <viewController storyboardIdentifier="MyPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pPF-M3-KVU" customClass="MyPageViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,7 +284,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle.fill" id="5Bt-xN-1pG"/>
-                    <navigationItem key="navigationItem" title="MY PAGE" id="78w-aa-ToU">
+                    <navigationItem key="navigationItem" title="내 정보" id="78w-aa-ToU">
                         <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="Zcd-VF-0qD">
                             <color key="tintColor" red="0.7809281012" green="0.35974349999999999" blue="0.49855727010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -386,7 +386,7 @@
                             <outlet property="delegate" destination="GeC-B7-BW7" id="MBB-Go-lJV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="vBu-Gj-REV"/>
+                    <navigationItem key="navigationItem" title="설정" id="vBu-Gj-REV"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="settingTableView" destination="NEW-Sc-qu3" id="zZ9-GT-qZP"/>
