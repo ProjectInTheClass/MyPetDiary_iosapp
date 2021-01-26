@@ -1,0 +1,45 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "6nj-AP-lU3"; */
+"6nj-AP-lU3.title" = "Item";
+
+/* Class = "UILabel"; text = "펫 다이어리 : 펫디를 소개합니다"; ObjectID = "9W6-DC-PoM"; */
+"9W6-DC-PoM.text" = "Introducing Pet Diary : PetD";
+
+/* Class = "UILabel"; text = "하나."; ObjectID = "AfY-PF-lnQ"; */
+"AfY-PF-lnQ.text" = "First.";
+
+/* Class = "UILabel"; text = "둘."; ObjectID = "LSV-CC-QS1"; */
+"LSV-CC-QS1.text" = "Second.";
+
+/* Class = "UITabBarItem"; title = "News Feed"; ObjectID = "MBf-My-Oil"; */
+"MBf-My-Oil.title" = "News Feed";
+
+/* Class = "UIButton"; normalTitle = "시작하기"; ObjectID = "MmE-Y6-K3K"; */
+"MmE-Y6-K3K.normalTitle" = "START!";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "RHr-al-OxM"; */
+"RHr-al-OxM.title" = "Item";
+
+/* Class = "UILabel"; text = "자! 그럼 시작해볼까요?"; ObjectID = "Tuv-Ya-aQA"; */
+"Tuv-Ya-aQA.text" = "Then shall we begin?";
+
+/* Class = "UILabel"; text = "계속하시려면 옆으로 넘겨주세요"; ObjectID = "hle-6b-z4T"; */
+"hle-6b-z4T.text" = "Please swipe to the right to continue.";
+
+/* Class = "UILabel"; text = "닉네임을 입력하고 펫디를 시작해 보세요😆"; ObjectID = "i9J-Kv-veS"; */
+"i9J-Kv-veS.text" = "Enter your nickname and start PetD😆";
+
+/* Class = "UITextField"; placeholder = "닉네임을 입력해 주세요"; ObjectID = "nts-ok-BHG"; */
+"nts-ok-BHG.placeholder" = "Please enter your nickname";
+
+/* Class = "UILabel"; text = "반갑습니다😀"; ObjectID = "oop-SA-OWG"; */
+"oop-SA-OWG.text" = "Nice to meet you😀";
+
+/* Class = "UILabel"; text = "반려동물과의 하루를 기록해보세요🐶"; ObjectID = "qqI-ve-FND"; */
+"qqI-ve-FND.text" = "Record a day with your pet🐶";
+
+/* Class = "UIButton"; normalTitle = "START"; ObjectID = "sBC-UQ-7Z8"; */
+"sBC-UQ-7Z8.normalTitle" = "START";
+
+/* Class = "UILabel"; text = "다른 사람들과 하루를 공유하세요👩🏻‍🤝‍👨🏼"; ObjectID = "vMU-GI-zli"; */
+"vMU-GI-zli.text" = "Share your day with others👩🏻‍🤝‍👨🏼";
