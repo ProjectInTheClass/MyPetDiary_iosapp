@@ -44,7 +44,19 @@ class FirebaseNewsFeedDataModel: NSObject {
                         if let news = index.value as? Dictionary<String, Any> {
                             todayPost.append(news)
                             postCount += 1
-                            if postCount == value.count { completion(todayPost) }
+                            if postCount == value.count {
+                                todayPost.sort(by: { lhs, rhs in
+                                    if let ldic = lhs as? Dictionary<String, Any>,
+                                       let rdic = rhs as? Dictionary<String, Any>,
+                                       let lup = ldic["post_updated_date"] as? String,
+                                       let rup = rdic["post_updated_date"] as? String{
+                                        return lup > rup
+                                    } else {
+                                        return false
+                                    }
+                                })
+                                completion(todayPost)
+                            }
                         }
                     }
                 }
