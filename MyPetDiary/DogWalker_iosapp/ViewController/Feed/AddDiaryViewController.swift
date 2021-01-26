@@ -172,6 +172,18 @@ class AddDiaryViewController: UIViewController{
                 self.isWashed.isOn = washDB
                 self.isMedicine.isOn = medicineDB
                 self.isHospital.isOn = hospitalDB
+                if walkDB == true{
+                    self.walk.text = "산책🙆🏻‍♀️"
+                }
+                if washDB == true{
+                    self.wash.text = "목욕🙆🏻‍♀️"
+                }
+                if medicineDB == true{
+                    self.medicine.text = "약🙆🏻‍♀️"
+                }
+                if hospitalDB == true{
+                    self.hospital.text = "병원🙆🏻‍♀️"
+                }
             }
         })
         
