@@ -213,6 +213,10 @@ class AddDiaryViewController: UIViewController{
             alert.addAction(library)
             alert.addAction(camera)
             alert.addAction(cancel)
+            if let popoverController = alert.popoverPresentationController {
+                popoverController.sourceView = sender as? UIView
+                popoverController.sourceRect = (sender as AnyObject).bounds
+            }
             present(alert, animated: true, completion: nil)
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({ state in
@@ -221,9 +225,17 @@ class AddDiaryViewController: UIViewController{
                         alert.addAction(library)
                         alert.addAction(camera)
                         alert.addAction(cancel)
+                        if let popoverController = alert.popoverPresentationController {
+                            popoverController.sourceView = sender as? UIView
+                            popoverController.sourceRect = (sender as AnyObject).bounds
+                        }
                         self.present(alert, animated: true, completion: nil)
                     }
                 }else{
+                    if let popoverController = alert.popoverPresentationController {
+                        popoverController.sourceView = sender as? UIView
+                        popoverController.sourceRect = (sender as AnyObject).bounds
+                    }
                     self.dismiss(animated: true, completion: nil)
                 }
             })
