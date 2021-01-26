@@ -17,10 +17,10 @@ class PostCell: UITableViewCell
     var post: Post!{
         didSet {
             updateUI()
-            usernameLabel.text = "내용없음"
-            profileImageView.image = UIImage(named: "kid-2")
-            postImageView.image = UIImage(named: "kid-2")
-            showContentTextView.text = "콘텐츠 내용 없음"
+//            usernameLabel.text = nil
+//            profileImageView.image = UIImage(named: "white")
+//            postImageView.image = UIImage(named: "white")
+//            showContentTextView.text = nil
         }
     }
     func imageCircle(){
