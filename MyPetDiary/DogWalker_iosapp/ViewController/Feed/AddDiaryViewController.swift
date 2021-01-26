@@ -279,7 +279,7 @@ UINavigationControllerDelegate{
             //
             //        print(resized?.size)
             imageView.image = image
-            let size = CGSize(width: image.size.width * 0.1, height: image.size.height * 0.1)
+            let size = CGSize(width: image.size.width * 0.3, height: image.size.height * 0.3)
             let resizedImage = image.resizeImage(targetSize: size)
             photoData = resizedImage!.pngData() as NSData?
         }
