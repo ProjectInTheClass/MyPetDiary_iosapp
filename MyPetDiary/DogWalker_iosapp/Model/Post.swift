@@ -83,7 +83,7 @@ class PostService {
                 posts.append(Post(username: "",
                                   profileImage: UIImage(named: "white"),
                                   image: UIImage(named: "nothing"),
-                                  content: "오늘의 petD가 없습니다. 오늘의 petD를 작성하고 사람들과 공유해보세요!"))
+                                  content: "오늘의 petD를 작성해보세요!"))
                 print(posts)
                 completion(posts)
             }

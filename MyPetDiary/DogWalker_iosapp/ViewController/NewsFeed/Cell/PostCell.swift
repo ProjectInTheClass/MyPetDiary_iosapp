@@ -17,10 +17,13 @@ class PostCell: UITableViewCell
     var post: Post!{
         didSet {
             updateUI()
+<<<<<<< Updated upstream
 //            usernameLabel.text = nil
 //            profileImageView.image = UIImage(named: "white")
 //            postImageView.image = UIImage(named: "white")
 //            showContentTextView.text = nil
+=======
+>>>>>>> Stashed changes
         }
     }
     func imageCircle(){
