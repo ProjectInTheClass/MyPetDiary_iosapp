@@ -29,7 +29,7 @@ class NewsFeedTableViewController: UITableViewController {
         fetchPosts()
         initRefresh()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         //super.viewWillAppear(true)
         fetchPosts()

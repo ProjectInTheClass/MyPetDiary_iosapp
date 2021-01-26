@@ -37,20 +37,19 @@ class FirebaseNewsFeedDataModel: NSObject {
         
         newsfeedRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.exists() { // 오늘의 게시물이 있다면
-                if let value = snapshot.value as? Dictionary<String, Any> {
+                //if let value = snapshot.value as? Dictionary<String, Any> {
+                if let value = snapshot.children.allObjects as? [DataSnapshot] {
                     var postCount: Int = 0
                     for index in value {
                         if let news = index.value as? Dictionary<String, Any> {
-                            //print("news:\(news)")
                             todayPost.append(news)
                             postCount += 1
-                            //print("todaysPost:\(todayPost)")
                             if postCount == value.count { completion(todayPost) }
                         }
                     }
                 }
             } else { // 오늘의 게시물이 아무것도 없음
-                
+                completion(todayPost)
             }
         })
     }
