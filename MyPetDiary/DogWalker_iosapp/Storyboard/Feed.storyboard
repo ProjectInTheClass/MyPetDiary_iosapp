@@ -132,7 +132,7 @@
                 <tapGestureRecognizer id="6q8-WL-WCL">
                     <connections>
                         <action selector="showPostTapGesture:" destination="AjM-WY-uif" id="lPP-sF-Bhv"/>
-                        <segue destination="uCq-ng-aoP" kind="presentation" identifier="ShowSubSegue" id="hdl-dO-nrq"/>
+                        <segue destination="uCq-ng-aoP" kind="showDetail" identifier="ShowSubSegue" id="3TI-sf-rha"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -188,6 +188,7 @@
                             <constraint firstItem="vAs-7h-VGR" firstAttribute="bottom" secondItem="paG-Mi-Rmr" secondAttribute="bottom" constant="100" id="tZa-Xe-BlH"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nKv-Ke-Djj"/>
                     <connections>
                         <outlet property="cellTitle" destination="hpF-ni-4WZ" id="IKX-JW-TM3"/>
                         <outlet property="memoContent" destination="UAh-Sh-2UX" id="cpm-9u-RHL"/>
