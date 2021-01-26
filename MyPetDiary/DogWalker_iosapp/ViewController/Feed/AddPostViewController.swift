@@ -36,8 +36,6 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
     var current_date_string: String = "" // 현재 시각
     let deviceToken = UserDefaults.standard.string(forKey: "token")! // 기기 토큰
     let formatter = DateFormatter()
-
-//    @IBOutlet weak var testView: UIImageView!
     
     func fontChange() {
         firstLabel.font = UIFont(name: "SDSamliphopangcheBasic", size: 20)
@@ -111,7 +109,6 @@ class AddPostViewController: UIViewController, UITextFieldDelegate {
         fontChange()
         // Do any additional setup after loading the view.
         // var receivedImage = UIImageView() // 이전 페이지 선택이미지
-        //testView.image = receivedImage.image
         print("산책 스위치 확인: \(receivedWalkSwitch)")
         print("목욕 스위치 확인: \(receivedWashSwitch)")
         print("약 스위치 확인: \(receivedMedicineSwitch)")
