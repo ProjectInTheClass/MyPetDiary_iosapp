@@ -54,7 +54,7 @@
                                         <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Lxk-0n-prS">
                                             <rect key="frame" x="20" y="445.5" width="374" height="50"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-Ba-frz">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="내용" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUC-Ba-frz">
                                                     <rect key="frame" x="2" y="2" width="370" height="46"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
