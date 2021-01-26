@@ -40,14 +40,33 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
     // tab하면 화면 넘어가기
     @IBAction func showPostTapGesture(_ sender: Any) {
     }
+    
+    @objc func goPage(sender:UIGestureRecognizer) {
+        postDataModel
+            .showSwitchFromDB(deviceToken: deviceToken, selectedDate: selectedDateString, completion: {
+            walkDB, washDB, medicineDB, hospitalDB, nothing in
+                let storyboard  = UIStoryboard(name: "Feed", bundle: nil)
+                if nothing{
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TdMemoViewController") as? TodayMemoViewController else { return }
+                    vc.selectedDate = self.selectedDateString
+                    self.present(vc, animated: true, completion: nil)
+//                    self.navigationController!.pushViewController(vc, animated: true)
+                }else{
+                    guard let tvc = self.storyboard?.instantiateViewController(withIdentifier: "FirstAddViewController") as? AddDiaryViewController else { return }
+                    tvc.selectedDate = self.selectedDateString
+                    self.navigationController!.pushViewController(tvc, animated: true)
+                }
+            })
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        if segue.identifier == "ShowSubSegue" {
-            guard let TodayMemoViewController = segue.destination as? TodayMemoViewController else {return}
-            TodayMemoViewController.selectedDate = self.selectedDateString
-        } else if segue.identifier == "AddPostSegue" {
-            guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
-            AddDiaryViewController.selectedDate = self.selectedDateString
-        }
+//        if segue.identifier == "ShowSubSegue" {
+//            guard let TodayMemoViewController = segue.destination as? TodayMemoViewController else {return}
+////            TodayMemoViewController.selectedDate = self.selectedDateString
+//        } else if segue.identifier == "AddPostSegue" {
+        guard let AddDiaryViewController = segue.destination as? AddDiaryViewController else {return}
+        AddDiaryViewController.selectedDate = self.selectedDateString
+//        }
     }
  
     // 오늘날짜!
@@ -240,6 +259,9 @@ class FeedViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSo
         print("viewDidLoad")
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // Touch Event 등록 후 함수를 연동한다. (goPage)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(FeedViewController.goPage(sender:)))
+        self.subPostView.addGestureRecognizer(gesture)
 
         todayDateFirst()
         getDB()

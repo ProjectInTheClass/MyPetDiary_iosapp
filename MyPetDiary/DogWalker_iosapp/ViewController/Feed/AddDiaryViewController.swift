@@ -279,7 +279,7 @@ class AddDiaryViewController: UIViewController{
         
         // AddPostViewController로 타입캐스팅
         // 캐스팅시에는 항상 실패할 상황을 염두하여 옵셔널 바인딩을 해준다.
-        guard let nextViewController = destView as? AddPostViewController else {
+        guard destView is AddPostViewController else {
             return
         }
         

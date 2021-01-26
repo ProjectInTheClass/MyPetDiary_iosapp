@@ -132,7 +132,6 @@
                 <tapGestureRecognizer id="6q8-WL-WCL">
                     <connections>
                         <action selector="showPostTapGesture:" destination="AjM-WY-uif" id="lPP-sF-Bhv"/>
-                        <segue destination="uCq-ng-aoP" kind="showDetail" identifier="ShowSubSegue" id="6dM-bX-rG6"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -143,11 +142,11 @@
             <objects>
                 <viewController storyboardIdentifier="TdMemoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uCq-ng-aoP" customClass="TodayMemoViewController" customModule="DogWalker_iosapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IHb-xd-dWE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="paG-Mi-Rmr">
-                                <rect key="frame" x="30" y="50" width="354" height="658"/>
+                                <rect key="frame" x="30" y="94" width="354" height="668"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020.01.12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpF-ni-4WZ">
                                         <rect key="frame" x="126" y="0.0" width="102" height="28.5"/>
@@ -164,7 +163,7 @@
                                         </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="오늘의 일기를 작성해 주세요😀" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UAh-Sh-2UX">
-                                        <rect key="frame" x="52" y="338.5" width="250" height="319.5"/>
+                                        <rect key="frame" x="52" y="338.5" width="250" height="329.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>

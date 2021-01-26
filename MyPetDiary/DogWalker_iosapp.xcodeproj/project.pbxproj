@@ -24,7 +24,6 @@
 		47FAB62525AF5343005BEBAF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62425AF5343005BEBAF /* PostCell.swift */; };
 		47FAB62825AF53D0005BEBAF /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */; };
 		47FD397E25BAC8710062CBAB /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD397D25BAC8710062CBAB /* PageViewController.swift */; };
-		47FD39DC25BBDB850062CBAB /* SDSamliphopangcheOutline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */; };
 		47FD39DF25BBDB900062CBAB /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */; };
 		47FD39E225BBDC9E0062CBAB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FD39E125BBDC9E0062CBAB /* IntroViewController.swift */; };
 		76005365259DB48B0058F313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76005364259DB48B0058F313 /* AppDelegate.swift */; };
@@ -69,7 +68,6 @@
 		47FAB62425AF5343005BEBAF /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		47FAB62725AF53D0005BEBAF /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
 		47FD397D25BAC8710062CBAB /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SDSamliphopangcheOutline.otf; sourceTree = "<group>"; };
 		47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
 		47FD39E125BBDC9E0062CBAB /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		5F3146EC17AD24BC32DC027B /* Pods-DogWalker_iosapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DogWalker_iosapp.release.xcconfig"; path = "Target Support Files/Pods-DogWalker_iosapp/Pods-DogWalker_iosapp.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 			children = (
 				475BB55925BCFB1000934A43 /* SDSamliphopangcheBasic.otf */,
 				47FD39DE25BBDB900062CBAB /* Cafe24Oneprettynight.ttf */,
-				47FD39DB25BBDB850062CBAB /* SDSamliphopangcheOutline.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -351,7 +348,6 @@
 				47C846BD25A44E39005DAB89 /* NewsFeed.storyboard in Resources */,
 				7600536E259DB48C0058F313 /* Assets.xcassets in Resources */,
 				7600538C259DF1DD0058F313 /* Feed.storyboard in Resources */,
-				47FD39DC25BBDB850062CBAB /* SDSamliphopangcheOutline.otf in Resources */,
 				7600536C259DB48B0058F313 /* Main.storyboard in Resources */,
 				05FA7B1C25A7227C00E4A253 /* GoogleService-Info.plist in Resources */,
 			);
