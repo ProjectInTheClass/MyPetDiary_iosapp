@@ -78,10 +78,8 @@ class PostService {
                                 postCount += 1
                                 if postCount == todayPost.count {
                                     posts.sort(by: { lhs, rhs in
-                                        if let ldic = lhs as? Dictionary<String, Any>,
-                                           let rdic = rhs as? Dictionary<String, Any>,
-                                           let lup = ldic["post_updated_date"] as? String,
-                                           let rup = rdic["post_updated_date"] as? String{
+                                         if let lup = lhs.updatedTime,
+                                            let rup = rhs.updatedTime {
                                             return lup > rup
                                         } else {
                                             return false
