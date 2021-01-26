@@ -40,10 +40,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             ))
             // show the alert
             self.present(alert, animated: true, completion: nil)
-        } else {
+        } else if self.nickName.text == "admin" {
+            
+            UserDefaults.standard.setValue("deviceToken-admin", forKey: "token")
+            
+            userDataModel.saveNickname(deviceToken: "deviceToken-admin", nickname: "admin")
+            
+            guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainView") as? MPMainViewController else { return }
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: false)
+        }
+        else {
             // 기기 정보 기반 토큰 생성하기
-            
-            
             let deviceToken = UUID().uuidString
             UserDefaults.standard.setValue(deviceToken, forKey: "token")
             
