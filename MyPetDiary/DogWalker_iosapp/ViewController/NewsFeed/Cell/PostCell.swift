@@ -14,16 +14,13 @@ class PostCell: UITableViewCell
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var showContentTextView: UITextView!
     
-    func setDefault() {
-        usernameLabel.text = "내용 없음"
-        profileImageView.image = UIImage(named: "kid-2")
-        postImageView.image = UIImage(named: "kid-2")
-        showContentTextView.text = "내용 없음"
-    }
-    
     var post: Post!{
         didSet {
             updateUI()
+            usernameLabel.text = "내용없음"
+            profileImageView.image = UIImage(named: "kid-2")
+            postImageView.image = UIImage(named: "kid-2")
+            showContentTextView.text = "콘텐츠 내용 없음"
         }
     }
     func imageCircle(){
