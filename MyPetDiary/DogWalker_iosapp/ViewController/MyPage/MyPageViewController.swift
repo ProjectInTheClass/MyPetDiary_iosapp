@@ -89,7 +89,6 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
             self.petDStorage.showImageArray(allImage: allImage, completion: { newImage in
                 self.images = newImage
                 self.collectionV.reloadData()
-                print("MY PICTURE")
             })
         })
     }
