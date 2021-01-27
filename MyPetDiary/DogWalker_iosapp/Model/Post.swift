@@ -46,6 +46,8 @@ class PostService {
             
             var postCount: Int = 0
             
+            var serverflag: Int = 0 // 서버 확인용 flag
+            
             if todayPost.count != 0 { // 오늘의 게시물이 있는 경우
                 for index in todayPost {
                     if let postDetail = index as? Dictionary<String, String> {
@@ -76,6 +78,7 @@ class PostService {
                                                   content: postContent,
                                                   updatedTime: updatedTime))
                                 postCount += 1
+                                                            serverflag += 1
                                 if postCount == todayPost.count {
                                     posts.sort(by: { lhs, rhs in
                                          if let lup = lhs.updatedTime,
@@ -85,17 +88,19 @@ class PostService {
                                             return false
                                         }
                                     })
+                                    if serverflag == 0 {
+                                        // 서버 초과되서 안나올 경우
+                                        posts = [Post]()
+                                        posts.append(Post(username: "",
+                                                          profileImage: UIImage(named: "white"),
+                                                          image: UIImage(named: "server"),
+                                                          content: ""))
+                                        completion(posts)
+                                    }
                                     completion(posts)
                                 }
                             })
                         })
-                        // 서버 초과되서 안나올 경우
-                        posts = [Post]()
-                        posts.append(Post(username: "",
-                                          profileImage: UIImage(named: "white"),
-                                          image: UIImage(named: "server"),
-                                          content: ""))
-                        completion(posts)
                     }
                 }
             } else { // 오늘의 게시물이 없는 경우
