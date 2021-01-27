@@ -24,10 +24,10 @@
 ## ⚙️ 개발환경 및 사용한 라이브러리
 
 <p>
-<img src="https://img.shields.io/badge/swift-5.3.2-white">
-<img src="https://img.shields.io/badge/Xcode-12.3-white">
+<img src="https://img.shields.io/badge/swift-5.3.2-orange">
+<img src="https://img.shields.io/badge/Xcode-12.3-blue">
 <img src="https://img.shields.io/badge/CocoaPods-1.10.0-white">
-<img src="https://img.shields.io/badge/firebase-7.3.0-white">
+<img src="https://img.shields.io/badge/firebase-7.3.0-yellow">
 </p>
 
 <br>
