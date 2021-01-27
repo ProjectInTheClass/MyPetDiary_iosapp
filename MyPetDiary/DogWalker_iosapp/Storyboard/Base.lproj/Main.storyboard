@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24Oneprettynight.ttf">
+            <string>Cafe24Oneprettynight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="hkY-9E-m9u">
@@ -247,6 +252,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="❗️이 어플리케이션은 다른 사용자와 사진 및 게시글을 공유합니다. 동의하시면 시작해주세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUd-t5-yUg">
+                                <rect key="frame" x="59.5" y="332.5" width="295.5" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자! 그럼 시작해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tuv-Ya-aQA">
                                 <rect key="frame" x="130" y="438" width="154.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -268,6 +279,8 @@
                         <color key="backgroundColor" red="1" green="0.92185130770922996" blue="0.97964036430192902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Tuv-Ya-aQA" firstAttribute="centerX" secondItem="Uz7-sY-AlE" secondAttribute="centerX" id="Alh-tg-REv"/>
+                            <constraint firstItem="IUd-t5-yUg" firstAttribute="centerX" secondItem="Uz7-sY-AlE" secondAttribute="centerX" id="Cjf-0y-vKv"/>
+                            <constraint firstItem="Tuv-Ya-aQA" firstAttribute="top" secondItem="IUd-t5-yUg" secondAttribute="bottom" constant="80" id="Pv4-Bi-JT4"/>
                             <constraint firstItem="Tuv-Ya-aQA" firstAttribute="centerY" secondItem="Uz7-sY-AlE" secondAttribute="centerY" id="YJ6-c4-Rgg"/>
                             <constraint firstItem="MmE-Y6-K3K" firstAttribute="centerX" secondItem="Uz7-sY-AlE" secondAttribute="centerX" id="rpk-Mu-5gX"/>
                             <constraint firstItem="MmE-Y6-K3K" firstAttribute="top" secondItem="Tuv-Ya-aQA" secondAttribute="bottom" constant="100" id="zi9-sK-28v"/>
@@ -280,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtW-jX-Dh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559" y="121"/>
+            <point key="canvasLocation" x="-559.4202898550725" y="120.53571428571428"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.17128748469999999" alpha="1" colorSpace="calibratedWhite"/>
