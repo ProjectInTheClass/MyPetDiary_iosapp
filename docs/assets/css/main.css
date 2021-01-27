@@ -3958,3 +3958,27 @@ body.is-preload #sidebar nav ul li {
     background-attachment: scroll;
   }
 }
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+.text-center {
+  text-align: center !important;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+}
+.col-md-4 {
+  position: relative;
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+.col-md-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+}
