@@ -4028,6 +4028,9 @@ h4,
   margin-inline-end: 0px;
 }
 
+.text-primary {
+  color: #dfcebd !important;
+}
 .text-muted {
   color: #6c757d !important;
 }
