@@ -3982,3 +3982,61 @@ svg {
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
 }
+
+.container {
+  max-width: 1140px;
+}
+
+.page-section {
+  padding: 6rem 0;
+}
+.page-section h2.section-heading {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.page-section h3.section-subheading {
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-bottom: 4rem;
+}
+.text-uppercase {
+  text-transform: capitalize !important;
+}
+
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-3,
+.my-3 {
+  margin-top: 1rem !important;
+}
+h4,
+.h4 {
+  font-size: 1.5rem;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+p {
+  line-height: 1.75;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
