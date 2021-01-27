@@ -89,6 +89,13 @@ class PostService {
                                 }
                             })
                         })
+                        // 서버 초과되서 안나올 경우
+                        posts = [Post]()
+                        posts.append(Post(username: "",
+                                          profileImage: UIImage(named: "white"),
+                                          image: UIImage(named: "server"),
+                                          content: ""))
+                        completion(posts)
                     }
                 }
             } else { // 오늘의 게시물이 없는 경우
