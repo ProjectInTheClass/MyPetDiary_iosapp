@@ -209,7 +209,7 @@ body,
 input,
 select,
 textarea {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(0, 0, 0, 0.55);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16.5pt;
   font-weight: normal;
@@ -279,7 +279,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
   line-height: 1.5;
   margin: 0 0 0.5em 0;
@@ -1932,7 +1932,7 @@ button,
   border: solid 1px !important;
   border-color: rgba(255, 255, 255, 0.15) !important;
   border-radius: 3em;
-  color: #ffffff !important;
+  color: #000000 !important;
   cursor: pointer;
   display: inline-block;
   font-size: 1em;
@@ -1963,7 +1963,7 @@ button:after,
   -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
   -ms-transition: opacity 0.2s ease, -ms-transform 0.2s ease;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  background: #ffffff;
+  background: #000000;
   border-radius: 3em;
   content: "";
   height: 100%;
@@ -2011,7 +2011,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #ffffff;
+  background-color: #000000;
   color: #312450 !important;
 }
 
@@ -2063,7 +2063,7 @@ input[type="reset"]:hover:active,
 input[type="button"]:hover:active,
 button:hover:active,
 .button:hover:active {
-  border-color: #ffffff !important;
+  border-color: #000000 !important;
 }
 
 input[type="submit"]:hover:active:after,
@@ -2385,7 +2385,7 @@ form > .fields > .field.quarter {
 }
 
 label {
-  color: #ffffff;
+  color: #000000;
   font-weight: bold;
   line-height: 1.5;
   margin: 0 0 0.7em 0;
@@ -2430,8 +2430,8 @@ input[type="email"]:focus,
 input[type="tel"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #ffffff;
-  box-shadow: 0 0 0 1px #ffffff;
+  border-color: #000000;
+  box-shadow: 0 0 0 1px #000000;
 }
 
 select {
@@ -2445,7 +2445,7 @@ select {
 }
 
 select option {
-  color: #ffffff;
+  color: #000000;
   background: #312450;
 }
 
@@ -2626,27 +2626,27 @@ input[type="radio"] + label:before {
 }
 
 .wrapper.style1 .icon.major:before {
-  color: #5e42a6;
+  color: #2c2104;
 }
 
 .wrapper.style1-alt .icon.major:before {
-  color: #493382;
+  color: #2c2104;
 }
 
 .wrapper.style2 .icon.major:before {
-  color: #5052b5;
+  color: #2c2104;
 }
 
 .wrapper.style2-alt .icon.major:before {
-  color: #3e4094;
+  color: #2c2104;
 }
 
 .wrapper.style3 .icon.major:before {
-  color: #b74e91;
+  color: #2c2104;
 }
 
 .wrapper.style3-alt .icon.major:before {
-  color: #953d75;
+  color: #2c2104;
 }
 
 /* Image */
@@ -3092,7 +3092,7 @@ body.is-ie .spotlights > section {
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #9850ff;
+  background-color: #faffae;
 
   border-radius: 0;
   display: block;
@@ -3110,7 +3110,7 @@ body.is-ie .spotlights > section {
   -webkit-transition: opacity 1s ease;
   -ms-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background: rgba(49, 36, 80, 0.9);
+  background: rgba(167, 158, 131, 0.9);
   content: "";
   display: block;
   height: 100%;
@@ -3240,7 +3240,7 @@ table td {
 }
 
 table th {
-  color: #ffffff;
+  color: #000000;
   font-size: 1em;
   font-weight: bold;
   padding: 0 0.75em 0.75em 0.75em;
@@ -3312,31 +3312,31 @@ table.alt tfoot {
 }
 
 .wrapper.alt {
-  background-color: #261c3e;
+  background-color: #ffffff;
 }
 
 .wrapper.style1 {
-  background-color: #5e42a6;
+  background-color: #ffffff;
 }
 
 .wrapper.style1-alt {
-  background-color: #493382;
+  background-color: #ffffff;
 }
 
 .wrapper.style2 {
-  background-color: #5052b5;
+  background-color: #ffffff;
 }
 
 .wrapper.style2-alt {
-  background-color: #3e4094;
+  background-color: #ffffff;
 }
 
 .wrapper.style3 {
-  background-color: #b74e91;
+  background-color: #ffffff;
 }
 
 .wrapper.style3-alt {
-  background-color: #953d75;
+  background-color: #ffffff;
 }
 
 .wrapper.fullscreen {
@@ -3442,14 +3442,14 @@ body.is-preload .wrapper.fade > .inner {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  background-color: #5e42a6;
+  background-color: #f7edb5;
   cursor: default;
   padding: 1.75em 2em;
 }
 
 #header > .title {
   border: 0;
-  color: #ffffff;
+  color: #000000;
   display: block;
   font-size: 1.25em;
   font-weight: bold;
@@ -3494,7 +3494,7 @@ body.is-preload .wrapper.fade > .inner {
 }
 
 #header > nav > ul > li a.active {
-  color: #ffffff;
+  color: #000000;
 }
 
 @media screen and (max-width: 736px) {
@@ -3586,7 +3586,7 @@ body.is-preload .wrapper.fade > .inner {
 
 #sidebar {
   padding: 2.5em 2.5em 0.5em 2.5em;
-  background: #312450;
+  background: #2c2104;
   cursor: default;
   height: 100vh;
   left: 0;
@@ -3824,14 +3824,14 @@ body.is-ie #sidebar > .inner {
 }
 
 #sidebar nav a:before {
-  background: #3c2c62;
+  background: #2e210f;
 }
 
 #sidebar nav a:after {
-  background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-  background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-  background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-  background-image: linear-gradient(to right, #5e42a6, #b74e91);
+  background-image: -moz-linear-gradient(to right, #ffffff, #f7e47d);
+  background-image: -webkit-linear-gradient(to right, #ffffff, #f7e47d);
+  background-image: -ms-linear-gradient(to right, #ffffff, #f7e47d);
+  background-image: linear-gradient(to right, #ffffff, #f7e47d);
   -moz-transition: max-width 0.2s ease;
   -webkit-transition: max-width 0.2s ease;
   -ms-transition: max-width 0.2s ease;
@@ -3919,7 +3919,7 @@ body.is-preload #sidebar nav ul li {
 
   #sidebar nav a:after {
     background-image: none;
-    background-color: #b74e91;
+    background-color: #ffffff;
   }
 }
 
