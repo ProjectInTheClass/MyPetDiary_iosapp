@@ -18,7 +18,7 @@
 <br>
 <br>
 
-## ⚙️ 개발환경 및 사용한 라이브러리
+## ⚙️ IDE & Libraries
 
 <p>
 <img src="https://img.shields.io/badge/swift-5.3.2-orange">
@@ -30,7 +30,7 @@
 <br>
 <br>
 
-## 👩🏻‍💻 팀원
+## 👩🏻‍💻 Developers
 - 김경현 (@howard7221)
 - 이은영 (@eyl056)
 - 정지연 (@jiyeon1)
