@@ -14,11 +14,7 @@
 
 
 <br>
-
-## 펫디 상세화면
-
-<br>
-<br>
+<img width="1207" alt="스크린샷 2021-01-28 11 54 06" src="https://user-images.githubusercontent.com/48276522/106083685-40fcdc00-6160-11eb-8f3e-82e2e6e397f6.png">
 
 
 ## ⚙️ 개발환경 및 사용한 라이브러리
@@ -29,11 +25,6 @@
 <img src="https://img.shields.io/badge/CocoaPods-1.10.0-white">
 <img src="https://img.shields.io/badge/firebase-7.3.0-yellow">
 </p>
-
-<br>
-<br>
-
-## 앱 세부 기능
 
 <br>
 <br>
