@@ -2,7 +2,7 @@
 <h2 align="center"> 매일매일 기록하는 우리의 추억, 펫디 </h2>
 
 <h3 align="center">
-  <img width="170" alt="스크린샷 2021-01-28 12 04 36" src="https://user-images.githubusercontent.com/48276522/106084118-08113700-6161-11eb-9faf- 28f2285b0ebd.png">
+<img width="180" alt="스크린샷 2021-01-28 12 04 36" src="https://user-images.githubusercontent.com/48276522/106084340-8968c980-6161-11eb-93c9-abaa58370f7d.png">
 </h3>
 <br>
 <br>
