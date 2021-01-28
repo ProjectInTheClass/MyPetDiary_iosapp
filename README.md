@@ -2,7 +2,7 @@
 <h2 align="center"> 매일매일 기록하는 우리의 추억, 펫디 </h2>
 
 <h3 align="center">
-![IMG_FF0530C06EB6-1](https://user-images.githubusercontent.com/48276522/106083838-83261d80-6160-11eb-9f21-45ef55c702d9.jpeg)
+![IMG_FF0530C06EB6-1](https://user-images.githubusercontent.com/48276522/106083935-a9e45400-6160-11eb-9a5f-f865e3dfd87a.jpeg)
 <br>
 
 ### 반려동물과의 추억을 기록하고 사람들과 공유하는 어플리케이션
