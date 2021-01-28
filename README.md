@@ -2,9 +2,7 @@
 <h2 align="center"> 매일매일 기록하는 우리의 추억, 펫디 </h2>
 
 <h3 align="center">
-<img width="265" alt="mainscreen" src="https://user-images.githubusercontent.com/45346786/105955952-67683c00-60ba-11eb-95f0-ddcda809b475.png"> </h3>
-
-
+![IMG_FF0530C06EB6-1](https://user-images.githubusercontent.com/48276522/106083838-83261d80-6160-11eb-9f21-45ef55c702d9.jpeg)
 <br>
 
 ### 반려동물과의 추억을 기록하고 사람들과 공유하는 어플리케이션
@@ -12,11 +10,9 @@
 > <br> 하나. 반려동물과의 하루를 기록해보세요🐶
 > <br> 둘. 다른 사람들과 하루를 공유하세요👫
 
-
 <br>
 <img width="1207" alt="스크린샷 2021-01-28 11 54 06" src="https://user-images.githubusercontent.com/48276522/106083685-40fcdc00-6160-11eb-8f3e-82e2e6e397f6.png">
-
-
+<br>
 ## ⚙️ 개발환경 및 사용한 라이브러리
 
 <p>
@@ -28,7 +24,6 @@
 
 <br>
 <br>
-
 
 ## 팀원
 - 김경현 (@howard7221)
