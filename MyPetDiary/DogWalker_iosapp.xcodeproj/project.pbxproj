@@ -52,6 +52,7 @@
 /* Begin PBXFileReference section */
 		0519EFF325BB7D5A00FF3925 /* FirebaseNewsFeedDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNewsFeedDatabase.swift; sourceTree = "<group>"; };
 		0549476525B9656F00714492 /* FirebasePostDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePostDataModel.swift; sourceTree = "<group>"; };
+		0551FB3825C97D9400402FC7 /* DogWalker_iosapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DogWalker_iosapp.entitlements; sourceTree = "<group>"; };
 		05DA67FF25A87EFC000CE91D /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		05E0C1BA25B7FAA3009DB146 /* FirebaseUserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseUserDataModel.swift; sourceTree = "<group>"; };
 		05E0C1C425B7FAEC009DB146 /* MPMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPMainViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +203,7 @@
 		76005363259DB48B0058F313 /* DogWalker_iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				0551FB3825C97D9400402FC7 /* DogWalker_iosapp.entitlements */,
 				47FD39D925BBDB740062CBAB /* Fonts */,
 				7640D6A125AED23600A15B14 /* Model */,
 				7640D69925AECF2B00A15B14 /* Extension */,
@@ -579,6 +581,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DogWalker_iosapp/DogWalker_iosapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7X7PKCDRN5;
 				INFOPLIST_FILE = DogWalker_iosapp/Info.plist;
@@ -599,6 +602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DogWalker_iosapp/DogWalker_iosapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7X7PKCDRN5;
 				INFOPLIST_FILE = DogWalker_iosapp/Info.plist;
