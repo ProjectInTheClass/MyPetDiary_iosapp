@@ -40,11 +40,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라사용_사진 추가</string>
+	<string>카메라 앱에 접근을 허용하시겠습니까? 카메라는 오늘의 사진 등록 및 프로필 사진 등록에 사용됩니다.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>앨범 사용_사진 추가</string>
+	<string>앨범 앱에 사진을 저장하는 것을 허용하시겠습니까? 앨범은 오늘의 사진 등록 및 프로필 사진 등록에 사용됩니다.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>카메라 앱에 접근 허용</string>
+	<string>앨범 앱에 접근을 허용하시겠습니까? 앨범은  오늘의 사진 등록 및 프로필 사진 등록에 사용됩니다.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
