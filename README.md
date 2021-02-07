@@ -34,6 +34,6 @@
 <br>
 
 ## 👩🏻‍💻 Developers
-- 김경현 (@howard7221)
-- 이은영 (@eyl056)
-- 정지연 (@jiyeon1)
+- 김경현 <a href = "https://github.com/howard7221">(@howard7221)</a>
+- 이은영 <a href = "https://github.com/eyl056">(@eyl056)</a>
+- 정지연 <a href = "https://github.com/jiyeon1">(@jiyeon1)</a>
