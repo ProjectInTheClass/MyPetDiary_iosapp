@@ -9,6 +9,12 @@
 </h4>
 <br>
 <br>
+https://github.com/ProjectInTheClass/MyPetDiary_iosapp
+<br><br><br>
+
+### [앱 소개 보러가기!!](https://projectintheclass.github.io/MyPetDiary_iosapp/)
+
+
 
 ```
 펫디는 오늘 반려동물과의 있었던 일을 기록하고 반려동물과의 일상을 다른 사람들과 공유할 수 있는 어플리케이션입니다
@@ -21,6 +27,10 @@
 <br>
 <br>
 
+## 기능
+![image](https://user-images.githubusercontent.com/45346786/131145327-99b94587-5fdf-456c-9666-443614442907.png)
+
+<br><br>
 ## ⚙️ IDE & Libraries
 
 <p>
@@ -28,6 +38,7 @@
 <img src="https://img.shields.io/badge/Xcode-12.3-blue">
 <img src="https://img.shields.io/badge/CocoaPods-1.10.0-white">
 <img src="https://img.shields.io/badge/firebase-7.3.0-yellow">
+<a href="https://github.com/eyl056/MyPetDiary/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/eyl056/MyPetDiary"></a>
 </p>
 
 <br>
